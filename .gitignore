@@ -1,0 +1,15 @@
+*.html
+*.zip
+*.ai
+*.psd
+.sass-cache/
+*.db
+*.mp4
+*.sassc
+*.scssc
+.DS_Store
+.sass-cache
+codekit-config.json
+dist/css/styles.css
+dist/js/core.js
+node_modules/*

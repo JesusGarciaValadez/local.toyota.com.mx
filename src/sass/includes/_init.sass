@@ -1,0 +1,367 @@
+//Clearfix
+.cf
+	*zoom: 1
+	&:after
+		content: ""
+		display: table
+		clear: both
+
+//Base
+.small
+	font-size: 0.8em
+.big
+	font-size: 1.2em
+
+.left
+	float: left
+.right
+	float: right
+.center
+	display: table
+	margin: auto
+.clear
+	clear: both
+.hide
+	display: none !important
+.show
+	display: block	
+.circle
+	border-radius: 50%
+	overflow: hidden
+.sinFlex
+	display: block
+.boxShadow
+	box-shadow: 1px 1px 5px rgba(90, 90, 90, 0.7)
+	margin-bottom: 3px
+.hideM, .hideT, .hideD
+	display: block
+
+.link
+	+aReset
+	color: $azul
+	font-size: inherit
+	&:after
+		+fawesome("\f105")
+		margin-left: 5px
+
+.returnLink
+	+aReset
+	color: $azul
+	font-size: inherit
+	&:before
+		+fawesome("\f104")
+		margin-right: 5px
+
+.btn,.btn_rojo,.btn_azul,.btn_blanco,.btn_gris
+	font-weight: 400
+	&.next
+		&:after
+			+fawesome("\F105")
+			margin-left: 10px
+	&.prev
+		&:before
+			+fawesome("\F104")
+			margin-right: 10px
+	&.shop
+		&:after
+			+fawesome("\F07A")
+			margin-left: 10px
+	&.disabled
+		opacity: 0.6
+		cursor: default
+
+.btn_rojo
+	+btn
+
+.btn_azul
+	+btn($azul, white, white)
+
+.btn_blanco
+	+btn($transp, $color-text, $color-border)
+
+.btn_gris
+	+btn($gris, white, $color-border)
+
+.btn_facebook
+	+btn($color-FB, white, $transp)
+	&:before
+		+fawesome("\F09A")
+		margin-right: 10px
+
+//Textos
+.text_left
+	text-align: left
+.text_center
+	text-align: center
+.text_right
+	text-align: right
+.text_justify
+	text-align: justify
+
+.sinScroll
+	overflow: hidden
+
+//Iconos
+@each $ico, $valor in $icons
+	.bt__#{$ico}
+		&:before
+			+fawesome($valor)
+
+strong
+	font-weight: 600
+
+//Grid
+.container
+	width: 100%
+	max-width: 960px
+	margin: auto
+	[class*="g-"]
+		+bx
+		padding: 0 5px
+		display: inline-block
+		float: left
+		position: relative
+	.container
+		+bx
+		padding: 0 $min-spacer/2
+
+.g-12
+	width: $g12
+	&.important
+		width: $g12 !important
+.g-11
+	width: $g11
+	&.important
+		width: $g11 !important
+.g-10
+	width: $g10
+	&.important
+		width: $g10 !important
+.g-9
+	width: $g9
+	&.important
+		width: $g9 !important
+.g-8
+	width: $g8
+	&.important
+		width: $g8 !important
+.g-7
+	width: $g7
+	&.important
+		width: $g7 !important
+.g-6
+	width: $g6
+	&.important
+		width: $g6 !important
+.g-5
+	width: $g5
+	&.important
+		width: $g5 !important
+.g-4
+	width: $g4
+	&.important
+		width: $g4 !important
+.g-3
+	width: $g3
+	&.important
+		width: $g3 !important
+.g-2_5
+	width: $g2_5
+	&.important
+		width: $g2_5 !important
+.g-2
+	width: $g2
+	&.important
+		width: $g2 !important
+.g-1
+	width: $g1
+	&.important
+		width: $g1 !important
+.s-11
+	margin-left: $g11
+.s-10
+	margin-left: $g10
+.s-9
+	margin-left: $g9
+.s-8
+	margin-left: $g8
+.s-7
+	margin-left: $g7
+.s-6
+	margin-left: $g6
+.s-5
+	margin-left: $g5
+.s-4
+	margin-left: $g4
+.s-3
+	margin-left: $g3
+.s-2
+	margin-left: $g2
+.s-1
+	margin-left: $g1
+
+//Portal Base
+html
+	font-size: $fontSize
+body
+	font-family: $fontPrin
+	text-rendering: optimizeLegibility
+	-webkit-font-smoothing: antialiased
+	-moz-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+h2
+	+font-size(32px)
+	//width: 100%
+	font-weight: 300
+	margin-bottom: 20px
+
+header, .wrapper, section, .footer
+	+bx
+	width: 100%
+
+section
+	@extend .cf
+	&.dark
+		background: $color-bg
+
+.wrapper
+	@extend .cf
+	overflow: hidden
+	min-height: 500px
+
+.scripts
+	display: none
+
+.toastNotification
+	display: none
+	z-index: 1000
+	position: fixed
+	top: 100px
+	right: 100px
+	background: rgba(0,0,0,0.5)
+	color: white
+	padding: 1rem
+
+.box
+	display: block
+
+.breadcrumb,.subMenu3
+	+bx
+	font-size: 1rem
+	margin-bottom: $min-spacer
+	color: $color-text
+	overflow: hidden
+	font-weight: 300
+	li
+		float: left
+		margin-right: 5px
+		position: relative
+		&:after
+			content: " / "
+			margin: 0px 2px
+		&:last-child
+			color: $primario
+			&:after
+				content: ""
+			a
+				cursor: default
+		a
+			+aReset
+
+.breadcrumb
+	font-size: 0.85rem
+	width: 100%
+	max-width: 940px
+	overflow: initial
+	display: table
+	margin: $min-spacer auto
+	li
+		&:last-child
+			color: $negro
+			font-weight: 400
+
+
+.cont-banner
+	margin:  auto
+	>img
+		width: 100%
+		image-rendering: optimizeQuality
+
+input, textarea, keygen, select, button, .alert
+	font-family: $fontPrin !important
+	font-size: 0.9rem
+	font-weight: 300
+	&.info
+		outline: 1px solid $info
+		background: rgba($info,0.1)
+		color: $info
+		font-weight: 500
+		+placeholder
+			color: $info
+			font-weight: 500
+	&.success
+		outline: 1px solid $success
+		background: rgba($success,0.1)
+		color: $success
+		font-weight: 500
+		+placeholder
+			color: $success
+			font-weight: 500
+
+	&.warning
+		outline: 1px solid $warning
+		background: rgba($warning,0.1)
+		color: $warning
+		font-weight: 500
+		+placeholder
+			color: $warning
+			font-weight: 500
+	&.error
+		outline: 1px solid $error
+		background: rgba($error,0.1)
+		color: $error
+		font-weight: 500
+		+placeholder
+			color: $error
+			font-weight: 500
+.alert
+	+bx
+	padding: $spacer
+
+.requerido
+	&:before
+		content: "* "
+
+span.select
+	position: relative
+	> select
+		+appearance
+	&:after
+		+bx
+		+fawesome("\f0d7")
+		+center(h)
+		position: absolute
+		right: 0px
+		font-size: 20px
+		border-left: 1px solid $color-border
+		padding: 9px 15px
+		pointer-events: none
+
+.oneMomentPlease
+	display: table
+	background: rgba(black,0.5)
+	width: 100%
+	height: 100%
+	overflow: hidden
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 10000
+	span
+		display: table
+		+center(vh)
+		&:before
+			+fawesome("\f110")
+			color: white
+			font-size: 3rem

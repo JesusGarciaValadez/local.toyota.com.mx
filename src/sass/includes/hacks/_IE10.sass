@@ -1,0 +1,319 @@
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+	header
+		&.fixed
+			.search
+				width: 50%
+		.promoHeader
+			max-width: 650px
+			width: 50%
+			margin-right: 10px
+			overflow-x: hidden
+		.menuTiendas
+			width: 30%
+			padding: 0
+			li
+				&.tiendas,&.mall
+					.subMenu
+						dt
+							li
+								border: none !important
+				&.mall,&.tiendas,&.subastas
+					&:after
+						right: 10px
+					&:hover
+						&:after	
+							right: 10px
+					.subMenu
+						dt
+							a
+								&.logoTelmex
+									width: 178px
+								&.logoTelcel
+									width: 105px
+								&.logoSears
+									width: 105px
+								&.logoSanborns
+									width: 130px
+								&.logoClaro
+									width: 70px
+								&.logoInbursa
+									width: 82px
+
+		.mall
+			li,dt
+				&:first-child
+					background: none !important
+
+		.productosNewCat
+			&:after	
+				right: 20px
+
+		.productosCat,.productosNewCat
+			.menuHeader
+				>.subMenu
+					>dl
+						>dt,>dd
+							>a
+								padding-bottom: 3px
+
+		.productosHead
+			li
+				li
+					height: 10px
+		.subMenu
+			dt
+				margin-top: 5px
+				margin-bottom: 4px
+
+		.pasos
+			>ul
+				overflow: hidden
+			li
+				&.view
+					a
+						border-bottom: none	
+
+				a
+					&.ico-ingresar,&.ico-direccion,&.ico-formapago,&.ico-terminar,&.ico-cerrar
+						&:before
+							display: block
+
+	.aside__cupon
+		form
+			+bx
+
+	.header__movil
+		padding: 0
+		.navegacionM
+			display: none
+		&.view
+			.navegacionM
+				display: block
+				overflow: scroll
+				height: calc(100vh - 107px)
+								
+	.mod__producto
+		.info-Product
+			.media-container
+				min-width: 560px
+		.price-Product
+			width: calc(100% - 570px)
+			.shareProduct
+				ul
+					+justifyCont(center)
+
+	.filtroCategoria, .filtroSubCategoria, .menuTienda
+		dt
+			+bx
+			display: table !important
+			width: 100%
+			word-wrap: break-word
+			>a
+				+bx
+				display: table !important
+				width: 100%
+		dd
+			li
+				border: none !important
+				>a
+					display: table !important
+					text-align: left
+					width: 100% !important
+
+	.card__product
+		a
+			&.descuento,&.nuevo,&.otros
+				.desc
+					span
+						display: block
+						text-align: center
+						width: 100%
+
+			.contImgProd
+				img
+					-ms-interpolation-mode: bicubic
+					height: auto !important
+					width: auto !important
+
+	input[type="radio"]
+		float: left
+		border: none !important
+		padding: inherit !important
+		cursor: pointer
+		width: inherit !important
+		display: inline !important
+
+
+	.forma_pago_contenedor2,.mod__datosT
+		.forma_pago_contenido,.forma_pago_miTelmex,.forma_registro_miTelmex
+			.form-group
+				input[type='radio']
+					box-sizing: content-box
+
+	.terminar-pedido
+		.thanks
+			.moduloVerde
+				.check
+					margin-right: 50px
+
+	span.select
+		&:after
+			content: " "
+
+	.mod-5,.mod-4
+		.bx-wrapper
+			.bx-controls.bx-has-controls-direction
+				right: 0px
+				pointer-events: none
+				opacity: 1
+				position: absolute
+				height: 100%
+				top: 0!important
+				left: 0
+				width: 100%!important
+				.bx-controls-direction
+					pointer-events: auto!important
+	.conProductos
+		.slider__index
+			img
+				height: initial
+				min-height: initial
+
+			.contentImage
+				background-size: 100%
+
+		.magazine
+			.bx-wrapper
+				position: relative
+				.bx-controls-direction
+					max-width: inherit !important
+					width: 90%
+					position: absolute
+					top: 0%
+					left: 5%
+					top: initial
+					height: 100%
+
+	.sec__sliderInterno
+		article
+			.bx-wrapper
+				.bx-controls-direction
+					max-width: initial !important
+
+	section
+		&.sec__slider
+			padding: 0
+
+
+	aside
+		&.tiendas,&.mall
+			padding: 0 !important
+
+		&.mall
+			dd
+				padding: 0
+				li
+					border: none
+	
+	.final_cajaPago
+		display: block!important
+		width: 100%
+		overflow: hidden
+		.subtotal_finalCajaPago,.total_finalCajaPago
+			float: right
+
+	.miCuenta
+		article
+			.datosServicio
+				a
+					display: block
+					width: 100%
+
+	.forma_pago_contenedor2
+		input[type="radio"]
+			margin-right: 0
+			padding-right: 0
+
+
+	input[type="radio"]
+		max-width: 0.9rem
+		width: 14px !important
+		margin: 0 5px  !important
+
+	.botones_cajaPago
+		.botones
+			.btn-rojo
+				margin: 0
+	
+	.aside__cupon
+		input[type="button"],button
+			margin-right: 23px
+	@media only screen and (max-width: 960px)
+		header
+			.promoHeader
+				width: 45%
+				li:nth-child(1n+4)
+					display: none !important
+		.mod__producto
+			.info-Product
+				width: 50%
+				.media-container
+					min-width: initial
+			.price-Product
+				width: 50%
+				.shareProduct
+					ul
+						+justifyCont(center)
+
+		.orden__Compra
+			&.oneClick
+				.panel-body
+					.forma_pago_contenedor2
+						.oC_tarjeta
+							.contImg
+								display: none
+							hgroup
+								display: inline-block
+								max-width: 53%
+							h2,h3
+								display: inline-block
+
+
+	@media only screen and (max-width: 768px)
+		.orden__Compra
+			&.oneClick
+				.panel-body
+					.forma_pago_contenedor2
+						.oC_tarjeta
+							hgroup
+								max-width: 75%
+
+	@media only screen and (max-width: 560px)
+		.orden__Compra
+			&.oneClick
+				.panel-body
+					.forma_pago_contenedor2
+						.oC_tarjeta
+							hgroup
+								max-width: 59%
+
+	@media only screen and (max-width: 480px)
+		body,html
+			overflow-x: visible!important
+			overflow-y: visible!important
+		.orden__Compra
+			&.oneClick
+				.panel-body
+					.forma_pago_contenedor2
+						.oC_tarjeta
+							hgroup
+								max-width: 74%
+
+
+
+//todos los IE desde el 9 al 11
+@media screen and (min-width:0\0)
+	input[type="radio"]
+		width: 14px !important
+		min-width: 14px !important
+		margin: 0 5px  !important

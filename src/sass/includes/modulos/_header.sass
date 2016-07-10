@@ -1,0 +1,132 @@
+header
+	[class*="__Superior"]
+		+bx
+		+gradient(180deg, #fcfcfc, #d7d7d7)
+		+font-size(12px)
+		min-height: 30px
+		width: 100%
+		border-bottom: 2px solid $color-border
+		color: $color-text
+		.container
+			position: relative
+		.headerS_call
+			display: table
+			width: 100%
+			padding: $min-spacer
+			text-align: center
+			p
+				&:after
+					margin-left: $min-spacer/2
+					+fawesome("\f095")
+					position: absolute
+					+font-size(22px) 
+					top: $min-spacer/4
+		.headerS_buttons
+			display: table
+			position: absolute
+			right: 0px
+			top: $min-spacer
+		a
+			+aReset
+			padding: $min-spacer
+			border-left: 1px solid $color-border
+	
+
+	[class*="__Middle"]
+		border-bottom: 1px solid $color-border
+		margin-bottom: -1px
+		.container
+			+bx
+			+flex
+			+flexDir(row)
+			+justifyCont(space-between)
+			+alignItem(center)
+			padding: $min-spacer/2 0
+			position: relative
+			.logo
+				width: 265px
+				height: 73px
+				display: table
+				&:before
+					content: ""
+					background: url(img/logoSanborns.png) no-repeat
+					display: table
+					width: 265px
+					height: 73px
+			.hotSale
+				+bx
+				display: none
+				background: $color-bg
+				position: absolute
+				left: -85px
+				border: 2px solid #e0e2e1
+				width: 70px
+				height: 70px
+				border-radius: 3px
+				&.show
+					display: table
+				&:before
+					+center(vh)
+					content: " "
+					background: url(img/hotsale.png) no-repeat
+					width: 65px
+					height: 43px
+					display: table
+
+			form
+				+bx
+				max-width: 655px
+				width: 100%
+				position: relative
+				padding: 0 $spacer*1.5
+				input[type="search"],input[type="text"]
+					&.search
+						+bx
+						padding: $min-spacer
+						padding-right: 80px
+						min-height: 35px
+						border-radius: 5px
+						border: 1px solid $color-border
+						width: 100%
+				button
+					&.search
+						+bx
+						+gradient(90deg, #B7202E, $primario)
+						border-radius: 0 5px 5px  0
+						border: none
+						cursor: pointer
+						min-width: 70px
+						min-height: 100%
+						position: absolute
+						right: $spacer*1.5
+						top: 0
+						&:before
+							+fawesome("\F002")
+							font-size: 1.2rem
+							color: #a61907
+
+	[class*="__Inferior"]
+		margin-bottom: -2px
+		.container
+			nav
+				+font-size(14px) 
+				>ul
+					+bx
+					+flex
+					+flexDir(row)
+					max-height: 50px
+					border-bottom: 2px solid $primario 
+					color: $color-text
+					>li
+						&.active,&:hover
+							>a
+								background: $primario
+								color: white
+						>a
+							+bx
+							+aReset
+							+flex
+							+alignItem(center)
+							padding: $min-spacer
+							text-align: center
+							min-height: 50px

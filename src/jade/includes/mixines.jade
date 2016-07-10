@@ -1,0 +1,11 @@
+//-video youtube
+mixin videoYoutube(width,height,url)
+	iframe(width="#{width}",height="#{height}",src="//www.youtube.com/embed/#{url}",frameborder="0",allowfullscreen)
+
+mixin breadcrumb(arreglo)
+	.breadcrumb
+		ul
+			li Personas
+			each val in arreglo
+				li
+					a(href="#{val.url}") #{val.nivel}

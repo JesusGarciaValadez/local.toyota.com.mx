@@ -1,0 +1,629 @@
+.home__Modulos1,.mod__Promociones
+	font-weight: 300
+	h3
+		font-size: 1.6rem
+		margin-bottom: $spacer
+	p
+		font-size: 1.1rem
+		margin-bottom: $spacer
+		color: $color-text
+		width: 90%
+		line-height: 1.7rem
+	article
+		+flex
+		+flexDir(row-reverse)
+		+alignItem(flex-start)
+		img
+			width: 37%
+			margin-right: 3%
+			height: auto
+
+.mod__Promociones
+	.contentTituloUrl
+		padding-bottom: $spacer
+	article
+		> div
+			width: 80%
+			p
+				min-height: 60px
+		img
+			width: 17%
+			margin-right: 3%
+
+.home__Modulos2,.mod__Ayuda,.mod__Modulos2
+	font-weight: 300
+	h3
+		font-size: 1.6rem
+		margin-bottom: $spacer
+	p
+		font-size: 1.1rem
+		margin-bottom: $spacer
+		color: $color-text
+		width: 90%
+		line-height: 1.7rem
+	ul
+		line-height: 2rem
+
+.mod__Ayuda
+	.contentTituloUrl
+		padding-bottom: $spacer
+
+.mod__Modulos2
+	padding: $spacer 0
+	article
+		+flex
+		+flexDir(column)
+		img
+			width: 40%
+			margin: $min-spacer auto
+	p
+		width: 95%
+
+.home__free,.mod__free
+	+flex
+	+flexDir
+	p
+		color: white
+		text-align: center
+		padding: 70px 0 !important
+		font-size: 2rem
+
+.home__encuesta,.mod__encuesta
+	font-weight: 300
+	padding-bottom: 0px
+	.container
+		+flex
+		+flexDir(row)
+		+justifyCont
+		+alignItem
+	h3
+		font-size: 1.6rem
+		margin-bottom: $spacer
+	p
+		font-size: 1.1rem
+		margin-bottom: $spacer
+		width: 80%
+		color: $color-text
+		line-height: 1.7rem
+	figure
+		+flex
+		+justifyCont
+		margin-bottom: -3px
+		img
+			//max-height: 267px
+			width: auto
+			max-height: 90px
+
+
+
+
+//secciones
+section
+	&.header__Section
+		h1
+			font-size: 2rem
+			color: $negro
+			margin-bottom: $min-spacer
+		p
+			font-size: 1.5rem
+			color: $color-text
+		.cont-head3
+			+flex
+			max-width: 940px
+			margin: auto
+			.contImg
+				display: none
+			.contDescrip
+				+flex
+				+flexDir
+				+justifyCont
+				width: 100%
+				p
+					line-height: 2rem
+			&.chargeImg
+				+flexDir(row)
+				max-width: 100%!important
+				margin-bottom: -18px
+				.contImg, .contDescrip
+					display: block
+					width: 50%
+					img
+						width: 100%
+						height: auto
+				.contDescrip
+					max-width: 470px
+					h2
+						line-height: 2rem
+						font-size: 1.6rem
+
+.level2
+	section
+		position: relative
+		&.header__Section
+			h1
+				color: $negro
+				font-weight: 300	
+			h2
+				color: $color-text	
+				font-size: 1.4rem
+
+
+.level3
+	section
+		position: relative
+		.anclas
+			position: absolute
+			top: -90px
+		.contentTituloDescrip
+			margin-bottom: $min-spacer
+			h2
+				font-size: 1.7rem
+				font-weight: 300
+				padding-bottom: $min-spacer
+				color: $negro
+			p
+				font-size: 1.5rem
+				font-weight: 300
+				color: $color-text
+
+.navigatorSliderResumen
+	display: table
+	margin: $min-spacer/2 auto
+	li
+		float: left
+		margin-left: $min-spacer
+		width: 15px
+		height: 15px
+		background: $gris
+		border-radius: 50%
+		cursor: pointer
+		&.active,&:hover
+			background: $azul
+		&:first-child
+			margin-left: 0
+.modulo__resumen
+	overflow: hidden
+	.contentResumen
+		+fx(margin-left,0.5s)
+		width: 500%
+		margin-left: 0
+		&.step2
+			+fx(margin-left,0.5s)
+			margin-left: -100%
+		&.step3
+			+fx(margin-left,0.5s)
+			margin-left: -200%
+		&.step4
+			+fx(margin-left,0.5s)
+			margin-left: -300%
+		&.step5
+			+fx(margin-left,0.5s)
+			margin-left: -400%
+	.viewResumen
+		+flex
+		+flexDir(row)
+		width: 20%
+		float: left
+	.resumen,.images
+		width: 50%
+		padding-bottom: $min-spacer/2
+		h3
+			font-size: 1.5rem
+			font-weight: 300
+			color: $color-text
+			padding-bottom: $spacer
+		p
+			font-size: 1.2rem
+			color: $color-text
+			font-weight: 300
+			padding-bottom: $spacer
+	.images
+		img
+			display: table
+			margin: auto
+			width: 90%
+
+.plan__Precio,.equipo__destacado
+	+bx
+	padding: 0 $min-spacer/2
+	width: $g3
+	float: left
+	margin-bottom: $spacer*1.5
+
+.plan__Precio
+	dl
+		border: 1px solid $color-border
+		dd
+			padding: $min-spacer $min-spacer/2
+			border-top: 1px solid $color-border
+			background: white
+			&:first-of-type
+				border-top: initial
+			p
+				font-size: 0.9rem
+				text-align: center
+			&.precio
+				background: $azul
+				p
+					color: white
+				span
+					display: block
+					font-size: 1.7rem
+					font-weight: 700
+			&.minutos,&.msn
+				background: $color-bg
+				
+	h3
+		+bx
+		width: 100%
+		background: $negro
+		color: white
+		padding: $min-spacer $min-spacer/2
+		text-align: center
+		font-weight: 300
+		border-bottom: 1px solid white
+	strong
+		font-weight: 700
+	.btn-rojo
+		display: table
+		margin: auto
+		width: 80%
+		&:after
+			+fawesome("\f105")
+			margin-left: 5px
+
+.equipo__destacado
+	.equipo
+		+bx
+		padding: $min-spacer $min-spacer/2
+		background: white
+	.equipo-precio
+		+flex
+		+justifyCont(flex-end)
+		+alignItem(flex-start)
+		.equipoImg
+			width: 70%
+			img
+				width: 100%
+				max-width: 98px
+				height: auto
+				max-height: 170px
+				display: table
+				margin: auto
+		.precio
+			p
+				+bx
+				font-size: 1rem
+				padding: $min-spacer/2
+				&.normal
+					color: $color-text
+					span
+						font-size: 0.8rem
+				&.tienda
+					color: black
+					margin-bottom: $min-spacer/2
+					span
+						font-size: 1.4rem
+						font-weight: 400
+	.descrip-equipo
+		h3
+			font-size: 1.4rem
+			font-weight: 400
+			padding: 0 $min-spacer/2 $min-spacer
+			color: $negro
+		ul
+			+flex
+			+flexDir(row)
+			li
+				+bx
+				width: 25%
+				padding: $min-spacer/4
+			p
+				font-size: 0.7rem
+				text-align: center
+				font-weight: 400
+				padding: $min-spacer/4 0
+	.btn-rojo
+		display: table
+		margin: auto
+		width: 100%
+		&:after
+			+fawesome("\f07a")
+			margin-left: 5px
+
+.comparador
+	+flex
+	+justifyCont(flex-end)
+	+alignItem
+	font-weight: 300
+	label
+		color: $azul
+		font-size: 0.8rem
+		text-transform: uppercase
+		margin-left: 5px
+
+.morePlan
+	padding: $min-spacer/2 $min-spacer/2 $min-spacer
+	display: table
+	margin: auto
+	cursor: pointer
+	width: 100%
+	text-align: center
+
+
+//curto nivel
+.detallePlan
+	.returnLink, h1
+		overflow: hidden
+		margin-bottom: $min-spacer
+	h1
+		font-size: 1.7rem
+		font-weight: 300
+		padding-bottom: initial
+		color: $negro
+		margin-bottom: 0.5rem
+		width: 100%
+	h2
+		font-weight: 400 !important
+	
+	.returnLink
+		float: right
+
+	.descripcionPlan
+		+flex
+		+flexDir(row)
+		padding-bottom: $min-spacer
+		.textPlan
+			+bx
+			width: 50%
+			padding-right: 20px
+			p
+				font-size: 0.9rem
+				font-weight: 300
+				line-height: 1.5rem
+				margin-bottom: $min-spacer/2
+		ul
+			+bx
+			padding-right: 20px
+			width: 50%
+			font-size: 0.9rem
+			font-weight: 300
+			li
+				margin-bottom: $min-spacer
+				&:before
+					content: "\002022"
+					margin-right: $min-spacer/2
+					color: $primario
+
+	.cont_Adicionales
+		padding: $min-spacer 0 0
+		+flex
+		+flexDir(row)
+		+flexWrap
+		h3
+			font-size: 1.5rem
+			padding: $min-spacer 0
+			width: 100%
+			display: table
+			&:before
+				+fawesome("\f055")
+				margin-right: $min-spacer/2
+				color: $primario
+		fieldset
+			width: 100%
+		.btn-rojo
+			float: right
+			margin: initial
+			&:after
+				+fawesome("\f105")
+				margin-left: 5px
+	
+	.mod__adicional
+		+bx
+		width: 33.3%
+		padding-right: 40px
+		min-height: 190px
+		h3,h4
+			font-size: 1.5rem
+			font-weight: 400
+		p
+			font-size: 0.9rem
+			font-weight: 300
+			min-height: 50px
+			margin-bottom: $min-spacer/2
+			line-height: 1.2rem
+		.link
+			font-weight: 300
+			margin-bottom: $min-spacer
+			display: inline-block 
+		label
+			font-size: 0.9rem
+		.contCheck
+			+flex
+			+flexDir(row)
+			+alignItem(baseline)
+
+.tarifas
+	h3
+		margin-bottom: $min-spacer
+	p
+		+bx
+		color: $color-text
+		font-size: 0.9rem
+		line-height: 1.5rem
+		font-weight: 300
+		padding: $spacer 0px
+	.listOrder
+		+flex
+		+flexDir(row)
+		+flexWrap
+		color: $negro
+		list-style: initial
+		list-style-position: inside
+		font-size: 0.9rem
+		margin-bottom: $spacer
+		li
+			+bx
+			width: 33.3%
+			padding-right: $min-spacer*1.5
+			min-height: 30px
+			padding-bottom: $min-spacer/2
+
+
+.mod__Accordeon
+	> dl
+		width: 100%
+		border: 1px solid $color-border
+		border-radius: 3px
+		margin-bottom: $min-spacer
+		&.showAccordeon
+			dt
+				&:after
+					+fawesome("\F068")
+			dd
+				display: block
+		dt
+			+bx
+			padding: $min-spacer
+			position: relative
+			cursor: pointer
+			&:after
+				+fawesome("\F067")
+				position: absolute
+				right: $min-spacer
+				color: $azul
+		dd	
+			+bx
+			padding: 0 $min-spacer $min-spacer
+			display: none
+
+
+.page404
+	background: white
+	color: $negro
+	header
+		margin: auto
+		display: table
+		background: $primario
+		padding: $spacer
+		color: white
+		border-top: 50px solid white
+		margin-bottom: $min-spacer
+		.container
+			+flex
+			+flexDir(row)
+		hgroup
+			+flex
+			+flexDir(column)
+			padding: 0px $min-spacer 0 $spacer
+		h1
+			font-size: 2.5rem
+			padding: $min-spacer+2 0
+		h2
+			font-size: 1.2rem
+	.header__logo
+		+aReset
+		width: 300px
+		height: 95px
+		position: relative
+		font-size: 1.6rem
+		color: $color-text
+		font-weight: 300
+		display: table
+		margin-left: $min-spacer/2
+		padding-right: $min-spacer
+		border-right: 1px solid $color-border
+		float: left
+		&:before
+			content: " "
+			background: url(vector/logoF.svg) no-repeat
+			width: 300px
+			height: 70px
+			margin-bottom: 5px
+			top: 10px
+			position: relative
+			float: left
+	p
+		padding: $min-spacer 0
+		font-weight: 300
+		letter-spacing: 1px
+		font-size: 1.3rem
+	section
+		padding-top: $min-spacer
+	.search
+		border: none
+		padding: 0px  $min-spacer/2
+		width: 80%
+		margin: auto
+		.contSearch
+			+flex
+			+flexDir(row)
+			+justifyCont(space-between)
+			width: 100%
+			border: 1px solid $color-border
+			border-radius: 5px
+			overflow: hidden
+		input[type="search"]
+			+bx
+			+appearance
+			min-width: 70px
+			max-width: 950px
+			width: 90%
+			height: 40px
+			display: block
+			padding: 10px
+			border: none
+			border-radius: 5px 0 0 5px
+			font-size: 1.3rem
+			&:focus
+				outline: 0
+		.bt__search
+			+bx
+			background: $azul
+			padding: $spacer/3
+			width: 10%
+			min-width: 30px
+			height: 40px
+			border-radius: 0px 5px 5px 0px
+			border: none
+			cursor: pointer
+			border: 1px solid white
+			&:focus
+				outline: 0
+			&:before
+				+fawesome("\f002")
+				color: white
+	.wrapper
+		box-shadow: initial
+
+	nav
+		width: 90%
+		margin: auto
+		+flex
+		+flexDir(row)
+		+flexWrap
+		dl
+			width: 33%
+		dt,dd
+			width: 100%
+			padding: $min-spacer/2 0 
+			text-align: center
+			font-size: 1.1rem
+			font-weight: 400
+			li
+				font-size: 1rem
+				padding: $min-spacer/4 0
+				a
+					color: $color-text
+					font-weight: 300 
+			a
+				+aReset
+				color: $primario
+		dt
+			font-size: 1.5rem
+			a
+				letter-spacing: 2.5px
+				color: $negro
+
+	footer
+		display: none
