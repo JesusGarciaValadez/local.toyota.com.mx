@@ -24,8 +24,47 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-Icon-calculadora:before {
+.icon-icono_asesoria:before {
   content: "\e905";
+}
+.icon-icono_asistencia:before {
+  content: "\e906";
+}
+.icon-icono_auxilio:before {
+  content: "\e90a";
+}
+.icon-icono_calculator:before {
+  content: "\e90b";
+}
+.icon-icono_chat:before {
+  content: "\e90c";
+}
+.icon-icono_cobertura:before {
+  content: "\e90d";
+}
+.icon-icono_cubre:before {
+  content: "\e90e";
+}
+.icon-icono_exclusiones:before {
+  content: "\e90f";
+}
+.icon-icono_infoviajes:before {
+  content: "\e910";
+}
+.icon-icono_mapaeucanada:before {
+  content: "\e911";
+}
+.icon-icono_mapamexico:before {
+  content: "\e912";
+}
+.icon-icono_pagohotel:before {
+  content: "\e913";
+}
+.icon-icono_phone:before {
+  content: "\e914";
+}
+.icon-icono_remolque:before {
+  content: "\e915";
 }
 .icon-arrow-left:before {
   content: "\e903";
