@@ -1,80 +1,17 @@
 //- safari 6 - 7
 _::-webkit-full-page-media, _:future, :root
 
-	header
-		.productosCat,.productosNewCat
-			.menuHeader
-				>.subMenu
-					>dl
-						dt,dd
-							min-width: 20%
-
-	.mod__producto
-		.info-Product
-			.media-container
-				min-width: 540px
-		.price-Product
-			width: calc(100% - 550px)
-			.shareProduct
-				ul
-					+justifyCont(center)
-
-	
-	.aside__cupon
-		input[type="button"]
-			width: 100%
-			
-	@media only screen and (max-width: 960px)
-		header
-			.promoHeader
-				width: 45%
-				li:nth-child(1n+4)
-					display: none !important
-		.mod__producto
-			.info-Product
-				.media-container
-					min-width: initial
-			.price-Product
-				width: 50%
-
+	// .experiencia
+	// 	.container
+	// 		.flex
+	// 			.colum
+	// 				> div
+	// 					height: auto
 
 //- safari 9
 @supports (overflow:-webkit-marquee) and (justify-content:inherit)
-
-	header
-		.productosCat,.productosNewCat
-			.menuHeader
-				>.subMenu
-					>dl
-						dt,dd
-							min-width: 20%
-
-	.mod__producto
-		.info-Product
-			.media-container
-				min-width: 560px
-		.price-Product
-			width: calc(100% - 570px)
-			.shareProduct
-				ul
-					+justifyCont(center)
 	
-	.aside__cupon
-		input[type="button"]
-			width: 100%
-
-	@media only screen and (max-width: 960px)
-		header
-			.promoHeader
-				width: 45%
-				li:nth-child(1n+4)
-					display: none !important
-		.mod__producto
-			.info-Product
-				.media-container
-					min-width: initial
-			.price-Product
-				width: 50%
+	
 
 // iPhone 6
 @media screen and (min-device-width : 375px) and (max-device-width : 667px) and (-webkit-device-pixel-ratio: 2)

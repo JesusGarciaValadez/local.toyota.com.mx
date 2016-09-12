@@ -11,5 +11,5 @@
 .sass-cache
 codekit-config.json
 dist/css/styles.css
-dist/js/core.js
+dist/css/materialize.css
 node_modules/*

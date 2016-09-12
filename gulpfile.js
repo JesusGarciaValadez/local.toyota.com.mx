@@ -101,6 +101,6 @@ gulp.task('watch', function(){
 	});
 });
 
-gulp.task('toyota', ['jade:watch','compass:watch','coffee:watch','webserver']);
+gulp.task('toyota', ['jade:watch','compass:watch','webserver']);
 
 gulp.task('default', ['js']);

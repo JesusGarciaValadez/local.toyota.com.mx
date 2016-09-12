@@ -1,11 +1,38 @@
-//-video youtube
-mixin videoYoutube(width,height,url)
-	iframe(width="#{width}",height="#{height}",src="//www.youtube.com/embed/#{url}",frameborder="0",allowfullscreen)
+//-Menu Autos
+mixin menuAutos(arreglo)
+	.menuAutos
+		div
+			.regresar Modelos
+			ul
+				each val, index in arreglo
+					-var ind = index +1
+					li
+						a #{val.familia}
+						div
+							.container
+								h6 #{val.titulo}
+								.flex
+									each valu in arreglo[index].lista
+										div
+											a(href="#{valu.urlimg}")
+												img(src="images/autos/#{valu.img}")
+												img(src="images/autos/#{valu.imghover}").hover
+											p #{valu.modelo}
+												cite #{valu.slogan}
+												span Desde 
+													b $#{valu.precio}
+											a(href="#{valu.url}").link CONFIGURA
 
-mixin breadcrumb(arreglo)
-	.breadcrumb
-		ul
-			li Personas
-			each val in arreglo
-				li
-					a(href="#{val.url}") #{val.nivel}
+//-Links Footer
+mixin linksFooter(arreglo)
+	each val, index in arreglo
+		-var ind = index +1
+		div
+			//-dt #{val.titulo}
+			each valu, index1 in arreglo[index].lista
+				dl
+					dt #{valu.titulo}
+					div
+						each value in arreglo[index].lista[index1].subLista
+							dd
+								a(href="#{value.url}") #{value.text1}

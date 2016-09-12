@@ -1,132 +1,448 @@
-header
-	[class*="__Superior"]
-		+bx
-		+gradient(180deg, #fcfcfc, #d7d7d7)
-		+font-size(12px)
-		min-height: 30px
-		width: 100%
-		border-bottom: 2px solid $color-border
-		color: $color-text
-		.container
-			position: relative
-		.headerS_call
-			display: table
-			width: 100%
-			padding: $min-spacer
-			text-align: center
-			p
-				&:after
-					margin-left: $min-spacer/2
-					+fawesome("\f095")
-					position: absolute
-					+font-size(22px) 
-					top: $min-spacer/4
-		.headerS_buttons
-			display: table
-			position: absolute
-			right: 0px
-			top: $min-spacer
+.header
+	.logoToyota
+		background: url(img/logo_toyota.png) no-repeat center
+		background-size: contain
+		bottom: 0px
+		display: table
+		height: 60px
+		left: 0px
+		margin: 0px 1rem
+		position: absolute
+		width: 8.4375rem
+	.btnDistribuidores
+		+fx(all,0.3s)
+		background: linear-gradient(to right,$Red800 50%,transparent 0)
+		background-position: right bottom
+		background-size: 200% 100%
+		border-left: 1px solid #E0E0E0
+		display: table
+		height: 60px
+		overflow: hidden
+		position: absolute
+		right: 4.3125rem
+		bottom: 0px
+		&:hover
+			background-color: transparent
+			background-position: left bottom
+			a
+				color: $White
 		a
-			+aReset
-			padding: $min-spacer
-			border-left: 1px solid $color-border
-	
-
-	[class*="__Middle"]
-		border-bottom: 1px solid $color-border
-		margin-bottom: -1px
-		.container
-			+bx
-			+flex
-			+flexDir(row)
-			+justifyCont(space-between)
-			+alignItem(center)
-			padding: $min-spacer/2 0
+			+fx(all,0.5s)
+			color: #CC0033
+			display: table-cell
+			font-size: 0.875rem
+			font-weight: 700
+			margin: 0px
+			padding: 0px 1.5rem
 			position: relative
-			.logo
-				width: 265px
-				height: 73px
-				display: table
-				&:before
-					content: ""
-					background: url(img/logoSanborns.png) no-repeat
-					display: table
-					width: 265px
-					height: 73px
-			.hotSale
+			text-decoration: none
+			vertical-align: middle
+			&:before
+				+fawesome('\f041')
+				display: inline-block
+				margin-right: 0.5rem
+	.menu
+		> .flex
+			+flexDir
+			.menuSuperior
 				+bx
-				display: none
-				background: $color-bg
-				position: absolute
-				left: -85px
-				border: 2px solid #e0e2e1
-				width: 70px
-				height: 70px
-				border-radius: 3px
-				&.show
-					display: table
-				&:before
-					+center(vh)
-					content: " "
-					background: url(img/hotsale.png) no-repeat
-					width: 65px
-					height: 43px
-					display: table
-
-			form
-				+bx
-				max-width: 655px
+				background: #fff
+				border-bottom: 1px solid #e6e6e6
+				height: 60px
 				width: 100%
-				position: relative
-				padding: 0 $spacer*1.5
-				input[type="search"],input[type="text"]
-					&.search
-						+bx
-						padding: $min-spacer
-						padding-right: 80px
-						min-height: 35px
-						border-radius: 5px
-						border: 1px solid $color-border
+				+order(2)
+				nav
+					display: table
+					float: left
+					height: 100%
+					overflow: hidden
+					margin-left: calc(8.4375rem + 2rem) 
+					> ul
+						display: table
+						height: 100%
+						margin: 0px
+						padding: 0px
+						> li
+							display: table
+							float: left
+							height: 100%
+							margin: 0px
+							> a
+								+fx(all,0.5s)
+								color: $BlueGrey900
+								display: table-cell
+								font-size: 1rem
+								font-weight: 400
+								padding: 0px 1rem
+								position: relative
+								text-decoration: none
+								vertical-align: middle
+								&:hover
+									color: $Red800
+							&.activo
+								> a
+									color: $Red800
+							&.desplegar
+								> a
+									&:before
+										+center(h)
+										+fawesome('\f107')
+										+fx(all,0.5s)
+										color: $BlueGrey900
+										right: 0px
+								&.hover
+									> a
+										color: $Red800
+										&:before
+											+fawesome('\f106')
+											color: $Red800
+									.menuAutos
+										+shadow(0px, 0px, 0px, 40px, rgba(0,0,0,0.6))
+										+translate(0%, 0%)
+				.menuAutos
+					+fx(all,0.5s)
+					+translate(0%, -100%)
+					background: $Grey50
+					height: 620px
+					left: 0px
+					position: absolute
+					top: 100%
+					width: 100%
+					z-index: -1
+					.regresar 
+						display: none
+					> div
+						background: $BlueGrey50
+						height: 50px
 						width: 100%
-				button
-					&.search
-						+bx
-						+gradient(90deg, #B7202E, $primario)
-						border-radius: 0 5px 5px  0
-						border: none
-						cursor: pointer
-						min-width: 70px
-						min-height: 100%
-						position: absolute
-						right: $spacer*1.5
-						top: 0
-						&:before
-							+fawesome("\F002")
-							font-size: 1.2rem
-							color: #a61907
+						ul
+							display: table
+							height: 100%
+							margin: auto
+							li
+								display: table
+								float: left
+								height: 100%
+								margin: 0px
+								&.activo
+									> a
+										color: $BlueGrey900	
+										&:before
+											background: $BlueGrey900
+											width: 100%
+									> div 
+										opacity: 1
+										z-index: 9
+								> a
+									+fx(all,0.5s)
+									color: $BlueGrey
+									cursor: pointer
+									display: table-cell
+									font-size: 0.75rem
+									font-weight: 700
+									margin: 0px
+									padding: 0px 1.5rem
+									position: relative
+									text-decoration: none
+									vertical-align: middle
+									&:before
+										+center(v)
+										+fx(all,0.5s)
+										background: transparent
+										bottom: 0px
+										content: " "
+										display: block
+										height: 2px
+										width: 0%
+									&:hover
+										color: $BlueGrey900
+										&:before
+											background: $BlueGrey900
+											width: 100%
+								> div
+									+bx
+									+fx(all,0.8s)
+									height: calc(100% - 50px)
+									left: 0px
+									opacity: 0
+									position: absolute
+									top: 50px
+									width: 100%
+									h6
+										display: block
+										font-size: 1.125rem
+										font-weight: 700
+										margin-top: 1.25rem
+									.container
+										overflow: auto
+										.flex
+											&.hover
+												> div
+													opacity: 0.5
+											> div
+												+bx
+												+fx(all,0.5s)
+												float: left
+												width: 25%
+												a:not(.link)
+													+bx
+													display: table
+													margin: 1rem auto
+													padding: 0px 1rem
+													width: 100%
+													img
+														display: table
+														margin: auto
+														max-width: 232px
+														width: 100%
+														&.hover
+															display: none
+												p
+													font-size: 1.125rem
+													text-align: center
+													cite 
+														display: none
+														margin-top: 0.5rem
+													span
+														display: block
+														font-size: 1rem
+														font-weight: 300
+														margin-top: 0.5rem
+												&.hover
+													opacity: 1
+													a:not(.link)
+														img
+															display: none
+															&.hover
+																display: block
+													cite
+														display: block
+													span
+														display: none
+													.link
+														&:before
+															width: 100%
 
-	[class*="__Inferior"]
-		margin-bottom: -2px
-		.container
-			nav
-				+font-size(14px) 
-				>ul
-					+bx
-					+flex
-					+flexDir(row)
-					max-height: 50px
-					border-bottom: 2px solid $primario 
-					color: $color-text
-					>li
-						&.active,&:hover
-							>a
-								background: $primario
-								color: white
-						>a
-							+bx
-							+aReset
-							+flex
-							+alignItem(center)
-							padding: $min-spacer
+				.btnBuscador
+					border-left: 1px solid #E0E0E0
+					display: table
+					float: right
+					height: 100%
+					overflow: hidden
+					span
+						display: table-cell
+						margin: 0px
+						padding: 0px 1.5rem
+						vertical-align: middle
+						i
+							cursor: pointer
+
+			.menuInferior
+				background: $BlueGrey900
+				height: 40px
+				overflow: hidden
+				width: 100%
+				+order(1)
+				nav
+					display: table
+					float: right
+					height: 100%
+					overflow: hidden
+					position: relative
+					> a
+						+fx(all,0.3s)
+						color: $BlueGrey100
+						display: table-cell
+						font-size: 0.875rem
+						font-weight: 400
+						height: 100%
+						margin: 0px
+						padding: 0px 0.625rem
+						text-decoration: none
+						vertical-align: middle
+						&:hover
+							color: $BlueGrey
+					.logoComoNuevos
+						&:before
+							+fonIco('\e907')
+							-moz-osx-font-smoothing: grayscale
+							-webkit-font-smoothing: antialiased
+							font-size: 26px
+							font-style: normal
+							font-variant: normal
+							font-weight: normal
+							line-height: 1
+							speak: none
+							text-transform: none
+					.redes
+						display: table
+						float: left
+						height: 100%
+						overflow: hidden
+						padding: 0px 1rem
+						position: relative
+						> a
+							+fx(all,0.3s)
+							color: $BlueGrey100
+							display: table-cell
+							font-size: 1.0625rem
+							margin: 0px
+							padding: 0px 0.5rem
+							text-decoration: none
+							vertical-align: middle
+							&:hover
+								color: $BlueGrey
+
+@mixin Header-smartphone
+	.header 
+		+shadow
+		background: $White
+		height: 60px
+		.logoToyota
+			+center(r)
+		.btnDistribuidores
+			background: none
+			border: none
+			padding: 0px 1rem
+			right: 3.5rem
+			a
+				color: $BlueGrey
+				font-size: 0.5625rem
+				font-weight: 400
+				padding: 0px
+				text-align: center
+				&:before
+					+center(r)
+					color: $BlueGrey900
+					display: block
+					font-size: 24px
+			&:hover
+				a
+					color: $BlueGrey
+		.menu
+			+fx(all,0.5s)
+			+translate(-100%, 0%)
+			overflow: hidden
+			height: calc(100vh - 60px)
+			position: fixed
+			top: 60px
+			overflow: hidden
+			width: 100%
+			> .flex
+				background: $BlueGrey900
+				display: block
+				overflow: auto
+				width: 100%
+				height: 100%
+				//display: none
+				overflow-x: hidden
+				.menuSuperior
+					+order(1)
+					background: $White
+					border: none
+					height: auto
+					overflow: hidden
+					nav
+						margin: 0px
+						width: 100%
+						> ul
+							display: block
+							> li
+								border-bottom: 1px solid $BlueGrey50
+								width: 100%
+								&:last-child
+									border: none
+								> a
+									display: block
+									padding: 1.125rem 20px
+								&.desplegar
+									> a
+										&:before
+											+fawesome('\f105')
+											right: 20px
+					.menuAutos
+						+fx(all,0.5s)
+						+translate(100%, 0%)
+						height: calc(100vh - 60px)
+						overflow: auto
+						top: 0px
+						z-index: 9
+						.regresar 
+							background: $White
+							color: $BlueGrey900
+							display: block
+							font-size: 1.125rem
+							font-weight: 700
+							padding: 1.125rem 20px
+							position: relative
 							text-align: center
-							min-height: 50px
+							&:after
+								+center(h)
+								+fawesome('\f104')
+								color: #F44336
+								font-size: 1.25rem
+								left: 20px
+						> div
+							height: auto
+							> ul
+								display: block
+								> li
+									width: 100%
+									background: $Grey100
+									> a
+										border-bottom: 1px solid $Grey400
+										display: block
+										padding: 1.125rem 20px
+										color: $BlueGrey800
+										font-weight: 400
+										&:before
+											display: none
+										&:after
+											+center(h)
+											+fawesome('\f067')
+											color: #333333
+											font-size: 0.625rem
+											right: 20px
+										&.activo
+											&:after
+												content: "\f068"
+									> div
+										+fxr
+										background: $White
+										display: none
+										opacity: 1
+										position: inherit
+										.container 
+											.flex 
+												> div
+													width: 100%
+						&.activo
+							+translate(0%, 0%)
+					.btnBuscador
+						border: none
+						border-bottom: 1px solid $BlueGrey50
+						display: block
+						float: none
+						padding: 1.125rem 20px
+						span
+							padding: 0px
+
+				.menuInferior
+					+order(2)
+					height: auto
+					nav 
+						padding: 30px 0px
+						width: 100%
+						> a
+							+bx
+							display: block
+							font-size: 1rem
+							height: auto
+							padding: 0px 20px 30px
+							width: 100%
+						.redes
+							height: auto
+							margin: 1rem auto
+							float: none
+			&.activo
+				+translate(0%, 0%)

@@ -1,0 +1,65 @@
+.promociones
+	overflow: hidden
+	width: 100%
+	.container
+		h2
+			text-align: center
+			b
+				font-weight: 600
+		p
+			font-size: 1.125rem
+			line-height: 1.625rem
+			text-align: center
+		.flex
+			+justifyCont(space-between)
+			margin: 114px auto
+			overflow: hidden
+			dl
+				+bx
+				float: left
+				padding-right: 0.5rem
+				width: 67%
+				dd
+					overflow: hidden
+					position: relative
+					img
+						display: block
+						height: auto
+						width: 100%
+					> div
+						background: rgba(204,0,51,0.7)
+						display: none
+						height: 100%
+						left: 0px
+						position: absolute
+						top: 0px
+						width: 100%
+					.boton
+						+center(vh)
+						background: $White
+						color: $Red800
+					.link.plus
+						display: none
+			.colum
+				+flex
+				+flexDir
+				+justifyCont(space-between)
+				padding: 0px
+				width: 33%
+
+@mixin home-promociones-smartphone
+	.promociones 
+		.container 
+			p
+				display: none
+			.flex
+				margin: 50px auto
+				dl
+					padding: 0px
+					width: 100%
+					dd
+						.link.plus
+							display: table
+							margin: 1rem 0px
+				.colum
+					width: 100%

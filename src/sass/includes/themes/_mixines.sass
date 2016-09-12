@@ -1,110 +1,17 @@
-//-Funciones
-@function strip-unit($num)
-	@return $num / ($num * 0 + 1)
-
-@function calculateRem($size)
-	$remSize: $size / $remVal
-	@return $remSize * 1rem
-
-
 //- Mixines
-=font-size($size,$imp...)
-	font-size: $size $imp
-	font-size: calculateRem($size) $imp
-
-=remsXpx($property, $values... )
-	$max: length($values)
-	$pxValues: ''
-	$remValues: ''
-
-	@for $i from 1 through $max
-		$value: strip-unit(nth($values, $i))
-		$pxValues: #{$pxValues + $value*strip-unit($remVal)}px
-		@if $i < $max
-			$pxValues: #{$pxValues + " "}
-
-	@for $i from 1 through $max
-		$value: strip-unit(nth($values, $i))
-		$remValues: #{$remValues + $value}rem
-
-		@if $i < $max
-			$remValues: #{$remValues + " "}
-
-	#{$property}: $pxValues
-	#{$property}: $remValues
-
-=pxXrems($property, $values...)
-	$max: length($values)
-	$pxValues: ''
-	$remValues: ''
-
-	@for $i from 1 through $max
-		$value: strip-unit(nth($values, $i))
-		$pxValues: #{$pxValues + $value}px
-
-		@if $i < $max
-			$pxValues: #{$pxValues + " "}
-
-	@for $i from 1 through $max
-		$value: strip-unit(nth($values, $i))
-		$remValues: #{$remValues + $value/strip-unit($remVal)}rem
-
-		@if $i < $max
-			$remValues: #{$remValues + " "}
-	#{$property}: $pxValues
-	#{$property}: $remValues
-
-=svgBg($name)
-	background: url('img/#{$name}.png') transparent 0 0 no-repeat
-	background: none, url('vector/#{$name}.svg') 0 0 no-repeat
-	
-=out
-	border: 1px dotted black
-
 =bx($value: border-box)
 	-moz-box-sizing: $value
 	-webkit-box-sizing: $value
 	box-sizing: $value
 
-=padd
-	padding: $min-spacer+3 $spacer
-
-=bgSvg($bg-url, $color)
-	background-color: $color
-	mask: url(vector/$bg-url) no-repeat 
-	-webkit-mask: url(vector/$bg-url) no-repeat 
-
-
-=linked
-	color: $color-link
-	text-decoration: underline
-
-=btn($bg:$primario, $color: white, $borde: $color-border, $ancho: table)
-	+bx
-	width: auto
-	margin: $min-spacer 0px
-	font-size: $fontSize
-	text-align: center !important
-	text-decoration: none
-	display: $ancho
-	border-radius: 5px
-	padding: $min-spacer
-	line-height: 1
-	cursor: pointer
-	background: $bg
-	border: 1px solid $borde
-	color: $color !important
-	//font-weight: 300
-
+=fonIco($value)
+	content: $value
+	font-family: 'icomoon'
 
 =appearance
 	-webkit-appearance: none
 	-moz-appearance: none
 	appearance: none
-
-=aReset
-	color: inherit
-	text-decoration: none
 
 =center($value: v)
 	position: absolute
@@ -127,6 +34,14 @@
 		transform: translate(-50%, -50%)
 		top: 50%
 		left: 50%
+	@else if $value == r
+		-webkit-transform: translate(0%, 0%)
+		-moz-transform: translate(0%, 0%)
+		-ms-transform: translate(0%, 0%)
+		transform: translate(0%, 0%)
+		position: inherit
+		top: inherit
+		left:  inherit
 
 =translate($value1,$value2 )
 	-webkit-transform: translate($value1, $value2)
@@ -134,11 +49,17 @@
 	-ms-transform: translate($value1, $value2)
 	transform: translate($value1, $value2)
 
-=transform($values...)
-	-webkit-transform: $values
-	-moz-transform: $values
-	-ms-transform: $values
-	transform: $values
+=scale($value1,$value2 )
+	-webkit-transform: scale($value1, $value2)
+	-moz-transform: scale($value1, $value2)
+	-ms-transform: scale($value1, $value2)
+	transform: scale($value1, $value2)
+
+=transformr
+	-webkit-transform: inherit
+	-moz-transform: inherit
+	-ms-transform: inherit
+	transform: inherit
 
 =gradient($deg, $color_A, $color_B)
 	background: $color_A
@@ -162,11 +83,11 @@
 	-moz-transition: $elem $time
 	-ms-transition: $elem $time
 	transition: $elem $time
-
-=scrollMobile
-	overflow-x: hidden
-	overflow-y: scroll
-	-webkit-overflow-scrolling: touch
+=fxr
+	-webkit-transition: inherit
+	-moz-transition: inherit
+	-ms-transition: inherit
+	transition: inherit
 
 =shadow($type: box , $s1: 2px, $s2: 2px, $s3: 10px, $alpha: rgba(0,0,0,0.5))
 	-webkit-box-shadow: $s1 $s2 $s3 $alpha
@@ -188,14 +109,14 @@
 	height: $alto
 
 
-//- Bloque Experimental Flex-Box
+//- Bloque Experimental Flex
 =flex
 	display: -webkit-box
-	display: -moz-box !important
-	display: -ms-flexbox !important
-	webkit-display: -webkit-flex !important
-	display: -webkit-flex !important
-	display: flex !important
+	display: -moz-box 
+	display: -ms-flexbox 
+	webkit-display: -webkit-flex 
+	display: -webkit-flex 
+	display: flex 
 
 =flexDir($dir: column)
 	flex-direction: $dir
@@ -230,13 +151,9 @@
 		-ms-flex-pack: justify
 	@if $dir == "space-between"
 		-ms-flex-pack: justify
-
-=placeholder
-	&::-webkit-input-placeholder
-		@content
-	&:-moz-placeholder
-		@content
-	&::-moz-placeholder
-		@content
-	&:-ms-input-placeholder
-		@content
+=order($dir)
+	order: $dir
+	-webkit-order: $dir
+=alignSelf($dir: center)
+	align-self: $dir
+	-webkit-align-self: $dir

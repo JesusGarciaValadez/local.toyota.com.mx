@@ -1,7 +1,188 @@
 footer
-	+bx
-	background: $color-border
-	padding: 0
+	.footer1
+		background: $BlueGrey800
+		overflow: hidden
+		width: 100%
+		.derechos
+			height: 80px
+			overflow: hidden
+			width: 100%
+			dl
+				display: table
+				height: 100%
+				overflow: hidden
+				width: 100%
+				dd
+					display: table-cell
+					width: 25%
+					vertical-align: middle
+					.logoToyotaFooter
+						background: url(img/logo_toyota_footer.svg) no-repeat center
+						background-size: contain
+						display: table
+						margin: 0px
+						height: 18px
+						width: 112px
+					p
+						color: $BlueGrey100
+						margin: 0px
+					.boton
+						display: none
+					span
+						color: $BlueGrey100
+						font-size: 0.75rem
+						font-weight: 300
+						margin: 0px
+						margin-top: 0.25rem
+					.numero
+						background: url(img/numero.png) no-repeat center
+						background-size: contain
+						display: table
+						margin: 0px
+						height: 30px
+						width: 135px
+					.input-field
+						margin: 0px
+						> input[type=text]
+							height: 2rem
+							border-bottom: 1px solid $BlueGrey400
+							box-shadow: none
+						> label
+							color: $BlueGrey100
+							font-size: 0.75rem
+							left: 0px
 
-	//-todas las clases que inicien con footer
-	[class^="footer"]
+	.footer2
+		background: $BlueGrey900
+		overflow: hidden
+		width: 100%
+		.linksFooter
+			display: table
+			padding-bottom: 1.625rem
+			padding-top: 2.375rem
+			width: 100%
+			> div
+				display: table-cell
+				width: 25%
+				dl
+					dt
+						color: $BlueGrey100
+						font-size: 0.875rem
+						font-weight: 600
+						margin-bottom: 0.6875rem
+						margin-top: 1.0625rem
+					&:first-child
+						dt
+							margin-top: 0px
+					dd
+						margin: 0px 0px
+						a
+							color: $BlueGrey400
+							font-size: 0.75rem
+		.menuLegales
+			border-top: 1px solid $BlueGrey400
+			height: 86px
+			overflow: hidden
+			width: 100%
+			nav
+				display: table
+				float: left
+				height: 100%
+				overflow: hidden
+				ul
+					display: table-row
+					margin: 0px
+					padding: 0px
+					li
+						display: table-cell
+						margin: 0px
+						padding-right: 1.25rem
+						vertical-align: middle
+						a
+							color: $BlueGrey100
+							font-size: 0.75rem
+							font-weight: 300
+							text-decoration: none
+
+@mixin Footer-smartphone
+	footer
+		.footer1
+			background: $BlueGrey900
+			.derechos
+				height: auto
+				dl
+					display: block
+					dd
+						display: block
+						margin: 20px auto
+						width: 100%
+						.logoToyotaFooter
+							margin: auto
+						p
+							text-align: center
+						.boton
+							display: table
+							margin: 1rem auto
+						span
+							display: table
+							margin: auto
+						.numero
+							margin: auto
+		.footer2
+			.container
+				overflow: visible
+			.linksFooter
+				padding: 0px
+				> div
+					display: table-row
+					dl
+						+fx(all,0.5s)
+						border-bottom: 1px solid #989898
+						margin-bottom: 1rem
+						dt
+							font-size: 1rem
+							margin: 0px
+							margin-bottom: 1rem
+							position: relative
+							&:after
+								+center(h)
+								+fawesome('\f067')
+								color: rgba(207, 216, 220, 0.5)
+								font-size: 0.75rem
+								right: 0px
+						> div
+							+bx
+							background: $BlueGrey800
+							display: none
+							left: -20px
+							padding: 0px 20px
+							position: relative
+							width: calc(100% + 40px)
+						dd
+							border-bottom: 1px solid $BlueGrey900
+							a
+								display: block
+								font-size: 1rem
+								padding: 20px 0px
+							&:last-child
+								border: none
+						&.activo
+							border: none
+							dt
+								&:after
+									content: "\f068"
+			.menuLegales
+				border: none
+				height: auto
+				padding: 24px 0px
+				nav
+					width: 100%
+					ul
+						width: 100%
+						li
+							display: block
+							margin-bottom: 24px
+							padding: 0px
+							width: 100%
+							a
+								font-size: 1rem

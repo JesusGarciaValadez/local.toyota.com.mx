@@ -1,0 +1,183 @@
+.cover
+	overflow: hidden
+	position: relative
+	width: 100%
+	.slide
+		overflow: hidden
+		width: 100%
+		> div
+			overflow: hidden
+			height: 700px
+			width: 100%
+			.bg
+				+center(v)
+				top: 0px
+			.container
+				.flex
+					height: 100%
+					> div
+						width: 50%
+					.texto
+						+alignSelf(flex-start)
+						+order(1)
+						-webkit-animation-duration: 3s
+						animation-duration: 3s
+						h2
+							white-space: pre-line
+						.btvideo
+							display: table
+							margin-bottom: 37px
+							margin-top: 28px
+							position: relative
+							p
+								font-size: 1.125rem
+								font-weight: 700
+								margin: 0px
+								span
+									font-weight: 700
+							a
+								+center(h)
+								background: #263238
+								border-radius: 50%
+								color: #fff
+								display: table
+								height: 25px
+								margin-left: 0.8125rem
+								text-decoration: none
+								width: 25px
+								left: 100%
+								&:after
+									+fawesome("\f04b")
+									+translate(-50%,-50%)
+									font-size: 0.625rem
+									left: 55%
+									position: absolute
+									top: 50%
+						.boton
+							margin: 0px
+							min-width: 200px
+					.imagen
+						+alignSelf
+						+order(2)
+						img
+							height: auto
+							width: 100%
+							margin-top: 4.5rem
+	.bx-prev 
+		border-radius: 50%
+		border: 2px solid $BlueGrey900
+		color: $BlueGrey900
+		left: 0px
+		margin-right: 2rem 
+		position: relative
+		&:before
+			+fonIco("\e903")
+			+translate(-50%,-50%)
+			font-size: 16px
+			left: 50%
+			position: absolute
+			text-indent: 0px
+			top: 50%
+	.bx-next 
+		border-radius: 50%
+		border: 2px solid $BlueGrey900
+		color: $BlueGrey900
+		position: relative
+		right: 0px
+		&:before
+			+fonIco("\e904")
+			+translate(-50%,-50%)
+			font-size: 16px
+			left: 50%
+			position: absolute
+			text-indent: 0px
+			top: 50%
+	.bx-controls-direction
+		bottom: 50px
+		position: absolute
+		width: 100%
+		a
+			+fx(all,0.5s) 
+			display: inline-block
+			height: 42px
+			outline: 0
+			text-decoration: none
+			text-indent: -9998px
+			width: 42px
+			z-index: 98
+			&.disabled 
+				border: 2px solid rgba(38, 50, 56, 0.4)
+				color: rgba(38, 50, 56, 0.4)
+				&:hover
+					background: none
+	
+	.bx-wrapper
+		.bx-has-pager
+			+center(v)
+			bottom: 20px
+		.bx-pager
+			color: rgba(38, 50, 56, 0.4)
+			font-family: Arial
+			font-size: 0px
+			font-weight: bold
+			text-align: center
+			&.bx-default-pager
+				a
+					+fx(all,0.5s)
+					-moz-border-radius: 5px
+					-webkit-border-radius: 5px
+					background: rgba(38, 50, 56, 0.4)
+					border-radius: 5px
+					display: block
+					height: 8px
+					margin: 0px 12px
+					outline: 0px
+					text-indent: -9999px
+					width: 8px
+					&:hover, &.active, &:focus
+						+scale(1.5,1.5)
+						background: $BlueGrey900
+		.bx-pager-item
+			*display: inline
+			*zoom: 1
+			display: inline-block
+			font-size: 0px
+			line-height: 0px
+		.bx-controls-auto
+			.bx-controls-auto-item
+				*display: inline
+				*zoom: 1
+				display: inline-block
+
+@mixin home-cover-smartphone
+	.cover 
+		.slide 
+			> div 
+				height: auto
+				.bg
+					width: 120%
+				.container 
+					.flex 
+						> div
+							width: 100%
+						.texto
+							+order(2)
+							margin-bottom: 40px
+							h2
+								margin: 0px
+								text-align: center
+								b
+									display: block
+							.btvideo
+								margin: 27px auto
+								p
+									font-weight: 400
+									text-transform: capitalize
+									span
+										display: none
+							.boton
+								margin: 1rem auto
+						.imagen
+							+order(1)
+		.bx-controls-direction
+			display: none

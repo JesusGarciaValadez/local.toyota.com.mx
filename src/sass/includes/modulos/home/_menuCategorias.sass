@@ -1,0 +1,101 @@
+.menuCategorias
+	background: $Grey50
+	border-bottom: 1px solid #E0E0E0
+	border-top: 1px solid #E0E0E0
+	overflow: visible
+	width: 100%
+	.container
+		max-width: 1440px
+		overflow: visible
+		nav
+			display: table
+			height: 120px
+			position: relative
+			width: 100%
+			span
+				display: table
+				height: 100%
+				margin: 0px
+				padding: 0px
+				width: 100%
+				a
+					+bx
+					+fx(all,0.3s)
+					border-right: 1px solid #E0E0E0
+					color: #263238
+					display: table-cell
+					font-size: 1rem
+					font-weight: 600
+					height: 100%
+					margin: 0px
+					text-align: center
+					text-decoration: none
+					vertical-align: middle
+					width: 20%
+					&:before
+						-moz-osx-font-smoothing: grayscale
+						-webkit-font-smoothing: antialiased
+						color: #989898
+						content: " "
+						display: table
+						font-style: normal
+						font-variant: normal
+						font-weight: normal
+						line-height: 1
+						margin: 1rem auto
+						speak: none
+						text-transform: none
+					&:last-child
+						border-right: none
+					&.autos
+						&:before
+							+fonIco('\e900')
+							font-size: 21px
+					&.hibridos
+						&:before
+							+fonIco('\e902')
+							font-size: 20px
+					&.suv
+						&:before
+							+fonIco('\e909')
+							font-size: 22px
+					&.pick
+						&:before
+							+fonIco('\e908')
+							font-size: 25px
+					&.futuro
+						&:before
+							+fonIco('\e901')
+							font-size: 19px
+					&:hover
+						+scale(1.20,1.20)
+						+shadow(0px, 0px, 3px, 22px, rgba(0,0,0,0.6))
+						background: #CC0033
+						border-right: none
+						color: #fff
+						&:before
+							color: #fff
+
+@mixin home-menuCategorias-smartphone
+	.menuCategorias 
+		background: $BlueGrey900
+		.container 
+			padding: 0px
+			nav 
+				height: auto
+				span 
+					a
+						border: none
+						border-bottom: 1px solid $White
+						color: $White
+						display: block
+						overflow: hidden
+						padding: 22px 0px
+						width: 100%
+						&:before
+							color: $White
+							margin-top: 0px
+						&:last-child
+							border-bottom: none
+						&:hover
+							+transformr

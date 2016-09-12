@@ -1,9 +1,19 @@
 //- Fixes para Firefox
 @-moz-document url-prefix() 
-	.card__product
-		a
-			.contImgProd
-				img
-					width: 100%
-					&.alto
-						width: auto
+	.menuSuperior
+		nav
+			ul
+				li
+					.menuAutos
+						> div
+							ul
+								li
+									> div
+										.container
+											.flex
+												> div
+													p
+														span
+															height: 19px
+
+	@media only screen and (max-width: 960px)

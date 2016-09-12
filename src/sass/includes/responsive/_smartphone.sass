@@ -1,221 +1,42 @@
-@media only screen and (max-width: $breakpoint-sm)
-	.hideT
-		display: block !important
-	.hideM
-		display: none !important
-	body,html
-		+scrollMobile
-	body,html
-		font-size: $fontSize+1
-	header
-		float: left
-		.bloqueMenu
-			.movil
-				display: flex !important
-			.descktop
-				display: none
+@media only screen and (max-width: 767px)
+	html
+		//font-size: 12px
+		overflow: hidden
+	body
+		height: 100vh
 
+	main
+		margin-top: 60px
+
+	h1
+		font-size: 2.5rem
+	h2
+		font-size: 2.5rem
+		line-height: 3.125rem
+	h3
+		font-size: 1.5rem
+	h6
+		font-size: 1.5rem
 
 	.container
-		+bx
-		padding: 0 20px
-		[class^="g-"]
-			width: $g12
-			padding: 5px
-	.slider__index
-		img
-			float: right
-		.slider-contenido
-			float: left
-			position: relative
-			width: 100%
-			padding: 10px 26px 0px
-	.g-11, .g-10, .g-9, .g-8, .g-7, .g-6, .g-5, .g-4, .g-3, .g-2, .g-1
-		width: 100%
-		padding-bottom: ($min-spacer) !important 
-	.s-11, .s-10, .s-9, .s-8, .s-7, .s-6, .s-5, .s-4, .s-3, .s-2, .s-1
-		margin-left: initial
+		max-width: 767px!important
+		padding: 0px 20px
 
-	.breadcrumb
-		+bx
-		padding: 0 20px
-	footer
-		.footer-breadcrumb
-			margin-bottom: 25px
-		[class*="superior"] 
-			padding: 0 0 25px
-			.container 
-				dl
-					width: 50%
-					margin-bottom: $min-spacer
-					&.box__rs
-						width: 100%
-		[class*="inferior"] 
-			.container
-				+flexDir(column)
-				.footer__foot
-					+flexDir(column)
-					padding: $min-spacer 0
-				.footer__logo
-					margin: initial !important
-				p
-					padding-top: $min-spacer/2
-				.footer__menu
-					+flexDir(column)
-					ul
-						+flexWrap
-						+justifyCont(flex-start)
-						li
-							width: 50%
-							margin-bottom: $min-spacer
+	.hamburguesa
+		display: block
+		
+	.flex
+		+flexDir
 
-	//- Slider
-	.slider__index
-		.slider-contenido
-			h1,h2,p,a
-				width: 100% !important
-				font-size: 1rem
-				margin-bottom: $min-spacer/2
-			p
-				span
-					font-size: 85%
-					position: initial
-					font-size: inherit
-					margin-left: 5px
-			a
-				&.btn
-					margin: initial
+	// Header
+	@include Header-smartphone
 
-	.toastNotification
-		width: 100vw
-		top: initial
-		right: 0
-		left: 0
-		bottom: 0
-		background: rgba(0,0,0,0.8)
+	// Modulos Home
+	@include home-cover-smartphone
+	@include home-menuCategorias-smartphone
+	@include home-promociones-smartphone
+	@include home-experiencia-smartphone
+	@include home-localizaCotiza-smartphone
 
-	//home Servicios
-	.home__Servicios
-		.g-3
-			width: 50%
-			padding-bottom: $spacer
-		a
-			width: 70% !important
-
-	.home__Modulos1
-		article
-			+flexDir(column)
-			+alignItem
-			img
-				padding: $spacer 0
-				width: 70%
-				margin-right: initial
-			&:last-child
-				img
-					padding-bottom: 0
-
-	.home__Modulos2
-		article
-			margin-bottom: $spacer
-			&:last-child
-				margin-bottom: initial
-			
-	.home__encuesta
-		.container
-			+flexDir(column-reverse)
-		figure
-			+alignItem(flex-end)
-			padding-bottom: initial !important
-
-	//- 3er nivel
-	section
-		&.header__Section
-			h1
-				margin: $min-spacer 0
-			.cont-head3
-				&.chargeImg
-					+flexDir(column)
-					margin-bottom: initial
-				.contImg,.contDescrip
-					width: 100% !important
-				.contDescrip
-					+bx
-					padding: 0px 20px
-
-	.mod__Ofertas
-		article
-			margin-bottom: $spacer*1.5
-			padding-bottom: $spacer*1.5 !important
-			border-bottom: 1px dashed $color-border !important
-			&:last-child
-				margin-bottom: initial
-				padding-bottom: initial !important
-				border-bottom: none !important
-		figure
-			min-height: 200px
-			max-height: 200px
-
-
-	.modulo__resumen
-		.resumen,.images
-			width: 100%
-			p
-				font-size: 1rem
-				padding-bottom: $min-spacer
-		.viewResumen
-			+flexDir(column-reverse)
-
-	.plan__Precio,.equipo__destacado
-		width: 100%
-
-	.wrapper 
-		.contentTituloUrl
-			h2
-				font-size: 1.2rem
-			.link
-				font-size: 0.9rem
-
-	//cuarto nivel			
-	.detallePlan
-		.descripcionPlan
-			+flexDir(column)
-			.textPlan, ul
-				margin-top: $min-spacer
-				width: 100%
-
-		.mod__adicional
-			width: 100%
-			padding: $spacer 0 $min-spacer
-			border-top: 1px solid $color-border
-
-		.cont_Adicionales
-			.btn-rojo
-				margin: auto
-				float: initial
-
-	.tarifas
-		.listOrder
-			+flexDir(column)
-			li
-				width: 100%
-
-
-	.caracteristicas
-		.contentEquipoDestacado
-			article
-				width: 100%
-				word-wrap: break-word
-
-@media only screen and (max-width: $breakpoint-m) and (orientation: portrait)
-	.home__Servicios
-		.g-3
-			width: 50%
-			padding-bottom: $spacer
-		a
-			width: 70% !important
-
-@media only screen and (max-width: $breakpoint-m) and (orientation: landscape)
-	header
-		&.fixed
-			.header__launcher
-				display: none !important
+	// Footer
+	@include Footer-smartphone

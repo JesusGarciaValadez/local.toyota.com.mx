@@ -1,0 +1,74 @@
+.localizaCotiza
+	overflow: hidden
+	width: 100%
+	dl
+		display: table
+		width: 100%
+		dd
+			display: table-cell
+			padding: 60px 0px
+			vertical-align: middle
+			width: 50%
+			h6
+				color: $White
+				font-weight: 600
+				margin-bottom: 2.625rem
+				text-align: center
+				&:before
+					-moz-osx-font-smoothing: grayscale
+					-webkit-font-smoothing: antialiased
+					color: $White
+					content: " "
+					display: block
+					font-size: 31px
+					font-style: normal
+					font-variant: normal
+					font-weight: normal
+					line-height: 1
+					margin-bottom: 2.0625rem
+					speak: none
+					text-transform: none
+		.localiza
+			background: url(img/bg_localiza.jpg) no-repeat center
+			background-color: #a40007
+			h6:before
+				+fawesome('\f041')
+			.input-field
+				display: table
+				margin: auto
+				width: 50%
+				label
+					left: 0px
+					text-align: center
+		.cotiza
+			background: url(img/bg_cotiza.jpg) no-repeat center
+			background-color: #212c30
+			h6:before
+				+fonIco('\e905')
+
+@mixin home-localizaCotiza-smartphone
+	.localizaCotiza 
+		dl 
+			dd
+				+bx
+				display: block
+				padding: 60px 20px
+				width: 100%
+				h6
+					color: $BlueGrey900
+					&:before
+						color: $Red800
+			.localiza
+				background: none
+				background-color: $White
+				.input-field
+					width: 100%
+					input
+						border-bottom: 1px solid $BlueGrey900
+						&:focus:not([readonly])+label
+							color: $BlueGrey900
+					label
+						color: $BlueGrey900
+			.cotiza
+				background: none
+				background-color: $Grey100

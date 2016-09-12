@@ -1,13 +1,36 @@
 header
-	.header__Superior
-		.container
-
-	.header__Middle
-		.container
-
-	.header__Inferior
-		.container
-			nav
-				ul
-					li.active: a(href="#")
-					li: a(href="#")
+	.header
+		a(href="#").logoToyota
+		.btnDistribuidores
+			a(href="#") Distribuidores
+		.hamburguesa Menú
+		.menu
+			.flex
+				.menuSuperior
+					.btnBuscador
+						span
+							i.fa.fa-search
+					nav
+						ul
+							li.desplegar
+								a(href="#") Modelos
+								+menuAutos(infoMenuAutos)
+							li
+								a(href="#") Configura y Cotiza
+							li
+								a(href="#") Servicio
+							li
+								a(href="#") Propietarios Toyota
+							li
+								a(href="#") Financiamiento
+				.menuInferior
+					nav
+						a(href="#") Prueba un Toyota
+						a(href="#") Preguntas frecuentes
+						a(href="#").logoComoNuevos
+						.redes
+							a(href="#").fa.fa-facebook
+							a(href="#").fa.fa-twitter
+							a(href="#").fa.fa-instagram
+							a(href="#").fa.fa-youtube
+							a(href="#").fa.fa-linkedin

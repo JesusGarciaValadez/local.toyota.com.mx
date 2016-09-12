@@ -1,3 +1,34 @@
 footer
-	p footer 
-	//include includes/scripts
+	.footer1
+		.container
+			.derechos
+				dl
+					dd
+						.logoToyotaFooter
+						span © Toyota México 2016
+					dd
+						p ¿Necesitas ayuda?
+						a(href="tel:018007869682").boton LLAMAR
+						.numero
+					dd
+					dd
+						.input-field
+							input(type="text").validate#last_name
+							label(for="last_name") Mantente informado
+	.footer2
+		.container
+			.linksFooter
+				+linksFooter(infolinksFooter)
+			.menuLegales
+				nav
+					ul
+						li
+							a(href="#") Términos y condiciones
+						li
+							a(href="#") Políticas de privacidad
+						li
+							a(href="#") Políticas de Cookies
+						li
+							a(href="#") Mapa de sitio
+
+	include scripts
