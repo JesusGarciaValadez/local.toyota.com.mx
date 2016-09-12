@@ -1,0 +1,56 @@
+.error404
+	height: 640px
+	width: 100%
+	.container
+		overflow: visible
+		> div
+			overflow: hidden
+			width: 50%
+			img
+				+center(vh)
+				height: 100%
+				width: auto
+				z-index: -1
+			h2
+				span
+					color: $Red800
+			p
+				font-size: 2rem
+				font-weight: 300
+				line-height: 2.5rem
+			dl
+				+alignItem
+				margin-top: 4.375rem
+				dd
+					float: left
+					p
+						font-size: 1.375rem
+						margin: 0px
+					.boton
+						margin: 0px 2rem
+
+@mixin error-smartphone
+	.error404
+		height: auto
+		.container
+			> div
+				width: 100%
+				img
+					+center(r)
+					height: auto
+					width: 100%
+				h2
+					margin-top: 0px
+					text-align: center
+				p
+					font-size: 1.125rem
+					line-height: 1.8125rem
+					text-align: center
+				dl 
+					margin: 1.75rem auto 3.125rem
+					dd
+						float: none
+						p
+							font-size: 1.125rem
+						.boton
+							margin: 1rem 2rem
