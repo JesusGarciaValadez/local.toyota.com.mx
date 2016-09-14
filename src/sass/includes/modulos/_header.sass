@@ -1,6 +1,6 @@
 .header
 	+shadow
-	.logoToyota
+	.logo-toyota
 		background: url(img/logo_toyota.png) no-repeat center
 		background-size: contain
 		bottom: 0px
@@ -45,7 +45,7 @@
 	.menu
 		> .flex
 			+flexDir
-			.menuSuperior
+			.menu-superior
 				+bx
 				+order(2)
 				background: #fff
@@ -97,10 +97,10 @@
 										&:before
 											+fawesome('\f106')
 											color: $Red800
-									.menuAutos
+									.menu-autos
 										+shadow(0px, 0px, 0px, 40px, rgba(0,0,0,0.6))
 										+translate(0%, 0%)
-				.menuAutos
+				.menu-autos
 					+fx(all,0.5s)
 					+translate(0%, -100%)
 					background: $Grey50
@@ -298,7 +298,7 @@
 							+translate(0%, 0%)
 							opacity: 1
 
-			.menuInferior
+			.menu-inferior
 				+order(1)
 				background: $BlueGrey900
 				height: 40px
@@ -359,7 +359,7 @@
 	.header
 		background: $White
 		height: 60px
-		.logoToyota
+		.logo-toyota
 			+center(r)
 		.btnDistribuidores
 			background: none
@@ -398,7 +398,7 @@
 				height: 100%
 				//display: none
 				overflow-x: hidden
-				.menuSuperior
+				.menu-superior
 					+order(1)
 					background: $White
 					border: none
@@ -422,7 +422,7 @@
 										&:before
 											+fawesome('\f105')
 											right: 20px
-					.menuAutos
+					.menu-autos
 						+fx(all,0.5s)
 						+translate(100%, 0%)
 						height: calc(100vh - 60px)
@@ -503,7 +503,7 @@
 							input[type=submit]
 								display: none
 
-				.menuInferior
+				.menu-inferior
 					+order(2)
 					height: auto
 					nav 

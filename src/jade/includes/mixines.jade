@@ -1,6 +1,6 @@
 //-Menu Autos
-mixin menuAutos(arreglo)
-	.menuAutos
+mixin menu-autos(arreglo)
+	.menu-autos
 		div
 			.regresar Modelos
 			ul
@@ -34,7 +34,7 @@ mixin paginador(arreglo)
 						i(class="#{val.claseIco}") #{val.nombreIco}
 
 //-Links Mapa de Sitio
-mixin mapadesitio(arreglo)
+mixin mapa-de-sitio(arreglo)
 	each val, index in arreglo
 		-var ind = index +1
 		div
@@ -46,7 +46,7 @@ mixin mapadesitio(arreglo)
 							dd #{value.text1}
 
 //-Links Footer
-mixin linksFooter(arreglo)
+mixin links-footer(arreglo)
 	each val, index in arreglo
 		-var ind = index +1
 		div
