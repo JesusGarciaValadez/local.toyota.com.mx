@@ -1,0 +1,109 @@
+.resultados
+	.container
+		overflow: visible
+		h6
+			b
+				font-weight: 600
+		> p
+			font-size: 1.125rem
+		> div
+			dl
+				+bx
+				+fx(all,0.2s)
+				border-bottom: 1px solid $BlueGrey
+				padding: 2.5rem 20px
+				&:last-child
+					border: none
+				&:hover
+					+scale(1.02,1.02)
+					+shadow(0px, 0px, 3px, 25px, rgba(0,0,0,0.6))
+					background: $Grey50
+					border: none
+				dt
+					color: $BlueGrey800
+					font-size: 1rem
+					font-weight: 700
+					padding-bottom: 1.875rem
+					span
+						&:before
+							content: " | "
+				dd
+					> div
+						img
+							+bx
+							display: table
+							height: auto
+							margin: auto
+							max-width: 232px
+							padding: 0px 1rem
+							width: 100%
+						p
+							font-weight: 300
+						&:first-child
+							width: 20%
+						&:last-child
+							width: 80%
+						.link
+							font-size: 0.875rem
+							font-weight: 600
+							margin: 1rem 0px
+		.paginador
+			display: table
+			margin: 6.25rem auto
+		.recomendacion
+			display: table
+			margin: 6.25rem auto
+			p
+				font-weight: 600
+				text-align: center
+			ul
+				display: table
+				li
+					display: table-cell
+					padding: 0px 1.5625rem
+					position: relative
+					&:after
+						+center(h)
+						+fawesome('\f111')
+						color: $Red800
+						font-size: 5px
+						right: 0px
+					&:last-child
+						&:after
+							display: none
+					a
+						color: $Red800
+						font-size: 0.875rem
+						font-weight: 700
+
+@mixin resultados-smartphone
+	.resultados 
+		.container 
+			h6
+				font-size: 1.125rem
+			p
+				font-size: 1rem
+			> div 
+				dl
+					&:last-child
+						border-bottom: 1px solid $BlueGrey
+					dd 
+						> div
+							img
+								padding: 1rem
+							&:first-child
+								width: 100%
+							&:last-child
+								width: 100%
+			.recomendacion
+				display: block
+				width: 100%
+				p
+					text-align: left
+				ul
+					width: 100%
+					li
+						display: block
+						padding: 0px
+						&:after
+							display: none

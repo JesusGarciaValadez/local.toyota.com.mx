@@ -190,6 +190,18 @@ footer
 			height: 0.625rem
 			line-height: normal
 			right: 0px
+	&.descarga
+		padding-right: 1rem
+		&:hover
+			&:before
+				width: calc(100% - 1rem)
+		&:after
+			+center(h)
+			+fawesome('\f019')
+			font-size: 0.625rem
+			height: 0.625rem
+			line-height: normal
+			right: 0px
 
 .boton
 	+fx(all,0.5s)

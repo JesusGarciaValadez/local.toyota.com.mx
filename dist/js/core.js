@@ -42,6 +42,7 @@ init = function(){
 	moverElementos = function(){
 		$('.linksFooter dl > div').css("display", "none");
 		$('.menuAutos > div ul li > div').css("display", "none");
+		$('.btnBuscador').removeClass('activo');
 	}
 
 	resetElementos = function(){
@@ -66,6 +67,9 @@ init = function(){
 		}).on('mouseout',function() {
 			$(this).removeClass('hover');
 			$('.menuAutos .flex').removeClass('hover');
+		});
+		$('.btnBuscador > span').on('click', function(){
+			$('.btnBuscador').toggleClass('activo');
 		});
 	}
 
@@ -108,6 +112,7 @@ init = function(){
 		$('.desplegar').off('mouseout');
 		// $('.menuAutos .flex > div').off('mouseover');
 		// $('.menuAutos .flex > div').off('mouseout');
+		$('.btnBuscador > span').off('click');
 	} 
 	hoverdir = function(){
 		$('.promociones .flex dd').each( function() { $(this).hoverdir(); } );

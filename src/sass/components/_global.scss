@@ -146,16 +146,20 @@ video.responsive-video {
 // Pagination
 
 .pagination {
-
   li {
-    display: inline-block;
-    font-size: 1.2rem;
-    padding: 0 10px;
-    line-height: 30px;
     border-radius: 2px;
+    display: inline-block;
+    height: 30px;
     text-align: center;
+    vertical-align: middle;
 
-    a { color: #444; }
+    a {
+      color: #37474F;
+      display: block;
+      font-size: 1rem;
+      font-weight: 400;
+      padding: 0 10px;
+    }
 
     &.active a { color: #fff; }
 
@@ -167,8 +171,8 @@ video.responsive-video {
     }
 
     i {
-      font-size: 2.2rem;
-      vertical-align: middle;
+      font-size: 1.25rem;
+      line-height: 30px;
     }
   }
 

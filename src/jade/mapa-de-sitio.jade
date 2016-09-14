@@ -1,4 +1,4 @@
--var location = "index"
+-var location = "mapadesitio"
 -var subLoc = " "
 -var titulo = " "
 -var descrip = " "
@@ -16,10 +16,11 @@ html(itemscope, itemtype="http://schema.org/WebPage")
 		include includes/header
 		
 		main.wrapper
-			include includes/modulos/home/cover
-			include includes/modulos/home/menu_categorias
-			include includes/modulos/home/promociones
-			include includes/modulos/home/experiencia
-			include includes/modulos/home/localiza_cotiza
+			section.mapadesitio
+				.container
+					h1 
+						b Mapa de Sitio
+					div
+						+mapadesitio(infomapadesitio)
 
 		include includes/footer

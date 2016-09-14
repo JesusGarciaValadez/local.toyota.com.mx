@@ -1,0 +1,41 @@
+.mapadesitio
+	.container
+		> div
+			display: table
+			padding-bottom: 7.5rem
+			padding-top: 4rem
+			width: 100%
+			> div
+				display: table-cell
+				width: 25%
+				dl
+					dt
+						color: $BlueGrey800
+						font-size: 1rem
+						font-weight: 700
+						margin-bottom: 0.6875rem
+						margin-top: 1.0625rem
+					&:first-child
+						dt
+							margin-top: 0px
+					dd
+						color: $BlueGrey800
+						font-size: 1rem
+						font-weight: 300
+						margin: 0px 0px
+
+@mixin mapadesitio-smartphone
+	.mapadesitio
+		.container
+			h1
+				margin: 1.25rem 0px 0px
+			> div
+				padding-bottom: 6.25rem
+				padding-top: 0.8125rem
+				> div
+					display: table-row
+					width: 100%
+					dl
+						&:first-child
+							dt
+								margin-top: 1.0625rem

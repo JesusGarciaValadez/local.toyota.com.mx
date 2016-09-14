@@ -1,0 +1,95 @@
+-var location = "resultados"
+-var subLoc = " "
+-var titulo = " "
+-var descrip = " "
+-var keyword = " "
+-var breadcrumb = "none"
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	body
+		
+		include includes/header
+		
+		main.wrapper
+			section.resultados
+				.container
+					h6 
+						b Resultados de tu búsqueda:
+					h6
+						b ¡Lo sentimos! No encontramos lo que buscas
+					p Pero aquí hay otras ligas que te pueden interesar.
+					div
+						dl
+							dt Yaris Sedán 
+								span Explora modelo
+							dd.flex
+								div
+									img(src="images/autos/yarisSedan.png")
+								div
+									p Haz el camino más divertido y disfruta su sistema de audio AM / FM / CD con reproductor MP3, WMA, minijack y 4 bocinas…
+									a(href="").link.plus Detalle de modelo
+						dl
+							dt Yaris Sedán MT
+								span Explora modelo
+							dd.flex
+								div
+									img(src="images/autos/yarisHb.png")
+								div
+									p Conoce todas las propiedades de Yaris Sedán en su versión Manual de 4 velocidadades. Tracción delantera, frenos de disco ventilado toma auxiliar de corriente 12 V DC…
+									a(href="").link.plus Detalle de modelo
+						dl
+							dt Yaris Sedán CVT
+								span Explora modelo
+							dd.flex
+								div
+									img(src="images/genericaResultados.png")
+								div
+									p Descubre todo lo que ofrece Yaris Sedan CVT. Única en su segmento con siete cambios simulados. Sistema de manos libres Bluetooth, espejos laterales con ajuste eléctrico…
+									a(href="").link.plus Detalle de modelo
+						dl
+							dt Galería Yaris Sedán
+								span Detalle
+							dd.flex
+								div
+									img(src="images/galeria/img01.jpg")
+								div
+									p Mira todos los detalles de Yaris Sedán
+									a(href="").link.plus Ir a galería
+						dl
+							dt Ficha Técnica Yaris Sedán MT
+								span Modelo 2016
+							dd.flex
+								div
+									img(src="images/descarga/cardYaris.jpg")
+								div
+									p Descarga la ficha técnica de Yaris Sedán 2017 en su versión MT
+									a(href="").link.descarga Descargar
+						dl
+							dt Mi primer Yaris
+								span Blog
+							dd.flex
+								div
+									img(src="images/experiencia/experiencia03.jpg")
+								div
+									p Sigue la historia de María Soto. Descubre su primer aventura a bordo de Yaris.
+									a(href="").link.plus Ver historia
+									
+					+paginador(infopaginador)
+					.recomendacion
+						p Puedes continuar navegando en los siguientes enlaces.
+						ul
+							li
+								a(href="") Home
+							li
+								a(href="") Distribuidores
+							li
+								a(href="") Blog
+							li
+								a(href="") Contacto y ayuda
+
+		include includes/footer
