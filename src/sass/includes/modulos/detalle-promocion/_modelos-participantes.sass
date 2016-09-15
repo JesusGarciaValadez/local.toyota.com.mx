@@ -1,0 +1,102 @@
+.modelos-participantes
+	.container
+		overflow: visible
+		h3
+			text-align: center
+		> .flex
+			+justifyCont(space-between)
+			margin: 4rem auto 0px
+			> div
+				+bx
+				background: $Grey100
+				margin-bottom: 4rem
+				padding: 1.25rem
+				position: relative
+				width: 49%
+				h4
+					color: $Red800
+					margin-top: 0px
+				p
+					font-size: 1.375rem
+					line-height: 1.75rem
+					margin: 2.1875rem 0px
+				.legales
+					+translate(0%, 50%)
+					cursor: pointer
+					font-size: 0.875rem
+					margin: 0px
+					position: absolute
+					right: 1.25rem
+					top: 1.25rem
+				img
+					display: table
+					margin: 4.375rem auto
+					max-width: 450px
+					width: 100%
+					&.hover
+						display: none
+				.links
+					display: table
+					margin: 1rem auto
+					width: 100%
+					> a
+						display: table-cell
+						font-size: 0.875rem
+						text-align: center
+				.detalle
+					+bx
+					background: rgba(255,255,255,0.90)
+					border: 1px solid $Grey200
+					display: none
+					height: 100%
+					left: 0px
+					padding: 50px 30px 30px
+					position: absolute
+					top: 0px
+					width: 100%
+					.cerrar
+						background: $Red800
+						cursor: pointer
+						height: 50px
+						position: absolute
+						right: 0px
+						top: 0px
+						width: 50px
+						&:before
+							+center(vh)
+							+fawesome('\f00d')
+							color: $White
+					p
+						font-size: 0.75rem
+						line-height: 1.25rem
+				&:hover
+					+shadow(0px, 0px, 3px, 25px, rgba(0,0,0,0.6))
+					img
+						display: none
+						&.hover
+							display: block
+		.terminos
+			+bx
+			border-top: 1px solid $Grey400
+			display: table
+			margin: 0px auto 4rem
+			padding-top: 1.875rem
+			width: 80%
+			p
+				font-size: 0.75rem
+
+@mixin detalle-promocion-modelos-participantes-smartphone
+	.modelos-participantes 
+		.container 
+			h3
+				white-space: pre-line
+			> .flex 
+				> div
+					width: 100%
+					.legales
+						+translate(0%, 0%)
+						position: inherit
+						top: inherit
+						right: inherit
+			.terminos
+				width: 100%

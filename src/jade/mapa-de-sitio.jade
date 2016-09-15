@@ -1,4 +1,4 @@
--var location = "index"
+-var location = "mapadesitio"
 -var subLoc = " "
 -var titulo = " "
 -var descrip = " "
@@ -16,6 +16,11 @@ html(itemscope, itemtype="http://schema.org/WebPage")
 		include includes/header
 		
 		main.wrapper
-			include includes/modulos/terminos-legales/terminos
+			section.mapa-de-sitio
+				.container
+					h1 
+						b Mapa de Sitio
+					div
+						+mapa-de-sitio(infomapadesitio)
 
 		include includes/footer

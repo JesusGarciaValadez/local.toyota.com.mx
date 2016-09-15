@@ -56,7 +56,7 @@ h2
 
 h3
 	color: $BlueGrey800
-	font-size: 2.5rem
+	font-size: 2rem
 	font-weight: 400
 	margin: 3.5rem 0px 1.25rem
 	line-height: 3rem
@@ -186,6 +186,18 @@ footer
 		&:after
 			+center(h)
 			+fawesome('\f067')
+			font-size: 0.625rem
+			height: 0.625rem
+			line-height: normal
+			right: 0px
+	&.descarga
+		padding-right: 1rem
+		&:hover
+			&:before
+				width: calc(100% - 1rem)
+		&:after
+			+center(h)
+			+fawesome('\f019')
 			font-size: 0.625rem
 			height: 0.625rem
 			line-height: normal

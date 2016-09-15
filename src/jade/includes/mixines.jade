@@ -1,6 +1,6 @@
 //-Menu Autos
-mixin menuAutos(arreglo)
-	.menuAutos
+mixin menu-autos(arreglo)
+	.menu-autos
 		div
 			.regresar Modelos
 			ul
@@ -23,12 +23,33 @@ mixin menuAutos(arreglo)
 													b $#{valu.precio}
 											a(href="#{valu.url}").link CONFIGURA
 
-//-Links Footer
-mixin linksFooter(arreglo)
+//-Paginador
+mixin paginador(arreglo)
+	.paginador
+		ul.pagination
+			each val, index in arreglo
+				-var ind = index +1
+				li(class="#{val.clase}")
+					a(href="#!") #{val.nombre}
+						i(class="#{val.claseIco}") #{val.nombreIco}
+
+//-Links Mapa de Sitio
+mixin mapa-de-sitio(arreglo)
 	each val, index in arreglo
 		-var ind = index +1
 		div
-			//-dt #{val.titulo}
+			each valu, index1 in arreglo[index].lista
+				dl
+					dt #{valu.titulo}
+					div
+						each value in arreglo[index].lista[index1].subLista
+							dd #{value.text1}
+
+//-Links Footer
+mixin links-footer(arreglo)
+	each val, index in arreglo
+		-var ind = index +1
+		div
 			each valu, index1 in arreglo[index].lista
 				dl
 					dt #{valu.titulo}
