@@ -4,7 +4,7 @@
 	border-top: 1px solid #E0E0E0
 	overflow: visible
 	width: 100%
-	.container
+	> .container
 		max-width: 1440px
 		overflow: visible
 		nav
@@ -33,18 +33,9 @@
 					vertical-align: middle
 					width: 20%
 					&:before
-						-moz-osx-font-smoothing: grayscale
-						-webkit-font-smoothing: antialiased
 						color: #989898
-						content: " "
 						display: table
-						font-style: normal
-						font-variant: normal
-						font-weight: normal
-						line-height: 1
 						margin: 1rem auto
-						speak: none
-						text-transform: none
 					&:last-child
 						border-right: none
 					&.autos
@@ -69,12 +60,209 @@
 							font-size: 19px
 					&:hover
 						+scale(1.20,1.20)
-						+shadow(0px, 0px, 3px, 22px, rgba(0,0,0,0.6))
+						+shadow(0px, 27px, 24px, 0px, rgba(0,0,0,0.2), 0px, 40px, 77px, 0px, rgba(0,0,0,0.22))
 						background: #CC0033
 						border-right: none
 						color: #fff
 						&:before
 							color: #fff
+	.menuModal
+		background: rgba(255,255,255,0.95)
+		display: none
+		height: 100vh
+		left: 0px
+		position: fixed
+		top: 0px
+		width: 100vw
+		z-index: 99
+		.close
+			+translate(-50% , -50%)
+			cursor: pointer
+			display: table
+			height: 25px
+			position: absolute
+			right: 20px
+			top: 40px
+			width: 25px
+			z-index: 1
+			&:before
+				+center(vh)
+				+fawesome('\f00d')
+				color: $Red800
+				font-size: 1.5625rem
+		.menu-autos
+			height: 100%
+			width: 100%
+			.regresar 
+				display: none
+			> div
+				display: table
+				height: 100%
+				width: 100%
+				ul
+					display: table
+					height: 100%
+					width: 100%
+					li
+						float: left
+						height: 100vh
+						width: 100vw
+						> a
+							background: $BlueGrey800
+							color: $White
+							display: block
+							font-size: 1.375rem
+							font-weight: 600
+							margin: 0px
+							padding: 1.5625rem 0px
+							text-align: center
+							text-decoration: none
+						> div
+							height: calc(100vh - 8.25rem)
+							overflow: hidden
+							width: 100%
+							h6
+								display: none
+							.container
+								overflow: auto
+								.flex
+									&.hover
+										> div
+											opacity: 0.5
+									> div
+										+bx
+										+fx(all,0.5s)
+										float: left
+										margin-top: 5rem
+										width: 33%
+										a:not(.link)
+											+bx
+											display: table
+											margin: 1rem auto
+											padding: 0px 1rem
+											width: 100%
+											img
+												display: table
+												margin: auto
+												max-width: 320px
+												width: 100%
+												&.hover
+													display: none
+										p
+											font-size: 1.375rem
+											text-align: center
+											cite 
+												display: none
+												font-weight: 700
+												margin-top: 0.5rem
+											span
+												display: block
+												font-size: 1.375rem
+												font-weight: 300
+												margin-top: 0.5rem
+										.link
+											font-size: 0.875rem
+										&.hover
+											opacity: 1
+											a:not(.link)
+												img
+													display: none
+													&.hover
+														display: block
+											cite
+												display: block
+											span
+												display: none
+											.link
+												&:before
+													width: 100%
+			.bx-prev 
+				border-radius: 50%
+				border: 2px solid $BlueGrey900
+				color: $BlueGrey900
+				left: 40px
+				margin-right: 2rem 
+				position: relative
+				&:before
+					+fonIco("\e903")
+					+translate(-50%,-50%)
+					font-size: 16px
+					left: 50%
+					position: absolute
+					text-indent: 0px
+					top: 50%
+			.bx-next 
+				border-radius: 50%
+				border: 2px solid $BlueGrey900
+				color: $BlueGrey900
+				position: relative
+				right: 40px
+				&:before
+					+fonIco("\e904")
+					+translate(-50%,-50%)
+					font-size: 16px
+					left: 50%
+					position: absolute
+					text-indent: 0px
+					top: 50%
+			.bx-controls-direction
+				a
+					+center(h)
+					+fx(all,0.5s) 
+					display: inline-block
+					height: 42px
+					outline: 0
+					text-decoration: none
+					text-indent: -9998px
+					width: 42px
+					z-index: 98
+					&.disabled 
+						border: 2px solid rgba(38, 50, 56, 0.4)
+						color: rgba(38, 50, 56, 0.4)
+						&:hover
+							background: none
+			
+			.bx-wrapper
+				.bx-viewport
+					ul
+						li
+							width: 100vw !important
+				.bx-pager
+					+center(v)
+					bottom: 23px
+					color: rgba(38, 50, 56, 0.4)
+					font-family: Arial
+					font-size: 0px
+					font-weight: bold
+					padding: 10px 0px
+					text-align: center
+					&.bx-default-pager
+						a
+							+fx(all,0.5s)
+							-moz-border-radius: 5px
+							-webkit-border-radius: 5px
+							background: rgba(38, 50, 56, 0.4)
+							border-radius: 5px
+							display: block
+							height: 8px
+							margin: 0px 12px
+							outline: 0px
+							text-indent: -9999px
+							width: 8px
+							&:hover, &.active, &:focus
+								+scale(1.5,1.5)
+								background: $BlueGrey900
+				.bx-pager-item
+					*display: inline
+					*zoom: 1
+					display: inline-block
+					font-size: 0px
+					line-height: 0px
+				.bx-controls-auto
+					.bx-controls-auto-item
+						*display: inline
+						*zoom: 1
+						display: inline-block
 
 @mixin home-menu-categorias-smartphone
 	.menu-categorias 
@@ -99,3 +287,38 @@
 							border-bottom: none
 						&:hover
 							+transformr
+		.menuModal
+			.menu-autos 
+				> div 
+					ul 
+						li 
+							> a
+								font-size: 1.125rem
+								padding-left: 1.875rem
+								text-align: left
+							> div 
+								height: calc(100vh - 4.75rem)
+								.container 
+									.flex 
+										> div
+											margin-top: 2.5rem
+											width: 100%
+											&:last-child
+												margin-bottom: 3.75rem
+											p
+												font-size: 1.25rem
+												span
+													font-size: 1.25rem
+				.bx-controls-direction 
+					a
+						display: none
+				.bx-wrapper 
+					.bx-pager
+						background: $BlueGrey800
+						bottom: 0px
+						width: 100%
+						&.bx-default-pager
+							a
+								background: $White
+								&:hover, &.active, &:focus
+									background: $Red800

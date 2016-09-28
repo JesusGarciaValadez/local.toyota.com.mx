@@ -24,6 +24,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-icono_quecubre:before {
+  content: "\e916";
+}
+.icon-icono_ubicame:before {
+  content: "\e917";
+}
 .icon-icono_asesoria:before {
   content: "\e905";
 }

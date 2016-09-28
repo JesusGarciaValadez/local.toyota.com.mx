@@ -15,31 +15,58 @@
 				margin-bottom: 2.625rem
 				text-align: center
 				&:before
-					-moz-osx-font-smoothing: grayscale
-					-webkit-font-smoothing: antialiased
 					color: $White
-					content: " "
 					display: block
 					font-size: 31px
-					font-style: normal
-					font-variant: normal
-					font-weight: normal
-					line-height: 1
 					margin-bottom: 2.0625rem
-					speak: none
-					text-transform: none
 		.localiza
 			background: url(img/bg_localiza.jpg) no-repeat center
 			background-color: #a40007
 			h6:before
 				+fawesome('\f041')
-			.input-field
+			> div
 				display: table
+				padding-right: calc(35px + 1rem)
 				margin: auto
-				width: 50%
-				label
-					left: 0px
-					text-align: center
+				width: 258px
+				span
+					position: relative
+					&:before
+						+center(h)
+						+fawesome('\f002')
+						color: $White
+						left: 0px
+						margin-right: 0.5rem
+					input
+						+bx
+						border-bottom: 1px solid $White
+						color: $White
+						padding-left: 20px
+						&:focus:not([readonly])
+							border-bottom: 1px solid $White
+						&:-webkit-autofill
+							border: 1px solid #000
+							color: #fff
+					.ubicame
+						+center(h)
+						+fx(all,0.5s)
+						background: none
+						border-radius: 50%
+						border: none
+						cursor: pointer
+						height: 35px
+						left: 100%
+						margin: 0px 0.5rem
+						overflow: hidden
+						width: 35px
+						&:before
+							+center(vh)
+							+fonIco('\e917')
+							color: $White
+							font-size: 35px
+						&:hover
+							+shadow
+
 		.cotiza
 			background: url(img/bg_cotiza.jpg) no-repeat center
 			background-color: #212c30
@@ -61,14 +88,24 @@
 			.localiza
 				background: none
 				background-color: $White
-				.input-field
-					width: 100%
-					input
-						border-bottom: 1px solid $BlueGrey900
-						&:focus:not([readonly])+label
-							color: $BlueGrey900
-					label
-						color: $BlueGrey900
+				> div
+					span
+						&:before
+							color: $Grey400
+						input
+							border-bottom: 1px solid $BlueGrey800
+							color: $Grey400
+							&::-webkit-input-placeholder
+								color: $Grey400
+							&:-moz-placeholder
+								color: $Grey400
+							&::-moz-placeholder
+								color: $Grey400
+							&:-ms-input-placeholder
+								color: $Grey400
+						.ubicame
+							&:before
+								color: $BlueGrey800
 			.cotiza
 				background: none
 				background-color: $Grey100

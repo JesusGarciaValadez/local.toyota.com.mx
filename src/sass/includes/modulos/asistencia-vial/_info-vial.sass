@@ -1,27 +1,117 @@
-section.info-vial
-	padding-top: 90px
-	padding-bottom: 90px
-	ul 
-		li 
-			color: $BlueGrey800
-			font-size: 1.625rem
-			margin-left: 80px
-			margin-bottom: 40px
+.info-vial
+	.container
+		> div
+			display: table
+			margin: 6.25rem auto
+			dl
+				dd
+					margin-left: 108px
+					i
+						background: $BlueGrey100
+						border-radius: 50%
+						display: block
+						height: 78px
+						left: 10px
+						position: absolute
+						width: 78px
+						&:before
+							+center(vh)
+						&.icono_cubre
+							&:before
+								+fonIco('\e90e')
+								font-size: 50px
+						&.icono_remolque
+							&:before
+								+fonIco('\e915')
+								font-size: 46px
+						&.icono_auxilio
+							&:before
+								+fonIco('\e90a')
+								font-size: 46px
+						&.icono_asesoria
+							&:before
+								+fonIco('\e905')
+								font-size: 35px
+						&.icono_infoviajes
+							&:before
+								+fonIco('\e910')
+								font-size: 46px
+						&.icono_pagohotel
+							&:before
+								+fonIco('\e913')
+								font-size: 38px
+						&.icono_cobertura
+							&:before
+								+fonIco('\e90d')
+								font-size: 57px
+						&.icono_exclusiones
+							&:before
+								+fonIco('\e90f')
+								font-size: 44px
+					h3
+						font-size: 1.625rem
+					h4
+						font-size: 1.625rem
+					ul
+						li
+							margin-bottom: 1.25rem
 
-			&:before
-				width: 77px
-				height: 77px
-				border-radius: 50%
-				background: $BlueGrey100
-				position: absolute
-				left: 0px
-				padding: 20px
-				box-sizing: border-box
-				display: flex
-				justify-content: center
-				align-items: center
-				font-size: 44px
-				
-
-	
-
+@mixin asistencia-vial-info-vial-smartphone
+	.info-vial
+		.container
+			> div
+				margin: 0px auto 3.125rem
+				dl
+					dd
+						margin: 0px
+						i
+							height: 50px
+							left: inherit
+							margin: 1.25rem auto
+							position: relative
+							width: 50px
+							&.icono_cubre
+								&:before
+									font-size: 29px
+							&.icono_remolque
+								&:before
+									font-size: 27px
+							&.icono_auxilio
+								&:before
+									font-size: 27px
+							&.icono_asesoria
+								&:before
+									font-size: 23px
+							&.icono_infoviajes
+								&:before
+									font-size: 23px
+							&.icono_pagohotel
+								&:before
+									font-size: 24px
+							&.icono_cobertura
+								&:before
+									font-size: 38px
+							&.icono_exclusiones
+								&:before
+									font-size: 28px
+						h3
+							font-size: 1.5rem
+							margin-top: 0px
+						h4
+							font-size: 1.625rem
+							line-height: 1.625rem
+							margin-top: 0px
+							b
+								font-size: 1.125rem
+								font-weight: 600
+						ul
+							li
+								margin-left: 1.25rem
+								position: relative
+								&:before
+									+fawesome('\f111')
+									position: absolute
+									top: 0px
+									right: 100%
+									font-size: 0.3125rem
+									margin-right: 0.625rem

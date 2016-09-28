@@ -95,14 +95,20 @@ p
 	font-size: 1rem
 	font-weight: 400
 	margin-bottom: 1.25rem
-	line-height: 1.1875rem
+	line-height: 1.625rem
 	b
 		font-weight: 700
 	span
 		color: $BlueGrey800
 		font-size: 1rem
 		font-weight: 400
-		line-height: 1.1875rem
+		line-height: 1.625rem
+ul
+	li
+		color: $BlueGrey800
+		font-size: 1rem
+		font-weight: 400
+		line-height: 1.625rem
 
 small
 	font-size: smaller
@@ -204,13 +210,15 @@ footer
 			right: 0px
 
 .boton
+	+bx
 	+fx(all,0.5s)
 	background: $Red800
 	border-radius: 50px
+	border: none
 	clear: both
 	color: $White
 	cursor: pointer
-	display: table
+	display: block
 	font-size: 0.875rem
 	font-weight: 700
 	margin: 1rem auto
@@ -220,7 +228,23 @@ footer
 	text-align: center
 	text-decoration: none
 	&:hover
+		+shadow
 		background: $Red400
+	&.secundario
+		border: 1px solid $Red800
+		background: none
+		color: $Red800
+		&:hover
+			+shadow
+			background: $Red400
+			color: $White
+			border: 1px solid $Red400
+	&.disabled
+		background: $Grey200
+		color: $Grey400
+		cursor: default
+		&:hover
+			+shadowr
 
 .left
 	+bx
@@ -246,7 +270,10 @@ footer
 		color: $BlueGrey900
 		display: block
 		font-size: 24px
-
+.input-field
+	input[type="submit" i]
+		&:focus
+			outline-width: 0
 .flex
 	+flex
 	+flexDir(row)

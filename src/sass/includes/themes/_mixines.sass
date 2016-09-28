@@ -5,8 +5,20 @@
 	box-sizing: $value
 
 =fonIco($value)
+	-moz-osx-font-smoothing: grayscale
+	-webkit-font-smoothing: antialiased
 	content: $value
 	font-family: 'icomoon'
+	font-style: normal
+	font-variant: normal
+	font-weight: normal
+	line-height: 1
+	speak: none
+	text-transform: none
+
+=object($dir: cover)
+	-o-object-fit: $dir
+	object-fit: $dir
 
 =appearance
 	-webkit-appearance: none
@@ -63,12 +75,12 @@
 
 =gradient($deg, $color_A, $color_B)
 	background: $color_A
-	background: -moz-linear-gradient($deg, $color_A 0%, $color_B 100%)
-	background: -webkit-gradient($deg, color-stop(0%, $color_A), color-stop(100%, $color_B))
-	background: -webkit-linear-gradient($deg, $color_A 0%, $color_B 100%)
-	background: -o-linear-gradient($deg, $color_A 0%, $color_B 100%)
-	background: -ms-linear-gradient($deg, $color_A 0%, $color_B 100%)
-	background: linear-gradient($deg, $color_A 0%, $color_B 100%)
+	background: -moz-linear-gradient($deg, $color_A 50%, $color_B 50%)
+	background: -webkit-gradient($deg, color-stop(50%, $color_A), color-stop(50%, $color_B))
+	background: -webkit-linear-gradient($deg, $color_A 50%, $color_B 50%)
+	background: -o-linear-gradient($deg, $color_A 50%, $color_B 50%)
+	background: -ms-linear-gradient($deg, $color_A 50%, $color_B 50%)
+	background: linear-gradient($deg, $color_A 50%, $color_B 50%)
 	@if $deg >=0 and $deg <=90
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color_A}', endColorstr='#{$color_B}', GradientType=0 )
 	@if $deg >=91 and $deg <=180
@@ -89,12 +101,19 @@
 	-ms-transition: inherit
 	transition: inherit
 
-=shadow($type: box , $s1: 2px, $s2: 2px, $s3: 10px, $alpha: rgba(0,0,0,0.5))
-	-webkit-box-shadow: $s1 $s2 $s3 $alpha
-	-moz-box-shadow: $s1 $s2 $s3 $alpha
-	-o-box-shadow: $s1 $s2 $s3 $alpha
-	-ms-box-shadow: $s1 $s2 $s3 $alpha
-	box-shadow: $s1 $s2 $s3 $alpha
+=shadow($s1: 0px, $s2: 5px, $s3: 11px, $s4: 0px, $alpha: rgba(0,0,0,0.18), $s12: 0px, $s22: 4px, $s32: 15px, $s42: 0px, $alpha2: rgba(0,0,0,0.15))
+	-webkit-box-shadow: $s1 $s2 $s3 $s4 $alpha, $s12 $s22 $s32 $s42 $alpha2
+	-moz-box-shadow: $s1 $s2 $s3 $s4 $alpha, $s12 $s22 $s32 $s42 $alpha2
+	-o-box-shadow: $s1 $s2 $s3 $s4 $alpha, $s12 $s22 $s32 $s42 $alpha2
+	-ms-box-shadow: $s1 $s2 $s3 $s4 $alpha, $s12 $s22 $s32 $s42 $alpha2
+	box-shadow: $s1 $s2 $s3 $s4 $alpha, $s12 $s22 $s32 $s42 $alpha2
+
+=shadowr
+	-webkit-box-shadow: none
+	-moz-box-shadow: none
+	-o-box-shadow: none
+	-ms-box-shadow: none
+	box-shadow: none
 
 =fawesome($value)
 	content: $value

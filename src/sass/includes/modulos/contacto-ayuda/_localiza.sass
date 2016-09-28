@@ -1,0 +1,75 @@
+.localiza
+	overflow: hidden
+	width: 100%
+	dl
+		display: table
+		width: 100%
+		dd
+			display: table-cell
+			padding: 60px 0px
+			vertical-align: middle
+			width: 100%
+			h6
+				color: $BlueGrey900
+				font-weight: 600
+				margin-bottom: 2.625rem
+				text-align: center
+				&:before
+					+fawesome('\f041')
+					color: $Red800
+					display: block
+					font-size: 31px
+					margin-bottom: 2.0625rem
+			> div
+				display: table
+				padding-right: calc(35px + 1rem)
+				margin: auto
+				width: 258px
+				span
+					position: relative
+					&:before
+						+center(h)
+						+fawesome('\f002')
+						left: 0px
+						margin-right: 0.5rem
+						color: $Grey400
+					input
+						+bx
+						color: $Grey400
+						border-bottom: 1px solid $BlueGrey800
+						padding-left: 20px
+						&:focus:not([readonly])
+							border-bottom: 1px solid $BlueGrey800
+						&::-webkit-input-placeholder
+							color: $Grey400
+						&:-moz-placeholder
+							color: $Grey400
+						&::-moz-placeholder
+							color: $Grey400
+						&:-ms-input-placeholder
+							color: $Grey400
+					.ubicame
+						+center(h)
+						+fx(all,0.5s)
+						background: none
+						border-radius: 50%
+						border: none
+						cursor: pointer
+						height: 35px
+						left: 100%
+						margin: 0px 0.5rem
+						overflow: hidden
+						width: 35px
+						&:before
+							+center(vh)
+							+fonIco('\e917')
+							color: $BlueGrey800
+							font-size: 35px
+						&:hover
+							+shadow
+
+@mixin contacto-ayuda-localiza-smartphone
+	.localiza
+		dl 
+			dd
+				display: block

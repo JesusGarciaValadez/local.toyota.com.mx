@@ -1,0 +1,36 @@
+section.comentario
+	.container
+		dl
+			dd
+				h3 
+					b Escribe tu comentario
+				from
+					.input-field
+						input(type="text").validate#last_name
+						label(for="last_name") Ingresa tu nombre completo*
+					.input-field
+						input(type="email").validate#email
+						label(for="email" data-error="Ingresa un correo válido") ¿Cuál es tu correo electrónico?*
+					.input-field
+						input(type="text").validate#last_name
+						label(for="last_name") Asunto
+					.input-field
+						input(type="text" length="170").validate#input_text
+						label(for="input_text") Mensaje*
+					.input-field
+						button(type="submit").boton.disabled ENVIAR
+				.gracias
+					div
+						i
+						h2 
+							b ¡Muchas gracias!
+						p Tus comentarios han sido 
+							br
+							| recibidos con éxito
+						a(href="#").boton CONTINUAR
+			dd
+				p 
+					b o llámanos al
+				.numero
+				p De: 8:00 a 20:00 hrs, de lunes a viernes
+				a(href="tel:018007869682").boton LLAMAR

@@ -1,5 +1,5 @@
 .header
-	+shadow
+	+shadow(0px, 8px, 17px, 0px, rgba(0,0,0,0.2), 0px, 6px, 20px, 0px, rgba(0,0,0,0.19))
 	.logo-toyota
 		background: url(img/logo_toyota.png) no-repeat center
 		background-size: contain
@@ -98,7 +98,7 @@
 											+fawesome('\f106')
 											color: $Red800
 									.menu-autos
-										+shadow(0px, 0px, 0px, 40px, rgba(0,0,0,0.6))
+										+shadow(0px, 27px, 24px, 0px, rgba(0,0,0,0.2), 0px, 40px, 77px, 0px, rgba(0,0,0,0.22))
 										+translate(0%, 0%)
 				.menu-autos
 					+fx(all,0.5s)
@@ -278,7 +278,7 @@
 							height: 100%
 							margin: 0px 
 							width: calc(100% - 40px)
-						input[type=submit]
+						input[type=submit],button
 							background: none
 							border: none
 							color: $Red800
@@ -303,6 +303,7 @@
 				background: $BlueGrey900
 				height: 40px
 				overflow: hidden
+				position: relative
 				width: 100%
 				z-index: 9
 				nav
@@ -327,15 +328,7 @@
 					.logoComoNuevos
 						&:before
 							+fonIco('\e907')
-							-moz-osx-font-smoothing: grayscale
-							-webkit-font-smoothing: antialiased
 							font-size: 26px
-							font-style: normal
-							font-variant: normal
-							font-weight: normal
-							line-height: 1
-							speak: none
-							text-transform: none
 					.redes
 						display: table
 						float: left
@@ -506,6 +499,7 @@
 				.menu-inferior
 					+order(2)
 					height: auto
+					z-index: 0
 					nav 
 						padding: 30px 0px
 						width: 100%

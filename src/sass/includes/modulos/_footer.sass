@@ -43,14 +43,33 @@ footer
 						width: 135px
 					.input-field
 						margin: 0px
-						> input[type=text]
-							height: 2rem
+						> input[type=email]
 							border-bottom: 1px solid $BlueGrey400
-							box-shadow: none
+							color: $White
+							height: 2rem
+							&.valid
+								border-bottom: 2px solid $Green400
+								color: $White
+							&.invalid
+								border-bottom: 1px solid $Red600
 						> label
 							color: $BlueGrey100
 							font-size: 0.75rem
 							left: 0px
+						> input[type=submit],button
+							+center(h)
+							background: none
+							border: none
+							color: $White
+							cursor: pointer
+							font-family: "FontAwesome"
+							font-size: 1.125rem
+							padding: 0px
+							right: 0px
+							&:before
+								display: block
+								margin-bottom: 0.375rem
+								font-size: 0.875rem
 
 	.footer2
 		background: $BlueGrey900
@@ -104,6 +123,32 @@ footer
 							font-weight: 300
 							text-decoration: none
 
+.cookies
+	background: $Grey200
+	bottom: 0px
+	left: 0px
+	position: fixed
+	width: 100%
+	z-index: 98
+	border-top: 1px solid #E0E0E0
+	.container
+		dl
+			display: table
+			padding: 12px 0px
+			dd
+				display: table-cell
+				vertical-align: middle
+				width: 50%
+				p
+					font-size: 0.875rem
+					margin: 0px
+					a
+						color: $Red800
+						font-size: 0.875rem
+						text-decoration: underline
+				.boton
+					float: right
+
 @mixin Footer-smartphone
 	footer
 		.footer1
@@ -121,7 +166,7 @@ footer
 						p
 							text-align: center
 						.boton
-							display: table
+							display: block
 							margin: 1rem auto
 						span
 							display: table
@@ -186,3 +231,12 @@ footer
 							width: 100%
 							a
 								font-size: 1rem
+	.cookies 
+		.container 
+			dl 
+				padding: 1.25rem 0px
+				dd
+					display: block
+					width: 100%
+					.boton
+						float: none

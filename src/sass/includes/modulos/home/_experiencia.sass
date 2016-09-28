@@ -10,7 +10,6 @@
 				font-weight: 600
 		> p
 			font-size: 1.125rem
-			line-height: 1.625rem
 			text-align: center
 			white-space: pre-line
 		.flex
@@ -23,9 +22,12 @@
 				+justifyCont(space-between)
 				float: left
 				width: 32.5%
+				.img
+					padding: 0px 0px
 				.intsgram
 					background: none
 					overflow: hidden
+					padding: 0px 0px
 					position: relative
 					&:before
 						+fawesome('\f16d')
@@ -69,8 +71,9 @@
 					+fx(all,0.5s)
 					background: $White
 					margin-bottom: 1rem
+					padding: 3.5rem 0px
 					&:hover
-						+shadow(0px, 0px, 3px, 25px, rgba(0,0,0,0.6))
+						+shadow(0px, 8px, 17px, 0px, rgba(0,0,0,0.2), 0px, 6px, 20px, 0px, rgba(0,0,0,0.19))
 					img
 						display: block
 						height: auto
@@ -78,12 +81,27 @@
 					> div
 						+bx
 						padding: 1rem 2rem
-						p
+						h3
 							font-size: 1.125rem
 							line-height: 1.625rem
-				.link
-					font-weight: 600
-					margin: 1rem 0px
+							margin-top: 0px
+						p
+							font-size: 1.125rem
+						.link
+							float: left
+							font-size: 0.875rem
+							font-weight: 600
+							margin: 1rem 0px
+						span
+							color: $BlueGrey
+							float: left
+							font-size: 12px
+							font-weight: 600
+							margin: 1rem 0px
+							line-height: 1.8
+							&:before
+								content: "/"
+								margin: 0px 0.5rem
 
 @mixin home-experiencia-smartphone
 	.experiencia 
@@ -92,6 +110,7 @@
 				white-space: normal
 			.flex 
 				margin: 50px auto
+				padding: 0px
 				.colum
 					+flexDir
 					width: 100%
@@ -99,3 +118,5 @@
 						display: none
 						&:first-child
 							display: block
+						> div
+							padding: 1rem

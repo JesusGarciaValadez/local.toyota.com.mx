@@ -1,6 +1,57 @@
 .resultados
 	.container
 		overflow: visible
+		form
+			margin: 6.25rem auto
+			overflow: hidden
+			position: relative
+			width: 100%
+			input
+				&:focus:not([readonly])
+					box-shadow: none
+					outline-width: 0
+				&::-webkit-input-placeholder
+					color: $BlueGrey100
+				&:-moz-placeholder
+					color: $BlueGrey100
+				&::-moz-placeholder
+					color: $BlueGrey100
+				&:-ms-input-placeholder
+					color: $BlueGrey100
+			input[type=text]
+				+fxr
+				border-bottom: 1px solid $BlueGrey400
+				color: $BlueGrey900
+				font-size: 3.25rem
+				font-weight: 300
+				height: 100%
+				margin: 0px 
+				padding: 0.9375rem 0px
+				width: 100%
+			input[type=submit],button
+				background: none
+				border: none
+				color: $BlueGrey100
+				cursor: pointer
+				display: none
+				font-family: "FontAwesome"
+				font-size: 1.625rem
+				height: 100%
+				position: absolute
+				right: 0px
+				top: 0px
+				width: 40px
+			span
+				color: $BlueGrey100
+				font-size: 1.625rem
+				height: 100%
+				position: absolute
+				right: 0px
+				top: 0px
+				width: 40px
+				&:before
+					+center(vh)
+					+fawesome('\f002')
 		h6
 			b
 				font-weight: 600
@@ -16,7 +67,7 @@
 					border: none
 				&:hover
 					+scale(1.02,1.02)
-					+shadow(0px, 0px, 3px, 25px, rgba(0,0,0,0.6))
+					+shadow(0px, 8px, 17px, 0px, rgba(0,0,0,0.2), 0px, 6px, 20px, 0px, rgba(0,0,0,0.19))
 					background: $Grey50
 					border: none
 				dt
@@ -79,6 +130,10 @@
 @mixin resultados-smartphone
 	.resultados 
 		.container 
+			form
+				margin: 2.5rem auto
+				input[type=text]
+					font-size: 1.25rem
 			h6
 				font-size: 1.125rem
 			p

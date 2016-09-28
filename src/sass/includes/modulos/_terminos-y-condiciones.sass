@@ -1,23 +1,46 @@
-article.terminos
-	ul
-		list-style-type: disc
-		padding-left: 70px
-		color: $BlueGrey800
-		li 
-			list-style-type: disc
-	ol 
-		list-style-type: decimal
-		padding-left: 70px
-		color: $BlueGrey800
-	ol.letter
-		list-style-type: upper-alpha
-		color: $BlueGrey800
+.terminos-condiciones
+	.container
+		> div
+			margin-bottom: 6.25rem
+			ul
+				margin-left: 4.5rem
+				li
+					padding-left: 0.625rem
+					position: relative
+					&:before
+						+fawesome('\f111')
+						font-size: 0.1875rem
+						left: 0px
+						position: absolute
+						top: 0px
+			dl
+				margin-left: 1.5625rem
+				dd
+					color: $BlueGrey800
+					display: list-item
+					font-size: 1rem
+					font-weight: 400
+					line-height: 1.625rem
+					list-style-type: decimal
+					margin-bottom: 1.25rem
+					margin-left: 1.25rem
+					ol
+						margin-left: 1.5625rem
+						margin-top: 1.25rem
+						li
+							list-style-type: upper-alpha
+							margin-left: 1.25rem
 
-
-
-
-	span.subtitulo-terminos
-		margin-top: 54px
-		margin-bottom: 45px
-		display: block
-		color: $BlueGrey800
+@mixin terminos-condiciones-smartphone
+	.terminos-condiciones
+		.container
+			> div
+				h1
+					margin-top: 1.25rem
+				h3
+					font-size: 1.5rem
+					line-height: 2.1875rem
+				ul
+					margin: 0px
+				dl
+					display: none

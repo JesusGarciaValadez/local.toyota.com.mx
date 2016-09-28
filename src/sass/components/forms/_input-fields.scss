@@ -36,19 +36,24 @@ input[type=search],
 textarea.materialize-textarea {
 
   // General Styles
-  background-color: transparent;
+  background-color: transparent !important;
   border: none;
-  border-bottom: $input-border;
+  //border-bottom: $input-border;
+  border-bottom: 1px solid #263238;
   border-radius: 0;
   outline: none;
-  height: $input-height;
+  //height: $input-height;
+  height: 2.5rem;
   width: 100%;
-  font-size: $input-font-size;
+  //font-size: $input-font-size;
+  font-size: 1.125rem;
+  font-weight: 400;
   margin: $input-margin;
   padding: $input-padding;
   box-shadow: none;
   box-sizing: content-box;
   transition: $input-transition;
+  color: #263238;
 
   // Disabled input style
   &:disabled,
@@ -65,20 +70,24 @@ textarea.materialize-textarea {
 
   // Focused input style
   &:focus:not([readonly]) {
-    border-bottom: 1px solid $input-focus-color;
-    box-shadow: 0 1px 0 0 $input-focus-color;
+    //border-bottom: 1px solid $input-focus-color;
+    //box-shadow: 0 1px 0 0 $input-focus-color;
+    border-bottom: 1px solid #3F7542;
   }
 
   // Focused label style
   &:focus:not([readonly])+label {
-    color: $input-focus-color;
+    //color: $input-focus-color;
+    color: #3F7542;
+    font-weight: 600;
   }
 
   // Valid Input Style
   &.valid,
   &:focus.valid {
-    border-bottom: 1px solid $input-success-color;
-    box-shadow: 0 1px 0 0 $input-success-color;
+    //border-bottom: 1px solid $input-success-color;
+    //box-shadow: 0 1px 0 0 $input-success-color;
+    border-bottom: 2px solid #66BB6A;
   }
 
   // Custom Success Message
@@ -92,8 +101,9 @@ textarea.materialize-textarea {
   // Invalid Input Style
   &.invalid,
   &:focus.invalid {
-    border-bottom: $input-invalid-border;
-    box-shadow: 0 1px 0 0 $input-error-color;
+    //border-bottom: $input-invalid-border;
+    //box-shadow: 0 1px 0 0 $input-error-color;
+    border-bottom: 1px solid #EB0A1E;
   }
 
   // Custom Error message
@@ -115,7 +125,8 @@ textarea.materialize-textarea {
     display: block;
     content: "";
     position: absolute;
-    top: 65px;
+    top: 55px;
+    font-size: 0.75rem;
     opacity: 0;
     transition: .2s opacity ease-out, .2s color ease-out;
   }
@@ -127,18 +138,24 @@ textarea.materialize-textarea {
   margin-top: 1rem;
 
   label {
-    color: $input-border-color;
+    //color: $input-border-color;
+    color: #8C9AA2;
     position: absolute;
     top: 0.8rem;
-    left: $gutter-width / 2;
-    font-size: 1rem;
+    //left: $gutter-width / 2;
+    left: 0px;
+    //font-size: 1rem;
+    font-size: 1.125rem;
+    font-weight: 300;
     cursor: text;
     transition: .2s ease-out;
   }
 
   label.active {
-    font-size: $label-font-size;
+    //font-size: $label-font-size;
+    font-size: 0.75rem;
     transform: translateY(-140%);
+    font-weight: 600;
   }
 
   // Prefix Icons

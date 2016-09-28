@@ -12,9 +12,12 @@ footer
 						.numero
 					dd
 					dd
-						.input-field
-							input(type="text").validate#last_name
-							label(for="last_name") Mantente informado
+						form
+							.input-field
+								input(type="email").validate#email  
+								label(for="email") Mantente informado
+								button(type="submit").fa.fa-envelope
+
 	.footer2
 		.container
 			.links-footer
@@ -25,10 +28,19 @@ footer
 						li
 							a(href="terminos-y-condiciones.html") Términos y condiciones
 						li
-							a(href="#") Políticas de privacidad
+							a(href="politica-de-privacidad.html") Políticas de privacidad
 						li
-							a(href="#") Políticas de Cookies
+							a(href="politica-de-cookies.html") Políticas de Cookies
 						li
 							a(href="mapa-de-sitio.html") Mapa de sitio
+
+.cookies.fadeInUp.animated
+	.container
+		dl
+			dd
+				p Este sitio utiliza cookies para asegurarse de obtener la mejor experiencia en nuestro sitio web. Para mas información haz 
+					a(href="politica-de-cookies.html") Click aquí
+			dd
+				span.boton DE ACUERDO
 
 	include scripts

@@ -10,6 +10,7 @@
 
 	h1
 		font-size: 2.5rem
+		line-height: 3rem
 	h2
 		font-size: 2.5rem
 		line-height: 3.125rem
@@ -39,7 +40,22 @@
 	@include home-localiza-cotiza-smartphone
 
 	// Modulos Detalle de Promocion
+	@include detalle-promocion-cover-promocion-smartphone
 	@include detalle-promocion-modelos-participantes-smartphone
+	@include detalle-promocion-nuestras-promociones-smartphone
+	@include detalle-promocion-Otras-promociones-smartphone
+
+	// Modulos Contacto y Ayuda
+	@include contacto-ayuda-cover-contacto-smartphone
+	@include contacto-ayuda-comentario-smartphone
+	@include contacto-ayuda-asistencia-vial-smartphone
+	@include contacto-ayuda-localiza-smartphone
+	@include contacto-ayuda-error-Page-smartphone
+
+	// Modulos Asistencia Vial
+	@include asistencia-vial-cover-asistencia-smartphone
+	@include asistencia-vial-info-vial-smartphone
+	@include asistencia-vial-asistencia-smartphone
 
 	// Modulos Resultados
 	@include resultados-smartphone
@@ -47,8 +63,14 @@
 	// Modulos 404
 	@include error-smartphone
 
+	// Modulos Terminos y Condiciones
+	@include terminos-condiciones-smartphone
+
 	// Modulos Mapa de Sitio
 	@include mapa-de-sitio-smartphone
 
 	// Footer
 	@include Footer-smartphone
+
+	// Fancybox
+	@include fancybox-smartphone

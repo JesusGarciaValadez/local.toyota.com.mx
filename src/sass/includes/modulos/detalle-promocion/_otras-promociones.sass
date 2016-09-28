@@ -1,0 +1,47 @@
+.otras-promociones
+	.container
+		h3
+			text-align: center
+		.flex
+			+justifyCont
+			margin: 4.25rem auto
+			overflow: hidden
+			dl
+				+bx
+				float: left
+				padding: 1%
+				width: 31%
+				dd
+					overflow: hidden
+					position: relative
+					img
+						display: block
+						height: auto
+						width: 100%
+					> div
+						background: rgba(204,0,51,0.7)
+						display: none
+						height: 100%
+						left: 0px
+						position: absolute
+						top: 0px
+						width: 100%
+					.boton
+						+center(vh)
+						background: $White
+						color: $Red800
+					.link.plus
+						display: none
+
+@mixin detalle-promocion-Otras-promociones-smartphone
+	.otras-promociones
+		.container
+			.flex
+				margin: 50px auto
+				dl
+					padding: 0px
+					width: 100%
+					dd
+						.link.plus
+							display: table
+							margin: 1rem 0px
