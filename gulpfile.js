@@ -39,18 +39,18 @@ gulp.task('jade', function(){
 
 /* Configuración de la tarea 'compass' */
 gulp.task('compass', function(){
-	gulp.src('./src/sass/**/*.sass')
+	gulp.src('./src/sass/**/*.*')
 	.pipe(compass({
 		config_file: './src/config.rb',
 		css: './dist/css',
-		sass: 'src/sass'
+		sass: 'src/sass',
+		scss: 'src/scss'
 	}))
 	.on('error', function(error){
 		console.log(error);
 	})
 	.pipe(gulp.dest('./dist/css'));
 });
-
  
 /* Configuración de la tarea 'coffee' */
 gulp.task('coffee', function(){
