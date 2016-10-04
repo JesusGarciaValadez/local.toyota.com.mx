@@ -1,0 +1,578 @@
+-var location = "descargables"
+-var subLoc = " "
+-var titulo = " "
+-var descrip = " "
+-var keyword = " "
+-var breadcrumb = "none"
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	body
+		
+		include includes/header
+		
+		main.wrapper
+			section.descargables
+				.container
+					h2
+						b Descargas
+					p ¿Quieres conocer todos los detalles y características técnicas de tu auto? 
+						br
+						b Aquí los puedes descargar
+					.menu
+						ul
+							li.activo
+								a AUTOS
+							li
+								a HÍBRIDOS
+							li
+								a SUV’S & MINIVANS
+							li
+								a PICK UP’S & COMERCIALES
+					.descargas
+						div
+							dl.flex
+								dt AUTOS
+								dd
+									h3
+										img(src="images/autos/nameplate/avanza.png")
+									p Bienvenido al espacio
+									img(src="images/autos/avanza.png")
+									.hover
+										span
+											a(href="#").boton.secundario.white FICHA TÉCNICA
+											a(href="#").boton.white MANUAL
+											a(href="#").link.descarga.white Catálogo
+									form.mobile
+										p
+											input(type="checkbox")#fichaAvanza.with-gap
+											label(for="fichaAvanza") Ficha técnica
+										p
+											input(type="checkbox")#manualAvanza.with-gap
+											label(for="manualAvanza") Manual
+										p
+											input(type="checkbox")#catalogoAvanza.with-gap
+											label(for="catalogoAvanza") Catálogo
+										input(type="submit" value="ENVIAR POR  CORREO").boton
+										input(type="submit" value="DESCARGAR A MI CELULAR").boton.secundario
+								dd
+									h3
+										img(src="images/autos/nameplate/yarisHb.png")
+									p Es tu momento
+									img(src="images/autos/yarisHb.png")
+									.hover
+										span
+											a(href="#").boton.secundario.white FICHA TÉCNICA
+											a(href="#").boton.white MANUAL
+											a(href="#").link.descarga.white Catálogo
+									form.mobile
+										p
+											input(type="checkbox")#fichaYarisHb.with-gap
+											label(for="fichaYarisHb") Ficha técnica
+										p
+											input(type="checkbox")#manualYarisHb.with-gap
+											label(for="manualYarisHb") Manual
+										p
+											input(type="checkbox")#catalogoYarisHb.with-gap
+											label(for="catalogoYarisHb") Catálogo
+										input(type="submit" value="ENVIAR POR  CORREO").boton
+										input(type="submit" value="DESCARGAR A MI CELULAR").boton.secundario
+								dd
+									h3
+										img(src="images/autos/nameplate/yarisSedan.png")
+									p Totalmente nuevo
+									img(src="images/autos/yarisSedan.png")
+									.hover
+										span
+											a(href="#").boton.secundario.white FICHA TÉCNICA
+											a(href="#").boton.white MANUAL
+											a(href="#").link.descarga.white Catálogo
+									form.mobile
+										p
+											input(type="checkbox")#fichaYarisSedan.with-gap
+											label(for="fichaYarisSedan") Ficha técnica
+										p
+											input(type="checkbox")#manualYarisSedan.with-gap
+											label(for="manualYarisSedan") Manual
+										p
+											input(type="checkbox")#catalogoYarisSedan.with-gap
+											label(for="catalogoYarisSedan") Catálogo
+										input(type="submit" value="ENVIAR POR  CORREO").boton
+										input(type="submit" value="DESCARGAR A MI CELULAR").boton.secundario
+								dd
+									h3
+										img(src="images/autos/nameplate/yarisR.png")
+									p Atrévete a todo
+									img(src="images/autos/yarisR.png")
+									.hover
+										span
+											a(href="#").boton.secundario.white FICHA TÉCNICA
+											a(href="#").boton.white MANUAL
+											a(href="#").link.descarga.white Catálogo
+									form.mobile
+										p
+											input(type="checkbox")#fichaYarisR.with-gap
+											label(for="fichaYarisR") Ficha técnica
+										p
+											input(type="checkbox")#manualYarisR.with-gap
+											label(for="manualYarisR") Manual
+										p
+											input(type="checkbox")#catalogoYarisR.with-gap
+											label(for="catalogoYarisR") Catálogo
+										input(type="submit" value="ENVIAR POR  CORREO").boton
+										input(type="submit" value="DESCARGAR A MI CELULAR").boton.secundario
+								dd
+									h3
+										img(src="images/autos/nameplate/camrry.png")
+									p Inspírate
+									img(src="images/autos/camrry.png")
+									.hover
+										span
+											a(href="#").boton.secundario.white FICHA TÉCNICA
+											a(href="#").boton.white MANUAL
+											a(href="#").link.descarga.white Catálogo
+									form.mobile
+										p
+											input(type="checkbox")#fichaCamrry.with-gap
+											label(for="fichaCamrry") Ficha técnica
+										p
+											input(type="checkbox")#manualCamrry.with-gap
+											label(for="manualCamrry") Manual
+										p
+											input(type="checkbox")#catalogoCamrry.with-gap
+											label(for="catalogoCamrry") Catálogo
+										input(type="submit" value="ENVIAR POR  CORREO").boton
+										input(type="submit" value="DESCARGAR A MI CELULAR").boton.secundario
+								dd
+									h3
+										img(src="images/autos/nameplate/corolla.png")
+									p Conquista el mundo
+									img(src="images/autos/corolla.png")
+									.hover
+										span
+											a(href="#").boton.secundario.white FICHA TÉCNICA
+											a(href="#").boton.white MANUAL
+											a(href="#").link.descarga.white Catálogo
+									form.mobile
+										p
+											input(type="checkbox")#fichaCorolla.with-gap
+											label(for="fichaCorolla") Ficha técnica
+										p
+											input(type="checkbox")#manualCorolla.with-gap
+											label(for="manualCorolla") Manual
+										p
+											input(type="checkbox")#catalogoCorolla.with-gap
+											label(for="catalogoCorolla") Catálogo
+										input(type="submit" value="ENVIAR POR  CORREO").boton
+										input(type="submit" value="DESCARGAR A MI CELULAR").boton.secundario
+						div
+							dl.flex
+								dt HÍBRIDOS
+								dd
+									h3
+										img(src="images/autos/nameplate/avanza.png")
+									p Bienvenido al espacio
+									img(src="images/autos/avanza.png")
+									.hover
+										span
+											a(href="#").boton.secundario.white FICHA TÉCNICA
+											a(href="#").boton.white MANUAL
+											a(href="#").link.descarga.white Catálogo
+									form.mobile
+										p
+											input(type="checkbox")#fichaAvanza.with-gap
+											label(for="fichaAvanza") Ficha técnica
+										p
+											input(type="checkbox")#manualAvanza.with-gap
+											label(for="manualAvanza") Manual
+										p
+											input(type="checkbox")#catalogoAvanza.with-gap
+											label(for="catalogoAvanza") Catálogo
+										input(type="submit" value="ENVIAR POR  CORREO").boton
+										input(type="submit" value="DESCARGAR A MI CELULAR").boton.secundario
+								dd
+									h3
+										img(src="images/autos/nameplate/yarisHb.png")
+									p Es tu momento
+									img(src="images/autos/yarisHb.png")
+									.hover
+										span
+											a(href="#").boton.secundario.white FICHA TÉCNICA
+											a(href="#").boton.white MANUAL
+											a(href="#").link.descarga.white Catálogo
+									form.mobile
+										p
+											input(type="checkbox")#fichaYarisHb.with-gap
+											label(for="fichaYarisHb") Ficha técnica
+										p
+											input(type="checkbox")#manualYarisHb.with-gap
+											label(for="manualYarisHb") Manual
+										p
+											input(type="checkbox")#catalogoYarisHb.with-gap
+											label(for="catalogoYarisHb") Catálogo
+										input(type="submit" value="ENVIAR POR  CORREO").boton
+										input(type="submit" value="DESCARGAR A MI CELULAR").boton.secundario
+								dd
+									h3
+										img(src="images/autos/nameplate/yarisSedan.png")
+									p Totalmente nuevo
+									img(src="images/autos/yarisSedan.png")
+									.hover
+										span
+											a(href="#").boton.secundario.white FICHA TÉCNICA
+											a(href="#").boton.white MANUAL
+											a(href="#").link.descarga.white Catálogo
+									form.mobile
+										p
+											input(type="checkbox")#fichaYarisSedan.with-gap
+											label(for="fichaYarisSedan") Ficha técnica
+										p
+											input(type="checkbox")#manualYarisSedan.with-gap
+											label(for="manualYarisSedan") Manual
+										p
+											input(type="checkbox")#catalogoYarisSedan.with-gap
+											label(for="catalogoYarisSedan") Catálogo
+										input(type="submit" value="ENVIAR POR  CORREO").boton
+										input(type="submit" value="DESCARGAR A MI CELULAR").boton.secundario
+								dd
+									h3
+										img(src="images/autos/nameplate/yarisR.png")
+									p Atrévete a todo
+									img(src="images/autos/yarisR.png")
+									.hover
+										span
+											a(href="#").boton.secundario.white FICHA TÉCNICA
+											a(href="#").boton.white MANUAL
+											a(href="#").link.descarga.white Catálogo
+									form.mobile
+										p
+											input(type="checkbox")#fichaYarisR.with-gap
+											label(for="fichaYarisR") Ficha técnica
+										p
+											input(type="checkbox")#manualYarisR.with-gap
+											label(for="manualYarisR") Manual
+										p
+											input(type="checkbox")#catalogoYarisR.with-gap
+											label(for="catalogoYarisR") Catálogo
+										input(type="submit" value="ENVIAR POR  CORREO").boton
+										input(type="submit" value="DESCARGAR A MI CELULAR").boton.secundario
+								dd
+									h3
+										img(src="images/autos/nameplate/camrry.png")
+									p Inspírate
+									img(src="images/autos/camrry.png")
+									.hover
+										span
+											a(href="#").boton.secundario.white FICHA TÉCNICA
+											a(href="#").boton.white MANUAL
+											a(href="#").link.descarga.white Catálogo
+									form.mobile
+										p
+											input(type="checkbox")#fichaCamrry.with-gap
+											label(for="fichaCamrry") Ficha técnica
+										p
+											input(type="checkbox")#manualCamrry.with-gap
+											label(for="manualCamrry") Manual
+										p
+											input(type="checkbox")#catalogoCamrry.with-gap
+											label(for="catalogoCamrry") Catálogo
+										input(type="submit" value="ENVIAR POR  CORREO").boton
+										input(type="submit" value="DESCARGAR A MI CELULAR").boton.secundario
+								dd
+									h3
+										img(src="images/autos/nameplate/corolla.png")
+									p Conquista el mundo
+									img(src="images/autos/corolla.png")
+									.hover
+										span
+											a(href="#").boton.secundario.white FICHA TÉCNICA
+											a(href="#").boton.white MANUAL
+											a(href="#").link.descarga.white Catálogo
+									form.mobile
+										p
+											input(type="checkbox")#fichaCorolla.with-gap
+											label(for="fichaCorolla") Ficha técnica
+										p
+											input(type="checkbox")#manualCorolla.with-gap
+											label(for="manualCorolla") Manual
+										p
+											input(type="checkbox")#catalogoCorolla.with-gap
+											label(for="catalogoCorolla") Catálogo
+										input(type="submit" value="ENVIAR POR  CORREO").boton
+										input(type="submit" value="DESCARGAR A MI CELULAR").boton.secundario
+						div
+							dl.flex
+								dt SUV’S & MINIVANS
+								dd
+									h3
+										img(src="images/autos/nameplate/avanza.png")
+									p Bienvenido al espacio
+									img(src="images/autos/avanza.png")
+									.hover
+										span
+											a(href="#").boton.secundario.white FICHA TÉCNICA
+											a(href="#").boton.white MANUAL
+											a(href="#").link.descarga.white Catálogo
+									form.mobile
+										p
+											input(type="checkbox")#fichaAvanza.with-gap
+											label(for="fichaAvanza") Ficha técnica
+										p
+											input(type="checkbox")#manualAvanza.with-gap
+											label(for="manualAvanza") Manual
+										p
+											input(type="checkbox")#catalogoAvanza.with-gap
+											label(for="catalogoAvanza") Catálogo
+										input(type="submit" value="ENVIAR POR  CORREO").boton
+										input(type="submit" value="DESCARGAR A MI CELULAR").boton.secundario
+								dd
+									h3
+										img(src="images/autos/nameplate/yarisHb.png")
+									p Es tu momento
+									img(src="images/autos/yarisHb.png")
+									.hover
+										span
+											a(href="#").boton.secundario.white FICHA TÉCNICA
+											a(href="#").boton.white MANUAL
+											a(href="#").link.descarga.white Catálogo
+									form.mobile
+										p
+											input(type="checkbox")#fichaYarisHb.with-gap
+											label(for="fichaYarisHb") Ficha técnica
+										p
+											input(type="checkbox")#manualYarisHb.with-gap
+											label(for="manualYarisHb") Manual
+										p
+											input(type="checkbox")#catalogoYarisHb.with-gap
+											label(for="catalogoYarisHb") Catálogo
+										input(type="submit" value="ENVIAR POR  CORREO").boton
+										input(type="submit" value="DESCARGAR A MI CELULAR").boton.secundario
+								dd
+									h3
+										img(src="images/autos/nameplate/yarisSedan.png")
+									p Totalmente nuevo
+									img(src="images/autos/yarisSedan.png")
+									.hover
+										span
+											a(href="#").boton.secundario.white FICHA TÉCNICA
+											a(href="#").boton.white MANUAL
+											a(href="#").link.descarga.white Catálogo
+									form.mobile
+										p
+											input(type="checkbox")#fichaYarisSedan.with-gap
+											label(for="fichaYarisSedan") Ficha técnica
+										p
+											input(type="checkbox")#manualYarisSedan.with-gap
+											label(for="manualYarisSedan") Manual
+										p
+											input(type="checkbox")#catalogoYarisSedan.with-gap
+											label(for="catalogoYarisSedan") Catálogo
+										input(type="submit" value="ENVIAR POR  CORREO").boton
+										input(type="submit" value="DESCARGAR A MI CELULAR").boton.secundario
+								dd
+									h3
+										img(src="images/autos/nameplate/yarisR.png")
+									p Atrévete a todo
+									img(src="images/autos/yarisR.png")
+									.hover
+										span
+											a(href="#").boton.secundario.white FICHA TÉCNICA
+											a(href="#").boton.white MANUAL
+											a(href="#").link.descarga.white Catálogo
+									form.mobile
+										p
+											input(type="checkbox")#fichaYarisR.with-gap
+											label(for="fichaYarisR") Ficha técnica
+										p
+											input(type="checkbox")#manualYarisR.with-gap
+											label(for="manualYarisR") Manual
+										p
+											input(type="checkbox")#catalogoYarisR.with-gap
+											label(for="catalogoYarisR") Catálogo
+										input(type="submit" value="ENVIAR POR  CORREO").boton
+										input(type="submit" value="DESCARGAR A MI CELULAR").boton.secundario
+								dd
+									h3
+										img(src="images/autos/nameplate/camrry.png")
+									p Inspírate
+									img(src="images/autos/camrry.png")
+									.hover
+										span
+											a(href="#").boton.secundario.white FICHA TÉCNICA
+											a(href="#").boton.white MANUAL
+											a(href="#").link.descarga.white Catálogo
+									form.mobile
+										p
+											input(type="checkbox")#fichaCamrry.with-gap
+											label(for="fichaCamrry") Ficha técnica
+										p
+											input(type="checkbox")#manualCamrry.with-gap
+											label(for="manualCamrry") Manual
+										p
+											input(type="checkbox")#catalogoCamrry.with-gap
+											label(for="catalogoCamrry") Catálogo
+										input(type="submit" value="ENVIAR POR  CORREO").boton
+										input(type="submit" value="DESCARGAR A MI CELULAR").boton.secundario
+								dd
+									h3
+										img(src="images/autos/nameplate/corolla.png")
+									p Conquista el mundo
+									img(src="images/autos/corolla.png")
+									.hover
+										span
+											a(href="#").boton.secundario.white FICHA TÉCNICA
+											a(href="#").boton.white MANUAL
+											a(href="#").link.descarga.white Catálogo
+									form.mobile
+										p
+											input(type="checkbox")#fichaCorolla.with-gap
+											label(for="fichaCorolla") Ficha técnica
+										p
+											input(type="checkbox")#manualCorolla.with-gap
+											label(for="manualCorolla") Manual
+										p
+											input(type="checkbox")#catalogoCorolla.with-gap
+											label(for="catalogoCorolla") Catálogo
+										input(type="submit" value="ENVIAR POR  CORREO").boton
+										input(type="submit" value="DESCARGAR A MI CELULAR").boton.secundario
+						div
+							dl.flex
+								dt PICK UP’S & COMERCIALES
+								dd
+									h3
+										img(src="images/autos/nameplate/avanza.png")
+									p Bienvenido al espacio
+									img(src="images/autos/avanza.png")
+									.hover
+										span
+											a(href="#").boton.secundario.white FICHA TÉCNICA
+											a(href="#").boton.white MANUAL
+											a(href="#").link.descarga.white Catálogo
+									form.mobile
+										p
+											input(type="checkbox")#fichaAvanza.with-gap
+											label(for="fichaAvanza") Ficha técnica
+										p
+											input(type="checkbox")#manualAvanza.with-gap
+											label(for="manualAvanza") Manual
+										p
+											input(type="checkbox")#catalogoAvanza.with-gap
+											label(for="catalogoAvanza") Catálogo
+										input(type="submit" value="ENVIAR POR  CORREO").boton
+										input(type="submit" value="DESCARGAR A MI CELULAR").boton.secundario
+								dd
+									h3
+										img(src="images/autos/nameplate/yarisHb.png")
+									p Es tu momento
+									img(src="images/autos/yarisHb.png")
+									.hover
+										span
+											a(href="#").boton.secundario.white FICHA TÉCNICA
+											a(href="#").boton.white MANUAL
+											a(href="#").link.descarga.white Catálogo
+									form.mobile
+										p
+											input(type="checkbox")#fichaYarisHb.with-gap
+											label(for="fichaYarisHb") Ficha técnica
+										p
+											input(type="checkbox")#manualYarisHb.with-gap
+											label(for="manualYarisHb") Manual
+										p
+											input(type="checkbox")#catalogoYarisHb.with-gap
+											label(for="catalogoYarisHb") Catálogo
+										input(type="submit" value="ENVIAR POR  CORREO").boton
+										input(type="submit" value="DESCARGAR A MI CELULAR").boton.secundario
+								dd
+									h3
+										img(src="images/autos/nameplate/yarisSedan.png")
+									p Totalmente nuevo
+									img(src="images/autos/yarisSedan.png")
+									.hover
+										span
+											a(href="#").boton.secundario.white FICHA TÉCNICA
+											a(href="#").boton.white MANUAL
+											a(href="#").link.descarga.white Catálogo
+									form.mobile
+										p
+											input(type="checkbox")#fichaYarisSedan.with-gap
+											label(for="fichaYarisSedan") Ficha técnica
+										p
+											input(type="checkbox")#manualYarisSedan.with-gap
+											label(for="manualYarisSedan") Manual
+										p
+											input(type="checkbox")#catalogoYarisSedan.with-gap
+											label(for="catalogoYarisSedan") Catálogo
+										input(type="submit" value="ENVIAR POR  CORREO").boton
+										input(type="submit" value="DESCARGAR A MI CELULAR").boton.secundario
+								dd
+									h3
+										img(src="images/autos/nameplate/yarisR.png")
+									p Atrévete a todo
+									img(src="images/autos/yarisR.png")
+									.hover
+										span
+											a(href="#").boton.secundario.white FICHA TÉCNICA
+											a(href="#").boton.white MANUAL
+											a(href="#").link.descarga.white Catálogo
+									form.mobile
+										p
+											input(type="checkbox")#fichaYarisR.with-gap
+											label(for="fichaYarisR") Ficha técnica
+										p
+											input(type="checkbox")#manualYarisR.with-gap
+											label(for="manualYarisR") Manual
+										p
+											input(type="checkbox")#catalogoYarisR.with-gap
+											label(for="catalogoYarisR") Catálogo
+										input(type="submit" value="ENVIAR POR  CORREO").boton
+										input(type="submit" value="DESCARGAR A MI CELULAR").boton.secundario
+								dd
+									h3
+										img(src="images/autos/nameplate/camrry.png")
+									p Inspírate
+									img(src="images/autos/camrry.png")
+									.hover
+										span
+											a(href="#").boton.secundario.white FICHA TÉCNICA
+											a(href="#").boton.white MANUAL
+											a(href="#").link.descarga.white Catálogo
+									form.mobile
+										p
+											input(type="checkbox")#fichaCamrry.with-gap
+											label(for="fichaCamrry") Ficha técnica
+										p
+											input(type="checkbox")#manualCamrry.with-gap
+											label(for="manualCamrry") Manual
+										p
+											input(type="checkbox")#catalogoCamrry.with-gap
+											label(for="catalogoCamrry") Catálogo
+										input(type="submit" value="ENVIAR POR  CORREO").boton
+										input(type="submit" value="DESCARGAR A MI CELULAR").boton.secundario
+								dd
+									h3
+										img(src="images/autos/nameplate/corolla.png")
+									p Conquista el mundo
+									img(src="images/autos/corolla.png")
+									.hover
+										span
+											a(href="#").boton.secundario.white FICHA TÉCNICA
+											a(href="#").boton.white MANUAL
+											a(href="#").link.descarga.white Catálogo
+									form.mobile
+										p
+											input(type="checkbox")#fichaCorolla.with-gap
+											label(for="fichaCorolla") Ficha técnica
+										p
+											input(type="checkbox")#manualCorolla.with-gap
+											label(for="manualCorolla") Manual
+										p
+											input(type="checkbox")#catalogoCorolla.with-gap
+											label(for="catalogoCorolla") Catálogo
+										input(type="submit" value="ENVIAR POR  CORREO").boton
+										input(type="submit" value="DESCARGAR A MI CELULAR").boton.secundario
+
+		include includes/footer

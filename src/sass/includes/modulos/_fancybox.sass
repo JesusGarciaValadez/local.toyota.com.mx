@@ -13,16 +13,17 @@
 	max-width: 100%
 
 .fancybox-close 
+	bottom: 100%
 	cursor: pointer
 	height: 24px
+	overflow: hidden
 	position: absolute
 	right: 0px
-	bottom: 100%
 	width: 24px
 	z-index: 8040
 	&:before
 		+center(vh)
-		+fawesome('\f00d')
+		+icons('\E14C')
 		color: $Red800
 		font-size: 30px
 

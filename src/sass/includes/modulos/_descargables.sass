@@ -1,0 +1,201 @@
+.descargables
+	background: $Grey50
+	.container
+		overflow: visible
+		h2
+			text-align: center
+		> p
+			font-size: 1.125rem
+			text-align: center
+		.menu
+			margin: 1.875rem auto
+			ul
+				display: table
+				height: 100%
+				margin: auto
+				li
+					display: table
+					float: left
+					height: 100%
+					margin: 0px
+					padding: 0px 1.5rem
+					&.activo
+						> a
+							color: $BlueGrey900	
+							&:before
+								background: $BlueGrey900
+								width: 100%
+					> a
+						+fx(all,0.5s)
+						color: $BlueGrey
+						cursor: pointer
+						display: table-cell
+						font-size: 0.875rem
+						font-weight: 700
+						margin: 0px
+						padding: 0px
+						position: relative
+						text-decoration: none
+						vertical-align: middle
+						&:before
+							+center(v)
+							+fx(all,0.5s)
+							background: transparent
+							bottom: 0px
+							content: " "
+							display: block
+							height: 2px
+							width: 0%
+						&:hover
+							color: $BlueGrey900
+							&:before
+								background: $BlueGrey900
+								width: 100%
+		.descargas
+			margin-bottom: 100px
+			> div
+				display: none
+				&:first-child
+					display: block
+				.flex
+					+justifyCont(space-between)
+					dt
+						color: $BlueGrey900
+						display: none
+						font-size: 1.75rem
+						margin: 2rem auto
+						text-align: center
+						font-weight: 700
+					dd
+						+fx(all,0.5s)
+						background: $White
+						margin-bottom: 2rem
+						overflow: hidden
+						position: relative
+						width: 32%
+						h3
+							> img
+								display: table
+								margin: 0px auto
+								max-width: 320px
+								width: 100%
+						p
+							color: $BlueGrey
+							font-size: 1.125rem
+							text-align: center
+						> img
+							display: table
+							margin: 3.125rem auto
+						.hover
+							background: rgba(204,0,51,0.9)
+							display: none
+							height: 100%
+							left: 0px
+							position: absolute
+							top: 0px
+							width: 100%
+							> span
+								+center(vh)
+								display: table
+								.descarga
+									padding-left: 1rem
+									padding-right: 0px
+									&:before
+										left: 1rem
+									&:after
+										left: 0px
+										right: inherit
+						.mobile
+							+bx
+							display: none
+							margin: auto
+							margin-bottom: 2rem
+							padding: 0px 1rem
+							p
+								text-align: inherit
+								[type="checkbox"]:not(:checked), [type="checkbox"]:checked
+									position: absolute
+									left: -9999px
+									opacity: 0
+									+ label
+										color: $BlueGrey900
+										position: relative
+										padding-left: 35px
+										cursor: pointer
+										display: inline-block
+										height: 25px
+										line-height: 25px
+										font-size: 1rem
+										transition: .28s ease
+										-khtml-user-select: none
+										user-select: none
+								[type="checkbox"]
+									+ label
+										&:before, &:after
+											content: ''
+											position: absolute
+											left: 0
+											top: 0
+											margin: 4px
+											width: 16px
+											height: 16px
+											z-index: 0
+											transition: .28s ease
+								[type="checkbox"]:not(:checked), [type="checkbox"]:checked, [type="checkbox"].with-gap:checked
+									+ label
+										&:before, &:after
+											border-radius: 50%
+								[type="checkbox"]:not(:checked)
+									+ label
+										&:before, &:after
+											border: 2px solid $BlueGrey900
+									+ label
+										&:after
+											z-index: -1
+											transform: scale(0)
+								[type="checkbox"]:checked 
+									+ label
+										&:before
+											border: 2px solid transparent
+										&:after
+											border: 2px solid $BlueGrey900
+											background-color: $BlueGrey900
+											z-index: 0
+											transform: scale(1.02)
+								[type="checkbox"].with-gap:checked 
+									+ label
+										&:before, &:after
+											border: 2px solid $BlueGrey900
+									+ label
+										&:after
+											background-color: $BlueGrey900
+											z-index: 0
+											transform: scale(0.5)
+							input[type="button"], input[type="submit"]
+								max-width: 220px
+								width: 220px
+						&:hover
+							+shadow(0px, 8px, 17px, 0px, rgba(0,0,0,0.2), 0px, 6px, 20px, 0px, rgba(0,0,0,0.19))
+
+@mixin descargables-smartphone
+	.descargables
+		.container
+			h2
+				text-align: left
+			p
+				text-align: left
+			.select-wrapper 
+				input
+					&.select-dropdown
+						border-bottom: 1px solid $BlueGrey
+				.dropdown-content 
+					li 
+						> span
+							color: $BlueGrey900
+			.descargas
+				> div
+					.flex
+						dt
+							display: block
+						dd
+							width: 100%

@@ -196,6 +196,10 @@ footer
 			height: 0.625rem
 			line-height: normal
 			right: 0px
+	&.white
+		color: $White
+		&:before
+			background: $White
 	&.descarga
 		padding-right: 1rem
 		&:hover
@@ -223,13 +227,16 @@ footer
 	font-weight: 700
 	margin: 1rem auto
 	max-width: 200px
-	min-width: 140px
+	min-width: 150px
 	padding: 15px 0px
 	text-align: center
 	text-decoration: none
 	&:hover
 		+shadow
 		background: $Red400
+	&.white
+		background: $White
+		color: $Red800
 	&.secundario
 		border: 1px solid $Red800
 		background: none
@@ -239,6 +246,13 @@ footer
 			background: $Red400
 			color: $White
 			border: 1px solid $Red400
+		&.white
+			border: 2px solid $White
+			color: $White
+			&:hover
+				background: $White
+				border: 2px solid $White
+				color: $Red400
 	&.disabled
 		background: $Grey200
 		color: $Grey400
@@ -274,6 +288,10 @@ footer
 	input[type="submit" i]
 		&:focus
 			outline-width: 0
+input
+	+appearance
+	&:focus
+		outline-width: 0
 .flex
 	+flex
 	+flexDir(row)
