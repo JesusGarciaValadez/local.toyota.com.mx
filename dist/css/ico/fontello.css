@@ -1,4 +1,11 @@
 @font-face {
+  font-family: 'lucida';
+  src: url('font/lucida.woff2') format('woff2'),
+       url('font/lucida.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: 'icomoon';
   src:  url('font/icomoon.eot?63712u');
   src:  url('font/icomoon.eot?63712u#iefix') format('embedded-opentype'),

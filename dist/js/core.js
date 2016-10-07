@@ -25,7 +25,6 @@ init = function(){
 				menumobile();
 				destructMenuDesctop();
 				menuFotter();
-				//destructMenuDescargables();
 				mobileMenuDescargables();
 			}
 		}
@@ -37,20 +36,19 @@ init = function(){
 				menudesktop();
 				destructMenuMobile();
 				menuFotterStop();
-				//destructMobileMenuDescargables();
 				menuDescargables();
 			}
 		}
 	}
 
 	moverElementos = function(){
-		$('.links-footer dl > div').css("display", "none");
+		$('.links-footer li > ul').css("display", "none");
 		$('.header .menu-autos > div ul li > div').css("display", "none");
 		$('.btnBuscador').removeClass('activo');
 	}
 
 	resetElementos = function(){
-		$('.links-footer dl > div').css("display", "block");
+		$('.links-footer li > ul').css("display", "block");
 		$('.header .menu-autos > div ul li > div').css("display", "block");
 		$('.descargas .mobile').css("display", "none");
 	}
@@ -162,6 +160,18 @@ init = function(){
 		preventDefaultSwipeY: false,
 		oneToOneTouch: false
 	});
+
+	$('.nuestra-gente .slide > div').bxSlider({
+		mode:'horizontal',
+		infiniteLoop: false,
+		responsive: true,
+		hideControlOnEnd: true,
+		touchEnabled: true,
+		preventDefaultSwipeX: false,
+		preventDefaultSwipeY: false,
+		oneToOneTouch: false,
+		controls: false
+	});
 	
 	$('.menuModal .close').on('click', function(){
 		$('.menuModal').fadeOut();
@@ -185,18 +195,18 @@ init = function(){
 	});
 
 	menuFotter = function(){
-		$('.links-footer dl > dt').on('click', function(){
+		$('.links-footer li > p').on('click', function(){
 			if(!$(this).parent().hasClass('activo')){
-				$('.links-footer dl').removeClass('activo')		
-				$('.links-footer dl > dt ~ div').slideUp();
+				$('.links-footer li').removeClass('activo')		
+				$('.links-footer li > p ~ ul').slideUp();
 			}
 			$(this).parent().toggleClass('activo');
-			$('~ div', this).slideToggle();
+			$('~ ul', this).slideToggle();
 		});
 	}
 
 	menuFotterStop = function(){
-		$('.links-footer dl > dt').off('click')
+		$('.links-footer li > p').off('click')
 	}
 
 	modelotarjeta = function(){
@@ -211,7 +221,6 @@ init = function(){
 	menuDescargables = function(){
 		if($('.descargables .menu').length === 0){
 			$('select').material_select('destroy');
-			//$('.descargas').next();
 
 			$('<div class="menu"><ul>').insertBefore('.descargas');
 
@@ -236,12 +245,8 @@ init = function(){
 			$('.descargas > div:eq('+(index)+')').fadeIn('slow');
 		});
 	}
-	destructMenuDescargables = function(){
-		$('.descargables .menu ul li').off('click')
-	}
 
 	mobileMenuDescargables = function(){
-		//$('.descargas').next();
 
 		$('<select name="filtro" id="filtro" />').insertBefore('.descargas');
 
@@ -262,10 +267,6 @@ init = function(){
 		});
 
 		$('select').material_select();
-	}
-
-	destructMobileMenuDescargables = function(){
-		$('select').material_select('destroy');
 	}
 
 	$('.resultados input[type=text]').on('keyup', function(){
