@@ -22,11 +22,14 @@
     text-transform: none;
 
     &:hover, &.active, &.selected {
-      background-color: $dropdown-hover-bg-color;
+      //background-color: $dropdown-hover-bg-color;
+    }
+    &:hover > span, &.active > span, &.selected >span {
+      color: #263238;
     }
 
     &.active.selected {
-      background-color: darken($dropdown-hover-bg-color, 5%);
+      //background-color: darken($dropdown-hover-bg-color, 5%);
     }
 
     &.divider {
@@ -36,7 +39,8 @@
 
     & > a, & > span {
       font-size: 16px;
-      color: $dropdown-color;
+      //color: $dropdown-color;
+      color: #8C9AA2;
       display: block;
       line-height: 22px;
       padding: (($dropdown-item-height - 22) / 2) 16px;

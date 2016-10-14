@@ -1,0 +1,23 @@
+-var location = "trabaja-con-nosotros"
+-var subLoc = " "
+-var titulo = " "
+-var descrip = " "
+-var keyword = " "
+-var breadcrumb = "none"
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	body
+		
+		include includes/header
+		
+		main.wrapper
+			include includes/modulos/trabaja-nosotros/cover-trabaja
+			include includes/modulos/trabaja-nosotros/vacantes
+			include includes/modulos/trabaja-nosotros/talento
+
+		include includes/footer

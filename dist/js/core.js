@@ -178,10 +178,44 @@ init = function(){
 		$('body').removeClass('hidden');
 	});
 
+	$('.vacante .boton').on('click', function(){
+		$('.postulateModal').fadeIn();
+		$('body').addClass('hidden');
+	});
+
+	$('.postulateModal .close').on('click', function(){
+		$('.postulateModal').fadeOut();
+		$('body').removeClass('hidden');
+	});
+
 	$('.error-page .close, .error-page .boton.secundario').on('click', function(){
 		$('.error-page').fadeOut();
 		$('body').removeClass('hidden');
 	});
+
+	deacargasModal = function(){
+		$('.descargas .enviar').on('click', function(){
+			$('.descargasModal').fadeIn();
+			$('body').addClass('hidden');
+		});
+
+		$('.descargasModal .close').on('click', function(){
+			$('.descargasModal').fadeOut();
+			$('body').removeClass('hidden');
+		});
+
+		$('.mail .boton').on('click', function(){
+			$('.mail').fadeOut();
+			$('.gracias').fadeIn();
+		});
+
+		$('.gracias .boton').on('click', function(){
+			$('.descargasModal').fadeOut();
+			$('body').removeClass('hidden');
+			$('.gracias').fadeOut();
+			$('.mail').fadeIn();
+		});
+	}
 
 	//fancybox
 	$('.fancybox-media').fancybox({
@@ -220,7 +254,7 @@ init = function(){
 
 	menuDescargables = function(){
 		if($('.descargables .menu').length === 0){
-			$('select').material_select('destroy');
+			$('.descargables select').material_select('destroy');
 
 			$('<div class="menu"><ul>').insertBefore('.descargas');
 
@@ -266,7 +300,7 @@ init = function(){
 			$('.descargas > div:eq('+(index)+')').fadeIn('slow');
 		});
 
-		$('select').material_select();
+		$('.descargables select').material_select();
 	}
 
 	$('.resultados input[type=text]').on('keyup', function(){
@@ -290,6 +324,13 @@ init = function(){
 		$('.cookies').addClass('fadeOutDown');
 	})
 
+	$('.vacantes select, .talento select, .flotillas select, .ideal select').material_select();
+
+	$('.ideal select').on('change',function() {
+		var index = $(this).val();
+		$('.modelo > div').hide();
+		$('.modelo > div:eq('+(index)+')').fadeIn('slow');
+	});
 
 	// $('.nuestras-promociones .validate').on('change', function(){
  //        if(!$(this).hasClass('valid')){
@@ -340,6 +381,7 @@ $(window).on('load',function(){
 	else{
 		if(! /iPad/i.test(navigator.userAgent) ) {
 			$('.descargas .mobile').css("display", "table");
+			deacargasModal();
 		}
 		else{
 

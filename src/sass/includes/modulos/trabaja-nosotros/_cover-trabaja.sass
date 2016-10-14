@@ -1,0 +1,35 @@
+.cover-trabaja
+	height: 550px
+	overflow: visible
+	position: relative
+	> img
+		position: absolute
+		top: 0px
+		right: 0px
+	.container
+		display: table
+		> div
+			display: table-cell
+			vertical-align: middle
+			h1
+				margin-top: 0px
+				white-space: pre-line
+				span 
+					color: $Red800
+			p
+				white-space: pre-line
+				span 
+					color: $Red800
+					font-weight: 700
+
+@mixin trabaja-nosotros-cover-trabaja-smartphone
+	.cover-trabaja
+		height: auto
+		> img
+			position: relative
+			width: 100%
+		.container
+			> div
+				display: block
+				p
+					white-space: normal

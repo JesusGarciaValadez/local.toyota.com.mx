@@ -1,0 +1,23 @@
+-var location = "ventas-corporativas"
+-var subLoc = " "
+-var titulo = " "
+-var descrip = " "
+-var keyword = " "
+-var breadcrumb = "none"
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	body
+		
+		include includes/header
+		
+		main.wrapper
+			include includes/modulos/ventas-corporativas/cover-ventas
+			include includes/modulos/ventas-corporativas/beneficios
+			include includes/modulos/ventas-corporativas/flotillas
+
+		include includes/footer

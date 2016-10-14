@@ -1,0 +1,32 @@
+section.postulateModal
+	.close
+	.container
+		div
+			h3 
+				b DBA Oracle SQL administrador de bases de datos
+			a(href="#").boton POSTÚLATE VÍA LINKEDIN
+			form
+				.input-field
+					input(type="text").validate#last_name
+					label(for="last_name") Ingresa tu nombre completo
+				.input-field
+					input(type="email").validate#email
+					label(for="email" data-error="Ingresa un correo válido") ¿Cuál es tu correo electrónico?
+				.input-field
+					input(type="tel").validate#tel
+					label(for="tel") Teléfono de contacto
+				.input-field
+					select
+						option(value="" disabled selected) Área de interés
+						option(value="1") Option 1
+						option(value="2") Option 2
+						option(value="3") Option 3
+				.file-field.input-field
+					div
+						input(type="file")
+						input(type="text" placeholder="Subir CV").file-path.validate
+				.input-field
+					input(type="text")#escribenos
+					label(for="escribenos") ¿Algo más que decirnos? ¡Escríbenos!
+				.input-field
+					input(type="submit" value="ENVIAR").boton.disabled

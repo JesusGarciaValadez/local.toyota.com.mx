@@ -31,6 +31,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-icono_carga:before {
+  content: "\e91b";
+}
+.icon-icono_rendimiento:before {
+  content: "\e918";
+}
+.icon-icono_seguridad:before {
+  content: "\e919";
+}
+.icon-icono_tecnologia:before {
+  content: "\e91a";
+}
 .icon-icono_quecubre:before {
   content: "\e916";
 }
