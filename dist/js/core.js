@@ -26,6 +26,7 @@ init = function(){
 				destructMenuDesctop();
 				menuFotter();
 				mobileMenuDescargables();
+				coverModeloMobile();
 			}
 		}
 		else if(anchura >= 768){
@@ -37,6 +38,7 @@ init = function(){
 				destructMenuMobile();
 				menuFotterStop();
 				menuDescargables();
+				coverModeloDesctop();
 			}
 		}
 	}
@@ -137,6 +139,23 @@ init = function(){
 		nextSelector: '#next'
 	});
 
+	coverModeloDesctop = function(){
+		coverslider = $('.cover-modelo .slide').bxSlider({
+			mode:'horizontal',
+			infiniteLoop: false,
+			responsive: true,
+			hideControlOnEnd: true,
+			touchEnabled: true,
+			preventDefaultSwipeX: false,
+			preventDefaultSwipeY: false,
+			oneToOneTouch: false,
+			prevSelector: '#prev',
+			nextSelector: '#next'
+		});
+	}
+	coverModeloMobile = function(){
+		coverslider.destroySlider();
+	}
 
 	$('.menu-categorias .container nav span > a').on('click', function(){
 		var index = $(this).index();
