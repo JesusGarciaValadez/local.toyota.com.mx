@@ -1,0 +1,175 @@
+.filtro-blog
+	+shadow(0px, 6px, 8px, 0px, rgba(0,0,0,0.2), 0px, 6px, 8px, 0px, rgba(0,0,0,0.19))
+	background: $BlueGrey900
+	height: 50px
+	margin: 0
+	overflow: initial
+	width: 100%
+	.head-menu
+		display: none
+	ul
+		display: table
+		height: 100%
+		margin: auto
+		li
+			display: table
+			float: left
+			height: 100%
+			margin: 0px
+			padding: 0px 1.5rem
+			&.activo
+				> a
+					color: $White
+					&:before
+						background: $White
+						width: 100%
+			> a
+				+fx(all,0.5s)
+				color: $BlueGrey400
+				cursor: pointer
+				display: table-cell
+				font-size: 0.875rem
+				font-weight: 700
+				margin: 0px
+				padding: 0px
+				position: relative
+				text-decoration: none
+				vertical-align: middle
+				&:before
+					+center(v)
+					+fx(all,0.5s)
+					background: transparent
+					bottom: 0px
+					content: " "
+					display: block
+					height: 4px
+					width: 0%
+				&:hover
+					color: $White
+					&:before
+						background: $White
+						width: 100%
+			&.filtro-autos
+				position: relative
+				> a
+					&:before
+						height: 0px
+					&:after
+						+center(h)
+						+fawesome('\f107')
+						+fx(all,0.5s)
+						color: $BlueGrey400
+						left: 6px
+						position: relative
+				&.hover
+					> a
+						color: $White
+						&:after
+							+fawesome('\f106')
+							color: $White	
+			.lista-autos
+				+fx(all,0.5s)
+				background: $BlueGrey800
+				height: 0
+				left: 0px
+				overflow: scroll
+				position: absolute
+				top: 50px
+				width: 100%
+				z-index: 1
+				&.activo
+					display: block
+					height: 260px
+				ul
+					display: table
+					height: 100%
+					margin: auto
+					li
+						border-bottom: 1px solid $BlueGrey900
+						display: table
+						left: 20px
+						padding: 0.75rem 0
+						position: relative
+						width: calc(100% - 40px)
+						> a
+							+fx(all,0.5s)
+							color: $BlueGrey
+							cursor: pointer
+							display: table-cell
+							font-size: 0.75rem
+							font-weight: 600
+							margin: 0px
+							padding: 0px
+							position: relative
+							text-decoration: none
+							vertical-align: middle
+							&:before
+								display: none
+							&:hover
+								color: $White
+
+
+@mixin blog-filtro-smartphone
+	.filtro-blog
+		+fx(all,0.5s)
+		+translate(+105%, 0%)
+		overflow: hidden
+		height: 100vh
+		position: fixed
+		top: 0
+		overflow: scroll
+		width: 100%
+		z-index: 99
+		.head-menu
+			display: block
+			> h1 
+				color: $White
+				font-size: 1.5rem
+				font-weight: 600
+				margin: 1.375rem 1.125rem
+				width: auto
+			.close
+				+translate(-50% , -50%)
+				cursor: pointer
+				display: table
+				height: 28px
+				position: absolute
+				right: 0px
+				top: 46px
+				width: 28px
+				z-index: 1
+				&:before
+					+center(vh)
+					+icons('\E14C')
+					color: $Red800
+					font-size: 1.75rem
+		> ul
+			display: block
+			height: auto
+			> li
+				border-bottom: 1px solid $BlueGrey400
+				height: auto
+				left: 20px
+				padding: 0
+				position: relative
+				width: calc(100vw - 40px)
+				&:last-child
+					border: none
+				> a
+					display: block
+					padding: 1.125rem 0
+					&:before
+						display: none
+				&.desplegar
+					> a
+						&:before
+							+fawesome('\f105')
+							right: 20px
+				.lista-autos
+					left: -20px
+					width: 100vw 
+					&.activo
+						display: block
+						height: auto
+		&.activo
+			+translate(0%, 0%)

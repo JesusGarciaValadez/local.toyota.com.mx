@@ -23,6 +23,15 @@ mixin menu-autos(arreglo)
 													b $#{valu.precio}
 											a(href="#{valu.url}").link CONFIGURA
 
+//-Autos
+mixin lista-autos(arreglo)
+	.lista-autos
+		ul
+			each val, index in arreglo
+				-var ind = index +1		
+				li
+					a #{val.modelo}							
+
 //-Paginador
 mixin paginador(arreglo)
 	.paginador
