@@ -1,0 +1,170 @@
+.grid-notas
+	background: $Grey100
+	overflow: hidden
+	width: 100%
+	.container
+		overflow: visible
+		.content-redes
+			height: 40px
+			width: 100% 
+			.compartir
+				display: table
+				float: right
+				> span
+					background: $BlueGrey900
+					color: $White
+					display: table-cell
+					font-size: 0.875rem
+					padding: 10px 18px
+				> a
+					+bx
+					border-left: none
+					border: 1px solid $BlueGrey900
+					color: $BlueGrey900
+					display: table-cell
+					position: relative
+					width: 40px
+					&:before
+						+center(vh)
+					&.fa-facebook
+						+fx(all,0.3s)
+						background: linear-gradient(to right,$Facebook 50%,transparent 0)
+						background-position: right bottom
+						background-size: 200% 100%
+					&.fa-twitter
+						+fx(all,0.3s)
+						background: linear-gradient(to right,$Twitter 50%,transparent 0)
+						background-position: right bottom
+						background-size: 200% 100%
+					&.fa-envelope
+						+fx(all,0.3s)
+						background: linear-gradient(to right,$Mensaje 50%,transparent 0)
+						background-position: right bottom
+						background-size: 200% 100%
+					&:hover
+						background-color: transparent
+						background-position: left bottom
+						color: $White
+		h3
+			color: $BlueGrey400
+			margin: 2.5rem 0px 2.5rem
+			text-align: left
+			b
+				font-weight: 600
+		.flex
+			+justifyCont(space-between)
+			margin: 0px auto 60px
+			padding: 0px
+			.fila
+				+flex
+				+flexDirRow
+				+justifyCont(space-between)
+				float: left
+				width: 100%
+				.nota
+					padding: 0px 0px
+				> div
+					+bx
+					+fx(all,0.5s)
+					background: $White
+					margin-bottom: 1rem
+					padding: 3.5rem 0px
+					width: 32%
+					&:hover
+						+shadow(0px, 8px, 17px, 0px, rgba(0,0,0,0.2), 0px, 6px, 20px, 0px, rgba(0,0,0,0.19))
+					.imagen
+						height: 210px
+						overflow: hidden
+						padding: 0
+						position: relative
+						width: 100%
+						img
+							+center(vh)
+							display: block
+							height: auto
+							position: absolute
+							width: 104%
+					> div
+						+bx
+						padding: 1rem 1.375rem
+						.titulo
+							color: $BlueGrey800
+							display: block
+							font-size: 1.125rem
+							font-weight: 700
+							line-height: 1.625rem
+							margin-top: 0px
+						.link
+							cursor: pointer
+							float: left
+							font-size: 0.75rem
+							font-weight: 700
+							margin: 1.25rem 0px
+						span
+							color: $BlueGrey
+							float: left
+							font-size: 0.75rem
+							font-weight: 400
+							margin: 1.25rem 0px
+							line-height: 1.8
+							&:before
+								content: "/"
+								margin: 0px 0.5rem
+				.fullw
+					display: table
+					margin-bottom: 3.75rem
+					width: 100%
+					> div
+						+bx
+						display: table-cell
+						padding: 50px
+						vertical-align: middle
+						width: 50%
+						p
+							color: $BlueGrey800
+							font-size: 0.875rem
+							font-weight: 400
+							line-height: 1.25rem
+							margin: 1rem 0
+		.paginador
+			display: table
+			margin: 5rem auto
+
+@mixin mosaico-notas-smartphone
+	.grid-notas 
+		.container 
+			.content-redes
+				.compartir
+					display: table
+					float: none
+					margin: 1.625rem auto
+			h3
+				margin: 1.25rem 0
+			.flex 
+				margin: 20px auto
+				padding: 0px
+				.fila
+					+flexDir
+					width: 100%
+					> div
+						margin-bottom: 2.5rem
+						width: 100%
+						.imagen
+							img
+								width: 120%
+					.fullw
+						margin-bottom: 2.5rem
+						> div
+							+bx
+							display: block
+							padding: 1rem 1.375rem
+							vertical-align: middle
+							width: 100%
+							p
+								color: $BlueGrey800
+								font-size: 0.875rem
+								font-weight: 400
+								line-height: 1.25rem
+								margin: 1rem 0
+			.paginador
+				margin: 3rem auto

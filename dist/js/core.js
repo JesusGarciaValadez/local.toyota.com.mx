@@ -24,6 +24,7 @@ init = function(){
 				moverElementos();
 				menumobile();
 				destructMenuDesctop();
+				filtroblogMobile();
 				menuFotter();
 				mobileMenuDescargables();
 				coverModeloMobile();
@@ -36,6 +37,7 @@ init = function(){
 				hoverdir();
 				menudesktop();
 				destructMenuMobile();
+				filtroblog();
 				menuFotterStop();
 				menuDescargables();
 				coverModeloDesctop();
@@ -78,6 +80,16 @@ init = function(){
 		});
 	}
 
+	filtroblog = function(){
+		$('.filtro-autos').on('mouseover',function() {
+			$(this).addClass('hover');
+			$('.lista-autos').addClass('activo');
+		}).on('mouseout',function() {
+			$(this).removeClass('hover');
+			$('.lista-autos').removeClass('activo');	
+		});
+	}
+
 	menumobile = function(){
 		$('.hamburguesa').on('click', function(){
 			$('.header > .menu').toggleClass('activo');
@@ -107,6 +119,22 @@ init = function(){
 			$('.menu-autos .flex').removeClass('hover');
 		});
 	}
+
+	filtroblogMobile = function(){
+		$('.menuFiltro').on('click', function(){
+			$('.filtro-blog').toggleClass('activo');
+			$('body').toggleClass('hidden');
+		});
+		$('.close').on('click', function(){
+			$('.filtro-blog').removeClass('activo');
+			$('body').removeClass('hidden');
+		});
+		$('.filtro-autos').on('click',function() {
+			$(this).toggleClass('hover');
+			$('.lista-autos').toggleClass('activo');
+		});
+	}
+
 	destructMenuMobile = function(){
 		$('.hamburguesa, .desplegar > a, .regresar, .header .menu-autos div ul li a').off('click');
 	}
@@ -124,6 +152,7 @@ init = function(){
 		$('.otras-promociones .flex dd').each( function() { $(this).hoverdir(); } );
 		$('.intsgram').each( function() { $(this).hoverdir(); } );
 		$('.descargas .flex dd').each( function() { $(this).hoverdir(); } );
+		$('.prevandnext-notas .image').each( function() { $(this).hoverdir(); } );
 	}
 
 	$('.cover .slide').bxSlider({
