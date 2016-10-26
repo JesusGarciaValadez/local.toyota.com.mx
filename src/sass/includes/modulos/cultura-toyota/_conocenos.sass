@@ -1,0 +1,29 @@
+.conocenos
+	margin: 3.125rem 0px
+	.container
+		display: table
+		> div
+			display: table-cell
+			vertical-align: top
+			width: 50%
+			img
+				display: block
+				height: auto
+				width: 100%
+			h2
+				margin-top: 0px
+			.link
+				margin: 1rem 0px
+			&:last-child
+				padding-left: 6.25rem
+
+@mixin cultura-toyota-conocenos-smartphone
+	.conocenos
+		.container
+			> div
+				display: block
+				width: 100%
+				h2
+					margin-top: 2.1875rem
+				&:last-child
+					padding-left: 0px

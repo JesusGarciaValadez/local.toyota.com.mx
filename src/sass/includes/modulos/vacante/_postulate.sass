@@ -1,0 +1,70 @@
+.postulateModal
+	+bx
+	background: rgba(255,255,255,0.95)
+	display: none
+	height: 100vh
+	left: 0px
+	position: fixed
+	top: 0px
+	width: 100vw
+	z-index: 99
+	.close
+		+translate(-50% , -50%)
+		cursor: pointer
+		display: table
+		height: 25px
+		position: absolute
+		right: 20px
+		top: 40px
+		width: 25px
+		z-index: 1
+		&:before
+			+center(vh)
+			+icons('\E14C')
+			color: $Red800
+			font-size: 1.5625rem
+	.container
+		overflow: visible
+		> div
+			+center(vh)
+			h3
+				text-align: center
+			p
+				text-align: center
+				white-space: pre-line
+			> .boton
+				margin-top: 3rem
+			form
+				max-width: 600px
+				margin: auto
+				margin-top: 80px
+				.file-field
+					> div
+						position: relative
+						&:before
+							+center(h)
+							+fawesome('\f019')
+							right: 0px
+						&:after
+							bottom: -5px
+							color: $BlueGrey
+							content: "(Archivos .doc o .pdf / máximo 5MB)"
+							font-size: 0.75rem
+							left: 0px
+							position: absolute
+						input
+							&::-webkit-input-placeholder
+								color: $BlueGrey
+								font-weight: 300
+							&:-moz-placeholder
+								color: $BlueGrey
+								font-weight: 300
+							&::-moz-placeholder
+								color: $BlueGrey
+								font-weight: 300
+							&:-ms-input-placeholder
+								color: $BlueGrey
+								font-weight: 300
+				.boton
+					margin: 1rem 0px
+					margin-top: 3rem

@@ -113,69 +113,102 @@
 							padding: 0px 1rem
 							p
 								text-align: inherit
-								[type="checkbox"]:not(:checked), [type="checkbox"]:checked
-									position: absolute
-									left: -9999px
-									opacity: 0
-									+ label
-										color: $BlueGrey900
-										position: relative
-										padding-left: 35px
-										cursor: pointer
-										display: inline-block
-										height: 25px
-										line-height: 25px
-										font-size: 1rem
-										transition: .28s ease
-										-khtml-user-select: none
-										user-select: none
-								[type="checkbox"]
-									+ label
-										&:before, &:after
-											content: ''
-											position: absolute
-											left: 0
-											top: 0
-											margin: 4px
-											width: 16px
-											height: 16px
-											z-index: 0
-											transition: .28s ease
-								[type="checkbox"]:not(:checked), [type="checkbox"]:checked, [type="checkbox"].with-gap:checked
-									+ label
-										&:before, &:after
-											border-radius: 50%
-								[type="checkbox"]:not(:checked)
-									+ label
-										&:before, &:after
-											border: 2px solid $BlueGrey900
-									+ label
-										&:after
-											z-index: -1
-											transform: scale(0)
-								[type="checkbox"]:checked 
-									+ label
-										&:before
-											border: 2px solid transparent
-										&:after
-											border: 2px solid $BlueGrey900
-											background-color: $BlueGrey900
-											z-index: 0
-											transform: scale(1.02)
-								[type="checkbox"].with-gap:checked 
-									+ label
-										&:before, &:after
-											border: 2px solid $BlueGrey900
-									+ label
-										&:after
-											background-color: $BlueGrey900
-											z-index: 0
-											transform: scale(0.5)
 							input[type="button"], input[type="submit"]
 								max-width: 220px
 								width: 220px
 						&:hover
 							+shadow(0px, 8px, 17px, 0px, rgba(0,0,0,0.2), 0px, 6px, 20px, 0px, rgba(0,0,0,0.19))
+		.descargasModal
+			+bx
+			background: rgba(255,255,255,0.95)
+			display: none
+			height: 100vh
+			left: 0px
+			position: fixed
+			top: 0px
+			width: 100vw
+			z-index: 99
+			.close
+				+translate(-50% , -50%)
+				cursor: pointer
+				display: table
+				height: 25px
+				position: absolute
+				right: 20px
+				top: 40px
+				width: 25px
+				z-index: 1
+				&:before
+					+center(vh)
+					+icons('\E14C')
+					color: $Red800
+					font-size: 1.5625rem
+			.container
+				overflow: visible
+				> div
+					+bx
+					+center(vh)
+					padding: 0px 20px
+					width: 100%
+					&.gracias
+						display: none
+						i
+							+bx
+							border-radius: 50%
+							border: 5px solid $Green400
+							color: $Green400
+							display: table
+							height: 70px
+							margin: auto
+							position: relative
+							width: 70px
+							&:before
+								+center(vh)
+								+icons('\E876')
+								font-size: 50px
+								line-height: 0px
+					h1
+						margin-top: 30px
+						text-align: center
+					p
+						text-align: center
+						font-size: 1.125rem
+						line-height: 1.625rem
+					> .boton
+						margin-top: 3rem
+					form
+						margin-top: 80px
+						margin: auto
+						.file-field
+							> div
+								position: relative
+								&:before
+									+center(h)
+									+fawesome('\f019')
+									right: 0px
+								&:after
+									bottom: -5px
+									color: $BlueGrey
+									content: "(Archivos .doc o .pdf / máximo 5MB)"
+									font-size: 0.75rem
+									left: 0px
+									position: absolute
+								input
+									&::-webkit-input-placeholder
+										color: $BlueGrey
+										font-weight: 300
+									&:-moz-placeholder
+										color: $BlueGrey
+										font-weight: 300
+									&::-moz-placeholder
+										color: $BlueGrey
+										font-weight: 300
+									&:-ms-input-placeholder
+										color: $BlueGrey
+										font-weight: 300
+						.boton
+							margin: 1rem 0px
+							margin-top: 3rem
 
 @mixin descargables-smartphone
 	.descargables
@@ -184,14 +217,6 @@
 				text-align: left
 			p
 				text-align: left
-			.select-wrapper 
-				input
-					&.select-dropdown
-						border-bottom: 1px solid $BlueGrey
-				.dropdown-content 
-					li 
-						> span
-							color: $BlueGrey900
 			.descargas
 				> div
 					.flex

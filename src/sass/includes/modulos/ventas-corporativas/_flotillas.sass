@@ -1,0 +1,43 @@
+.flotillas
+	background: $Grey50
+	overflow: visible
+	padding: 6.25rem 0px
+	.container
+		overflow: visible
+		> div
+			max-width: 600px
+			margin: auto
+			h3
+				margin-top: 0px
+			form
+				margin-top: 3.125rem
+				.file-field
+					> div
+						position: relative
+						&:before
+							+center(h)
+							+fawesome('\f019')
+							right: 0px
+						&:after
+							bottom: -5px
+							color: $BlueGrey
+							content: "(Archivos .doc o .pdf / máximo 5MB)"
+							font-size: 0.75rem
+							left: 0px
+							position: absolute
+						input
+							&::-webkit-input-placeholder
+								color: $BlueGrey
+								font-weight: 300
+							&:-moz-placeholder
+								color: $BlueGrey
+								font-weight: 300
+							&::-moz-placeholder
+								color: $BlueGrey
+								font-weight: 300
+							&:-ms-input-placeholder
+								color: $BlueGrey
+								font-weight: 300
+				.boton
+					margin: 1rem 0px
+					margin-top: 3rem

@@ -1,0 +1,145 @@
+.nuestra-gente
+	background: $Grey50
+	padding: 6.25rem 0px
+	.container
+		overflow: visible
+		.slide
+			padding-bottom: 50px
+			position: relative
+			dl
+				display: table
+				dd
+					display: table-cell
+					vertical-align: top
+					width: 50%
+					&:after
+						color: $Grey200
+						content: "“"
+						font-family: 'lucida'
+						font-size: 400px
+						left: -10px
+						position: absolute
+						top: 10px
+						z-index: -1
+					cite
+						color: $Red800
+						font-size: 1.375rem
+						line-height: 1.875rem
+					h3
+						line-height: 2.375rem
+						margin-top: 0.9375rem
+						span
+							display: block
+							font-size: 1.125rem
+							font-style: italic
+							font-weight: 600
+					p
+						font-size: 1.375rem
+						font-style: italic
+						font-weight: 300
+						line-height: 2rem
+						text-align: center
+						white-space: pre-line
+					img
+						display: block
+						height: auto
+						width: 100%
+		.boton
+			margin: 2rem auto 0px
+	.bx-prev 
+		border-radius: 50%
+		border: 2px solid $BlueGrey900
+		color: $BlueGrey900
+		left: 0px
+		margin-right: 2rem 
+		position: relative
+		&:before
+			+fonIco("\e903")
+			+translate(-50%,-50%)
+			font-size: 16px
+			left: 50%
+			position: absolute
+			text-indent: 0px
+			top: 50%
+	.bx-next 
+		border-radius: 50%
+		border: 2px solid $BlueGrey900
+		color: $BlueGrey900
+		position: relative
+		right: 0px
+		&:before
+			+fonIco("\e904")
+			+translate(-50%,-50%)
+			font-size: 16px
+			left: 50%
+			position: absolute
+			text-indent: 0px
+			top: 50%
+	.bx-controls-direction
+		bottom: 50px
+		position: absolute
+		width: 100%
+		a
+			+fx(all,0.5s) 
+			display: inline-block
+			height: 42px
+			outline: 0
+			text-decoration: none
+			text-indent: -9998px
+			width: 42px
+			z-index: 98
+			&.disabled 
+				border: 2px solid rgba(38, 50, 56, 0.4)
+				color: rgba(38, 50, 56, 0.4)
+				&:hover
+					background: none
+	
+	.bx-wrapper
+		.bx-has-pager
+			+center(v)
+			bottom: 20px
+		.bx-pager
+			color: rgba(38, 50, 56, 0.4)
+			font-family: Arial
+			font-size: 0px
+			font-weight: bold
+			text-align: center
+			&.bx-default-pager
+				a
+					+fx(all,0.5s)
+					-moz-border-radius: 5px
+					-webkit-border-radius: 5px
+					background: rgba(38, 50, 56, 0.4)
+					border-radius: 5px
+					display: block
+					height: 8px
+					margin: 0px 12px
+					outline: 0px
+					text-indent: -9999px
+					width: 8px
+					&:hover, &.active, &:focus
+						+scale(1.5,1.5)
+						background: $BlueGrey900
+		.bx-pager-item
+			*display: inline
+			*zoom: 1
+			display: inline-block
+			font-size: 0px
+			line-height: 0px
+		.bx-controls-auto
+			.bx-controls-auto-item
+				*display: inline
+				*zoom: 1
+				display: inline-block
+
+@mixin cultura-toyota-nuestra-gente-smartphone
+	.nuestra-gente
+		padding: 3.125rem 0px
+		.container
+			.slide
+				dl
+					dd
+						display: block
+						width: 100%
+						p
+							white-space: normal

@@ -1,0 +1,59 @@
+.agenda-configura
+	background: -moz-linear-gradient(0deg, #a00008 0%, #a00008 50%, #121a1c 50%, #121a1c 100%)
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #a00008), color-stop(50%, #a00008), color-stop(50%, #121a1c), color-stop(100%, #121a1c))
+	background: -webkit-linear-gradient(0deg, #a00008 0%, #a00008 50%, #121a1c 50%, #121a1c 100%)
+	background: -o-linear-gradient(0deg, #a00008 0%, #a00008 50%, #121a1c 50%, #121a1c 100%)
+	background: -ms-linear-gradient(0deg, #a00008 0%, #a00008 50%, #121a1c 50%, #121a1c 100%)
+	background: linear-gradient(90deg, #a00008 0%, #a00008 50%, #121a1c 50%, #121a1c 100%)
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a00008', endColorstr='#121a1c',GradientType=1 )
+	overflow: hidden
+	width: 100%
+	.container
+		max-width: 1500px
+		padding: 0px
+		dl
+			display: table
+			width: 100%
+			dd
+				display: table-cell
+				padding: 90px 0px
+				position: relative
+				vertical-align: middle
+				overflow: hidden
+				width: 50%
+				img
+					+fx(all,0.5s)
+					+object
+					height: 100%
+					position: absolute
+					top: 0px
+					width: 100%
+				&:hover
+					img
+						+scale(1.08,1.08)
+				h5
+					color: $White
+					font-weight: 600
+					margin-bottom: 1.875rem
+					position: relative
+					text-align: center
+					&:before
+						color: $White
+						display: block
+						font-size: 31px
+						margin-bottom: 2.0625rem
+				.boton
+					position: relative
+
+@mixin modelos-agenda-configura-smartphone
+	.agenda-configura 
+		.container
+			dl 
+				dd
+					+bx
+					display: block
+					width: 100%
+					h6
+						color: $BlueGrey900
+						&:before
+							color: $Red800

@@ -5,7 +5,7 @@ select { display: none; }
 select.browser-default { display: block; }
 
 select {
-  background-color: $select-background;
+  //background-color: $select-background;
   width: 100%;
   padding: $select-padding;
   border: $select-border;
@@ -23,9 +23,10 @@ select {
   input.select-dropdown {
     position: relative;
     cursor: pointer;
-    background-color: transparent;
+    //background-color: transparent;
     border: none;
-    border-bottom: $input-border;
+    //border-bottom: $input-border;
+    border-bottom: 1px solid #263238;
     outline: none;
     height: $input-height;
     line-height: $input-height;
@@ -34,6 +35,7 @@ select {
     margin: $input-margin;
     padding: 0;
     display: block;
+    font-weight: 300;
   }
 
   span.caret {
@@ -43,7 +45,8 @@ select {
     top: 16px;
     font-size: 10px;
     &.disabled {
-      color: $input-disabled-color;
+      //color: $input-disabled-color;
+      color: #8C9AA2;
     }
   }
 
@@ -56,7 +59,8 @@ select {
 
 // Disabled styles
 select:disabled {
-  color: rgba(0,0,0,.3);
+ //color: rgba(0,0,0,.3);
+  color: #8C9AA2;
 }
 
 .select-wrapper input.select-dropdown:disabled {
@@ -75,8 +79,9 @@ select:disabled {
 .select-dropdown li.disabled,
 .select-dropdown li.disabled > span,
 .select-dropdown li.optgroup {
-  color: $select-disabled-color;
-  background-color: transparent;
+  //color: $select-disabled-color;
+  //background-color: transparent;
+  color: #8C9AA2;
 }
 
 // Prefix Icons
@@ -103,11 +108,13 @@ select:disabled {
   border-top: 1px solid $dropdown-hover-bg-color;
 
   &.selected > span {
-    color: rgba(0, 0, 0, .7);
+    //color: rgba(0, 0, 0, .7);
+    color: #263238;
   }
 
   & > span {
-    color: rgba(0, 0, 0, .4);
+    //color: rgba(0, 0, 0, .4);
+    color: #263238;
   }
 
   & ~ li.optgroup-option {

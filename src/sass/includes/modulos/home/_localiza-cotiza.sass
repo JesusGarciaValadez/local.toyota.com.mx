@@ -1,111 +1,142 @@
 .localiza-cotiza
+	background: -moz-linear-gradient(0deg, #a40007 0%, #a40007 50%, #212c30 50%, #212c30 100%)
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #a40007), color-stop(50%, #a40007), color-stop(50%, #212c30), color-stop(100%, #212c30))
+	background: -webkit-linear-gradient(0deg, #a40007 0%, #a40007 50%, #212c30 50%, #212c30 100%)
+	background: -o-linear-gradient(0deg, #a40007 0%, #a40007 50%, #212c30 50%, #212c30 100%)
+	background: -ms-linear-gradient(0deg, #a40007 0%, #a40007 50%, #212c30 50%, #212c30 100%)
+	background: linear-gradient(90deg, #a40007 0%, #a40007 50%, #212c30 50%, #212c30 100%)
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a40007', endColorstr='#212c30',GradientType=1 )
 	overflow: hidden
 	width: 100%
-	dl
-		display: table
-		width: 100%
-		dd
-			display: table-cell
-			padding: 60px 0px
-			vertical-align: middle
-			width: 50%
-			h6
-				color: $White
-				font-weight: 600
-				margin-bottom: 2.625rem
-				text-align: center
-				&:before
+	.container
+		max-width: 1500px
+		padding: 0px
+		dl
+			display: table
+			width: 100%
+			dd
+				display: table-cell
+				padding: 60px 0px
+				position: relative
+				vertical-align: middle
+				overflow: hidden
+				width: 50%
+				img
+					+fx(all,0.5s)
+					+object
+					height: 100%
+					position: absolute
+					top: 0px
+					width: 100%
+				&:hover
+					img
+						+scale(1.08,1.08)
+				h6
 					color: $White
-					display: block
-					font-size: 31px
-					margin-bottom: 2.0625rem
-		.localiza
-			background: url(img/bg_localiza.jpg) no-repeat center
-			background-color: #a40007
-			h6:before
-				+fawesome('\f041')
-			> div
-				display: table
-				padding-right: calc(35px + 1rem)
-				margin: auto
-				width: 258px
-				span
+					font-weight: 600
+					margin-bottom: 2.625rem
 					position: relative
+					text-align: center
 					&:before
-						+center(h)
-						+fawesome('\f002')
 						color: $White
-						left: 0px
-						margin-right: 0.5rem
-					input
-						+bx
-						border-bottom: 1px solid $White
-						color: $White
-						padding-left: 20px
-						&:focus:not([readonly])
-							border-bottom: 1px solid $White
-						&:-webkit-autofill
-							border: 1px solid #000
-							color: #fff
-					.ubicame
-						+center(h)
-						+fx(all,0.5s)
-						background: none
-						border-radius: 50%
-						border: none
-						cursor: pointer
-						height: 35px
-						left: 100%
-						margin: 0px 0.5rem
-						overflow: hidden
-						width: 35px
+						display: block
+						font-size: 31px
+						margin-bottom: 2.0625rem
+			.localiza
+				//background-color: #a40007
+				img
+					right: 0px
+				h6:before
+					+fawesome('\f041')
+				> div
+					display: table
+					padding-right: calc(35px + 1rem)
+					margin: auto
+					width: 258px
+					span
+						position: relative
 						&:before
-							+center(vh)
-							+fonIco('\e917')
+							+center(h)
+							+fawesome('\f002')
 							color: $White
-							font-size: 35px
-						&:hover
-							+shadow
+							left: 0px
+							margin-right: 0.5rem
+						input
+							+bx
+							border-bottom: 1px solid $White
+							color: $White
+							padding-left: 20px
+							&:focus:not([readonly])
+								border-bottom: 1px solid $White
+							&:-webkit-autofill
+								border: 1px solid #000
+								color: #fff
+						.ubicame
+							+center(h)
+							+fx(all,0.5s)
+							background: none
+							border-radius: 50%
+							border: none
+							cursor: pointer
+							height: 35px
+							left: 100%
+							margin: 0px 0.5rem
+							overflow: hidden
+							width: 35px
+							&:before
+								+center(vh)
+								+fonIco('\e917')
+								color: $White
+								font-size: 35px
+							&:hover
+								+shadow
 
-		.cotiza
-			background: url(img/bg_cotiza.jpg) no-repeat center
-			background-color: #212c30
-			h6:before
-				+fonIco('\e90b')
+			.cotiza
+				//background-color: #212c30
+				img
+					left: 0px
+				h6:before
+					+fonIco('\e90b')
+				.boton
+					position: relative
 
 @mixin home-localiza-cotiza-smartphone
 	.localiza-cotiza 
-		dl 
-			dd
-				+bx
-				display: block
-				padding: 60px 20px
-				width: 100%
-				h6
-					color: $BlueGrey900
-					&:before
-						color: $Red800
-			.localiza
-				background: none
-				background-color: $White
-				> div
-					span
+		background: none
+		.container
+			dl 
+				dd
+					+bx
+					display: block
+					padding: 60px 20px
+					width: 100%
+					img
+						display: none
+					h6
+						color: $BlueGrey900
 						&:before
-							color: $Grey400
-						input
-							border-bottom: 1px solid $BlueGrey800
-							color: $Grey400
-							&::-webkit-input-placeholder
-								color: $Grey400
-							&:-moz-placeholder
-								color: $Grey400
-							&::-moz-placeholder
-								color: $Grey400
-							&:-ms-input-placeholder
-								color: $Grey400
-						.ubicame
+							color: $Red800
+				.localiza
+					background: none
+					background-color: $White
+					> div
+						span
 							&:before
-								color: $BlueGrey800
-			.cotiza
-				background: none
-				background-color: $Grey100
+								color: $Grey400
+							input
+								border-bottom: 1px solid $BlueGrey800
+								color: $Grey400
+								&::-webkit-input-placeholder
+									color: $Grey400
+								&:-moz-placeholder
+									color: $Grey400
+								&::-moz-placeholder
+									color: $Grey400
+								&:-ms-input-placeholder
+									color: $Grey400
+							.ubicame
+								&:before
+									color: $BlueGrey800
+				.cotiza
+					background: none
+					background-color: $Grey100

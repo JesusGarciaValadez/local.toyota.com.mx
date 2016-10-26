@@ -1,4 +1,11 @@
 @font-face {
+  font-family: 'lucida';
+  src: url('font/lucida.woff2') format('woff2'),
+       url('font/lucida.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: 'icomoon';
   src:  url('font/icomoon.eot?63712u');
   src:  url('font/icomoon.eot?63712u#iefix') format('embedded-opentype'),
@@ -24,6 +31,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-icono_carga:before {
+  content: "\e91b";
+}
+.icon-icono_rendimiento:before {
+  content: "\e918";
+}
+.icon-icono_seguridad:before {
+  content: "\e919";
+}
+.icon-icono_tecnologia:before {
+  content: "\e91a";
+}
 .icon-icono_quecubre:before {
   content: "\e916";
 }

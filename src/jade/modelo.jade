@@ -1,0 +1,22 @@
+-var location = "modelo"
+-var subLoc = " "
+-var titulo = " "
+-var descrip = " "
+-var keyword = " "
+-var breadcrumb = "none"
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	body
+		
+		include includes/header
+		
+		main.wrapper
+			include includes/modulos/modelo/cover-modelo
+			include includes/modulos/modelo/agenda-configura
+
+		include includes/footer

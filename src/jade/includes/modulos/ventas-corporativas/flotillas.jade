@@ -1,0 +1,36 @@
+section.flotillas
+	.container
+		div
+			h3 
+				b ¿Estás interesado(a) en adquirir una flotilla de autos Toyota?
+			form
+				.input-field
+					input(type="text").validate#last_name
+					label(for="last_name") Ingresa tu nombre completo*
+				.input-field
+					input(type="text").validate#last_name
+					label(for="last_name") Nombre de la empresa*
+				.input-field
+					input(type="email").validate#email
+					label(for="email" data-error="Ingresa un correo válido") ¿Cuál es tu correo electrónico?*
+				.input-field
+					input(type="tel").validate#tel
+					label(for="tel") Teléfono*
+				.input-field
+					input(type="text").validate#cp
+					label(for="cp") C.P.*
+				.input-field
+					select
+						option(value="" disabled selected) Selecciona un modelo
+						optgroup(label="AUTOS")
+							option(value="1") Corolla
+						optgroup(label="PICK UP’S & COMERCIALES")
+							option(value="2") Tacoma
+							option(value="3") Tundra
+							option(value="4") Hiace
+							option(value="5") Hilux
+				.input-field
+						input(type="text" length="170").validate#input_text
+						label(for="input_text") Mensaje*
+				.input-field
+					input(type="submit" value="ENVIAR").boton.disabled

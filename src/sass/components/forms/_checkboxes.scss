@@ -3,7 +3,7 @@
 
 /* CUSTOM CSS CHECKBOXES */
 form p {
-  margin-bottom: 10px;
+  margin-bottom: 1.25rem;
   text-align: left;
 }
 
@@ -27,9 +27,10 @@ form p:last-child {
     padding-left: 35px;
     cursor: pointer;
     display: inline-block;
-    height: 25px;
-    line-height: 25px;
+    height: 20px;
+    line-height: 20px;
     font-size: 1rem;
+    color: #263238;
 
     -webkit-user-select: none; /* webkit (safari, chrome) browsers */
     -moz-user-select: none; /* mozilla browsers */
@@ -51,6 +52,7 @@ form p:last-child {
     border-radius: 1px;
     margin-top: 2px;
     transition: .2s;
+
   }
 
   &:not(.filled-in) + label:after {
@@ -132,6 +134,9 @@ form p:last-child {
     /* .1s delay is for check animation */
     transition: border .25s, background-color .25s, width .20s .1s, height .20s .1s, top .20s .1s, left .20s .1s;
     z-index: 1;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
   }
 
   // Unchecked style
@@ -179,8 +184,8 @@ form p:last-child {
       top: 0;
       width: 20px;
       height: 20px;
-      border: 2px solid $secondary-color;
-      background-color: $secondary-color;
+      border: 2px solid #CC0033;
+      background-color: #CC0033;
       z-index: 0;
     }
   }

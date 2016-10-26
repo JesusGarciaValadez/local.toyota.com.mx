@@ -80,24 +80,28 @@ footer
 			padding-bottom: 1.625rem
 			padding-top: 2.375rem
 			width: 100%
-			> div
+			> ul
 				display: table-cell
 				width: 25%
-				dl
-					dt
+				> li
+					line-height: inherit
+					p
 						color: $BlueGrey100
 						font-size: 0.875rem
 						font-weight: 600
+						line-height: inherit
 						margin-bottom: 0.6875rem
 						margin-top: 1.0625rem
 					&:first-child
-						dt
+						p
 							margin-top: 0px
-					dd
-						margin: 0px 0px
-						a
-							color: $BlueGrey400
-							font-size: 0.75rem
+					> ul
+						> li
+							line-height: inherit
+							margin: 0px 0px
+							a
+								color: $BlueGrey400
+								font-size: 0.75rem
 		.menu-legales
 			border-top: 1px solid $BlueGrey400
 			height: 86px
@@ -178,13 +182,13 @@ footer
 				overflow: visible
 			.links-footer
 				padding: 0px
-				> div
+				> ul
 					display: table-row
-					dl
+					> li
 						+fx(all,0.5s)
 						border-bottom: 1px solid #989898
 						margin-bottom: 1rem
-						dt
+						p
 							font-size: 1rem
 							margin: 0px
 							margin-bottom: 1rem
@@ -195,7 +199,7 @@ footer
 								color: rgba(207, 216, 220, 0.5)
 								font-size: 0.75rem
 								right: 0px
-						> div
+						> ul
 							+bx
 							background: $BlueGrey800
 							display: none
@@ -203,17 +207,17 @@ footer
 							padding: 0px 20px
 							position: relative
 							width: calc(100% + 40px)
-						dd
-							border-bottom: 1px solid $BlueGrey900
-							a
-								display: block
-								font-size: 1rem
-								padding: 20px 0px
-							&:last-child
-								border: none
+							> li
+								border-bottom: 1px solid $BlueGrey900
+								a
+									display: block
+									font-size: 1rem
+									padding: 20px 0px
+								&:last-child
+									border: none
 						&.activo
 							border: none
-							dt
+							p
 								&:after
 									content: "\f068"
 			.menu-legales

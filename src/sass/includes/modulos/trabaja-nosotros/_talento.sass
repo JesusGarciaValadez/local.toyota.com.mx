@@ -1,0 +1,45 @@
+.talento
+	background: $Grey50
+	padding: 3.125rem 0px
+	.container
+		overflow: visible
+		h3
+			text-align: center
+		p
+			text-align: center
+			white-space: pre-line
+		> .boton
+			margin-top: 3rem
+		form
+			max-width: 600px
+			margin: auto
+			margin-top: 80px
+			.file-field
+				> div
+					position: relative
+					&:before
+						+center(h)
+						+fawesome('\f019')
+						right: 0px
+					&:after
+						bottom: -5px
+						color: $BlueGrey
+						content: "(Archivos .doc o .pdf / máximo 5MB)"
+						font-size: 0.75rem
+						left: 0px
+						position: absolute
+					input
+						&::-webkit-input-placeholder
+							color: $BlueGrey
+							font-weight: 300
+						&:-moz-placeholder
+							color: $BlueGrey
+							font-weight: 300
+						&::-moz-placeholder
+							color: $BlueGrey
+							font-weight: 300
+						&:-ms-input-placeholder
+							color: $BlueGrey
+							font-weight: 300
+			.boton
+				margin-top: 3rem

@@ -1,0 +1,28 @@
+.cover-ventas
+	height: 550px
+	position: relative
+	> img
+		+center(v)
+		top: 0px
+	.container
+		display: table
+		> div
+			display: table-cell
+			vertical-align: middle
+			h1
+				margin-top: 0px
+			h3
+				margin-top: 0px
+
+@mixin ventas-corporativas-cover-ventas-smartphone
+	.cover-ventas
+		height: auto
+		> img
+			min-height: auto
+			position: relative
+			width: 100%
+		.container
+			> div
+				display: block
+				h1
+					margin-top: 1.875rem

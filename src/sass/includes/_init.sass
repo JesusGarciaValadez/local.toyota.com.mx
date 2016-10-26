@@ -65,7 +65,7 @@ h3
 
 h4
 	color: $BlueGrey800
-	font-size: 2rem
+	font-size: 1.75rem
 	font-weight: 400
 	margin: 2.75rem 0px 1rem
 	line-height: 2.375rem
@@ -74,19 +74,19 @@ h4
 
 h5
 	color: $BlueGrey800
-	font-size: 1.75rem
+	font-size: 1.625rem
 	font-weight: 400
 	margin: 2.4375rem 0px 0.875rem 
-	line-height: 2.0625rem
+	line-height: 1.9375rem
 	b
 		font-weight: 700
 
 h6
 	color: $BlueGrey800
-	font-size: 1.625rem
+	font-size: 1.5rem
 	font-weight: 400
 	margin: 2.25rem 0px 0.8125rem
-	line-height: 1.9375rem
+	line-height: 1.75rem
 	b
 		font-weight: 700
 
@@ -131,8 +131,8 @@ header
 
 main
 	margin-top: 100px
-	// min-height: calc(100vh - 100px)
-	overflow: hidden
+	//min-height: calc(100vh - 100px)
+	//overflow: hidden
 	width: 100%
 
 section
@@ -212,6 +212,20 @@ footer
 			height: 0.625rem
 			line-height: normal
 			right: 0px
+	&.regresar
+		padding-left: 1.5rem
+		&:before
+			left: 1.5rem
+		&:hover
+			&:before
+				width: calc(100% - 1rem)
+		&:after
+			+center(h)
+			+fawesome('\f177')
+			font-size: 0.625rem
+			height: 0.625rem
+			line-height: normal
+			left: 0px
 
 .boton
 	+bx
@@ -296,3 +310,8 @@ input
 	+flex
 	+flexDir(row)
 	+flexWrap
+.contenedor
+	height: 100%
+	margin: auto
+	max-width: 1500px
+	width: 100%

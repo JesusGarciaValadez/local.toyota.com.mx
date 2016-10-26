@@ -58,11 +58,11 @@ mixin mapa-de-sitio(arreglo)
 mixin links-footer(arreglo)
 	each val, index in arreglo
 		-var ind = index +1
-		div
+		ul
 			each valu, index1 in arreglo[index].lista
-				dl
-					dt #{valu.titulo}
-					div
+				li
+					p #{valu.titulo}
+					ul
 						each value in arreglo[index].lista[index1].subLista
-							dd
+							li
 								a(href="#{value.url}") #{value.text1}
