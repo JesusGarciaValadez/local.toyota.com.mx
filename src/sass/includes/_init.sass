@@ -191,7 +191,20 @@ footer
 				width: calc(100% - 1rem)
 		&:after
 			+center(h)
-			+fawesome('\f067')
+			+icons('\E145')
+			font-size: 0.75rem
+			height: 0.625rem
+			line-height: normal
+			right: 0px
+			padding-bottom: 2px
+	&.datalle
+		padding-right: 1rem
+		&:hover
+			&:before
+				width: calc(100% - 1rem)
+		&:after
+			+center(h)
+			+fawesome('\f178')
 			font-size: 0.625rem
 			height: 0.625rem
 			line-height: normal
@@ -201,7 +214,7 @@ footer
 		&:before
 			background: $White
 	&.descarga
-		padding-right: 1rem
+		padding-left: 1rem
 		&:hover
 			&:before
 				width: calc(100% - 1rem)
@@ -211,7 +224,9 @@ footer
 			font-size: 0.625rem
 			height: 0.625rem
 			line-height: normal
-			right: 0px
+			left: 0px
+		&:before
+			left: 1rem
 	&.regresar
 		padding-left: 1.5rem
 		&:before
