@@ -1,174 +1,118 @@
 section.consulta-categoria
-	display: none
-// section.consulta-categoria
-// 	.container
-// 		.select-wrapper 
-// 			input.select-dropdown
-// 				border-bottom: 1px solid $BlueGrey
-// 		h6
-// 			text-align: center
-// 			width: 100%
-// 			color: $Red800
-// 			margin: 6.625rem 0px 2.9375rem
-// 			font-size: 1.625rem
-// 		+flex
-// 		+alignItem(flex-start)
-// 		+justifyCont(space-between)
-// 		+flexWrap
-// 		.menu-categoria 
-// 			width: 30%
-// 			text-align: right
-// 			padding-top: 1rem
-// 			font-size: 1.125rem
-// 			dl 
-// 				dd
-// 					margin-bottom: 20px
-// 					a 
-// 						color: $BlueGrey100
-// 						font-size: 18px
-// 						font-weight: 600
-// 						&:hover
-// 							color: $BlueGrey900
-// 							position: relative
-// 							&:after
-// 								+fawesome("\f105")
-// 								position: absolute
-// 								right: -20px
-
-// 		>div
-// 			width: 62%
-// 			padding-top: 0px
-// 			.accordion 
-// 				width: 100%
-// 				li 
-// 					border-bottom: 1px solid $BlueGrey
-// 					position: relative
-// 					@extend .flex-between 
-// 					&:last-child
-// 						border-bottom: none
-// 					b
-// 						width: 100%
-// 						display: block
-// 						cursor: pointer
-// 						font-size: 1.125rem
-// 						color: $BlueGrey900
-// 						font-weight: 700
-// 						padding: 30px 0px
-// 						position: relative
-// 						padding-right: 28px
-// 						i 
-// 							position: absolute
-// 							top: 2rem
-// 							right: 2px
-// 							content: " "
-// 							width: 1.5625rem
-// 							height: 1.5625rem
-// 							border-radius: 50%
-// 							background-color: $Grey200
-// 							&:after
-// 								position: absolute
-// 								+fawesome("\f067")
-// 								+center(vh)
-// 								color: $BlueGrey800
-// 								font-size: 0.875rem
-// 								@extend .transAcordeon
-// 						i.active
-// 							background-color: $Red800
-// 							&:after
-// 								color: #fff
-// 								+fawesome("\f068")
-// 								@extend .transAcordeon
-
-// 					b.active
-// 						color: $Red800
-// 						font-weight: 700							
-// 					.container-contenido 
-// 						display: none
-// 						width: 100%
-// 						>p
-// 							font-size: 1.125rem
-// 							color: $BlueGrey900
-
-
-
-// 					.container-contenido 
-// 						display: none
-// 						width: 100%
-// 						p
-// 							font-size: 1.125rem
-// 							color: $BlueGrey900
-// 					.contenido-informativo
-// 						background-color: $Grey200
-// 						width: 100%
-// 						padding: 1.875rem 1.25rem
-// 						display: none
-// 						label
-// 							color: $BlueGrey900
-// 							font-size: 1rem
-// 							font-weight: 600
-// 			.paginacion
-// 				width: 100%!important
-// 				margin: 100px 0px 120px
-
-// 		.container-opcion
-// 			background-color: $Grey200
-// 			width: 100%
-// 			padding: 30px  20px
-// 			box-sizing: border-box
-// 			+flex
-// 			+alignItem
-// 			+justifyCont(space-between)
-// 			form
-// 				width: 100%
-// 			p 
-// 				margin: 0
-// 				font-size: 1rem
-// 				font-weight: 600
-// 			form
-// 				width: 30%
-// 			label
-// 				color: $BlueGrey900
-// 			//@extend .radios-style
-// 			.boton
-// 				color: #fff
-// 				font-size: 0.875rem
-// 				min-width: 100px!important
-// 				padding: 0.620rem 0px
-// 				margin: 0
-// 		.container-opcion-dudas
-// 			background-color: $Grey200
-// 			width: 100%
-// 			padding: 30px  20px
-// 			box-sizing: border-box
-// 			+flex
-// 			+alignItem
-// 			+justifyCont(space-between)
-// 			p 
-// 				font-size: 1.125rem
-// 				font-weight: 700
-// 				margin-bottom: 17px
-// 				&:last-child
-// 					margin-bottom: 0
-// 			.boton
-// 				min-width: 162px!important
-// 				padding: 0.620rem 0px
-// 				font-weight: 700
-// 				font-size: 0.875rem
-// 				margin: 0
-// 		.container-opcion-gracias
-// 			background-color: $Grey200
-// 			width: 100%
-// 			padding: 30px  20px
-// 			box-sizing: border-box
-// 			+flex
-// 			+alignItem
-// 			+justifyCont(flex-start)
-// 			+flexWrap
-// 			p 
-// 				font-size: 1.125rem
-// 				font-weight: 700
-// 				margin-bottom: 17px
-// 				width: 100%
-// 				&:last-child
-// 					margin-bottom: 0
-// 					font-weight: normal
+	padding: 100px 0px
+	.container
+		h6
+			text-align: center
+			b
+				color: $Red800
+				font-weight: 600
+		> div
+			display: table
+			width: 100%
+			.preguntas
+				display: table-cell
+				width: 62%
+				> ul
+					+bx
+					display: none
+					width: 100%
+					&:first-child
+						display: block
+					li
+						border-bottom: 1px solid $BlueGrey
+						position: relative
+						> b
+							+fx(all,0.5s)
+							color: $BlueGrey900
+							cursor: pointer
+							display: block
+							font-weight: 700
+							padding: 0.75rem 0px
+							padding-right: 40px
+						> i
+							+fx(all,0.5s)
+							background: $Grey200
+							border-radius: 50%
+							display: block
+							height: 30px
+							position: absolute
+							right: 0px
+							top: 0.75rem
+							width: 30px
+							&:before
+								+center(vh)
+								+icons('\E145')
+								color: $BlueGrey900
+								cursor: pointer
+								font-size: 1.375rem
+						&.activo
+							> b
+								color: $Red800
+							> i
+								background: $Red800
+								&:before
+									color: $White
+									+icons('\E15B')
+									font-size: 1.375rem
+						&:last-child
+							border: none
+						> div
+							display: none
+							> p
+								font-size: 1.125rem
+							> div
+								+bx
+								background: $Grey200
+								margin: 1rem auto 0px
+								overflow: hidden
+								padding: 25px 20px
+								width: 100%
+								form
+									display: table
+									width: 100%
+									.input-field
+										display: table-cell
+										vertical-align: middle
+										width: 50%
+										p
+											color: $BlueGrey900
+											font-weight: 600
+										> div
+											display: table
+											> div
+												display: table-cell
+												width: 130px
+												> label
+													color: $BlueGrey900
+													font-weight: 600
+													top: 0px
+													display: table
+													margin: auto
+										.boton
+											float: right
+								> h6
+									margin: 0px
+									font-size: 1.125rem
+									b
+										padding: 0px
+								> p
+									font-size: 0.875rem
+									margin: 0px
+								.boton
+									margin: 0px auto
+							> .losentimos
+								display: table
+								> div
+									display: table-cell
+									vertical-align: middle
+									width: 50%
+									> h6
+										margin: 0px
+										font-size: 1.125rem
+										b
+											padding: 0px
+									> p
+										font-size: 0.875rem
+										margin: 0px
+				.paginador
+					margin-top: 100px

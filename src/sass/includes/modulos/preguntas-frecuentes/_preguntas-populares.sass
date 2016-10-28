@@ -1,5 +1,6 @@
 section.preguntas-populares
 	background: $Grey50
+	padding-bottom: 70px
 	.container
 		h3
 			b
@@ -28,6 +29,7 @@ section.preguntas-populares
 						display: block
 						font-weight: 700
 						padding: 0.75rem 0px
+						padding-right: 30px
 					i
 						+fx(all,0.5s)
 						background: $Grey200
@@ -60,41 +62,92 @@ section.preguntas-populares
 						> p
 							font-size: 1.125rem
 						> div
+							+bx
 							background: $Grey200
 							margin: 1rem auto 0px
 							overflow: hidden
-							padding: 25px 0px
+							padding: 25px 20px
 							width: 100%
-							&.informacion
-								+bx
-								padding: 25px 20px
-								form
-									display: table
-									width: 100%
-									.input-field
-										display: table-cell
-										vertical-align: middle
-										width: 50%
-										p
-											color: $BlueGrey900
-											font-weight: 600
+							form
+								display: table
+								width: 100%
+								.input-field
+									display: table-cell
+									vertical-align: middle
+									width: 50%
+									p
+										color: $BlueGrey900
+										font-weight: 600
+									> div
+										display: table
 										> div
-											display: table
-											> div
-												display: table-cell
-												width: 130px
-												> label
-													color: $BlueGrey900
-													font-weight: 600
-													top: 0px
-													display: table
-													margin: auto
-										.boton
-											float: right
+											display: table-cell
+											width: 130px
+											> label
+												color: $BlueGrey900
+												font-weight: 600
+												top: 0px
+												display: table
+												margin: auto
+									.boton
+										float: right
 							> h6
-								text-align: center
-								margin-top: 0px
+								margin: 0px
+								font-size: 1.125rem
+								b
+									padding: 0px
 							> p
-								text-align: center
+								font-size: 0.875rem
+								margin: 0px
 							.boton
 								margin: 0px auto
+						> .losentimos
+							display: table
+							> div
+								display: table-cell
+								vertical-align: middle
+								width: 50%
+								> h6
+									margin: 0px
+									font-size: 1.125rem
+									b
+										padding: 0px
+								> p
+									font-size: 0.875rem
+									margin: 0px
+
+@mixin preguntas-frecuentes-preguntas-populares-smartphone
+	section.preguntas-populares 
+		.container 
+			.preguntas 
+				ul
+					padding: 0px
+					display: block
+					width: 100%
+					li 
+						> div 
+							> div 
+								padding: 25px 10px
+								form 
+									.input-field
+										display: block
+										width: 100%
+										p
+											margin-bottom: 1.25rem
+										.boton
+											float: none
+											margin: 2rem auto
+								> h6
+									text-align: center
+								> p
+									text-align: center
+							> .losentimos 
+								> div
+									display: block
+									width: 100%
+									> h6
+										text-align: center
+									> p
+										text-align: center
+									.boton
+										margin: 1rem auto
