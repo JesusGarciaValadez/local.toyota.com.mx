@@ -367,6 +367,35 @@ init = function(){
 		$('.resultados form > span').fadeIn();
 	})
 
+	$('.buscar input[type=text]').on('keyup', function(){
+		var cuantos = $(this).val().length
+		if(cuantos >= 1){
+			$('.buscar form > span').fadeOut();
+			$('.buscar form > button').fadeIn();
+			$('.buscar form > ul').fadeIn();
+		}
+		else{
+			$('.buscar form > button').fadeOut();
+			$('.buscar form > ul').fadeOut();
+			$('.buscar form > span').fadeIn();
+
+		}
+	});
+	$('.buscar form > button').on('click', function(){
+		$('.buscar form > button').fadeOut();
+		$('.buscar form > ul').fadeOut();
+		$('.buscar form > span').fadeIn();
+	})
+
+	$('.preguntas li > b, .preguntas li > i').on('click', function(){
+		if(!$(this).parent().hasClass('activo')){
+			$('.preguntas li').removeClass('activo')		
+			$('.preguntas li > b ~ div').slideUp();
+		}
+		$(this).parent().toggleClass('activo');
+		$('~ div', this).slideToggle();
+	});
+
 	$('.cookies .boton').on('click', function(){
 		$('.cookies').removeClass('fadeInUp');
 		$('.cookies').addClass('fadeOutDown');

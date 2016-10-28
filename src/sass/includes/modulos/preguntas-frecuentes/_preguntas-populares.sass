@@ -1,0 +1,100 @@
+section.preguntas-populares
+	background: $Grey50
+	.container
+		h3
+			b
+				font-weight: 600
+			span
+				display: block
+				font-weight: 300
+		h6
+			b
+				color: $Red800
+				font-weight: 600
+		.preguntas
+			display: table
+			ul
+				+bx
+				display: table-cell
+				padding-right: 2rem
+				width: 50%
+				li
+					border-bottom: 1px solid $BlueGrey
+					position: relative
+					b
+						+fx(all,0.5s)
+						color: $BlueGrey900
+						cursor: pointer
+						display: block
+						font-weight: 700
+						padding: 0.75rem 0px
+					i
+						+fx(all,0.5s)
+						background: $Grey200
+						border-radius: 50%
+						display: block
+						height: 30px
+						position: absolute
+						right: 0px
+						top: 0.75rem
+						width: 30px
+						&:before
+							+center(vh)
+							+icons('\E145')
+							color: $BlueGrey900
+							cursor: pointer
+							font-size: 1.375rem
+					&.activo
+						> b
+							color: $Red800
+						> i
+							background: $Red800
+							&:before
+								color: $White
+								+icons('\E15B')
+								font-size: 1.375rem
+					&:last-child
+						border: none
+					> div
+						display: none
+						> p
+							font-size: 1.125rem
+						> div
+							background: $Grey200
+							margin: 1rem auto 0px
+							overflow: hidden
+							padding: 25px 0px
+							width: 100%
+							&.informacion
+								+bx
+								padding: 25px 20px
+								form
+									display: table
+									width: 100%
+									.input-field
+										display: table-cell
+										vertical-align: middle
+										width: 50%
+										p
+											color: $BlueGrey900
+											font-weight: 600
+										> div
+											display: table
+											> div
+												display: table-cell
+												width: 130px
+												> label
+													color: $BlueGrey900
+													font-weight: 600
+													top: 0px
+													display: table
+													margin: auto
+										.boton
+											float: right
+							> h6
+								text-align: center
+								margin-top: 0px
+							> p
+								text-align: center
+							.boton
+								margin: 0px auto
