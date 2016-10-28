@@ -16,6 +16,10 @@ init = function(){
 		return;
 	}
 
+	coordenadas = function() {
+		filtroFixed = $("#menuFiltro").offset().top;
+	};
+
 	setSize = function(){
 		medidas();
 		if(anchura <= 767){
@@ -42,6 +46,19 @@ init = function(){
 				menuDescargables();
 				coverModeloDesctop();
 			}
+		}
+	}
+
+	decideScroll = function(){
+		medidas();
+		coordenadas();
+
+		// Home
+		if ($(this).scrollTop() > 610) {
+			$('.filtro-blog').addClass('fixed');
+		} else {
+
+			$('.filtro-blog').removeClass('fixed');
 		}
 	}
 
@@ -184,6 +201,17 @@ init = function(){
 	}
 	coverModeloMobile = function(){
 		coverslider.destroySlider();
+	}
+
+	if($('main').hasClass('header-static')){
+		$('header').addClass('static');
+		$('main').addClass('rest-top')
+		decideScroll();
+		$(window).on('scroll',decideScroll);
+	}
+	else{
+		$('header').removeClass('static');
+		$('main').removeClass('rest-top')
 	}
 
 	$('.menu-categorias .container nav span > a').on('click', function(){

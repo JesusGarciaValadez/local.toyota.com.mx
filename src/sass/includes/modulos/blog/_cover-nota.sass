@@ -1,15 +1,14 @@
 .cover-nota
 	height: 510px
 	position: relative
-	> img
-		+center(vh)
-		+object
-		bottom: 0px
-		min-height: 510px
-		width: 100%
 	.container
 		display: table
 		overflow: visible
+		max-width: 1500px
+		> img
+			+center(vh)
+			min-height: 510px
+			width: 100%
 		> div
 			display: none
 			vertical-align: top
@@ -21,15 +20,19 @@
 	.cover-nota
 		background: $BlueGrey900
 		height: auto
-		> img
-			+center(v)
-			display: block
-			min-height: auto
-			position: relative
-			width: 100%
 		.container
+			padding: 0px
+			width: 100%
+			> img
+				+center(v)
+				display: block
+				min-height: auto
+				position: relative
+				width: 100%
 			> div
 				display: block
+				padding: 0 20px
+				position: relative
 				h1
 					color: $White
 					float: left
