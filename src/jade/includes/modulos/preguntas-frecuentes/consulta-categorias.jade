@@ -3,9 +3,9 @@ section.consulta-categoria
 		h6 
 			b Consulta por categoría
 		div
-			.menu-categoria 
+			.menu
 				ul
-					li
+					li.activo
 						a(href="#") Financiamiento
 					li 
 						a(href="#") Servicio
@@ -14,160 +14,194 @@ section.consulta-categoria
 					li 
 						a(href="#") Sobre la compañia
 			.preguntas
-				ul
-					li
-						b ¿Qué promociones tienen actualmente?
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
-					li
-						b ¿Mi vehículo se asegura al momento de adquirir un crédito? 
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
-					li
-						b ¿Puedo elegir el seguro de mi vehículo?
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
-					li
-						b ¿Por qué son mejores los recambios y accesorios originales de Toyota?
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+				div
+					ul
+						li
+							b ¿Qué promociones tienen actualmente?
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+								.informacion
+									form
+										.input-field
+											p ¿Te ha sido útil está información
+										.input-field
+											div
+												div
+													input(name="group1" type="radio")#siC.with-gap
+													label(for="siC") Si
+												div
+													input(name="group1" type="radio")#noC.with-gap
+													label(for="noC") No
+										.input-field
+											input(type="submit" value="ENVIAR").boton
+						li
+							b ¿Mi vehículo se asegura al momento de adquirir un crédito? 
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+								.losentimos
+									div
+										h6 
+											b Lo sentimos
+										p Para responder tus dudas
+									div
+										a(href="#").boton CÓNTACTANOS
+						li
+							b ¿Puedo elegir el seguro de mi vehículo?
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+								.gracias
+									h6 
+										b ¡Muchas gracias!
+									p Tu opinión es muy importante para nosotros
+						li
+							b ¿Por qué son mejores los recambios y accesorios originales de Toyota?
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
 
-					li
-						b ¿Todas las pólizas de seguro de los autos son iguales?
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+						li
+							b ¿Todas las pólizas de seguro de los autos son iguales?
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
 
-					li
-						b ¿Dónde puedo realizar los pagos de mi crédito?
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+						li
+							b ¿Dónde puedo realizar los pagos de mi crédito?
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
 
-					li
-						b ¿Qué datos necesito para poder realizar el pago de mi financiamiento? 
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+						li
+							b ¿Qué datos necesito para poder realizar el pago de mi financiamiento? 
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
 
-					li
-						b ¿Qué pasa si no pago mi mensualidad a tiempo? 
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
-					li
-						b ¿Cuál es el procedimiento para obtener mis documentos una vez que liquidé mi crédito?
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
-				ul
-					li
-						b ¿Qué promociones tienen actualmente?
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+						li
+							b ¿Qué pasa si no pago mi mensualidad a tiempo? 
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+						li
+							b ¿Cuál es el procedimiento para obtener mis documentos una vez que liquidé mi crédito?
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+					.paginacion
+						+paginador(infopaginador)
+				div
+					ul
+						li
+							b ¿Qué promociones tienen actualmente?
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
 
-					li
-						b ¿Por qué son mejores los recambios y accesorios originales de Toyota?
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+						li
+							b ¿Por qué son mejores los recambios y accesorios originales de Toyota?
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
 
-					li
-						b ¿Todas las pólizas de seguro de los autos son iguales?
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+						li
+							b ¿Todas las pólizas de seguro de los autos son iguales?
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
 
-					li
-						b ¿Dónde puedo realizar los pagos de mi crédito?
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+						li
+							b ¿Dónde puedo realizar los pagos de mi crédito?
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
 
-					li
-						b ¿Qué datos necesito para poder realizar el pago de mi financiamiento? 
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+						li
+							b ¿Qué datos necesito para poder realizar el pago de mi financiamiento? 
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
 
-					li
-						b ¿Qué pasa si no pago mi mensualidad a tiempo? 
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
-					li
-						b ¿Cuál es el procedimiento para obtener mis documentos una vez que liquidé mi crédito?
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
-				ul
-					li
-						b ¿Qué promociones tienen actualmente?
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
-					li
-						b ¿Mi vehículo se asegura al momento de adquirir un crédito? 
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
-					li
-						b ¿Puedo elegir el seguro de mi vehículo?
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
-					li
-						b ¿Qué datos necesito para poder realizar el pago de mi financiamiento? 
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+						li
+							b ¿Qué pasa si no pago mi mensualidad a tiempo? 
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+						li
+							b ¿Cuál es el procedimiento para obtener mis documentos una vez que liquidé mi crédito?
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+					.paginacion
+						+paginador(infopaginador)
+				div
+					ul
+						li
+							b ¿Qué promociones tienen actualmente?
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+						li
+							b ¿Mi vehículo se asegura al momento de adquirir un crédito? 
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+						li
+							b ¿Puedo elegir el seguro de mi vehículo?
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+						li
+							b ¿Qué datos necesito para poder realizar el pago de mi financiamiento? 
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
 
-					li
-						b ¿Qué pasa si no pago mi mensualidad a tiempo? 
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
-					li
-						b ¿Cuál es el procedimiento para obtener mis documentos una vez que liquidé mi crédito?
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
-				ul
-
-					li
-						b ¿Por qué son mejores los recambios y accesorios originales de Toyota?
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
-					li
-						b ¿Todas las pólizas de seguro de los autos son iguales?
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
-					li
-						b ¿Dónde puedo realizar los pagos de mi crédito?
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
-					li
-						b ¿Qué datos necesito para poder realizar el pago de mi financiamiento? 
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
-					li
-						b ¿Qué pasa si no pago mi mensualidad a tiempo? 
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
-					li
-						b ¿Cuál es el procedimiento para obtener mis documentos una vez que liquidé mi crédito?
-						i
-						div
-							p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
-				.paginacion
-					+paginador(infopaginador)
+						li
+							b ¿Qué pasa si no pago mi mensualidad a tiempo? 
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+						li
+							b ¿Cuál es el procedimiento para obtener mis documentos una vez que liquidé mi crédito?
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+					.paginacion
+						+paginador(infopaginador)
+				div
+					ul
+						li
+							b ¿Por qué son mejores los recambios y accesorios originales de Toyota?
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+						li
+							b ¿Todas las pólizas de seguro de los autos son iguales?
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+						li
+							b ¿Dónde puedo realizar los pagos de mi crédito?
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+						li
+							b ¿Qué datos necesito para poder realizar el pago de mi financiamiento? 
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+						li
+							b ¿Qué pasa si no pago mi mensualidad a tiempo? 
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+						li
+							b ¿Cuál es el procedimiento para obtener mis documentos una vez que liquidé mi crédito?
+							i
+							div
+								p Te sugerimos seguir al pendiente de nuestras redes sociales, cada mes contamos con promociones distintas.
+					.paginacion
+						+paginador(infopaginador)

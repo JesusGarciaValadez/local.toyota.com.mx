@@ -31,6 +31,7 @@ init = function(){
 				filtroblogMobile();
 				menuFotter();
 				mobileMenuDescargables();
+				mobileMenuPreguntas();
 				coverModeloMobile();
 			}
 		}
@@ -44,6 +45,7 @@ init = function(){
 				filtroblog();
 				menuFotterStop();
 				menuDescargables();
+				menuPreguntas();
 				coverModeloDesctop();
 			}
 		}
@@ -358,7 +360,7 @@ init = function(){
 
 	mobileMenuDescargables = function(){
 
-		$('<select name="filtro" id="filtro" />').insertBefore('.descargas');
+		$('<select name="filtro" id="filtro" class="fill-descargas" />').insertBefore('.descargas');
 
 		$.each($('.descargables .menu ul li'), function( index ) {
 			var text = $('.descargables .menu ul li:eq('+index+')').text();
@@ -368,7 +370,7 @@ init = function(){
 
 		$('.descargables .menu').remove();
 
-		$( "#filtro" ).on('change',function() {
+		$('.fill-descargas').on('change',function() {
 			var index = $(this).val();
 			$('.descargables .menu ul li').removeClass('activo');
 			$(this).addClass('activo');
@@ -377,6 +379,57 @@ init = function(){
 		});
 
 		$('.descargables select').material_select();
+	}
+
+	menuPreguntas = function(){
+		if($('.consulta-categoria .menu').length === 0){
+			$('.consulta-categoria select').material_select('destroy');
+
+			$('<div class="menu"><ul>').insertBefore('.preguntas');
+
+			$.each($('#filtro option'), function( index ) {
+				var text = $('#filtro option:eq('+index+')').text();
+				var filter = $('#filtro option:eq('+index+')').data('filter');
+				$('.consulta-categoria .menu ul').append($("<li><a>"+text+"</a></li>"));
+				$('.consulta-categoria .menu ul li:eq(0)').addClass('activo');
+				$('.consulta-categoria .preguntas > div').hide();
+				$('.consulta-categoria .preguntas > div:eq(0)').show();
+			});
+
+			$('#filtro').remove();
+		}
+
+		$('.consulta-categoria .menu ul li').on('click', function(e){
+			e.preventDefault();
+			var index = $(this).index();
+			$('.consulta-categoria .menu ul li').removeClass('activo');
+			$(this).addClass('activo');
+			$('.consulta-categoria .preguntas > div').hide();
+			$('.consulta-categoria .preguntas > div:eq('+(index)+')').fadeIn('slow');
+		});
+	}
+
+	mobileMenuPreguntas = function(){
+
+		$('<select name="filtro" id="filtro" class="fill-preguntas" />').insertBefore('.preguntas');
+
+		$.each($('.consulta-categoria .menu ul li'), function( index ) {
+			var text = $('.consulta-categoria .menu ul li:eq('+index+')').text();
+			var filter = $('.consulta-categoria .menu ul li:eq('+index+')').data('filter');
+			$('.consulta-categoria #filtro').append($("<option value="+index+" />").text(text));
+		});
+
+		$('.consulta-categoria .menu').remove();
+
+		$('.fill-preguntas').on('change',function() {
+			var index = $(this).val();
+			$('.consulta-categoria .menu ul li').removeClass('activo');
+			$(this).addClass('activo');
+			$('.consulta-categoria .preguntas > div').hide();
+			$('.consulta-categoria .preguntas > div:eq('+(index)+')').fadeIn('slow');
+		});
+
+		$('.consulta-categoria select').material_select();
 	}
 
 	$('.resultados input[type=text]').on('keyup', function(){

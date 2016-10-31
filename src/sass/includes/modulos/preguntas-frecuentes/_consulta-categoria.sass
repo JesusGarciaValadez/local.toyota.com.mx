@@ -1,7 +1,8 @@
 section.consulta-categoria
 	padding: 100px 0px
 	.container
-		h6
+		overflow: visible
+		> h6
 			text-align: center
 			b
 				color: $Red800
@@ -9,103 +10,112 @@ section.consulta-categoria
 		> div
 			display: table
 			width: 100%
-			.preguntas
-				display: table-cell
-				width: 62%
-				> ul
-					+bx
-					display: none
-					width: 100%
-					&:first-child
-						display: block
+			.menu
+				ul
+					display: table
+					margin: auto
 					li
-						border-bottom: 1px solid $BlueGrey
-						position: relative
-						> b
+						margin: 6px 0px
+						a
 							+fx(all,0.5s)
-							color: $BlueGrey900
+							color: $BlueGrey100
 							cursor: pointer
 							display: block
-							font-weight: 700
-							padding: 0.75rem 0px
-							padding-right: 40px
-						> i
-							+fx(all,0.5s)
-							background: $Grey200
-							border-radius: 50%
-							display: block
-							height: 30px
-							position: absolute
-							right: 0px
-							top: 0.75rem
-							width: 30px
-							&:before
-								+center(vh)
-								+icons('\E145')
+							font-size: 1.125rem
+							font-weight: 600
+							position: relative
+							text-align: right
+						&.activo, &:hover
+							a
+								color: $BlueGrey900
+								&:before
+									+center(h)
+									+icons('\E315')
+									font-size: 1.5rem
+									left: 100%
+									padding-top: 2px
+			.preguntas
+				display: table-cell
+				width: 61%
+				> div
+					display: none
+					&:first-child
+						display: block
+					> ul
+						+bx
+						width: 100%
+						li
+							border-bottom: 1px solid $BlueGrey
+							position: relative
+							> b
+								+fx(all,0.5s)
 								color: $BlueGrey900
 								cursor: pointer
-								font-size: 1.375rem
-						&.activo
-							> b
-								color: $Red800
+								display: block
+								font-weight: 700
+								padding: 0.75rem 0px
+								padding-right: 2.5rem
 							> i
-								background: $Red800
-								&:before
-									color: $White
-									+icons('\E15B')
-									font-size: 1.375rem
-						&:last-child
-							border: none
-						> div
-							display: none
-							> p
-								font-size: 1.125rem
-							> div
-								+bx
+								+fx(all,0.5s)
 								background: $Grey200
-								margin: 1rem auto 0px
-								overflow: hidden
-								padding: 25px 20px
-								width: 100%
-								form
-									display: table
-									width: 100%
-									.input-field
-										display: table-cell
-										vertical-align: middle
-										width: 50%
-										p
-											color: $BlueGrey900
-											font-weight: 600
-										> div
-											display: table
-											> div
-												display: table-cell
-												width: 130px
-												> label
-													color: $BlueGrey900
-													font-weight: 600
-													top: 0px
-													display: table
-													margin: auto
-										.boton
-											float: right
-								> h6
-									margin: 0px
-									font-size: 1.125rem
-									b
-										padding: 0px
+								border-radius: 50%
+								display: block
+								height: 1.875rem
+								position: absolute
+								right: 0px
+								top: 0.75rem
+								width: 1.875rem
+								&:before
+									+center(vh)
+									+icons('\E145')
+									color: $BlueGrey900
+									cursor: pointer
+									font-size: 1.375rem
+							&.activo
+								> b
+									color: $Red800
+								> i
+									background: $Red800
+									&:before
+										color: $White
+										+icons('\E15B')
+										font-size: 1.375rem
+							&:last-child
+								border: none
+							> div
+								display: none
 								> p
-									font-size: 0.875rem
-									margin: 0px
-								.boton
-									margin: 0px auto
-							> .losentimos
-								display: table
+									font-size: 1.125rem
 								> div
-									display: table-cell
-									vertical-align: middle
-									width: 50%
+									+bx
+									background: $Grey200
+									margin: 1rem auto 0px
+									overflow: hidden
+									padding: 25px 20px
+									width: 100%
+									form
+										display: table
+										width: 100%
+										.input-field
+											display: table-cell
+											vertical-align: middle
+											width: 50%
+											p
+												color: $BlueGrey900
+												font-weight: 600
+											> div
+												display: table
+												> div
+													display: table-cell
+													width: 130px
+													> label
+														color: $BlueGrey900
+														font-weight: 600
+														top: 0px
+														display: table
+														margin: auto
+											.boton
+												float: right
 									> h6
 										margin: 0px
 										font-size: 1.125rem
@@ -114,5 +124,64 @@ section.consulta-categoria
 									> p
 										font-size: 0.875rem
 										margin: 0px
-				.paginador
-					margin-top: 100px
+									.boton
+										margin: 0px auto
+								> .losentimos
+									display: table
+									> div
+										display: table-cell
+										vertical-align: middle
+										width: 50%
+										> h6
+											margin: 0px
+											font-size: 1.125rem
+											b
+												padding: 0px
+										> p
+											font-size: 0.875rem
+											margin: 0px
+					.paginador
+						margin-top: 100px
+
+@mixin preguntas-frecuentes-consulta-categoria-smartphone
+	section.consulta-categoria 
+		.container 
+			> div 
+				.preguntas
+					display: block
+					width: 100%
+					> div
+						ul
+							padding: 0px
+							display: block
+							width: 100%
+							li 
+								> div 
+									> div 
+										padding: 25px 10px
+										form 
+											.input-field
+												display: block
+												width: 100%
+												p
+													margin-bottom: 1.25rem
+													text-align: center
+												> div
+													margin: auto
+												.boton
+													float: none
+													margin: 2rem auto
+										> h6
+											text-align: center
+										> p
+											text-align: center
+									> .losentimos 
+										> div
+											display: block
+											width: 100%
+											> h6
+												text-align: center
+											> p
+												text-align: center
+											.boton
+												margin: 1rem auto
