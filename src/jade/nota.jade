@@ -1,0 +1,23 @@
+-var location = "blog"
+-var subLoc = " "
+-var titulo = " "
+-var descrip = " "
+-var keyword = " "
+-var breadcrumb = "none"
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	body
+		
+		include includes/header
+		
+		main.wrapper.header-static
+			include includes/modulos/blog/cover-nota
+			include includes/modulos/blog/filtro-blog
+			include includes/modulos/blog/info-nota
+
+		include includes/footer

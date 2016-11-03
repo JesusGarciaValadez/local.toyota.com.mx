@@ -66,6 +66,53 @@
 								font-size: 26px
 								line-height: 1
 								margin-bottom: 0.5rem
+				.nota
+					+bx
+					+fx(all,0.5s)
+					background: $White
+					margin-bottom: 1rem
+					padding: 0px 0px
+					width: 100%
+					&:hover
+						+shadow(0px, 8px, 17px, 0px, rgba(0,0,0,0.2), 0px, 6px, 20px, 0px, rgba(0,0,0,0.19))
+					.imagen
+						height: 210px
+						overflow: hidden
+						padding: 0
+						position: relative
+						width: 100%
+						img
+							+center(vh)
+							display: block
+							height: auto
+							position: absolute
+							width: 104%
+					> div
+						+bx
+						padding: 1rem 1.375rem
+						.titulo
+							color: $BlueGrey800
+							display: block
+							font-size: 1.125rem
+							font-weight: 700
+							line-height: 1.625rem
+							margin-top: 0px
+						.link
+							cursor: pointer
+							float: left
+							font-size: 0.75rem
+							font-weight: 700
+							margin: 1.25rem 0px
+						span
+							color: $BlueGrey
+							float: left
+							font-size: 0.75rem
+							font-weight: 400
+							margin: 1.25rem 0px
+							line-height: 1.8
+							&:before
+								content: "/"
+								margin: 0px 0.5rem
 				> div
 					+bx
 					+fx(all,0.5s)
@@ -87,6 +134,14 @@
 							margin-top: 0px
 						p
 							font-size: 1.125rem
+							margin: 1rem 0
+						.titulo
+							color: $BlueGrey800
+							display: block
+							font-size: 1.125rem
+							font-weight: 700
+							line-height: 1.625rem
+							margin-top: 0px
 						.link
 							float: left
 							font-size: 0.875rem
@@ -120,3 +175,8 @@
 							display: block
 						> div
 							padding: 1rem
+					.nota
+						.imagen
+							img
+								height: 100%
+								width: auto
