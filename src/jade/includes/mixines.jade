@@ -21,7 +21,11 @@ mixin menu-autos(arreglo)
 												cite #{valu.slogan}
 												span Desde 
 													b $#{valu.precio}
-											a(href="#{valu.url}").link CONFIGURA
+											dl
+												dd
+													a(href="#{valu.urlver}").link VER DETALLE
+												dd
+													a(href="#{valu.url}").link CONFIGURA
 
 //-Autos
 mixin lista-autos(arreglo)

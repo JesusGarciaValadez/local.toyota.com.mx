@@ -484,6 +484,13 @@ init = function(){
 
 	$('.vacantes select, .talento select, .flotillas select, .ideal select').material_select();
 
+	var options = [ 
+		{selector: '.experiencia', offset: 500, callback: function(){
+			$('.colum').addClass("animacion");
+		}}
+	]; 
+	Materialize.scrollFire(options);
+
 	$('.ideal select').on('change',function() {
 		var index = $(this).val();
 		$('.modelo > div').hide();

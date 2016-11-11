@@ -155,13 +155,23 @@
 												display: none
 												font-weight: 700
 												margin-top: 0.5rem
+												font-style: italic
 											span
 												display: block
 												font-size: 1.375rem
 												font-weight: 300
 												margin-top: 0.5rem
-										.link
-											font-size: 0.875rem
+										> dl
+											+bx
+											display: table
+											margin: auto
+											padding: 0px 1rem
+											width: 100%
+											> dd
+												display: table-cell
+												width: 50%
+												.link
+													font-size: 0.875rem
 										&.hover
 											opacity: 1
 											a:not(.link)
@@ -173,9 +183,6 @@
 												display: block
 											span
 												display: none
-											.link
-												&:before
-													width: 100%
 			.bx-prev 
 				border-radius: 50%
 				border: 2px solid $BlueGrey900

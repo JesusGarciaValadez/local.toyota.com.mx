@@ -21,7 +21,22 @@
 				+flexDir
 				+justifyCont(space-between)
 				float: left
+				opacity: 0
 				width: 32.5%
+				&.animacion
+					opacity: 1
+					left: 0
+					-webkit-transform: rotateZ(0deg)
+					transform: rotateZ(0deg)
+				&:nth-child(1)
+					-webkit-transition: all 500ms ease-out 0s
+					transition: all 500ms ease-out 0s
+				&:nth-child(2)
+					-webkit-transition: all 500ms ease-out 500ms
+					transition: all 500ms ease-out 500ms
+				&:nth-child(3)
+					-webkit-transition: all 500ms ease-out 1s
+					transition: all 500ms ease-out 1s
 				.img
 					padding: 0px 0px
 				.intsgram
