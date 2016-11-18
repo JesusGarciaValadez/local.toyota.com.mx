@@ -2,8 +2,8 @@ header
 	.header
 		.contenedor
 			a(href="index.html").logo-toyota
-			.btnDistribuidores
-				a(href="#") Distribuidores
+			.btnDistribuidores(class="#{location == 'distribuidores' ? 'activo' : ''}")
+				a(href="distribuidores.html") Distribuidores
 		.hamburguesa Menú
 		.menu
 			.flex
@@ -31,8 +31,8 @@ header
 				.menu-inferior
 					.contenedor
 						nav
-							a(href="#") Prueba un Toyota
-							a(href="#") Preguntas frecuentes
+							a(href="prueba-un-toyota.html") Prueba un Toyota
+							a(href="preguntas-frecuentes.html") Preguntas frecuentes
 							a(href="#").logoComoNuevos
 							.redes
 								a(href="#").fa.fa-facebook

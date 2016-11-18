@@ -32,7 +32,7 @@ init = function(){
 				menuFotter();
 				mobileMenuDescargables();
 				mobileMenuPreguntas();
-				coverModeloMobile();
+				//coverModeloMobile();
 			}
 		}
 		else if(anchura >= 768){
@@ -46,7 +46,7 @@ init = function(){
 				menuFotterStop();
 				menuDescargables();
 				menuPreguntas();
-				coverModeloDesctop();
+				//coverModeloDesctop();
 			}
 		}
 	}
@@ -211,6 +211,23 @@ init = function(){
 		decideScroll();
 		$(window).on('scroll',decideScroll);
 	}
+	else if($('section').hasClass('cover-modelo')){
+		setSize = function(){
+			medidas();
+			if(anchura <= 767){
+				if(core=== true){
+					core = false
+					coverModeloMobile();
+				}
+			}
+			else if(anchura >= 768){
+				if(core=== false){
+					core = true
+					coverModeloDesctop();
+				}
+			}
+		}
+	}
 	else{
 		$('header').removeClass('static');
 		$('main').removeClass('rest-top')
@@ -271,6 +288,15 @@ init = function(){
 		$('body').removeClass('hidden');
 	});
 
+	$('.prueba .input-field > .boton').on('click', function(){
+		$('.pruebaModal').fadeIn();
+		$('body').addClass('hidden');
+	});
+	$('.pruebaModal .gracias > .boton').on('click', function(){
+		$('.pruebaModal').fadeOut();
+		$('body').removeClass('hidden');
+	});
+
 	deacargasModal = function(){
 		$('.descargas .enviar').on('click', function(){
 			$('.descargasModal').fadeIn();
@@ -282,12 +308,12 @@ init = function(){
 			$('body').removeClass('hidden');
 		});
 
-		$('.mail .boton').on('click', function(){
+		$('.descargasModal .mail .boton').on('click', function(){
 			$('.mail').fadeOut();
 			$('.gracias').fadeIn();
 		});
 
-		$('.gracias .boton').on('click', function(){
+		$('.descargasModal .gracias .boton').on('click', function(){
 			$('.descargasModal').fadeOut();
 			$('body').removeClass('hidden');
 			$('.gracias').fadeOut();
@@ -468,6 +494,63 @@ init = function(){
 		$('.buscar form > span').fadeIn();
 	})
 
+	$('.codigo input[type=text]').on('keyup', function(){
+		var cuantos = $(this).val().length
+		if(cuantos >= 1){
+			$('.codigo > span').fadeOut();
+			$('.codigo > button').fadeIn();
+			$('.codigo > dl').slideDown();
+		}
+		else{
+			$('.codigo > button').fadeOut();
+			$('.codigo > dl').slideUp();
+			$('.codigo > span').fadeIn();
+			$('.codigo > dl dd').removeClass();
+		}
+	});
+	$('.codigo > button').on('click', function(){
+		$('.codigo > button').fadeOut();
+		$('.codigo > dl').slideUp();
+		$('.codigo > span').fadeIn();
+		$('.codigo > dl dd').removeClass();
+	});
+	$('.codigo > dl dd').on('click', function(){
+		$('.codigo > dl dd').removeClass('activo');
+		$(this).addClass('activo');
+		$('.codigo > dl dd:not(.activo)').addClass('none');
+	});
+
+	$('.buscador input[type=text]').on('keyup', function(){
+		var cuantos = $(this).val().length
+		if(cuantos >= 1){
+			$('.buscador form > span').fadeOut();
+			$('.buscador form > button').fadeIn();
+			$('.buscador > dl').slideDown();
+		}
+		else{
+			$('.buscador form > button').fadeOut();
+			$('.buscador > dl').slideUp();
+			$('.buscador form > span').fadeIn();
+			$('.buscador > dl dd').removeClass();
+		}
+	});
+	$('.buscador form > button').on('click', function(){
+		$('.buscador form > button').fadeOut();
+		$('.buscador > dl').slideUp();
+		$('.buscador form > span').fadeIn();
+		$('.buscador > dl dd').removeClass();
+	})
+	$('.buscador > dl dd').on('click', function(){
+		$('.buscador > dl dd').removeClass('activo');
+		$(this).addClass('activo');
+	});
+	$('.buscador > dl .tabla .link').on('click', function(){
+		$(this).parent().parent().parent().parent().children('.datos').addClass('activo');
+		$('.buscador .datos .link').on('click', function(){
+			$('.buscador .datos').removeClass('activo');
+		});
+	});
+
 	$('.preguntas li > b, .preguntas li > i').on('click', function(){
 		if(!$(this).parent().hasClass('activo')){
 			$('.preguntas li').removeClass('activo')		
@@ -480,9 +563,9 @@ init = function(){
 	$('.cookies .boton').on('click', function(){
 		$('.cookies').removeClass('fadeInUp');
 		$('.cookies').addClass('fadeOutDown');
-	})
+	});
 
-	$('.vacantes select, .talento select, .flotillas select, .ideal select').material_select();
+	$('.vacantes select, .talento select, .flotillas select, .ideal select, .prueba select, .distribuidores select').material_select();
 
 	var options = [ 
 		{selector: '.experiencia', offset: 500, callback: function(){
