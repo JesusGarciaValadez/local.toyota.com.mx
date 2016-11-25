@@ -1,0 +1,47 @@
+section.descargas-propietarios
+	.container
+		.flex
+			.info
+				h2
+					b Descargas
+				p Conocer todos los detalles y características técnicas de tu Prius
+				p Consiste en hacer más eficientes todos los procesos, desde las actividades realizadas por nuestros técnicos y asesores, hasta la distribución de las áreas de trabajo para ofrecerte mayor comodidad y eficiencia durante su visita.
+			.card-descarga
+				h3
+					img(src="images/autos/nameplate/prius.png")
+				p El futuro esta aquí
+				img(src="images/autos/prius.png")
+				.hover
+					span
+						a(href="#").boton.secundario.white FICHA TÉCNICA
+						a(href="#").boton.white MANUAL
+						a(href="#").link.descarga.white Catálogo
+				form.mobile
+					p
+						input(type="checkbox")#fichaAvanza.filled-in
+						label(for="fichaAvanza") Ficha técnica
+					p
+						input(type="checkbox")#manualAvanza.filled-in
+						label(for="manualAvanza") Manual
+					p
+						input(type="checkbox")#catalogoAvanza.filled-in
+						label(for="catalogoAvanza") Catálogo
+					input(type="submit" value="ENVIAR POR CORREO" onclick="return false;").boton.enviar
+					input(type="submit" value="DESCARGAR A MI CELULAR").boton.secundario
+		.descargasModal
+			.close
+			.container
+				.mail
+					form
+						p Envía el enlace de descarga a tu correo electrónico 
+						.input-field
+							input(type="email").validate#email
+							label(for="email" data-error="Ingresa un correo válido") ¿Cuál es tu correo electrónico?*
+						.input-field
+							input(type="submit" value="ENVIAR" onclick="return false;").boton
+				.gracias
+					i
+					h1
+						b ¡Listo!
+					p Por favor revisa tu correo, se ha enviado el enlace de descarga.
+					span.boton ENTENDIDO

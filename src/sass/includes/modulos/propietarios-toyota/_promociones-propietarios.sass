@@ -1,0 +1,144 @@
+.promociones-propietarios
+	.container
+		overflow: visible
+		h2
+			text-align: center
+		> p
+			text-align: center
+		> h3
+			color: $Red800
+		> .flex
+			+justifyCont(space-between)
+			margin: 0px auto
+			> div
+				+bx
+				+fx(all,0.5s)
+				background: $Grey100
+				margin-bottom: 4rem
+				padding: 1.25rem
+				position: relative
+				width: 49%
+				h4
+					color: $Red800
+					margin-top: 0px
+				p
+					font-size: 1.375rem
+					line-height: 1.75rem
+					margin: 2.1875rem 0px
+				.link
+					margin: 1rem 0px
+					&.legales
+						+translate(0%, 50%)
+						cursor: pointer
+						font-size: 0.875rem
+						margin: 0px
+						position: absolute
+						right: 1.25rem
+						top: 1.25rem
+				img
+					display: table
+					margin: 4.375rem auto
+					max-width: 450px
+					width: 100%
+					&.hover
+						display: none
+				.detalle
+					+bx
+					background: rgba(255,255,255,0.90)
+					border: 1px solid $Grey200
+					display: none
+					height: 100%
+					left: 0px
+					overflow: auto
+					padding: 50px 30px 30px
+					position: absolute
+					top: 0px
+					width: 100%
+					.cerrar
+						background: $Red800
+						cursor: pointer
+						height: 50px
+						position: absolute
+						right: 0px
+						top: 0px
+						width: 50px
+						&:before
+							+center(vh)
+							+fawesome('\f00d')
+							color: $White
+					p
+						font-size: 0.75rem
+						line-height: 1.25rem
+				&:hover
+					+shadow(0px, 8px, 17px, 0px, rgba(0,0,0,0.2), 0px, 6px, 20px, 0px, rgba(0,0,0,0.19))
+					img
+						display: none
+						&.hover
+							display: block
+			.proximos-eventos
+				background: $White
+				display: table
+				padding: 0px
+				width: 100%
+				> div
+					+bx
+					display: table-cell
+					vertical-align: middle
+					width: 50%
+				.info
+					padding-right: 0.625rem
+					h3
+						color: $Red800
+						margin-top: 0px
+					p
+						font-size: 2rem
+						font-weight: 600
+						line-height: 2.75rem
+					.boton
+						margin: 2rem 0px
+				.img
+					padding-left: 0.625rem
+					img
+						+bx
+						display: block
+						height: auto
+						margin: auto
+						max-width: 600px
+						width: 100%
+					.boton
+						display: none
+				&:hover
+					+shadowr
+				&.activo
+					width: 49%
+					.info
+						display: none
+					.img
+						padding: 0px
+						.boton
+							display: block
+
+@mixin propietarios-toyota-promociones-propietarios-smartphone
+	.promociones-propietarios 
+		.container 
+			h3
+				margin-top: 3.125rem
+			> .flex 
+				> div
+					width: 100%
+					.link
+						&.legales
+							+translate(0%, 0%)
+							position: inherit
+							right: inherit
+							top: inherit
+				.proximos-eventos 
+					> div
+						display: block
+						width: 100%
+					.info
+						padding: 0px
+					.img
+						padding: 0px
+					&.activo
+						width: 100%

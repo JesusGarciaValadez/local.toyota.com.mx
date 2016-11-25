@@ -1,0 +1,103 @@
+-var location = "registro-inicio"
+-var subLoc = " "
+-var titulo = " "
+-var descrip = " "
+-var keyword = " "
+-var breadcrumb = "none"
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	body
+		
+		include includes/header
+		
+		main.wrapper
+			section.registro-inicio
+				.container
+					.botones
+						h1 
+							b Propietarios Toyota
+						.tabla
+							div
+								span(data-clase="registrate").boton.secundario REGISTRAR
+							div
+								span(data-clase="ingresar").boton.entrar ENTRAR
+						.bienvenido
+							h3
+								b ¡Bienvenido!
+							p Queremos que disfrutes en todo momento de tu Toyota, así que aquí te ofrecemos el mejor servicio, una atención personalizada y las mejores ofertas. 
+					.conten
+						.registrate
+							h3
+								b Regístrate
+							form
+								.input-field
+									input(type="text").validate#input_text
+									label(for="input_text") ¿Cuál es tu VIN?
+								.input-field
+									input(type="text").validate#last_name
+									label(for="last_name") Ingresa tu nombre completo
+								.input-field
+									input(type="email").validate#email
+									label(for="email" data-error="Ingresa un correo válido") ¿Cuál es tu correo electrónico?
+								.input-field
+									input(type="password").validate#password
+									label(for="password") Contraseña
+								.input-field
+									input(type="password").validate#password
+									label(for="password") Confirmar contraseña
+								.input-field
+									input(type="submit" value="ENVIAR" onclick="return false;" data-clase="listo").boton.disabled
+							p ¿Ya eres usuario? 
+							span(data-clase="ingresar").link Ingresar
+						.ingresar
+							h3
+								b Ingresar
+							form(action="propietarios-toyota.html")
+								.input-field
+									input(type="email").validate#email
+									label(for="email" data-error="Ingresa un correo válido") ¿Cuál es tu correo electrónico?
+								.input-field
+									input(type="password").validate#password
+									label(for="password") Contraseña
+									span(data-clase="restablecer").link ¿Olvidaste tu contraseña?
+								.input-field
+									input(type="submit" value="ENTRAR").boton
+							p ¿No tienes cuenta?
+							span(data-clase="registrate").link Registrate
+						.listo
+							i
+							h1
+								b ¡Listo!
+							p Porfavor revisa tu correo electrónico para confirmar tu registro
+							span(data-clase="ingresar").boton CONTINUAR
+						.restablecer
+							h3
+								b Restablecer contraseña
+							p Por favor escribe el correo electrónico que tienes registrado y te enviaremos un link para restablecer tu contraseña.
+							form
+								.input-field
+									input(type="email").validate#email
+									label(for="email" data-error="Ingresa un correo válido") ¿Cuál es tu correo electrónico?
+								.tabla
+									.input-field
+										span(data-clase="ingresar").boton.secundario CANCELAR
+									.input-field
+										input(type="submit" value="ENVIAR" onclick="return false;" data-clase="enviado").boton.disabled
+						.enviado
+							i
+							p Las instrucciones para restablecer la contraseña han sido enviadas al email 
+								b fulanito@gmail.com
+							p Si todavía no has recibido tu email de activación, introduce tu correo electrónico debajo y te enviaremos otra.
+							form
+								.input-field
+									input(type="email").validate#email
+									label(for="email" data-error="Ingresa un correo válido") ¿Cuál es tu correo electrónico?
+								.input-field
+									input(type="submit" value="ENVIAR" onclick="return false;" data-clase="ingresar").boton.disabled
+
+		include includes/footer

@@ -171,6 +171,7 @@ init = function(){
 		$('.otras-promociones .flex dd').each( function() { $(this).hoverdir(); } );
 		$('.intsgram').each( function() { $(this).hoverdir(); } );
 		$('.descargas .flex dd').each( function() { $(this).hoverdir(); } );
+		$('.card-descarga').each( function() { $(this).hoverdir(); } );
 		$('.prevandnext-notas .image').each( function() { $(this).hoverdir(); } );
 	}
 
@@ -298,7 +299,7 @@ init = function(){
 	});
 
 	deacargasModal = function(){
-		$('.descargas .enviar').on('click', function(){
+		$('.descargas .enviar, .card-descarga .enviar').on('click', function(){
 			$('.descargasModal').fadeIn();
 			$('body').addClass('hidden');
 		});
@@ -348,12 +349,20 @@ init = function(){
 	}
 
 	modelotarjeta = function(){
-		$('.modelos-participantes .legales').on('click', function(){
+		$('.modelos-participantes .legales, .promociones-propietarios .legales').on('click', function(){
 			$('~ .detalle', this).fadeIn();
 		})
-		$('.modelos-participantes .detalle .cerrar').on('click', function(){
+		$('.modelos-participantes .detalle .cerrar, .promociones-propietarios .detalle .cerrar').on('click', function(){
 			$(this).parent().fadeOut();
 		})
+
+		var promociones = $('.promociones-propietarios .container .flex > div').length
+			if (promociones % 2 == 1){
+
+			}
+			else{
+				$('.proximos-eventos').addClass('activo')
+			}
 	}
 
 	menuDescargables = function(){
@@ -551,6 +560,21 @@ init = function(){
 		});
 	});
 
+	$('.botones .boton').on('click', function(){
+		var clase = $(this).data('clase');
+		$('.botones .tabla').fadeOut( "slow", function() {
+			$('.botones .bienvenido').fadeIn();
+			$('.conten .'+(clase)+'').fadeIn( "fast", function() {
+				$('.conten').addClass('activo');
+			});
+		});
+	});
+	$('.conten .link, .registrate .boton, .listo .boton, .restablecer .boton, .enviado .boton').on('click', function(){
+		var clase = $(this).data('clase');
+		$('.conten > div').fadeOut("fast");
+		$('.conten .'+(clase)+'').fadeIn("slow");
+	});
+
 	$('.preguntas li > b, .preguntas li > i').on('click', function(){
 		if(!$(this).parent().hasClass('activo')){
 			$('.preguntas li').removeClass('activo')		
@@ -566,6 +590,10 @@ init = function(){
 	});
 
 	$('.vacantes select, .talento select, .flotillas select, .ideal select, .prueba select, .distribuidores select').material_select();
+	$('.datepicker').pickadate({
+		selectMonths: true, // Creates a dropdown to control month
+		selectYears: 15 // Creates a dropdown of 15 years to control year
+	});
 
 	var options = [ 
 		{selector: '.experiencia', offset: 500, callback: function(){
@@ -629,6 +657,7 @@ $(window).on('load',function(){
 	else{
 		if(! /iPad/i.test(navigator.userAgent) ) {
 			$('.descargas .mobile').css("display", "table");
+			$('.card-descarga .mobile').css("display", "table");
 			deacargasModal();
 		}
 		else{

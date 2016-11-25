@@ -1,0 +1,49 @@
+-var location = "restablecer"
+-var subLoc = " "
+-var titulo = " "
+-var descrip = " "
+-var keyword = " "
+-var breadcrumb = "none"
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	body
+		
+		include includes/header
+		
+		main.wrapper
+			section.registro-inicio.restablecer
+				.container
+					.botones
+						h1 
+							b Propietarios Toyota
+						.bienvenido
+							h3
+								b ¡Bienvenido!
+							p Queremos que disfrutes en todo momento de tu Toyota, así que aquí te ofrecemos el mejor servicio, una atención personalizada y las mejores ofertas. 
+					.conten
+						.restablecer
+							h3
+								b Restablecer contraseña
+							p Por favor introduce tu nueva contraseña
+							form
+								.input-field
+									input(type="password").validate#password
+									label(for="password") Contraseña
+								.input-field
+									input(type="password").validate#password
+									label(for="password") Confirmar contraseña
+								.input-field
+									input(type="submit" value="CONFIRMAR" onclick="return false;" data-clase="listo").boton.disabled
+						.listo
+							i
+							h1
+								b ¡Listo!
+							p Tu contraseña ha sido cambiada con éxito.
+							a(href="registro-inicio.html").boton INGRESAR
+
+		include includes/footer

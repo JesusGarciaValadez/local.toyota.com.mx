@@ -52,9 +52,11 @@ html(itemscope, itemtype="http://schema.org/WebPage")
 										option(value="1") S CVT
 								.contenedor
 									.input-field
-										select
-											option(value="" disabled selected) Fecha
-											option(value="1") Viernes, 13 septiembre
+										input(type="date").datepicker#date
+										label(for="date") Fecha
+										//- select
+										//- 	option(value="" disabled selected) Fecha
+										//- 	option(value="1") Viernes, 13 septiembre
 									.input-field
 										select
 											option(value="" disabled selected) Horario

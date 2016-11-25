@@ -1,0 +1,160 @@
+.descargas-propietarios
+	background: $Grey50
+	padding: 6.25rem 0px
+	.container
+		overflow: visible
+		.flex
+			+justifyCont
+			div
+				overflow: hidden
+				position: relative
+				width: 33%
+			.info
+				+bx
+				padding-right: 2rem
+				h2
+					margin-top: 0px
+				p
+					font-size: 1.125rem
+			.card-descarga
+				+fx(all,0.5s)
+				background: $White
+				h3
+					> img
+						display: table
+						margin: 0px auto
+						max-width: 320px
+						width: 100%
+				p
+					color: $BlueGrey
+					font-size: 1.125rem
+					text-align: center
+				> img
+					display: table
+					height: auto
+					margin: 3.125rem auto
+					max-width: 262px
+					width: 100%
+				.hover
+					background: rgba(204,0,51,0.9)
+					display: none
+					height: 100%
+					left: 0px
+					position: absolute
+					top: 0px
+					width: 100%
+					> span
+						+center(vh)
+						display: table
+				.mobile
+					+bx
+					display: none
+					margin: auto
+					margin-bottom: 2rem
+					padding: 0px 1rem
+					p
+						text-align: inherit
+					input[type="button"], input[type="submit"]
+						max-width: 220px
+						width: 220px
+				&:hover
+					+shadow(0px, 8px, 17px, 0px, rgba(0,0,0,0.2), 0px, 6px, 20px, 0px, rgba(0,0,0,0.19))
+		.descargasModal
+			+bx
+			background: rgba(255,255,255,0.95)
+			display: none
+			height: 100vh
+			left: 0px
+			position: fixed
+			top: 0px
+			width: 100vw
+			z-index: 99
+			.close
+				+translate(-50% , -50%)
+				cursor: pointer
+				display: table
+				height: 25px
+				position: absolute
+				right: 20px
+				top: 40px
+				width: 25px
+				z-index: 1
+				&:before
+					+center(vh)
+					+icons('\E14C')
+					color: $Red800
+					font-size: 1.5625rem
+			.container
+				overflow: visible
+				> div
+					+bx
+					+center(vh)
+					padding: 0px 20px
+					width: 100%
+					&.gracias
+						display: none
+						i
+							+bx
+							border-radius: 50%
+							border: 5px solid $Green400
+							color: $Green400
+							display: table
+							height: 70px
+							margin: auto
+							position: relative
+							width: 70px
+							&:before
+								+center(vh)
+								+icons('\E876')
+								font-size: 50px
+								line-height: 0px
+					h1
+						margin-top: 30px
+						text-align: center
+					p
+						text-align: center
+						font-size: 1.125rem
+						line-height: 1.625rem
+					> .boton
+						margin-top: 3rem
+					form
+						margin-top: 80px
+						margin: auto
+						.file-field
+							> div
+								position: relative
+								&:before
+									+center(h)
+									+fawesome('\f019')
+									right: 0px
+								&:after
+									bottom: -5px
+									color: $BlueGrey
+									content: "(Archivos .doc o .pdf / máximo 5MB)"
+									font-size: 0.75rem
+									left: 0px
+									position: absolute
+								input
+									&::-webkit-input-placeholder
+										color: $BlueGrey
+										font-weight: 300
+									&:-moz-placeholder
+										color: $BlueGrey
+										font-weight: 300
+									&::-moz-placeholder
+										color: $BlueGrey
+										font-weight: 300
+									&:-ms-input-placeholder
+										color: $BlueGrey
+										font-weight: 300
+						.boton
+							margin: 1rem 0px
+							margin-top: 3rem
+
+@mixin propietarios-toyota-descargas-propietarios-smartphone
+	.descargas-propietarios
+		background: $White
+		.container
+			.flex
+				div
+					width: 100%
