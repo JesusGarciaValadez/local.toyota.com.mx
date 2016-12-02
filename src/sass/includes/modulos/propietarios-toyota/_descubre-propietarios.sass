@@ -19,12 +19,33 @@
 				width: 32%
 				&:hover
 					+shadow(0px, 8px, 17px, 0px, rgba(0,0,0,0.2), 0px, 6px, 20px, 0px, rgba(0,0,0,0.19))
-				img
-					+center(vh)
-					+object
-					display: block
+				.video
 					height: 100%
+					overflow: hidden
+					padding-bottom: 0px
+					position: relative
 					width: 100%
+					img
+						+fx(all,0.5s)
+						+object
+						height: 100%
+						position: absolute
+						top: 0px
+						width: 100%
+					&:hover
+						img
+							+scale(1.08,1.08)
+					a
+						display: block
+						height: 100%
+						position: relative
+						text-decoration: none
+						width: 100%
+						&:after
+							+center(vh)
+							+fonIco('\E927')
+							color: rgba(255,255,255,0.85)
+							font-size: 3.75rem
 
 @mixin propietarios-toyota-descubre-propietarios-smartphone
 	.descubre-propietarios

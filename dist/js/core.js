@@ -1,6 +1,8 @@
 //variables
 var url = 'http://'+document.location.hostname+'/';
 var core = null;
+var clase1 = $('.menu-select').data('clase1');
+var	clase2 = $('.menu-select2').data('clase2');
 if($(window).width() <= 767){
 	core = true
 }else{
@@ -26,9 +28,7 @@ init = function(){
 				destructMenuDesctop();
 				filtroblogMobile();
 				menuFotter();
-				mobileMenuDescargables();
-				//mobileMenuServicios();
-				mobileMenuPreguntas();
+				mobileMenuSelect();
 				mobileMenuPropietarios();
 			}
 		}
@@ -41,9 +41,7 @@ init = function(){
 				destructMenuMobile();
 				filtroblog();
 				menuFotterStop();
-				menuDescargables();
-				//menuServicios();
-				menuPreguntas();
+				menuSelect();
 				menuPropietarios();
 			}
 		}
@@ -399,27 +397,23 @@ init = function(){
 				$('.proximos-eventos').addClass('activo')
 			}
 	}
-
-	menuDescargables = function(){
-		var clase1 = $('.menu-select').data('clase1');
-		var clase2 = $('.menu-select2').data('clase2');
-
+	
+	menuSelect = function(){
 		if($('.'+clase1+' .menu').length === 0){
 			$('.'+clase1+' select').material_select('destroy');
 
 			$('<div class="menu"><ul>').insertBefore('.'+clase2+'');
 
-			$.each($('#filtro option'), function( index ) {
-				var text = $('#filtro option:eq('+index+')').text();
-				var filter = $('#filtro option:eq('+index+')').data('filter');
+			$.each($('.fill-'+clase2+' option'), function( index ) {
+				var text = $('.fill-'+clase2+' option:eq('+index+')').text();
+				var filter = $('.fill-'+clase2+' option:eq('+index+')').data('filter');
 				$('.'+clase1+' .menu ul').append($("<li><a>"+text+"</a></li>"));
 				$('.'+clase1+' .menu ul li:eq(0)').addClass('activo');
 				$('.'+clase1+' .'+clase2+' > div').hide();
 				$('.'+clase1+' .'+clase2+' > div:eq(0)').show();
-				console.log(text);
 			});
 
-			$('#filtro').remove();
+			$('.fill-'+clase2+'').remove();
 		}
 
 		$('.'+clase1+' .menu ul li').on('click', function(e){
@@ -427,21 +421,18 @@ init = function(){
 			var index = $(this).index();
 			$('.'+clase1+' .menu ul li').removeClass('activo');
 			$(this).addClass('activo');
-			$('.'+clase2+' > div').hide();
-			$('.'+clase2+' > div:eq('+(index)+')').fadeIn('slow');
+			$('.'+clase1+' .'+clase2+' > div').hide();
+			$('.'+clase1+' .'+clase2+' > div:eq('+(index)+')').fadeIn('slow');
 		});
 	}
 
-	mobileMenuDescargables = function(){
-		var clase1 = $('.menu-select').data('clase1');
-		var clase2 = $('.menu-select2').data('clase2');
-
-		$('<select name="filtro" id="filtro" class="fill-'+clase2+'" />').insertBefore('.'+clase2+'');
+	mobileMenuSelect = function(){
+		$('<select name="filtro" class="fill-'+clase2+'" />').insertBefore('.'+clase2+'');
 
 		$.each($('.'+clase1+' .menu ul li'), function( index ) {
 			var text = $('.'+clase1+' .menu ul li:eq('+index+')').text();
 			var filter = $('.'+clase1+' .menu ul li:eq('+index+')').data('filter');
-			$('.'+clase1+' #filtro').append($("<option value="+index+" />").text(text));
+			$('.'+clase1+' .fill-'+clase2+'').append($("<option value="+index+" />").text(text));
 		});
 
 		$('.'+clase1+' .menu').remove();
@@ -450,114 +441,11 @@ init = function(){
 			var index = $(this).val();
 			$('.'+clase1+' .menu ul li').removeClass('activo');
 			$(this).addClass('activo');
-			$('.'+clase2+' > div').hide();
-			$('.'+clase2+' > div:eq('+(index)+')').fadeIn('slow');
+			$('.'+clase1+' .'+clase2+' > div').hide();
+			$('.'+clase1+' .'+clase2+' > div:eq('+(index)+')').fadeIn('slow');
 		});
 
 		$('.'+clase1+' select').material_select();
-	}
-
-	// menuServicios = function(){
-	// 	if($('.precios-servicio .menu').length === 0){
-	// 		$('.precios-servicio select').material_select('destroy');
-
-	// 		$('<div class="menu"><ul>').insertBefore('.servicios');
-
-	// 		$.each($('#filtro option'), function( index ) {
-	// 			var text = $('#filtro option:eq('+index+')').text();
-	// 			var filter = $('#filtro option:eq('+index+')').data('filter');
-	// 			$('.precios-servicio .menu ul').append($("<li><a>"+text+"</a></li>"));
-	// 			$('.precios-servicio .menu ul li:eq(0)').addClass('activo');
-	// 			$('.precios-servicio .servicios > div').hide();
-	// 			$('.precios-servicio .servicios > div:eq(0)').show();
-	// 		});
-
-	// 		$('#filtro').remove();
-	// 	}
-
-	// 	$('.precios-servicio .menu ul li').on('click', function(e){
-	// 		e.preventDefault();
-	// 		var index = $(this).index();
-	// 		$('.precios-servicio .menu ul li').removeClass('activo');
-	// 		$(this).addClass('activo');
-	// 		$('.precios-servicio .servicios > div').hide();
-	// 		$('.precios-servicio .servicios > div:eq('+(index)+')').fadeIn('slow');
-	// 	});
-	// }
-
-	// mobileMenuServicios = function(){
-
-	// 	$('<select name="filtro" id="filtro" class="fill-servicios" />').insertBefore('.servicios');
-
-	// 	$.each($('.precios-servicio .menu ul li'), function( index ) {
-	// 		var text = $('.precios-servicio .menu ul li:eq('+index+')').text();
-	// 		var filter = $('.precios-servicio .menu ul li:eq('+index+')').data('filter');
-	// 		$('.precios-servicio #filtro').append($("<option value="+index+" />").text(text));
-	// 	});
-
-	// 	$('.precios-servicio .menu').remove();
-
-	// 	$('.fill-servicios').on('change',function() {
-	// 		var index = $(this).val();
-	// 		$('.precios-servicio .menu ul li').removeClass('activo');
-	// 		$(this).addClass('activo');
-	// 		$('.servicios > div').hide();
-	// 		$('.servicios > div:eq('+(index)+')').fadeIn('slow');
-	// 	});
-
-	// 	$('.precios-servicio select').material_select();
-	// }
-
-	menuPreguntas = function(){
-		if($('.consulta-categoria .menu').length === 0){
-			$('.consulta-categoria select').material_select('destroy');
-
-			$('<div class="menu"><ul>').insertBefore('.preguntas');
-
-			$.each($('#filtro option'), function( index ) {
-				var text = $('#filtro option:eq('+index+')').text();
-				var filter = $('#filtro option:eq('+index+')').data('filter');
-				$('.consulta-categoria .menu ul').append($("<li><a>"+text+"</a></li>"));
-				$('.consulta-categoria .menu ul li:eq(0)').addClass('activo');
-				$('.consulta-categoria .preguntas > div').hide();
-				$('.consulta-categoria .preguntas > div:eq(0)').show();
-				console.log(text);
-			});
-
-			$('#filtro').remove();
-		}
-
-		$('.consulta-categoria .menu ul li').on('click', function(e){
-			e.preventDefault();
-			var index = $(this).index();
-			$('.consulta-categoria .menu ul li').removeClass('activo');
-			$(this).addClass('activo');
-			$('.consulta-categoria .preguntas > div').hide();
-			$('.consulta-categoria .preguntas > div:eq('+(index)+')').fadeIn('slow');
-		});
-	}
-
-	mobileMenuPreguntas = function(){
-
-		$('<select name="filtro" id="filtro" class="fill-preguntas" />').insertBefore('.preguntas');
-
-		$.each($('.consulta-categoria .menu ul li'), function( index ) {
-			var text = $('.consulta-categoria .menu ul li:eq('+index+')').text();
-			var filter = $('.consulta-categoria .menu ul li:eq('+index+')').data('filter');
-			$('.consulta-categoria #filtro').append($("<option value="+index+" />").text(text));
-		});
-
-		$('.consulta-categoria .menu').remove();
-
-		$('.fill-preguntas').on('change',function() {
-			var index = $(this).val();
-			$('.consulta-categoria .menu ul li').removeClass('activo');
-			$(this).addClass('activo');
-			$('.consulta-categoria .preguntas > div').hide();
-			$('.consulta-categoria .preguntas > div:eq('+(index)+')').fadeIn('slow');
-		});
-
-		$('.consulta-categoria select').material_select();
 	}
 
 	$('.resultados input[type=text]').on('keyup', function(){

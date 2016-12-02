@@ -1,34 +1,41 @@
 .expertos-servicio
-	padding: 6.25rem 0 0
+	padding: 6.25rem 0px
 	position: relative
 	.container
 		display: table
 		overflow: visible
 		dl
 			display: table
-			padding: 0 0
+			padding: 0px
 			width: 100%
 			dd
 				+bx
 				display: table-cell
-				padding: 0 1rem
+				padding: 0px 1rem
 				position: relative
 				vertical-align: top
 				width: 50%
-				img
-					display: block
-					height: 368px
-					position: relative
-					width: auto
-				.video
-					height: 368px
-					padding-bottom: 0
+				.img
+					height: 23rem
 					overflow: hidden
+					padding-bottom: 0px
 					position: relative
 					img
 						+fx(all,0.5s)
 						+object
-						height: auto
+						height: 100%
+						position: absolute
+						top: 0px
+						width: 100%
+				.video
+					height: 23rem
+					overflow: hidden
+					padding-bottom: 0px
+					position: relative
+					img
+						+fx(all,0.5s)
+						+object
+						height: 100%
 						position: absolute
 						top: 0px
 						width: 100%
@@ -36,17 +43,16 @@
 						img
 							+scale(1.08,1.08)
 					a
-						+center(vh)
-						color: rgba(255,255,255,0.85)
-						display: table
-						height: 60px
-						margin-left: 0.8125rem
+						display: block
+						height: 100%
+						position: relative
 						text-decoration: none
-						width: 60px
+						width: 100%
 						&:after
+							+center(vh)
 							+fonIco('\E927')
+							color: rgba(255,255,255,0.85)
 							font-size: 3.75rem
-							position: absolute
 				.boton
 					position: relative
 				h3
@@ -72,14 +78,11 @@
 				padding: 0
 				dd
 					display: block
+					padding: 0px
 					margin-bottom: 2rem
 					width: 100%
-					img
-						height: auto
-						width: 100%
-					.video
-						height: 212px
-						width: 100%
+					.img, .video
+						height: 15rem
 					h3
 						margin: 1rem 0
 					p
