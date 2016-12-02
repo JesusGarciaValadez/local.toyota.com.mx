@@ -120,7 +120,12 @@
 @mixin fancybox-smartphone
 	//Fancybox
 	.fancybox-wrap
+		-webkit-transform: translateY(-50%)
+		-moz-transform: translateY(-50%)
+		-ms-transform: translateY(-50%)
+		transform: translateY(-50%)
 		left: 0px!important
+		top: 50%!important
 		position: fixed!important
 		width: 100%!important
 	.fancybox-inner

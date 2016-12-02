@@ -1,196 +1,239 @@
-.filtro-blog
-	+shadow(0px, 6px, 8px, 0px, rgba(0,0,0,0.2), 0px, 6px, 8px, 0px, rgba(0,0,0,0.19))
-	background: $BlueGrey900
-	height: 50px
-	margin: 0
-	overflow: initial
-	width: 100%
-	.head-menu
-		display: none
-	ul
-		display: table
-		height: 100%
-		margin: auto
-		li
-			display: table
-			float: left
-			height: 100%
-			margin: 0px
-			padding: 0px 1.5rem
-			&.activo
-				> a
-					color: $White
-					&:before
-						background: $White
-						width: 100%
-			> a
-				+fx(all,0.5s)
-				color: $BlueGrey400
-				cursor: pointer
-				display: table-cell
-				font-size: 0.875rem
-				font-weight: 700
-				margin: 0px
-				padding: 0px
-				position: relative
-				text-decoration: none
-				vertical-align: middle
-				&:before
-					+center(v)
-					+fx(all,0.5s)
-					background: transparent
-					bottom: 0px
-					content: " "
-					display: block
-					height: 4px
-					width: 0%
-				&:hover
-					color: $White
-					&:before
-						background: $White
-						width: 100%
-			&.filtro-autos
-				position: relative
-				> a
-					&:before
-						height: 0px
-					&:after
-						+center(h)
-						+fawesome('\f107')
-						+fx(all,0.5s)
-						color: $BlueGrey400
-						left: 6px
-						position: relative
-				&.hover
-					> a
-						color: $White
-						&:after
-							+fawesome('\f106')
-							color: $White	
-			.lista-autos
-				+fx(all,0.5s)
-				background: $BlueGrey900
-				height: 0
-				left: 0px
-				overflow: scroll
-				position: absolute
-				top: 50px
-				width: 100%
-				z-index: 1
-				&.activo
-					display: block
-					height: 260px
-				ul
+.menu-blog
+	height: 60px
+	position: relative
+	.menufixed
+		+shadow(0px, 8px, 17px, 0px, rgba(0,0,0,0.2), 0px, 6px, 20px, 0px, rgba(0,0,0,0.19))
+		background: $BlueGrey900
+		position: absolute
+		top: 0px
+		width: 100%
+		z-index: 98
+		.container
+			max-width: 1500px
+			overflow: visible
+			nav
+				display: table
+				height: 60px
+				margin: auto
+				overflow: visible
+				> ul
 					display: table
 					height: 100%
 					margin: auto
-					li
-						+fx(all,0.5s)
+					> li
 						display: table
-						height: auto
-						padding: 0
-						position: relative
-						width: 100%
+						float: left
+						height: 100%
+						margin: 0px
+						&:hover, &.activo
+							> a
+								color: $White
+								&:before
+									background: $White
+									width: 100%
 						> a
 							+fx(all,0.5s)
-							color: $BlueGrey
+							color: $BlueGrey400
 							cursor: pointer
-							display: block
+							display: table-cell
 							font-size: 0.875rem
 							font-weight: 700
 							margin: 0px
-							padding: 0.75rem 1.25rem
+							padding: 0px
+							padding: 0px 1.5rem
 							position: relative
 							text-decoration: none
 							vertical-align: middle
 							&:before
-								display: none
-							&:hover
-								color: $White
-						&:after
-							background: $BlueGrey400
-							content: ' '
-							display: block
-							height: 1px
-							margin: 0 20px
-							position: absolute
-							width: 80%
-						&:hover
-							background: $BlueGrey800
-							&:after
-								background: $BlueGrey800
-	&.fixed
-		display: block
-		position: fixed
-		z-index: 1
+								+center(v)
+								+fx(all,0.5s)
+								background: transparent
+								bottom: 0px
+								content: " "
+								display: block
+								height: 4px
+								width: 0%
+						&.filtro-autos
+							position: relative
+							> a
+								&:before
+									display: none
+								&:after
+									+center(h)
+									+fawesome('\f107')
+									+fx(all,0.5s)
+									color: $BlueGrey400
+									font-size: 1rem
+									line-height: normal
+									right: 0px
+							&.activo
+								> a
+									color: $White
+									&:after
+										+fawesome('\f106')
+										color: $White	
+								.lista-autos
+									display: block
+									height: 260px
+							.lista-autos
+								+fx(all,0.5s)
+								background: $BlueGrey900
+								height: 0px
+								left: 0px
+								overflow: scroll
+								position: absolute
+								top: 100%
+								width: 100%
+								z-index: 1
+								ul
+									display: table
+									height: 100%
+									margin: auto
+									width: 100%
+									li
+										+fx(all,0.5s)
+										display: table
+										height: auto
+										padding: 0
+										position: relative
+										width: 100%
+										> a
+											+fx(all,0.5s)
+											color: $BlueGrey
+											display: block
+											font-size: 0.875rem
+											font-weight: 700
+											padding: 0.75rem 0px
+											text-decoration: none
+											border-bottom: 1px solid $BlueGrey400
+											width: calc(100% - 40px)
+											margin: auto
+										&:last-child
+											> a
+												border: none
+										&:hover, &.activo
+											background: $BlueGrey800
+											> a
+												border-bottom: 1px solid $BlueGrey800
+											&:last-child
+												> a
+													border: none
 
 @mixin blog-filtro-smartphone
-	.filtro-blog
-		+fx(all,0.5s)
-		+translate(+105%, 0%)
-		overflow: hidden
-		height: 100vh
-		position: fixed
-		top: 0
-		overflow: scroll
-		width: 100%
-		z-index: 99
-		.head-menu
-			display: block
-			> h1 
-				color: $White
-				font-size: 1.5rem
-				font-weight: 600
-				margin: 1.375rem 1.125rem
-				width: auto
-			.close
-				+translate(-50% , -50%)
-				cursor: pointer
-				display: table
-				height: 28px
-				position: absolute
-				right: 0px
-				top: 46px
-				width: 28px
-				z-index: 1
-				&:before
-					+center(vh)
-					+icons('\E14C')
-					color: $Red800
-					font-size: 1.75rem
-		> ul
-			display: block
-			height: auto
-			> li
-				border-bottom: 1px solid $BlueGrey400
-				height: auto
-				left: 20px
-				padding: 0
-				position: relative
-				width: calc(100vw - 40px)
-				&:last-child
-					border: none
-				> a
+	.menu-blog
+		.menufixed
+			.container
+				> .titulo
+					height: 60px
+					position: relative
+					width: 100%
+					> div
+						color: $White
+						display: table
+						float: left
+						font-size: 1.5rem
+						font-weight: 600
+						height: 100%
+						padding: 0px
+						span
+							display: table-cell
+							vertical-align: middle
+					.seccion
+						float: right
+						position: relative
+						cursor: pointer
+						padding-right: 1.5rem
+						font-size: 0.875rem
+						font-weight: 700
+						&:after
+							+center(h)
+							+icons('\E145')
+							color: $Red800
+							font-size: 1rem
+							line-height: normal
+							right: 0px
+				nav
+					+fx(all,0.5s)
+					+translate(100%, 0%)
+					background: $BlueGrey900
 					display: block
-					padding: 1.125rem 0
-					&:before
-						display: none
-				&.desplegar
-					> a
-						&:before
-							+fawesome('\f105')
+					height: 100vh
+					left: 0px
+					overflow: auto
+					position: fixed
+					top: 0px
+					width: 100vw
+					.datos
+						position: relative
+						.titulo
+							span
+								color: $White
+								display: block
+								font-size: 1.5rem
+								font-weight: 600
+								padding: 1.5rem 20px
+						.close 
+							cursor: pointer
+							height: 24px
+							overflow: hidden
+							position: absolute
 							right: 20px
-				.lista-autos
-					background: $BlueGrey800
-					left: -20px
-					overflow: hidden
-					width: 100vw 
-					&.activo
-						display: block
+							top: 30px
+							width: 24px
+							&:before
+								+center(vh)
+								+icons('\E14C')
+								color: $Red800
+								font-size: 30px
+					> ul
 						height: auto
-					ul
-						li
-							&:after
-								width: calc(100vw - 40px)
-		&.activo
-			+translate(0%, 0%)
+						width: 100%
+						> li
+							height: auto
+							padding: 0
+							position: relative
+							width: 100%
+							> a
+								border-bottom: 1px solid $BlueGrey400
+								display: block
+								margin: auto
+								padding: 1.125rem 0px
+								width: calc(100% - 40px)
+								&:before
+									display: none
+							&:last-child
+								> a
+									border: none
+							&:hover
+								background: $BlueGrey800
+								> a
+									border-bottom: 1px solid $BlueGrey800
+								&:last-child
+									> a
+										border: none
+							&.filtro-autos
+								&:hover
+									background: $BlueGrey400
+									> a
+										&:after
+											color: $White
+								&.activo
+									background: $BlueGrey400
+									.lista-autos
+										height: auto
+								.lista-autos
+									background: $BlueGrey800
+									ul
+										li
+											> a
+												border-bottom: 1px solid $BlueGrey900
+											&:hover, &.activo
+												background: $BlueGrey400
+												> a
+													color: $White
+													border-bottom: 1px solid $BlueGrey400
+			&.activo
+				z-index: 99
+				.container
+					nav
+						+translate(0%, 0%)
