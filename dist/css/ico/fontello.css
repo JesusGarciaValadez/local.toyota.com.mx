@@ -30,7 +30,45 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.icon-icono_play:before {
+  content: "\e927";
+}
+.icon-icono_cero:before {
+  content: "\e928";
+}
+.icon-icono_check:before {
+  content: "\e926";
+}
+.icon-icono_apoyo:before {
+  content: "\e922";
+}
+.icon-icono_balloon:before {
+  content: "\e923";
+}
+.icon-icono_estandar:before {
+  content: "\e924";
+}
+.icon-icono_flexibilidad:before {
+  content: "\e925";
+}
+.icon-icono_confianza:before {
+  content: "\e920";
+}
+.icon-icono_tranquilidad:before {
+  content: "\e921";
+}
+.icon-confianza:before {
+  content: "\e91c";
+}
+.icon-flexibilidad:before {
+  content: "\e91d";
+}
+.icon-rapidez:before {
+  content: "\e91e";
+}
+.icon-seguridad:before {
+  content: "\e91f";
+}
 .icon-icono_carga:before {
   content: "\e91b";
 }

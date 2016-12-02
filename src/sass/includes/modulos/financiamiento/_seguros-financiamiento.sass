@@ -1,0 +1,84 @@
+.seguros-financiamiento
+	padding: 6.25rem 0 
+	position: relative
+	.container
+		display: table
+		overflow: visible
+		h2
+			margin: 1.25rem auto
+			text-align: center
+			width: 64%
+		p
+			margin: 0 auto
+			text-align: center
+			width: 64%
+		dl
+			display: table
+			padding: 5.75rem 0 0
+			width: 100%
+			dd
+				+bx
+				display: table-cell
+				padding: 0
+				position: relative
+				vertical-align: top
+				width: 50%
+				i
+					background: $Red800
+					border-radius: 50%
+					display: block
+					height: 60px
+					left: 0
+					position: absolute
+					width: 60px
+					&:before
+						+center(vh)
+						color: $White
+						font-size: 30px
+					&.icono_confianza
+						&:before
+							+fonIco('\e91c')
+					&.icono_tranquilidad
+						&:before
+							+fonIco('\e921')
+					&.icono_flexibilidad
+						&:before
+							+fonIco('\e925')
+					&.icono_cero
+						&:before
+							+fonIco('\e928')
+					&.icono_apoyo
+						&:before
+							+fonIco('\e922')
+				p
+					font-size: 1.125rem
+					height: auto
+					margin: 0px 3rem 3rem 6.25rem
+					text-align: left
+					width: auto
+		.boton
+			max-width: 160px
+			min-width: 150px
+			margin: 0 auto
+			padding: 12px 0
+			text-transform: uppercase
+@mixin seguros-financiamiento-smartphone
+	.seguros-financiamiento
+		height: auto
+		.container
+			display: block
+			h2
+				width: 100%
+			p
+				width: 100%
+			dl 
+				padding: 2.5rem 0 0
+				dd
+					display: block
+					width: 100%
+					i
+						margin: 0 auto
+						position: relative
+					p
+						height: auto
+						margin: 0 0 3rem 0

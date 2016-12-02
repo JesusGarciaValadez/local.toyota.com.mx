@@ -1,0 +1,25 @@
+-var location = "financiamiento"
+-var subLoc = " "
+-var titulo = " "
+-var descrip = " "
+-var keyword = " "
+-var breadcrumb = "none"
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	body
+		
+		include includes/header
+		
+		main.wrapper
+			include includes/modulos/financiamiento/cover-financiamiento
+			include includes/modulos/financiamiento/planes-financiamiento
+			include includes/modulos/financiamiento/porque-financiamiento
+			include includes/modulos/financiamiento/beneficios-financiamiento
+			include includes/modulos/financiamiento/seguros-financiamiento
+
+		include includes/footer

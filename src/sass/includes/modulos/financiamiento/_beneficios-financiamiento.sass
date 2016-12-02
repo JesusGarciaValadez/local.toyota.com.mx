@@ -1,0 +1,80 @@
+.beneficios-financiamiento
+	height: 700px
+	padding: 0
+	position: relative
+	> img
+		+center(v)
+		top: 0px
+	.container
+		display: table
+		overflow: visible
+		padding: 4.375rem 0
+		h2
+			color: $White
+			margin: 0
+			text-align: center
+		.flex
+			+flex
+			+flexDirRow
+			+justifyCont(space-between)
+			float: left
+			width: 100%
+			margin: 6.25rem auto 0
+			padding: 0px
+			> div
+				+bx
+				+fx(all,0.5s)
+				margin-bottom: 1rem
+				padding: 0px 1rem
+				width: 25%
+				i
+					display: block
+					height: 90px
+					margin: 0 auto
+					position: relative
+					width: 90px
+					&:before
+						+center(vh)
+						color: $Grey400
+						font-size: 72px
+					&.icono_cubre
+						&:before
+							+fonIco('\e91e')
+					&.icono_confianza
+						&:before
+							+fonIco('\e91c')
+					&.icono_flexibilidad
+						&:before
+							+fonIco('\e91d')
+					&.icono_seguridad
+						&:before
+							+fonIco('\e91f')
+				.titulo
+					color: $Red400
+					font-size: 1.375rem
+					font-weight: 700
+					margin: 1.875rem 0 
+				p
+					color: $White
+					font-size: 1.125rem
+					text-align: center
+		.boton
+			max-width: 160px
+			min-width: 150px
+			margin: 0 auto
+			padding: 12px 0
+			text-transform: uppercase
+		
+@mixin beneficios-financiamiento-smartphone
+	.beneficios-financiamiento
+		background: $BlueGrey900
+		height: auto
+		> img
+			display: none
+		.container
+			.flex
+				margin: 4.375rem auto 0
+				> div
+					margin-bottom: 2rem
+					padding: 0px 2rem
+					width: 100%

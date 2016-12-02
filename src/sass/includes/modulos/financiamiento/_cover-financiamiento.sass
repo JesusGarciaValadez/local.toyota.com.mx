@@ -1,0 +1,50 @@
+.cover-financiamiento
+	height: 510px
+	position: relative
+	> img
+		+center(v)
+		top: 0px
+	.container
+		display: table
+		overflow: visible
+		> div
+			display: table-cell
+			vertical-align: middle
+			h1
+				margin: 0
+			h2
+				color: $Red800
+				margin-top: 0px
+			p
+				color: $BlueGrey900
+				font-size: 1rem
+				width: 40%
+			.link
+				cursor: pointer
+				float: left
+				font-size: 0.875rem
+				font-weight: 700
+				margin: 0
+				text-transform: uppercase
+@mixin cover-financiamiento-smartphone
+	.cover-financiamiento
+		height: auto
+		> img
+			display: block
+			min-height: auto
+			position: relative
+			width: 100%
+		.container
+			margin: 2.5rem 0
+			> div
+				display: block
+				h1
+					margin: 0
+					width: 100%
+				p
+					color: $BlueGrey900
+					display: block
+					text-align: left
+					margin: 0
+					margin-bottom: 1rem
+					width: 100%

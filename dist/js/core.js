@@ -18,6 +18,7 @@ init = function(){
 
 	coordenadas = function() {
 		filtroFixed = $("#menuFiltro").offset().top;
+		console.log(filtroFixed);
 	};
 
 	setSize = function(){
@@ -31,8 +32,9 @@ init = function(){
 				filtroblogMobile();
 				menuFotter();
 				mobileMenuDescargables();
+				mobileMenuServicios();
 				mobileMenuPreguntas();
-				coverModeloMobile();
+				//coverModeloMobile();
 			}
 		}
 		else if(anchura >= 768){
@@ -45,8 +47,9 @@ init = function(){
 				filtroblog();
 				menuFotterStop();
 				menuDescargables();
+				menuServicios();
 				menuPreguntas();
-				coverModeloDesctop();
+				//coverModeloDesctop();
 			}
 		}
 	}
@@ -381,6 +384,57 @@ init = function(){
 		$('.descargables select').material_select();
 	}
 
+	menuServicios = function(){
+		if($('.precios-servicio .menu').length === 0){
+			$('.precios-servicio select').material_select('destroy');
+
+			$('<div class="menu"><ul>').insertBefore('.servicios');
+
+			$.each($('#filtro option'), function( index ) {
+				var text = $('#filtro option:eq('+index+')').text();
+				var filter = $('#filtro option:eq('+index+')').data('filter');
+				$('.precios-servicio .menu ul').append($("<li><a>"+text+"</a></li>"));
+				$('.precios-servicio .menu ul li:eq(0)').addClass('activo');
+				$('.servicios > div').hide();
+				$('.servicios > div:eq(0)').show();
+			});
+
+			$('#filtro').remove();
+		}
+
+		$('.precios-servicio .menu ul li').on('click', function(e){
+			e.preventDefault();
+			var index = $(this).index();
+			$('.precios-servicio .menu ul li').removeClass('activo');
+			$(this).addClass('activo');
+			$('.servicios > div').hide();
+			$('.servicios > div:eq('+(index)+')').fadeIn('slow');
+		});
+	}
+
+	mobileMenuServicios = function(){
+
+		$('<select name="filtro" id="filtro" class="fill-servicios" />').insertBefore('.servicios');
+
+		$.each($('.precios-servicio .menu ul li'), function( index ) {
+			var text = $('.precios-servicio .menu ul li:eq('+index+')').text();
+			var filter = $('.precios-servicio .menu ul li:eq('+index+')').data('filter');
+			$('.precios-servicio #filtro').append($("<option value="+index+" />").text(text));
+		});
+
+		$('.precios-servicio .menu').remove();
+
+		$('.fill-descargas').on('change',function() {
+			var index = $(this).val();
+			$('.precios-servicio .menu ul li').removeClass('activo');
+			$(this).addClass('activo');
+			$('.servicios > div').hide();
+			$('.servicios > div:eq('+(index)+')').fadeIn('slow');
+		});
+
+		$('.precios-servicio select').material_select();
+	}
+
 	menuPreguntas = function(){
 		if($('.consulta-categoria .menu').length === 0){
 			$('.consulta-categoria select').material_select('destroy');
@@ -482,7 +536,7 @@ init = function(){
 		$('.cookies').addClass('fadeOutDown');
 	})
 
-	$('.vacantes select, .talento select, .flotillas select, .ideal select').material_select();
+	$('.vacantes select, .talento select, .flotillas select, .ideal select, .precios-servicio select, .refacciones-servicio select').material_select();
 
 	var options = [ 
 		{selector: '.experiencia', offset: 500, callback: function(){

@@ -1,0 +1,174 @@
+.planes-financiamiento
+	padding: 9.375rem 0 0
+	position: relative
+	.linea
+		+center(v)
+		background: $BlueGrey800
+		display: block
+		height: 220px
+		position: absolute
+		top: 40px
+		width: 1px
+		&:before
+			background: $BlueGrey800
+			border-radius: 4px
+			content: ""
+			display: block
+			height: 7px
+			left: -3px
+			position: absolute
+			width: 7px
+		&:after
+			background: $BlueGrey800
+			border-radius: 4px
+			bottom: 0
+			content: ""
+			display: block
+			height: 7px
+			left: -3px
+			position: absolute
+			width: 7px
+	.container
+		display: table
+		overflow: visible
+		.info
+			+center(v)
+			+bx
+			width: 28%
+			overflow: auto
+			padding: 140px 30px 0
+			position: absolute
+			h3
+				color: $BlueGrey800
+				line-height: 2.5rem
+				margin: 1rem 0px
+				text-align: center
+			p
+				text-align: center
+			.boton
+				margin: 3.125rem auto
+				padding: 12px 0
+		.plan
+			+fx(all,0.5s)
+			display: table
+			height: 540px
+			overflow: hidden
+			position: relative
+			width: 36%
+			> img
+				+center(vh)
+				display: block
+				height: auto
+				position: absolute
+				width: 116%
+			> div
+				padding: 0 2rem
+				i
+					background: $Red800
+					border-radius: 50%
+					display: block
+					height: 60px
+					margin: auto
+					position: relative
+					width: 60px
+					&:before
+						+center(vh)
+						color: $White
+						font-size: 30px
+					&.icono_estandar
+						&:before
+							+fonIco('\e924')
+					&.icono_balloon
+						&:before
+							+fonIco('\e924')
+				h3
+					color: $White
+					margin: 1.25rem auto
+					text-align: center
+				p
+					color: $White
+					font-size: 1.125rem
+					text-align: center
+			.info-small
+				+fx(all,0.6s)
+				+center(h)
+				+bx
+			.info-big
+				+fx(all,0.6s)
+				+center(h)
+				top: 150%
+				.caracteristicas
+					display: block
+					p
+						font-size: 1rem
+						font-weight: 600
+						text-align: left
+					ul
+						li
+							font-size: 1rem
+							font-weight: 600
+							color: $White
+					.boton
+						margin: 1.25rem auto
+						max-width: 140px
+						min-width: 120px
+						padding: 12px 0px
+			&:hover
+				.info-small
+					top: -100%
+				.info-big
+					top: 50%
+
+		.estandar
+			float: left
+		.balloon
+			float: right
+		.boton.planes
+			display: none
+		
+@mixin planes-financiamiento-smartphone
+	.planes-financiamiento
+		height: auto
+		padding: 0
+		.linea
+			display: none
+		.container
+			.info
+				width: 100%
+				padding: 0px 30px 0
+				position: relative
+				.boton
+					display: none
+			.plan
+				+fx(all,0.5s)
+				display: block
+				height: auto
+				overflow: hidden
+				position: relative
+				width: 100%
+				> div
+					padding: 0 1rem
+				> img
+					+center(r)
+					height: 320px
+					position: absolute
+				.info-small
+					display: none
+				.info-big
+					+fx(all,0.6s)
+					+center(r)
+					margin-top: 2.5rem
+					p
+						height: 112px
+					.caracteristicas
+						margin: 3rem 0
+						p
+							color: $BlueGrey800
+							height: auto
+						ul
+							li 
+								color: $BlueGrey800
+						.boton
+							margin: 1.25rem 0
+			.boton.planes
+				display: block
