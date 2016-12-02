@@ -1,0 +1,88 @@
+.expertos-servicio
+	padding: 6.25rem 0 0
+	position: relative
+	.container
+		display: table
+		overflow: visible
+		dl
+			display: table
+			padding: 0 0
+			width: 100%
+			dd
+				+bx
+				display: table-cell
+				padding: 0 1rem
+				position: relative
+				vertical-align: top
+				width: 50%
+				img
+					display: block
+					height: 368px
+					position: relative
+					width: auto
+				.video
+					height: 368px
+					padding-bottom: 0
+					overflow: hidden
+					position: relative
+					img
+						+fx(all,0.5s)
+						+object
+						height: auto
+						position: absolute
+						top: 0px
+						width: 100%
+					&:hover
+						img
+							+scale(1.08,1.08)
+					a
+						+center(vh)
+						color: rgba(255,255,255,0.85)
+						display: table
+						height: 60px
+						margin-left: 0.8125rem
+						text-decoration: none
+						width: 60px
+						&:after
+							+fonIco('\E927')
+							font-size: 3.75rem
+							position: absolute
+				.boton
+					position: relative
+				h3
+					line-height: 2.5rem
+					margin: 2rem 0
+					text-align: left
+				p
+					color: $BlueGrey800
+					font-size: 1rem
+					text-align: left
+				
+@mixin expertos-servicio-smartphone
+	.expertos-servicio
+		height: auto
+		padding: 3.125rem 0 0
+		.container
+			display: block
+			h2
+				width: 100%
+			p
+				width: 100%
+			dl 
+				padding: 0
+				dd
+					display: block
+					margin-bottom: 2rem
+					width: 100%
+					img
+						height: auto
+						width: 100%
+					.video
+						height: 212px
+						width: 100%
+					h3
+						margin: 1rem 0
+					p
+						height: auto
+						margin: 0 0 1.25rem 0
+					

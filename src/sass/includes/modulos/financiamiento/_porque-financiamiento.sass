@@ -1,0 +1,63 @@
+.porque-financiamiento
+	padding: 6.25rem 0 
+	position: relative
+	.container
+		display: table
+		overflow: visible
+		h2
+			margin: 1.25rem auto
+			text-align: center
+			width: 64%
+		p
+			margin: 0 auto
+			text-align: center
+			width: 64%
+		dl
+			display: table
+			padding: 5.75rem 0 0
+			width: 100%
+			dd
+				+bx
+				display: table-cell
+				padding: 0
+				position: relative
+				vertical-align: top
+				width: 50%
+				i
+					display: block
+					height: 30px
+					left: 0
+					position: absolute
+					width: 30px
+					&:before
+						+center(vh)
+					&.icono
+						&:before
+							+fonIco('\e926')
+							color: $Red800
+							font-size: 30px
+				p
+					font-size: 1.125rem
+					height: 80px
+					margin: 0 3rem 3rem 4rem
+					text-align: left
+					width: auto
+
+@mixin porque-financiamiento-smartphone
+	.porque-financiamiento
+		height: auto
+		padding: 3.125rem 0
+		.container
+			display: block
+			h2
+				width: 100%
+			p
+				width: 100%
+			dl 
+				padding: 2.5rem 0 0
+				dd
+					display: block
+					width: 100%
+					p
+						height: auto
+						margin: 0 1rem 2rem 4rem

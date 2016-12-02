@@ -1,0 +1,154 @@
+.refacciones-servicio
+	background: $Grey100
+	padding: 4.125rem 0 
+	position: relative
+	.container
+		display: table
+		overflow: visible
+		h2
+			margin: 1.25rem auto
+			text-align: center
+			width: 64%
+		p
+			margin: 0 auto
+			text-align: center
+			width: 64%
+		.flex
+			+justifyCont(space-between)
+			margin: 3.75rem auto 
+			padding: 0px
+			.fila
+				+flex
+				+flexDirRow
+				+justifyCont(space-between)
+				margin: 0 auto
+				width: auto
+				.refaccion
+					+bx
+					+fx(all,0.5s)
+					background: $White
+					margin: 1rem
+					padding: 0px
+					width: 286px
+					&:hover
+						+shadow(0px, 8px, 17px, 0px, rgba(0,0,0,0.2), 0px, 6px, 20px, 0px, rgba(0,0,0,0.19))
+					.imagen
+						height: 176px
+						overflow: hidden
+						padding: 0
+						position: relative
+						width: 100%
+						img
+							+center(vh)
+							display: block
+							height: auto
+							position: absolute
+							width: 104%
+					> div
+						+bx
+						padding: 1rem 1.375rem
+						> p
+							color: $BlueGrey800
+							font-size: 1.125rem
+							font-weight: 400
+							line-height: 1.625rem
+							margin: 1rem 0
+							text-align: left
+							width: 100%
+						form
+							display: table
+							margin: 0 auto
+							width: 100%
+							.input-field
+								+bx
+								display: table-cell
+								width: 70%
+								padding: 1rem 1.5rem 0 0
+								input[type=text]
+									font-size: 1rem
+									height: 2.5rem
+									&::-webkit-input-placeholder
+										color: $BlueGrey400
+										font-weight: 300
+									&:-moz-placeholder
+										color: $BlueGrey400
+										font-weight: 300
+									&::-moz-placeholder
+										color: $BlueGrey400
+										font-weight: 300
+									&:-ms-input-placeholder
+										color: $BlueGrey400
+										font-weight: 300
+								> p
+									color: $BlueGrey900
+									font-size: 1rem
+									font-weight: 700
+									margin: 0
+									text-align: left
+								label
+									color: $BlueGrey900
+									font-size: 0.875rem
+									font-weight: 300
+									line-height: 1.125rem
+									margin: 0
+									top: -6px
+								&:last-child
+									width: 30%
+									padding-right: 0rem
+						ul
+							li
+								font-size: 0.75rem
+								line-height: 1.25rem
+								&:before
+									+fawesome('\f111')
+									color: $BlueGrey400
+									font-size: 0.375rem
+									left: 100%
+									line-height: 1rem
+									margin-right: 6px
+									vertical-align: middle
+						.link
+							cursor: pointer
+							float: left
+							font-size: 0.875rem
+							font-weight: 700
+							margin: 1.25rem 0px
+							overflow: auto
+							&:after
+								+center(h)
+								+fawesome('\f178')
+								font-size: 0.75rem
+								height: 0.625rem
+								left: 100%
+								line-height: normal
+								margin-left: 6px
+								
+		.boton
+			max-width: 160px
+			min-width: 150px
+			margin: 0 auto
+			padding: 12px 0
+			text-transform: uppercase
+@mixin refacciones-servicio-smartphone
+	.refacciones-servicio
+		height: auto
+		padding: 3.125rem 0 
+		.container
+			display: block
+			h2
+				width: 100%
+			p
+				width: 100%
+			.flex 
+				margin: 20px auto
+				padding: 0px
+				.fila
+					+flexDir
+					width: 100%
+					.refaccion
+						margin: 1rem auto
+						.imagen
+							img
+								height: 100%
+								width: auto
+					
