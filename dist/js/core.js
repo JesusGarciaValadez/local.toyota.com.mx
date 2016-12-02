@@ -459,7 +459,7 @@ init = function(){
 
 		$('.precios-servicio .menu').remove();
 
-		$('.fill-descargas').on('change',function() {
+		$('.fill-servicios').on('change',function() {
 			var index = $(this).val();
 			$('.precios-servicio .menu ul li').removeClass('activo');
 			$(this).addClass('activo');
