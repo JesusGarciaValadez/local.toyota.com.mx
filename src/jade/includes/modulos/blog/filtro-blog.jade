@@ -1,17 +1,18 @@
-section.filtro-blog
-	.head-menu
-		h1 
-			b Vive Toyota
-		.close 
-	ul
-		li.activo
-			a(href="#") TODOS
-		li
-			a(href="#") EXPERIENCIAS
-		li
-			a(href="#") SOMOS TOYOTA
-		li
-			a(href="#") INNOVACIÓN
-		li.filtro-autos
-			a(href="#") TODOS LOS AUTOS
-			+lista-autos(listaAutos)
+.menu-blog
+	.menufixed(data-clase="menu-blog")
+		.container
+			.titulo
+			nav
+				.datos
+				ul
+					li.activo
+						a(href="#") TODOS
+					li
+						a(href="#") EXPERIENCIAS
+					li
+						a(href="#") SOMOS TOYOTA
+					li
+						a(href="#") INNOVACIÓN
+					li.filtro-autos
+						a(href="#") TODOS LOS AUTOS
+						+lista-autos(listaAutos)

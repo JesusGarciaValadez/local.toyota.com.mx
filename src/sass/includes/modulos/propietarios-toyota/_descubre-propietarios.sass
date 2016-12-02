@@ -1,0 +1,35 @@
+.descubre-propietarios
+	.container
+		overflow: visible
+		h2
+			text-align: center
+		p
+			text-align: center
+		.flex
+			+justifyCont(space-between)
+			margin: 3.125rem 0px
+			> div
+				+bx
+				+fx(all,0.5s)
+				background: $White
+				height: 280px
+				margin-bottom: 1rem
+				overflow: hidden
+				position: relative
+				width: 32%
+				&:hover
+					+shadow(0px, 8px, 17px, 0px, rgba(0,0,0,0.2), 0px, 6px, 20px, 0px, rgba(0,0,0,0.19))
+				img
+					+center(vh)
+					+object
+					display: block
+					height: 100%
+					width: 100%
+
+@mixin propietarios-toyota-descubre-propietarios-smartphone
+	.descubre-propietarios
+		.container
+			.flex
+				> div
+					width: 100%
+					margin-bottom: 2rem

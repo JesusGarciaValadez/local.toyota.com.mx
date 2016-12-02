@@ -1,5 +1,4 @@
-.nuestra-gente
-	background: $Grey50
+.consejos-propietarios
 	overflow: hidden
 	padding: 6.25rem 0px
 	position: relative
@@ -15,44 +14,21 @@
 					height: 100%
 					> div
 						+alignSelf
+						+bx
+						padding-right: 1rem
 						width: 50%
-						i
-							&:after
-								color: $Grey200
-								content: "“"
-								font-family: 'lucida'
-								font-size: 400px
-								left: -10px
-								position: absolute
-								top: 10px
-								z-index: 0
-						cite
-							color: $Red800
+						> h6
+							color: $BlueGrey
 							font-size: 1.375rem
-							line-height: 1.875rem
-						h3
-							line-height: 2.375rem
-							margin-top: 0.9375rem
-							position: relative
-							z-index: 1
-							span
-								display: block
-								font-size: 1.125rem
-								font-style: italic
-								font-weight: 600
-						p
-							font-size: 1.375rem
-							font-style: italic
+							margin-top: 0px
+						> h2
 							font-weight: 300
-							line-height: 2rem
-							text-align: center
-							white-space: pre-line
-							position: relative
-							z-index: 1
-						img
+							margin-top: 0px
+						> img
 							display: block
 							height: auto
 							width: 100%
+
 	.bx-prev 
 		border-radius: 50%
 		border: 2px solid $BlueGrey900
@@ -103,7 +79,8 @@
 	
 	.bx-wrapper
 		.bx-has-pager
-			margin: 2rem auto
+			+center(v)
+			bottom: 20px
 		.bx-pager
 			color: rgba(38, 50, 56, 0.4)
 			font-family: Arial
@@ -138,14 +115,23 @@
 				*zoom: 1
 				display: inline-block
 
-@mixin cultura-toyota-nuestra-gente-smartphone
-	.nuestra-gente
+@mixin propietarios-toyota-consejos-propietarios-smartphone
+	.consejos-propietarios 
 		padding: 3.125rem 0px
-		.slide
+		.slide 
 			> div
-				.container
-					.flex
+				padding-bottom: 30px
+				.container 
+					.flex 
 						> div
+							padding: 0px
 							width: 100%
-							p
-								white-space: normal
+							> h6
+								display: none
+							> h2
+								font-weight: 700
+								text-align: center
+							> p
+								text-align: center
+		.bx-controls-direction
+			display: none

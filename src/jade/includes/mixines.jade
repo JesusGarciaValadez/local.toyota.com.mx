@@ -34,7 +34,7 @@ mixin lista-autos(arreglo)
 			each val, index in arreglo
 				-var ind = index +1		
 				li
-					a #{val.modelo}							
+					a(href="#{val.url}") #{val.modelo}						
 
 //-Paginador
 mixin paginador(arreglo)

@@ -22,12 +22,12 @@ header
 									+menu-autos(infoMenuAutos)
 								li
 									a(href="#") Configura y Cotiza
-								li
-									a(href="#") Servicio
+								li(class="#{location == 'servicio' ? 'activo' : ''}")
+									a(href="servicio.html") Servicio
 								li(class="#{location == 'propietarios-toyota' ? 'activo' : ''}")
 									a(href="propietarios-toyota.html") Propietarios Toyota
-								li
-									a(href="#") Financiamiento
+								li(class="#{location == 'financiamiento' ? 'activo' : ''}")
+									a(href="financiamiento.html") Financiamiento
 				.menu-inferior
 					.contenedor
 						nav
