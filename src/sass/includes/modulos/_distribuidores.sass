@@ -1,0 +1,238 @@
+.distribuidores	
+	height: 800px
+	.container
+		max-width: 100%
+		padding: 0px
+		> div
+			float: left
+		.buscador
+			//+shadow(0px, 27px, 24px, 0px, rgba(0,0,0,0.2), 0px, 40px, 77px, 0px, rgba(0,0,0,0.22))
+			background: $White
+			height: 100%
+			width: 350px
+			> div:not(.mapa)
+				+bx
+				height: 14.5rem
+				margin-bottom: 1.875rem
+				overflow: hidden
+				padding: 0px 2rem
+				width: 100%
+				form
+					margin: auto
+					max-width: 780px
+					position: relative
+					width: 100%
+					input
+						&:focus:not([readonly])
+							box-shadow: none
+							outline-width: 0
+						&::-webkit-input-placeholder
+							color: $BlueGrey
+						&:-moz-placeholder
+							color: $BlueGrey
+						&::-moz-placeholder
+							color: $BlueGrey
+						&:-ms-input-placeholder
+							color: $BlueGrey
+					input[type=text]
+						+fxr
+						border-bottom: 1px solid $BlueGrey900
+						color: $BlueGrey900
+						font-size: 1.125rem
+						font-weight: 300
+						height: 100%
+						margin: 0px 
+						padding: 5px 0px
+						width: 100%
+					input[type=submit],button
+						background: none
+						border: none
+						color: $BlueGrey
+						cursor: pointer
+						display: none
+						font-size: 1.125rem
+						height: 100%
+						height: 30px
+						position: absolute
+						right: 0px
+						top: 0px
+						width: 30px
+						&:before
+							+icons('\E14C')
+					> span
+						background: $White
+						color: $BlueGrey
+						font-size: 1.125rem
+						height: 97%
+						position: absolute
+						right: 0px
+						top: 0px
+						width: 30px
+						&:before
+							+center(vh)
+							+fawesome('\f002')
+			> dl
+				display: none
+				height: calc(100% - 16.375rem)
+				overflow: auto
+				> dd
+					+fx(all,0.5s)
+					border-bottom: 1px solid $Grey400
+					display: table
+					width: 100%
+					&:hover
+						+shadow
+						background: rgba(238, 238, 238, 0.30)
+						border-bottom: 1px solid rgba(238, 238, 238, 0.3)
+					&.activo
+						+shadow
+						background: rgba(238, 238, 238, 0.30)
+						border-bottom: 1px solid rgba(238, 238, 238, 0.3)
+					&.none
+						display: none
+					.img
+						overflow: hidden
+						position: relative
+						width: 25%
+						img
+							+center(vh)
+							width: 112%
+					.info
+						padding: 1.25rem 2rem
+						i
+							color: $BlueGrey400
+							display: block
+							font-size: 0.75rem
+							font-weight: 700
+							margin: 0px auto 1.25rem
+							position: relative
+							&:before
+								+center(h)
+								+icons('\E885')
+								color: $Yellow700
+								padding-right: 5px
+								right: 100%
+						p
+							color: $BlueGrey900
+							font-size: 0.875rem
+							margin: 0px
+							span
+								font-size: 0.875rem
+								font-weight: 300
+						.tabla
+							display: table
+							width: 100%
+							> div
+								display: table-cell
+								vertical-align: middle
+							.link
+								cursor: pointer
+								float: right
+								font-size: 0.75rem
+					.datos
+						+fx(all,0.5s)
+						+translate(-100%, 0%)
+						background: $Grey50
+						height: 100%
+						left: 0px
+						overflow: auto
+						position: absolute
+						top: 0px
+						width: 350px
+						z-index: 2
+						.link
+							cursor: pointer
+							margin: 1rem 0px
+						> div
+							+bx
+							background: $White
+							padding: 1rem 2rem
+							width: 100%
+							img
+								display: block
+								height: auto
+								width: 100%
+							h6
+								font-size: 1.125rem
+								margin-top: 1.875rem
+							p
+								font-size: 0.875rem
+								font-weight: 300
+								line-height: 1.25rem
+							dl
+								dt
+									font-size: 0.75rem
+									font-weight: 700
+									line-height: 1.0625rem
+								dd
+									font-size: 0.75rem
+									font-weight: 400
+									line-height: 1.0625rem
+									margin-bottom: 0.75rem
+									a
+										color: $BlueGrey900
+										font-style: italic
+									ul
+										li
+											color: $BlueGrey900
+											font-size: 0.75rem
+											line-height: 1.1875rem
+											p
+												font-size: 0.75rem
+												font-weight: 300
+												line-height: 1.1875rem
+												margin: 0px
+						.form
+							background: $Grey50
+							.boton
+								margin: 2rem 0px
+						&.activo
+							+translate(0%, 0%)			
+			.mapa
+				height: 100%
+				position: absolute
+				right: 0px
+				top: 0px
+				width: calc(100% - 350px)
+				iframe
+					height: 100%
+					width: 100%
+				// img
+				// 	bottom: 0px
+				// 	cursor: move
+				// 	height: 100%
+				// 	position: absolute
+				// 	right: 0px
+				// 	width: auto
+
+@mixin distribuidores-smartphone
+	.distribuidores
+		+bx
+		height: auto
+		min-height: 600px
+		.container
+			.buscador
+				width: 100%
+				> div:not(.mapa)
+					height: auto
+					> h3
+						text-align: center
+					> p
+						text-align: center
+				> dl
+					height: auto
+					overflow: inherit
+					> dd
+						&:last-child
+							border-bottom: none
+							margin-bottom: 3.125rem
+						.datos
+							width: 100%
+				.mapa
+					+bx
+					height: auto
+					padding: 0px 2rem
+					position: relative
+					width: 100%
+					iframe
+						height: 300px

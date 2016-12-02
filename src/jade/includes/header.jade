@@ -2,8 +2,8 @@ header
 	.header
 		.contenedor
 			a(href="index.html").logo-toyota
-			.btnDistribuidores
-				a(href="#") Distribuidores
+			.btnDistribuidores(class="#{location == 'distribuidores' ? 'activo' : ''}")
+				a(href="distribuidores.html") Distribuidores
 		.hamburguesa Menú
 		.menu
 			.flex
@@ -24,15 +24,15 @@ header
 									a(href="#") Configura y Cotiza
 								li
 									a(href="#") Servicio
-								li
-									a(href="#") Propietarios Toyota
+								li(class="#{location == 'propietarios-toyota' ? 'activo' : ''}")
+									a(href="propietarios-toyota.html") Propietarios Toyota
 								li
 									a(href="#") Financiamiento
 				.menu-inferior
 					.contenedor
 						nav
-							a(href="#") Prueba un Toyota
-							a(href="#") Preguntas frecuentes
+							a(href="prueba-un-toyota.html") Prueba un Toyota
+							a(href="preguntas-frecuentes.html") Preguntas frecuentes
 							a(href="#").logoComoNuevos
 							.redes
 								a(href="#").fa.fa-facebook

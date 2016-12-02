@@ -1,0 +1,192 @@
+.registro-inicio
+	background: url(img/bg_propietarios.jpg) no-repeat center
+	background-size: cover
+	height: 800px
+	.container
+		display: table
+		padding: 0px
+		max-width: 1500px
+		> div
+			+bx
+			display: table-cell
+			padding: 0px 6.25rem
+			vertical-align: middle
+			width: 50%
+			> h1
+				color: $White
+				margin-top: 0px
+			> .tabla
+				> div
+					display: table-cell
+					padding-right: 2rem
+					vertical-align: middle
+					.boton
+						margin: 1rem 0px
+			.bienvenido
+				display: none
+				overflow: hidden
+				h3
+					color: $White
+				p
+					color: $White
+		.conten
+			+fx(all,0.5s)
+			+translate(0%, -100%)
+			background: $White
+			position: relative
+			height: 100%
+			overflow: hidden
+			&.activo
+				+translate(0%, 0%)
+			> div
+				+bx
+				display: none
+				left: 0px
+				padding: 0px 6.25rem
+				position: absolute
+				top: 0px
+				width: 100%
+				overflow: hidden
+				> p
+					font-size: 0.75rem
+					float: left
+				> .link
+					color: $BlueGrey800
+					cursor: pointer
+					float: left
+					font-size: 0.75rem
+					line-height: 1.625rem
+					margin: 0px
+					margin-left: 1rem
+					&:before
+						background: $BlueGrey800
+				.boton
+					margin: 2rem 0px
+			.ingresar
+				.input-field
+					.link
+						cursor: pointer
+						float: right
+						font-size: 0.75rem
+						line-height: 1.625rem
+						margin: 0px
+			.listo
+				+center(vh)
+				i
+					+bx
+					border-radius: 50%
+					border: 5px solid $Green400
+					color: $Green400
+					display: table
+					height: 70px
+					margin: auto
+					position: relative
+					width: 70px
+					&:before
+						+center(vh)
+						+icons('\E876')
+						font-size: 50px
+						line-height: 0px
+				h1
+					margin-top: 3.125rem
+					text-align: center
+				p
+					font-size: 1.375rem
+					text-align: center
+					float: none
+				.boton
+					margin: 2rem auto
+			.restablecer
+				> p
+					float: none
+					font-size: 1.125rem
+				.tabla
+					display: table
+					.input-field
+						display: table-cell
+						.boton
+							margin-right: 2rem
+			.enviado
+				+center(vh)
+				i
+					+bx
+					border-radius: 50%
+					border: 5px solid $Green400
+					color: $Green400
+					display: table
+					height: 70px
+					margin: auto
+					margin-bottom: 1.875rem
+					position: relative
+					width: 70px
+					&:before
+						+center(vh)
+						+icons('\E876')
+						font-size: 50px
+						line-height: 0px
+				> p
+					float: none
+					font-size: 1.125rem
+					text-align: center
+				.boton
+					margin: 2rem auto
+	&.restablecer
+		.container
+			> div
+				.bienvenido
+					display: block
+			.conten
+				+translate(0%, 0%)
+				.restablecer
+					display: block
+
+@mixin registro-inicio-smartphone
+	.registro-inicio
+		height: auto
+		min-height: 480px
+		.container
+			> div
+				display: block
+				padding: 0px
+				width: 100%
+				> h1
+					margin-top: 3.125rem
+					text-align: center
+				> .tabla
+					> div
+						display: block
+						padding: 0px
+						width: 100%
+						.boton
+							margin: 2rem auto
+				.bienvenido
+					background: $White
+					padding: 0px 20px
+					h3
+						color: $BlueGrey800
+					p
+						color: $BlueGrey800
+			.conten
+				+translate(0%, 0%)
+				> div
+					position: inherit
+					padding: 0px 20px
+					.boton
+						margin: 2rem auto
+				.ingresar
+					.input-field
+						.link
+							float: none
+				.listo
+					+center(r)
+				.restablecer
+					.tabla
+						width: 100%
+						.input-field
+							display: block
+							width: 100%
+							.boton
+								margin: 2rem auto
+								max-width: 150px
+				.enviado
+					+center(r)

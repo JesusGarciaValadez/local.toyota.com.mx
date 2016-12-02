@@ -1,0 +1,201 @@
+-var location = "distribuidores"
+-var subLoc = " "
+-var titulo = " "
+-var descrip = " "
+-var keyword = " "
+-var breadcrumb = "none"
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	body
+		
+		include includes/header
+		
+		main.wrapper
+			section.distribuidores
+				.container
+					.buscador
+						div
+							h3 
+								b Distribuidores
+							p Lozalica tu distribuidor más cercano, ingresa tu C.P. o tu dirección.
+							form
+								input(type="text" placeholder="Código Postal")
+								span
+								button(type="reset")
+						.mapa
+							//-img(src='images/sucursal/mapa.jpg')
+							iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.731040749109!2d-99.17160204849972!3d19.42402354592134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff49beb711f9%3A0xf2b634be3650b838!2sPraga%2C+Ju%C3%A1rez%2C+06600+Ciudad+de+M%C3%A9xico%2C+CDMX!5e0!3m2!1ses!2smx!4v1479318692484" width="600" height="450" frameborder="0" style="border:0" allowfullscreen)
+						dl
+							dd
+								.info
+									i Distribuidor más cercano
+									p
+										b Toyota Polanco
+									p 
+										span Lago Alberto 320,  Col. Anzures. México, Distrito Federal
+									.tabla
+										div
+											p (55) 2581 - 1010
+										div
+											span.link Contacta distribuidor
+								.datos
+									div
+										span.link.regresar Regresar
+										img(src="images/sucursal/polanco.jpg")
+										h6
+											b Toyota Polanco
+										p Lago Alberto 320,  Col. Anzures, México, Distrito Federa
+										dl
+											dt Teléfono
+											dd (55) 2581 - 1010
+											dt Sitio web
+											dd
+												a(href="http://www.toyotapolanco.com.mx/") http://www.toyotapolanco.com.mx/
+											dt Horarios
+											dd
+												ul 
+													li Lunes a viernes
+														p 09:00 - 20:00 hrs.
+													li Sábado
+														p 09:00 - 18:00 hrs.
+													li Domingo
+														p 09:00 -18:00 hrs.
+									.form
+										h6
+											b ¿Cómo podemos ayudarte?
+										p Por favor escríbenos, y en breve alguno de nuestros especialistas te atenderá.
+										form
+											.input-field
+												input(type="text").validate#last_name
+												label(for="last_name") Ingresa tu nombre completo
+											.input-field
+												input(type="email").validate#email
+												label(for="email" data-error="Ingresa un correo válido") ¿Cuál es tu correo electrónico?
+											.input-field
+												input(type="tel").validate#tel
+												label(for="tel") Teléfono de contacto
+											.input-field
+												select
+													option(value="" disabled selected) Asunto
+													option(value="1") Option 1
+													option(value="2") Option 2
+													option(value="3") Option 3
+											.input-field
+												input(type="submit" value="ENVIAR").boton
+							dd
+								.info
+									p
+										b Toyota Revolución
+									p 
+										span Avenida Revolución 406, Col. San Pedro de los Pinos, México Distrito Federal
+									.tabla
+										div
+											p (55) 8647 - 8020
+										div
+											span.link Contacta distribuidor
+								.datos
+									div
+										span.link.regresar Regresar
+										img(src="images/sucursal/polanco.jpg")
+										h6
+											b Toyota Revolución
+										p Avenida Revolución 406, Col. San Pedro de los Pinos, México Distrito Federal
+										dl
+											dt Teléfono
+											dd (55) 8647 - 8020
+											dt Sitio web
+											dd
+												a(href="http://www.toyotapolanco.com.mx/") http://www.toyotapolanco.com.mx/
+											dt Horarios
+											dd
+												ul 
+													li Lunes a viernes
+														p 09:00 - 20:00 hrs.
+													li Sábado
+														p 09:00 - 18:00 hrs.
+													li Domingo
+														p 09:00 -18:00 hrs.
+									.form
+										h6
+											b ¿Cómo podemos ayudarte?
+										p Por favor escríbenos, y en breve alguno de nuestros especialistas te atenderá.
+										form
+											.input-field
+												input(type="text").validate#last_name
+												label(for="last_name") Ingresa tu nombre completo
+											.input-field
+												input(type="email").validate#email
+												label(for="email" data-error="Ingresa un correo válido") ¿Cuál es tu correo electrónico?
+											.input-field
+												input(type="tel").validate#tel
+												label(for="tel") Teléfono de contacto
+											.input-field
+												select
+													option(value="" disabled selected) Asunto
+													option(value="1") Option 1
+													option(value="2") Option 2
+													option(value="3") Option 3
+											.input-field
+												input(type="submit" value="ENVIAR").boton
+							dd
+								.info
+									p
+										b Toyota Universidad
+									p 
+										span Avenida Revolución 406, Col. San Pedro de los Pinos, México Distrito Federal
+									.tabla
+										div
+											p (55) 8647 - 8020
+										div
+											span.link Contacta distribuidor
+								.datos
+									div
+										span.link.regresar Regresar
+										img(src="images/sucursal/polanco.jpg")
+										h6
+											b Toyota Universidad
+										p Avenida Revolución 406, Col. San Pedro de los Pinos, México Distrito Federal
+										dl
+											dt Teléfono
+											dd (55) 8647 - 8020
+											dt Sitio web
+											dd
+												a(href="http://www.toyotapolanco.com.mx/") http://www.toyotapolanco.com.mx/
+											dt Horarios
+											dd
+												ul 
+													li Lunes a viernes
+														p 09:00 - 20:00 hrs.
+													li Sábado
+														p 09:00 - 18:00 hrs.
+													li Domingo
+														p 09:00 -18:00 hrs.
+									.form
+										h6
+											b ¿Cómo podemos ayudarte?
+										p Por favor escríbenos, y en breve alguno de nuestros especialistas te atenderá.
+										form
+											.input-field
+												input(type="text").validate#last_name
+												label(for="last_name") Ingresa tu nombre completo
+											.input-field
+												input(type="email").validate#email
+												label(for="email" data-error="Ingresa un correo válido") ¿Cuál es tu correo electrónico?
+											.input-field
+												input(type="tel").validate#tel
+												label(for="tel") Teléfono de contacto
+											.input-field
+												select
+													option(value="" disabled selected) Asunto
+													option(value="1") Option 1
+													option(value="2") Option 2
+													option(value="3") Option 3
+											.input-field
+												input(type="submit" value="ENVIAR").boton
+
+		include includes/footer

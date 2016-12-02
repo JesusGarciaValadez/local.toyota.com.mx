@@ -1,0 +1,114 @@
+-var location = "agenda-una-cita"
+-var subLoc = " "
+-var titulo = " "
+-var descrip = " "
+-var keyword = " "
+-var breadcrumb = "none"
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	body
+		
+		include includes/header
+		
+		main.wrapper
+			section.prueba
+				.container
+					dl
+						dd
+							h1
+								b Agenda una cita para tu servicio
+							p Al realizar  una cita, tu vehículo es asignado de manera previa a un técnico especializado y a un asesor de servicio, quienes estarán esperando tu llegada. En la mayoría de los servicios por kilometraje, tu auto estará listo ese mismo día.
+						dd
+							form
+								.input-field
+									input(type="text").validate#last_name
+									label(for="last_name") Ingresa tu nombre completo
+								.input-field
+									input(type="email").validate#email
+									label(for="email" data-error="Ingresa un correo válido") ¿Cuál es tu correo electrónico?
+								.input-field
+									input(type="tel").validate#tel
+									label(for="tel") Teléfono de contacto
+								.input-field
+									select
+										option(value="" disabled selected) Selecciona un modelo
+										option(value="1") Yaris
+								.input-field
+									select
+										option(value="" disabled selected) Selecciona una versión
+										option(value="1") S CVT
+								.input-field
+									input(type="text").validate#vin
+									label(for="vin") Ingresa tu VIN
+								.contenedor
+									.input-field
+										input(type="date").datepicker#date
+										label(for="date") Fecha
+										//- select
+										//- 	option(value="" disabled selected) Fecha
+										//- 	option(value="1") Viernes, 13 septiembre
+									.input-field
+										select
+											option(value="" disabled selected) Horario
+											option(value="1") Matutino
+								p
+									b Selecciona un distribuidor
+								.codigo
+									input(type="text" placeholder="Código Postal")
+									span
+									button(type="reset")
+									dl
+										dd
+											.img
+												img(src='images/sucursal/polanco.jpg')
+											.info
+												i Distribuidor más cercano
+												p
+													b Toyota Polanco
+												p 
+													span Lago Alberto 320,  Col. Anzures. México, Distrito Federal
+												p (55) 2581 - 1010
+										dd
+											.img
+												img(src='images/sucursal/polanco.jpg')
+											.info
+												p
+													b Toyota Revolución
+												p 
+													span Avenida Revolución 406, Col. San Pedro de los Pinos, México Distrito Federal
+												p (55) 8647 - 8020
+										dd
+											.img
+												img(src='images/sucursal/polanco.jpg')
+											.info
+												p
+													b Toyota Universidad
+												p 
+													span Avenida Revolución 406, Col. San Pedro de los Pinos, México Distrito Federal
+												p (55) 8647 - 8020
+
+								.input-field
+									input(type="submit" value="ENVIAR" onclick="return false;").boton.disabled
+				.pruebaModal
+					.container
+						.gracias
+							i
+							h1
+								b En breve te contactaremos
+							p Tu asesor de servicio se pondrá en contacto contigo en las 
+								| próximas 
+								b 24 horas 
+								| para confirmar tu cita
+							p
+								b No olvides llevar
+							ul
+								li Credencial de elector IFE (Vigente)
+								li Licencia de conducir (Vigente)
+							span.boton CONTINUAR
+
+		include includes/footer
