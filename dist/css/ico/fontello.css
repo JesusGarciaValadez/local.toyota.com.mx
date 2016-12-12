@@ -30,6 +30,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-icono_int:before {
+  content: "\e929";
+}
+.icon-icono_acc:before {
+  content: "\e92a";
+}
 .icon-icono_play:before {
   content: "\e927";
 }

@@ -27,6 +27,8 @@
 		overflow: visible
 		> div
 			+center(vh)
+			max-width: 600px
+			width: 100%
 			h3
 				text-align: center
 			p
@@ -68,3 +70,10 @@
 				.boton
 					margin: 1rem 0px
 					margin-top: 3rem
+
+@mixin postulate-smartphone
+	.postulateModal
+		.container
+			overflow: auto
+			> div
+				+center(r)

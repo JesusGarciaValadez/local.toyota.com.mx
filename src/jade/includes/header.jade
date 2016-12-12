@@ -20,8 +20,8 @@ header
 								li.desplegar
 									a(href="#") Modelos
 									+menu-autos(infoMenuAutos)
-								li
-									a(href="#") Configura y Cotiza
+								li(class="#{location == 'configura-cotiza' ? 'activo' : ''}")
+									a(href="configura-cotiza.html") Configura y Cotiza
 								li(class="#{location == 'servicio' ? 'activo' : ''}")
 									a(href="servicio.html") Servicio
 								li(class="#{location == 'propietarios-toyota' ? 'activo' : ''}")

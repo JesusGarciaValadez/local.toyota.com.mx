@@ -1,0 +1,188 @@
+.configuracion
+	.head
+		.container
+			div
+				h4
+					span Corolla 
+					| Base
+				p 1.8 L, 4 cilindros, 16 válvulas, Transmisión Manual de 6 velocidades / CVT
+			div
+			div
+				div 
+					span.precio Precio Total
+						b $255,500
+				span.boton.secundario COTIZAR 
+	.interaccion
+		.menu
+			.container
+				nav
+					ul 
+						li.ext.activo
+							a(href="#") EXTERIOR
+						li.int
+							a(href="#") INTERIOR
+						li.acc
+							a(href="#") ACCESORIOS
+						li.res
+							a(href="#") RESUMEN
+		.exterior
+			.container
+				p 
+					b Elige el color de Corolla que combine con tu personalidad
+				#container
+					.menu360
+						.colores360
+						span Gris Metálico
+					.threesixty.car
+						img(src="images/autos/modelos360/corolla/grisMetalico/1.jpg")
+						.spinner
+							span 0%
+						ol.threesixty_images
+		.interior
+			.img
+				img(src="images/autos/interiores/corolla/tipo/pielNegro.jpg")
+			.container
+				p
+					b Elige el interior de tu Corolla
+				.interiores
+					.tipos
+						div(data-options='{ "nombre" : "Piel Negro", "imagen" : "pielNegro" }').activo
+							img(src="images/autos/interiores/corolla/tipo/thumbs/pielNegro.jpg")
+						div(data-options='{ "nombre" : "Piel Blanco", "imagen" : "pielBlanco" }')
+							img(src="images/autos/interiores/corolla/tipo/thumbs/pielBlanco.jpg")
+					span Piel Negro
+		.accesorios
+			.container
+				p
+					b Elige los accesorios para tu Corolla
+				.flex
+					div
+						div
+							.img
+								img(src="images/autos/accesorios/corolla/rines.jpg")
+							.info
+								p Rines deportivos 17”
+								p
+									b $15,000
+								span.link.datalle Ver detalle 
+							.seleccionar 
+								span SELECCIONAR
+					div
+						div
+							.img
+								img(src="images/autos/accesorios/corolla/spoiler.jpg")
+							.info
+								p Spoiler trasero
+								p
+									b $8,000
+								span.link.datalle Ver detalle 
+							.seleccionar 
+								span SELECCIONAR
+					div
+						div
+							.img
+								img(src="images/autos/accesorios/corolla/spoiler.jpg")
+							.info
+								p Spoiler trasero
+								p
+									b $8,000
+								span.link.datalle Ver detalle 
+							.seleccionar 
+								span SELECCIONAR
+		.resumen
+			.container
+				div
+					p 
+						b Resumen
+					.tabla
+						.fila
+							.celda
+								h4
+									span Corolla 
+									| Base
+									span.editar EDITAR
+								p 1.8 L, 4 cilindros, 16 válvulas DOHC, SEFI, VVT-i Dual, ETCS-i 132 hp @ 6,000 rpm 128 lb-pie @ 4,400 rpm
+								span.opcion Transmisión
+								p Manual de 6 velocidades / CVT
+							.celda
+								div 
+									span.precio Precio Total
+										b $255,500
+								span.link FINANCIAR
+					.tabla.ext
+						.fila
+							.celda
+								span.opcion Seleccionados
+								.icono Exterior 
+									span.editar EDITAR
+						.fila
+							.celda
+								.seleccion
+									span
+									span Metálico
+							.celda
+								div
+									p 
+										b Incluído
+					.tabla.int
+						.fila
+							.celda
+								.icono Interior 
+									span.editar EDITAR
+						.fila
+							.celda
+								.seleccion
+									span
+									span Piel
+							.celda
+								div
+									p 
+										b Incluído
+					.tabla.acc
+						.fila.titulo
+							.celda
+								span.opcion Opciones
+								.icono Accesorios 
+									span.editar EDITAR
+					.precio
+						span  Precio Total 
+							b $270,500
+					.cotizar
+						div
+							p Con la cotización 
+								b obtienes la información más completa, 
+								| también podrás acceder a 
+								b beneficios para comprar tu Toyota
+							p Recuerda que aquí puedes 
+								span.link FINANCIAR
+						div
+							span.boton COTIZAR
+					.distribuidor
+						p Tu código postal: 
+							span 06600
+						dl
+							dd.activo
+								.info
+									p
+										b Toyota Polanco
+									p 
+										span Lago Alberto 320,  Col. Anzures. México, Distrito Federal
+									p (55) 2581 - 1010
+							dd.none
+								.info
+									p
+										b Toyota Revolución
+									p 
+										span Avenida Revolución 406, Col. San Pedro de los Pinos, México Distrito Federal
+									p (55) 8647 - 8020
+							dd.none
+								.info
+									p
+										b Toyota Universidad
+									p 
+										span Avenida Revolución 406, Col. San Pedro de los Pinos, México Distrito Federal
+									p (55) 8647 - 8020
+						.ver
+							span Ver más
+	.btnregresar
+		span.link.regresar Cambia versión

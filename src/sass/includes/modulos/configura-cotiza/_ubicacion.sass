@@ -1,0 +1,155 @@
+section.configura-cotiza
+	.ubicacion
+		//display: none
+		.container
+			h1
+				text-align: center
+			> p
+				text-align: center
+				font-size: 1.125rem
+			form
+				margin: 6.25rem auto
+				max-width: 500px
+				> p
+					text-align: center
+					margin-bottom: 2.5rem
+				.codigo
+					margin: auto
+					position: relative
+					width: 100%
+					input
+						&:focus:not([readonly])
+							box-shadow: none
+							outline-width: 0
+						&::-webkit-input-placeholder
+							color: $BlueGrey
+						&:-moz-placeholder
+							color: $BlueGrey
+						&::-moz-placeholder
+							color: $BlueGrey
+						&:-ms-input-placeholder
+							color: $BlueGrey
+					input[type=text]
+						+fxr
+						border-bottom: 1px solid $BlueGrey900
+						color: $BlueGrey900
+						font-size: 1.125rem
+						font-weight: 300
+						height: 100%
+						margin: 0px 
+						padding: 5px 0px
+						width: 100%
+					input[type=submit],button
+						background: none
+						border: none
+						color: $BlueGrey
+						cursor: pointer
+						display: none
+						font-size: 1.125rem
+						height: 100%
+						height: 30px
+						position: absolute
+						right: 0px
+						top: 0px
+						width: 30px
+						&:before
+							+icons('\E14C')
+					> span
+						background: $White
+						color: $BlueGrey
+						font-size: 1.125rem
+						height: 30px
+						position: absolute
+						right: 0px
+						top: 0px
+						width: 30px
+						&:before
+							+center(vh)
+							+fawesome('\f002')
+					dl
+						display: none
+						margin-bottom: 2rem
+						dd
+							+fx(all,0.5s)
+							border-bottom: 1px solid $Grey400
+							cursor: pointer
+							display: table
+							margin-bottom: 0.5rem
+							min-height: 155px
+							width: 100%
+							&:hover
+								+shadow
+								background: rgba(238, 238, 238, 0.30)
+								border-bottom: 1px solid rgba(238, 238, 238, 0.3)
+							&.activo
+								+shadow
+								background: rgba(238, 238, 238, 0.30)
+								border-bottom: 1px solid rgba(238, 238, 238, 0.3)
+								margin-top: 1rem
+							&.none
+								display: none
+							> div
+								+bx
+								display: table-cell
+								height: 100%
+								vertical-align: top
+							.img
+								overflow: hidden
+								position: relative
+								width: 25%
+								img
+									+center(h)
+									height: 100%
+									left: 0px
+									width: auto
+							.info
+								padding: 1.25rem 2rem
+								width: 65%
+								i
+									color: $BlueGrey400
+									display: block
+									font-size: 0.75rem
+									font-weight: 700
+									margin: 0px auto 1.25rem
+									position: relative
+									&:before
+										+center(h)
+										+icons('\E885')
+										color: $Yellow700
+										padding-right: 5px
+										right: 100%
+								p
+									color: $BlueGrey900
+									font-size: 0.875rem
+									margin: 0px
+									span
+										font-size: 0.875rem
+										font-weight: 300
+					&.activo
+						dl
+							display: block					
+				.boton
+					margin: 3rem auto
+
+@mixin configura-cotiza-ubicacion-smartphone
+	section.configura-cotiza
+		.ubicacion
+			.container
+				> h1
+					margin: 3.125rem 0px 1.125rem
+				> p
+					font-size: 1.375rem
+				form 
+					margin: 1.5625rem auto 3.125rem
+					> p
+						text-align: left
+						font-size: 0.875rem
+						b
+							font-weight: 400
+					.codigo 
+						dl 
+							dd
+								.img
+									display: none
+								.info
+									width: 100%

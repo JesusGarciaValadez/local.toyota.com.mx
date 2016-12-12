@@ -1,0 +1,562 @@
+section.configura-cotiza
+	overflow: visible
+	.configuracion
+		display: none
+		.head
+			padding: 0.625rem 0px
+			.container
+				> div
+					display: table-cell
+					vertical-align: middle
+					width: 33%
+					h4
+						font-weight: 300
+						span
+							font-weight: 700
+					p
+						font-size: 0.875rem
+						line-height: 1.1875rem
+					> div
+						display: table
+						margin: auto
+						.precio
+							display: block
+							font-size: 0.75rem
+							font-weight: 300
+							text-align: right
+							b
+								display: block
+								font-size: 1.375rem
+								font-weight: 700
+		.interaccion
+			.menu
+				background: $Grey50
+				border-bottom: 1px solid #E0E0E0
+				border-top: 1px solid #E0E0E0
+				overflow: visible
+				position: relative
+				width: 100%
+				z-index: 1
+				.container
+					overflow: visible
+					padding: 0px
+					nav
+						display: table
+						height: 65px
+						position: relative
+						width: 100%
+						ul
+							display: table
+							height: 100%
+							margin: 0px
+							padding: 0px
+							width: 100%
+							li
+								+bx
+								+fx(all,0.3s)
+								border-right: 1px solid #E0E0E0
+								cursor: pointer
+								display: table-cell
+								height: 100%
+								margin: 0px
+								vertical-align: middle
+								width: 25%
+								a
+									color: $BlueGrey900
+									display: table
+									font-size: 1rem
+									font-weight: 700
+									margin: auto
+								&.listo
+									&.ext, &.int, &.acc
+										&:before
+											+icons('\E876')
+											display: table
+											line-height: 1.4
+											color: $Red800
+									&:hover
+										+transformr
+										+shadowr
+										background: none
+										border-right: 1px solid #E0E0E0
+										a
+											color: $BlueGrey900
+											font-weight: 700
+								&:before
+									color: #989898
+									display: table
+									margin: 0px auto
+								&:last-child
+									border-right: none
+									&.listo
+										&:hover
+											border-right: none
+								&.ext
+									&:before
+										+fawesome('\f043')
+										font-size: 20px
+										line-height: 1.4
+								&.int
+									&:before
+										+fonIco('\e929')
+										font-size: 20px
+										line-height: 1.4
+								&.acc
+									&:before
+										+fonIco('\e92a')
+										font-size: 20px
+										line-height: 1.4
+								&.res
+									&:before
+										display: none
+								&:hover
+									+scale(1.20,1.20)
+									+shadow(0px, 27px, 24px, 0px, rgba(0,0,0,0.2), 0px, 40px, 77px, 0px, rgba(0,0,0,0.22))
+									background: $Red800
+									border-right: none
+									&:before
+										color: $White
+									a
+										color: $White
+										font-weight: 400
+								&.activo
+									background: $Red800
+									&:before
+										color: $White
+									a
+										color: $White
+										font-weight: 400
+			.exterior
+				//display: none
+				padding: 2.5rem 0px
+				.container
+					> p
+						text-align: center
+					.menu360
+						> span
+							color: $BlueGrey
+							display: table
+							font-size: 0.875rem
+							line-height: 1.1875rem
+							margin: 1.5625rem auto
+							text-transform: capitalize
+						.colores360
+							border-collapse: separate
+							border-spacing: 15px 0px
+							display: table
+							margin: 1.5625rem auto
+							> div
+								+bx
+								+fx(all,0.5s)
+								cursor: pointer
+								display: table-cell
+								height: 30px
+								position: relative
+								width: 30px
+								&:hover, &.active
+									+shadow(0px, 5px, 11px, 0px, rgba(0,0,0,0.18), 0px, 4px, 15px, 0px, rgba(0,0,0,0.15))
+									&:before
+										+center(vh)
+										+icons('\E876')
+										color: $White
+										font-size: 1.25rem
+							.grisMetalico
+								background: #9D9EA0
+							.rojo
+								background: #D0011B
+							.azul
+								background: #1B5293
+							.negro
+								background: #000000
+							.plata
+								background: #c6c6c6
+					.threesixty
+						height: auto!important
+						> img
+							height: auto
+							width: 100%
+						.spinner
+							+center(vh)
+							margin: 0px!important
+			.interior
+				display: none
+				position: relative
+				overflow: hidden
+				height: 650px
+				width: 100%
+				.img
+					+center(v)
+					height: 100%
+					width: 100%
+					> img
+						+object
+						height: 100%
+						width: 100%
+				.container
+					> p
+						color: $White
+						margin-top: 2.5rem
+						text-align: center
+					.interiores
+						> span
+							color: $White
+							display: table
+							font-size: 0.875rem
+							font-weight: 300
+							line-height: 1.1875rem
+							margin: 1.5625rem auto
+							text-transform: capitalize
+						.tipos
+							border-collapse: separate
+							border-spacing: 15px 0px
+							display: table
+							margin: 1.5625rem auto
+							> div
+								+bx
+								+fx(all,0.5s)
+								border: 1px solid $White
+								cursor: pointer
+								display: table-cell
+								position: relative
+								> img
+									display: block
+								&:hover, &.activo
+									+shadow(0px, 5px, 11px, 0px, rgba(0,0,0,0.18), 0px, 4px, 15px, 0px, rgba(0,0,0,0.15))
+									&:before
+										+center(vh)
+										+icons('\E876')
+										color: $White
+										font-size: 1.25rem
+			.accesorios
+				background: $Grey100
+				display: none
+				padding: 2.5rem 0px
+				.container
+					> p
+						text-align: center
+					.flex
+						> div
+							margin-bottom: 2rem
+							width: 33%
+							+bx
+							padding: 0px 1rem
+							> div
+								+fx(all,0.5s)
+								background: $White
+								width: 100%
+								&:hover
+									+shadow(0px, 8px, 17px, 0px, rgba(0,0,0,0.2), 0px, 6px, 20px, 0px, rgba(0,0,0,0.19))
+								.img
+									margin-bottom: 1rem
+									overflow: hidden
+									> img
+										+object
+										display: block
+										height: 100%
+										max-width: 358px
+										width: 100%
+								.info
+									+bx
+									padding: 0px 1rem
+									p
+										font-size: 1.125rem
+										margin-bottom: 0px
+									.link
+										cursor: pointer
+										font-size: 0.875rem
+										margin: 1rem 0px
+								.seleccionar
+									+fx(all,0.5s)
+									background: $BlueGrey900
+									color: $White
+									cursor: pointer
+									display: block
+									font-size: 0.875rem
+									font-weight: 600
+									opacity: 1
+									padding: 0.625rem 0px
+									position: relative
+									text-align: center
+									width: 100%
+									&:hover
+										background: $Red800
+									&.activo
+										background: $Red800
+										&:before
+											+center(vh)
+											+icons('\E876')
+											color: $White
+											font-size: 1.25rem
+											
+										span
+											opacity: 0
+			.resumen
+				display: none
+				padding: 2.5rem 0px
+				.container
+					> div
+						margin: auto
+						max-width: 600px
+						width: 100%
+						> p
+							padding: 0px 2rem
+							margin: 0px
+						.tabla
+							+bx
+							border-bottom: 1px solid #E0E0E0
+							display: table
+							padding: 1rem 2rem
+							width: 100%
+							.fila
+								display: table
+								margin-bottom: 0.5rem
+								width: 100%
+								.celda
+									display: table-cell
+									vertical-align: middle
+									width: 50%
+									h4
+										font-size: 1.5rem
+										font-weight: 300
+										line-height: 1.75rem
+										margin-top: 0px
+										span
+											font-weight: 700
+									.editar
+										color: $Red800
+										cursor: pointer
+										font-size: 0.75rem
+										font-weight: 300
+										padding-left: 0.3125rem
+									.eliminar
+										color: $Red800
+										cursor: pointer
+										font-size: 0.75rem
+										font-weight: 300
+										padding-left: 0.3125rem
+									p
+										font-size: 0.875rem
+										line-height: 1.1875rem
+										&:last-child
+											margin-bottom: 0px
+									.opcion
+										color: $BlueGrey400
+										font-size: 0.75rem
+										font-weight: 600
+									> div
+										.precio
+											display: block
+											font-size: 0.75rem
+											font-weight: 300
+											text-align: right
+											b
+												display: block
+												font-size: 1.5rem
+												font-weight: 700
+										p
+											text-align: right
+											margin: 0px
+									.seleccion
+										span
+											font-size: 0.75rem
+									.link
+										cursor: pointer
+										float: right
+										font-size: 0.75rem
+										margin-top: 0.3125rem
+							&.ext
+								.icono
+									font-size: 1rem
+									font-weight: 700
+									position: relative
+									&:before
+										+center(h)
+										+fawesome('\f043')
+										font-size: 20px
+										line-height: 1.4
+										right: 100%
+										padding-right: 0.5rem
+							&.int
+								.icono
+									font-size: 1rem
+									font-weight: 700
+									position: relative
+									&:before
+										+center(h)
+										+fonIco('\e929')
+										font-size: 20px
+										line-height: 1.4
+										right: 100%
+										padding-right: 0.5rem
+							&.acc
+								.icono
+									font-size: 1rem
+									font-weight: 700
+									position: relative
+									&:before
+										+center(h)
+										+fonIco('\e92a')
+										font-size: 20px
+										line-height: 1.4
+										right: 100%
+										padding-right: 0.5rem
+						.precio
+							margin-top: 1rem
+							span
+								display: block
+								font-size: 1rem
+								text-align: right
+								b
+									font-size: 1.5rem
+									font-weight: 700
+						.cotizar
+							background: $Grey100
+							display: table
+							margin: 1rem auto
+							> div
+								+bx
+								padding: 1.25rem 2rem
+								display: table-cell
+								vertical-align: middle
+								p
+									font-size: 0.875rem
+									line-height: 1.1875rem
+									&:last-child
+										margin-bottom: 0px
+								.link
+									cursor: pointer
+									display: inline
+									font-size: 0.875rem
+									margin: 0px
+						.distribuidor
+							padding: 2.5rem 0px
+							> p
+								padding: 0px 2rem
+								span
+									font-size: 1.125rem
+									font-weight: 700
+							dl
+								margin-bottom: 2rem
+								dd
+									+fx(all,0.5s)
+									border-bottom: 1px solid $Grey400
+									cursor: pointer
+									display: table
+									margin-bottom: 0.5rem
+									width: 100%
+									&:hover
+										+shadow
+										background: rgba(238, 238, 238, 0.30)
+										border-bottom: 1px solid rgba(238, 238, 238, 0.3)
+									&.activo
+										+shadow
+										background: rgba(238, 238, 238, 0.30)
+										border-bottom: 1px solid rgba(238, 238, 238, 0.3)
+										margin-top: 1rem
+										p
+											b
+												&:before
+													+center(h)
+													+icons('\E876')
+													color: $BlueGrey900
+													font-size: 1.25rem
+													padding-right: 5px
+													right: 100%
+									&.none
+										display: none
+									> div
+										+bx
+										display: table-cell
+										height: 100%
+										vertical-align: top
+									.info
+										padding: 1.25rem 4rem
+										width: 65%
+										i
+											color: $BlueGrey400
+											display: block
+											font-size: 0.75rem
+											font-weight: 700
+											margin: 0px auto 1.25rem
+											position: relative
+											&:before
+												+center(h)
+												+icons('\E885')
+												color: $Yellow700
+												padding-right: 5px
+												right: 100%
+										p
+											color: $BlueGrey900
+											font-size: 0.875rem
+											margin: 0px
+											position: relative
+											span
+												font-size: 0.875rem
+												font-weight: 300
+							.ver
+								+bx
+								background: $White
+								overflow: hidden
+								padding: 10px 4rem 30px
+								span
+									color: $Red800
+									cursor: pointer
+									display: table
+									font-size: 0.875rem
+									font-weight: 600
+									overflow: hidden
+									padding-right: 1rem
+									position: relative
+									text-decoration: none
+									&:before
+										+fx(all,0.5s)
+										background: $Red800
+										bottom: 0px
+										content: " "
+										display: block
+										height: 2px
+										left: 0px
+										position: absolute
+										width: 0%
+									&:after
+										+center(h)
+										+fawesome('\f107')
+										+fx(all,0.5s)
+										font-size: 1rem
+										line-height: normal
+										right: 0px
+									&:hover
+										&:before
+											width: calc(100% - 1rem)
+								&.activo
+									span
+										&:after
+											+fawesome('\f106')
+		.btnregresar
+			+bx
+			+center(v)
+			max-width: 1200px
+			padding: 0px 10px
+			top: 0px
+			width: 100%
+			> .link.regresar
+				cursor: pointer
+				font-size: 0.875rem
+				margin: 1rem 0px
+
+@mixin configura-cotiza-configuracion-smartphone
+	section.configura-cotiza
+		.configuracion
+			.head
+				.container
+					> div
+						display: block
+						width: 100%
+						> div
+							> span
+								text-align: center
+			.btnregresar
+				+center(r)
+				padding: 0px 20px
+				> .link.regresar
+					margin: 2rem 0px

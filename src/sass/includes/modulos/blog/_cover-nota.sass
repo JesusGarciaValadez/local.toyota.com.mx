@@ -11,14 +11,9 @@
 			width: 100%
 		> div
 			display: none
-			vertical-align: top
-			h1
-				margin-top: 3.75rem
-			p
-				display: none
+
 @mixin nota-cover-smartphone
 	.cover-nota
-		background: $BlueGrey900
 		height: auto
 		.container
 			padding: 0px
@@ -29,39 +24,3 @@
 				min-height: auto
 				position: relative
 				width: 100%
-			> div
-				display: block
-				padding: 0 20px
-				position: relative
-				h1
-					color: $White
-					float: left
-					font-size: 1.25rem
-					margin: 6px 0
-					width: 50%
-				p
-					color: $White
-					display: block
-					font-size: 0.75rem
-					font-weight: 700
-					line-height: 60px
-					text-align: right
-					margin: 0
-					margin-right: 20px
-					.menuFiltro
-						+translate(-50% , -50%)
-						cursor: pointer
-						display: block
-						height: 24px
-						position: absolute
-						right: 0
-						top: 18px
-						width: 24px
-						z-index: 1
-						&:after
-							+center(h)
-							+icons('\E145')
-							color: $Red800
-							left: 0
-							font-size: 1.5rem
-							position: relative

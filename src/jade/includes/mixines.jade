@@ -27,6 +27,27 @@ mixin menu-autos(arreglo)
 												dd
 													a(href="#{valu.url}").link CONFIGURA
 
+//-Seleccionar Autos
+mixin seleccionar-autos(arreglo)
+	.configura-modelos
+		div
+			ul
+				each val, index in arreglo
+					-var ind = index +1
+					li
+						a #{val.familia}
+						div
+							.container
+								.flex
+									each valu in arreglo[index].lista
+										div
+											.img
+												img(src="images/autos/#{valu.img}")
+												img(src="images/autos/#{valu.imghover}").hover
+											p #{valu.modelo}
+											span Desde 
+												b $#{valu.precio}
+
 //-Autos
 mixin lista-autos(arreglo)
 	.lista-autos

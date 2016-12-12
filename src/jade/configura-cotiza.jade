@@ -1,0 +1,25 @@
+-var location = "configura-cotiza"
+-var subLoc = " "
+-var titulo = " "
+-var descrip = " "
+-var keyword = " "
+-var breadcrumb = "none"
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	body
+		
+		include includes/header
+		
+		main.wrapper
+			section.configura-cotiza
+				include includes/modulos/configura-cotiza/ubicacion
+				include includes/modulos/configura-cotiza/modelo
+				include includes/modulos/configura-cotiza/version
+				include includes/modulos/configura-cotiza/configuracion
+
+		include includes/footer

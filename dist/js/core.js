@@ -30,6 +30,9 @@ init = function(){
 				menuFotter();
 				mobileMenuSelect();
 				mobileMenuPropietarios();
+				if($('section').hasClass('cover-modelo')){
+					coverModeloMobile();
+				}
 			}
 		}
 		else if(anchura >= 768){
@@ -43,24 +46,35 @@ init = function(){
 				menuFotterStop();
 				menuSelect();
 				menuPropietarios();
+				if($('section').hasClass('cover-modelo')){
+					coverModeloDesctop();
+				}
 			}
 		}
 	}
 
 	moverElementos = function(){
 		$('.links-footer li > ul').css("display", "none");
-		$('.header .menu-autos > div ul li > div').css("display", "none");
-		$('.btnBuscador').removeClass('activo');
+		$('.header .menu-autos > div ul li > div, .configura-modelos div ul li > div').css("display", "none");
+		$('.btnBuscador, .configura-modelos div ul li > a').removeClass('activo');
 		if($('.header .menu.activo, .menu-propietarios .menufixed.activo').hasClass('activo')){
 			$('body').addClass('hidden');
 		}
+		$('.version .container > span').removeClass();
+		$('.version .container > span').addClass('boton secundario');
+		$('.configuracion .btnregresar > span').removeClass();
+		$('.configuracion .btnregresar > span').addClass('boton secundario');
 	}
 
 	resetElementos = function(){
 		$('.links-footer li > ul').css("display", "block");
-		$('.header .menu-autos > div ul li > div').css("display", "block");
+		$('.header .menu-autos > div ul li > div, .configura-modelos div ul li > div').css("display", "block");
 		$('.descargas .mobile').css("display", "none");
 		$('body').removeClass('hidden');
+		$('.version .container > span').removeClass();
+		$('.version .container > span').addClass('link regresar');
+		$('.configuracion .btnregresar > span').removeClass();
+		$('.configuracion .btnregresar > span').addClass('link regresar');
 	}
 
 	menudesktop = function(){
@@ -83,6 +97,19 @@ init = function(){
 		});
 		$('.btnBuscador > span').on('click', function(){
 			$('.btnBuscador').toggleClass('activo');
+		});
+		$('.configura-modelos div ul li').removeClass('activo');
+		$('.configura-modelos div ul li').eq(0).addClass('activo');
+		$('.configura-modelos div ul li').on('click', function(){
+			$('.configura-modelos div ul li').removeClass('activo');
+			$(this).addClass('activo');
+		});
+		$('.configura-modelos .flex > div').on('mouseover',function() {
+			$(this).addClass('hover');
+			$('.configura-modelos .flex').addClass('hover');
+		}).on('mouseout',function() {
+			$(this).removeClass('hover');
+			$('.configura-modelos .flex').removeClass('hover');
 		});
 	}
 
@@ -114,20 +141,237 @@ init = function(){
 			$(this).removeClass('hover');
 			$('.menu-autos .flex').removeClass('hover');
 		});
+		$('.configura-modelos div ul li > a').on('click', function(){
+			var activo = $(this).text();
+			$('.modelo h6 b').empty();
+			$('.modelo h6 b').append(activo);
+
+			if(!$(this).hasClass('activo')){
+				$('.configura-modelos div ul li > a').removeClass('activo')		
+				$('.configura-modelos div ul li > a ~ div').slideUp();
+			}
+			$(this).toggleClass('activo');
+			$('~ div', this).slideToggle();
+		});
 	}
 
 	destructMenuMobile = function(){
-		$('.hamburguesa, .desplegar > a, .regresar, .header .menu-autos div ul li a').off('click');
+		$('.hamburguesa, .desplegar > a, .regresar, .header .menu-autos div ul li a, .configura-modelos div ul li > a').off('click');
+		$('.modelo h6 b').empty();
 	}
 	
 	destructMenuDesctop = function(){
-		$('.header .menu-autos div ul li').off('click');
+		$('.header .menu-autos div ul li, .configura-modelos div ul li').off('click');
 		$('.desplegar').off('mouseover');
 		$('.desplegar').off('mouseout');
-		// $('.menu-autos .flex > div').off('mouseover');
-		// $('.menu-autos .flex > div').off('mouseout');
+		$('.configura-modelos .flex > div').off('mouseover');
+		$('.configura-modelos .flex > div').off('mouseout');
 		$('.btnBuscador > span').off('click');
+		var activo = $('.configura-modelos div ul li.activo a').text();
+		$('.modelo h6 b').append(activo);
 	} 
+
+	configuraCotiza = function(){
+		$('.ubicacion .input-field > .boton').on('click', function(){
+			if(!$('.ubicacion .input-field > .boton').hasClass('disabled')){
+				$('.ubicacion').fadeOut( "slow", function() {
+					$('.modelo').fadeIn();
+				});
+			}
+		});
+		$('.configura-modelos .flex > div').on('click', function(){
+			var nombre = $(this).find('p').text();
+
+			$('.version h3 b').empty();
+			$('.version h3').append($('<b>'+nombre+'</b>'));
+
+			if(!$(this).hasClass('activo')){
+				$('.configura-modelos .flex').removeClass('activo');
+				$('.configura-modelos .flex > div').removeClass('activo');
+			}
+			$(this).parent().toggleClass('activo');
+			$(this).toggleClass('activo');
+			$('.modelo').fadeOut( "slow", function() {
+				$('.version').fadeIn();
+			});
+			$('.version .container > span').on('click', function(){
+				$('.version').fadeOut( "slow", function() {
+					$('.modelo').fadeIn();
+				});
+			});
+		});
+		$('.version .menu ul li').on('click', function(){
+			var clase = $(this).data('clase');
+			$('.version .menu ul li').removeClass();
+			$(this).addClass('activo');
+			$('.version .flex > div').removeClass('activo');
+			$('.version .flex > div:not(.'+clase+')').addClass('activo');
+		});
+		$('.version .flex .ver').on('click', function(){
+			$(this).parent().toggleClass('activo');
+		});
+		$('.version .flex .confi').on('click', function(){
+
+			var nombre = $(this).parent().find('h6').html();
+			var precio = $(this).parent().find('span b').text();
+
+			$('.configuracion .head .precio b, .resumen .precio b').empty();
+			$('.configuracion .head .precio b, .resumen .precio b').append(precio);
+
+			$('.configuracion .head h4, .resumen .tabla .celda h4').empty();
+			$('.configuracion .head h4, .resumen .tabla .celda h4').append(nombre);
+
+			$('.version .flex .confi').removeClass('activo');
+			$(this).addClass('activo');
+			$('.version').fadeOut( "slow", function() {
+				$('.configuracion').fadeIn();
+			});
+			$('.configuracion .btnregresar > span').on('click', function(){
+				$('.configuracion').fadeOut( "slow", function() {
+					$('.version').fadeIn();
+				});
+			});
+		});
+
+		$('.interior .tipos > div ').on('click',function(){
+			var nombre = $(this).data( "options" ).nombre;
+			var img = $(this).data( "options" ).imagen;
+
+			$('.interior .tipos > div').removeClass('activo');
+			$(this).addClass('activo');
+			
+			$('.interiores > span').empty();
+			$('.interiores > span').append(nombre);
+
+			$('.interior .img > img').attr("src", 'images/autos/interiores/corolla/tipo/'+img+'.jpg');
+		});		
+
+		$('.configuracion .menu ul li').on('click',function(){
+
+		});
+
+		$('.interaccion .menu ul li').on('click',function(){
+			rellenar();
+			var index = $(this).index();
+			var on = index+1
+			var nombre = $('.interaccion > div:not(.menu):visible').find('span:eq(0)').text();
+			var numero = $('.interaccion .accesorios .seleccionar.activo').length;
+
+			$('.interaccion .menu ul li.activo').addClass('listo');
+			
+			if($('.interaccion .menu ul li').hasClass('activo')){
+				$(this).removeClass('listo');
+			}
+			
+			if($('.interaccion .menu ul li.acc').hasClass('listo')){
+				$('.interaccion .menu ul li.acc a span').empty();
+				$('.interaccion .menu ul li.acc a').append('<span> ('+numero+')</span>');
+			}
+			
+			$('.interaccion .menu ul li:not(.acc, .res).activo a').empty();
+			$('.interaccion .menu ul li:not(.acc, .res).activo a').append(nombre);
+			$('.interaccion .menu ul li').removeClass('activo');
+			$(this).addClass('activo');
+			$('.interaccion > div:not(.menu)').fadeOut( "slow", function() {
+				setTimeout(function(){
+					$('.interaccion > div:eq('+on+')').fadeIn("slow");
+				},500);
+			});
+		});
+
+		$('.interaccion .accesorios .seleccionar').on('click', function(){
+			$(this).parent().parent().toggleClass('activo');
+			$(this).toggleClass('activo');
+		});
+
+		$('.resumen .tabla .editar').on('click', function(){
+			//var clase = $(this).parent().parent().parent().parent().attr('class').split(' ')[1];
+			var clase = $(this).parents('.tabla').attr('class').split(' ')[1];
+			$('.interaccion .menu .'+clase+'').trigger('click');
+		});
+
+		//ThreeSixty
+		reel360Gal = function(color){	
+			
+			$('.car').ThreeSixty({
+		        totalFrames: 36,
+		        endFrame: 36,
+		        //currentFrame: 1,
+
+		        imgList: '.threesixty_images',
+		        progress: '.spinner',
+		        //imagePath: url+'images/autos/modelos360/corolla/'+color+'/',
+		        imagePath: 'images/autos/modelos360/corolla/'+color+'/',
+		        filePrefix: '',
+		        ext: '.jpg',
+		        height: 406,
+		        width: 1000,
+				disableSpin: true,
+		        navigation: false,
+		        dragging: false,
+		        responsive: true
+			});
+		}
+
+		coloresCar = function(){
+			var cars = ['grisMetalico','rojo','azul','negro','plata'];
+			var cars_n = ['Gris Metálico','Rojo','Azul','Negro','Plata'];
+			var i = 0;
+			var total = (cars.length)-1;
+
+			while(i<=total){
+				$('.configuracion .colores360').append('<div class="'+cars[i]+'">')
+				i++
+			}
+
+			$('.configuracion .colores360 > div:eq(0)').addClass('active');
+			
+			$('.configuracion .colores360 > div').on('click',function(){
+				$('.configuracion .colores360 > div').removeClass('active');
+				$(this).addClass('active');
+				var colorActive = $('.configuracion .colores360 > div.active').index();
+				$('.menu360 span').text(cars_n[colorActive]);
+				$('.threesixty > img').attr("src", 'images/autos/modelos360/corolla/'+cars[colorActive]+'/1.jpg');
+				reel360Gal(cars[colorActive]);
+			});
+		}
+		rellenar = function(){
+			var extColor = $('.exterior .colores360 > div.active').attr('class').split(' ')[0];
+			var extNombre = $('.exterior .menu360 > span').text();
+
+			var intImg = $('.interior .tipos > div.activo > img').attr('src');
+			var intNombre = $('.interior .interiores > span').text();
+
+			var activos = $('.accesorios .flex > div.activo .info');
+			var arry = [];
+			$.each(activos, function(k,v){
+				arry.push($(v).find('p').text().split('$'));
+			})
+			var elemento = arry;
+			var cuantos = elemento.length;
+			var i = 0;
+
+			$('.resumen .tabla.acc .fila:not(.titulo)').remove();
+
+			$('.resumen .tabla.ext .seleccion span:eq(1)').empty();
+			$('.resumen .tabla.ext .seleccion span:eq(1)').append(extNombre);
+
+			$('.resumen .tabla.int .seleccion span:eq(1)').empty();
+			$('.resumen .tabla.int .seleccion span:eq(1)').append(intNombre);
+
+			while(i<=cuantos){
+				if(typeof elemento[i] !== 'undefined'){
+					$('.resumen .tabla.acc').append('<div class="fila"><div class="celda"><div class="seleccion"><span>'+elemento[i][0]+'</span><span class="eliminar">ELIMINAR</span></div></div><div class="celda"><div><p><b>'+elemento[i][1]+'</b></p></div></div></div>');
+				}
+				i++
+			}
+
+		}
+		reel360Gal('grisMetalico');
+		coloresCar();
+		rellenar();
+	}
+
 
 	hoverdir = function(){
 		$('.promociones .flex dd').each( function() { $(this).hoverdir(); } );
@@ -175,7 +419,7 @@ init = function(){
 
 	filtroblogMobile = function(){
 
-		var name = $('.cover-blog h1').text();
+		var name = $('.cover-blog h1, .cover-nota h1').text();
 		var activo = $('.menu-blog nav ul li.activo').text();
 
 		$('.menu-blog .titulo').append($('<div><span>'+name+'</span></div>'));
@@ -232,23 +476,6 @@ init = function(){
 		$('header').addClass('static');
 		$('html').css("overflow", "visible");
 		$(window).on('scroll',menufixed);
-	}
-	else if($('section').hasClass('cover-modelo')){
-		setSize = function(){
-			medidas();
-			if(anchura <= 767){
-				if(core=== true){
-					core = false
-					coverModeloMobile();
-				}
-			}
-			else if(anchura >= 768){
-				if(core=== false){
-					core = true
-					coverModeloDesctop();
-				}
-			}
-		}
 	}
 	else{
 
@@ -322,13 +549,17 @@ init = function(){
 		$('body').removeClass('hidden');
 	});
 
+	
 	$('.prueba .input-field > .boton').on('click', function(){
-		$('.pruebaModal').fadeIn();
-		$('body').addClass('hidden');
+		if(!$('.prueba .input-field > .boton').hasClass('disabled')){
+			$('.pruebaModal').fadeIn();
+			$('body').addClass('hidden');
+		}
 	});
 	$('.pruebaModal .gracias > .boton').on('click', function(){
 		$('.pruebaModal').fadeOut();
 		$('body').removeClass('hidden');
+		$('.codigo > button').trigger( "click" );
 	});
 
 	deacargasModal = function(){
@@ -462,7 +693,7 @@ init = function(){
 	$('.resultados form > button').on('click', function(){
 		$('.resultados form > button').fadeOut();
 		$('.resultados form > span').fadeIn();
-	})
+	});
 
 	$('.buscar input[type=text]').on('keyup', function(){
 		var cuantos = $(this).val().length
@@ -482,7 +713,7 @@ init = function(){
 		$('.buscar form > button').fadeOut();
 		$('.buscar form > ul').fadeOut();
 		$('.buscar form > span').fadeIn();
-	})
+	});
 
 	$('.codigo input[type=text]').on('keyup', function(){
 		var cuantos = $(this).val().length
@@ -496,6 +727,7 @@ init = function(){
 			$('.codigo > dl').slideUp();
 			$('.codigo > span').fadeIn();
 			$('.codigo > dl dd').removeClass();
+			$('.input-field .boton').addClass('disabled');
 		}
 	});
 	$('.codigo > button').on('click', function(){
@@ -503,11 +735,31 @@ init = function(){
 		$('.codigo > dl').slideUp();
 		$('.codigo > span').fadeIn();
 		$('.codigo > dl dd').removeClass();
+		$('.input-field .boton').addClass('disabled');
 	});
 	$('.codigo > dl dd').on('click', function(){
 		$('.codigo > dl dd').removeClass('activo');
+		$('.input-field .boton').removeClass('disabled');
 		$(this).addClass('activo');
 		$('.codigo > dl dd:not(.activo)').addClass('none');
+	});
+
+	$('.distribuidor .ver span').on('click', function(){
+		
+		if(!$('.distribuidor > dl dd.none').hasClass('none')){
+			$('.distribuidor > dl dd:not(.activo)').addClass('none');
+			$('.distribuidor .ver').removeClass('activo');
+		}
+		else{
+			$('.distribuidor > dl dd:not(.activo)').removeClass('none');
+			$('.distribuidor .ver').addClass('activo');
+		}
+	});
+	$('.distribuidor > dl dd').on('click', function(){
+		$('.distribuidor > dl dd').removeClass('activo');
+		$(this).addClass('activo');
+		$('.distribuidor > dl dd:not(.activo)').addClass('none');
+		$('.distribuidor .ver').removeClass('activo');
 	});
 
 	$('.buscador input[type=text]').on('keyup', function(){
@@ -529,7 +781,7 @@ init = function(){
 		$('.buscador > dl').slideUp();
 		$('.buscador form > span').fadeIn();
 		$('.buscador > dl dd').removeClass();
-	})
+	});
 	$('.buscador > dl dd').on('click', function(){
 		$('.buscador > dl dd').removeClass('activo');
 		$(this).addClass('activo');
@@ -608,6 +860,7 @@ init = function(){
 	inicio = function(){
 		setSize();
 		modelotarjeta();
+		configuraCotiza();
 	}
 
 	$(window).resize(function(){
