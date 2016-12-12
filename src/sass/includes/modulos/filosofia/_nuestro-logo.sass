@@ -1,0 +1,65 @@
+.nuestro-logo
+	padding: 6.25rem 0 
+	position: relative
+	.container
+		display: table
+		overflow: visible
+		h2
+			font-weight: 300
+			margin: 1.25rem auto
+			text-align: center
+		dl
+			display: table
+			padding: 5.75rem 0 0
+			width: 100%
+			dd
+				+bx
+				display: table-cell
+				padding: 0 2rem
+				position: relative
+				vertical-align: top
+				width: 40%
+				img
+					display: block
+					margin: 0 auto
+				span
+					display: block
+					font-size: 1.375rem
+					font-weight: 600
+					font-style: italic
+					margin: 3.75rem 0 1rem
+					position: relative
+					text-align: center
+				p
+					font-size: 1.125rem
+					font-style: normal
+					font-weight: 400
+					margin: 1rem 0
+					position: relative
+					text-align: center
+					width: auto
+					z-index: 1
+				ul 
+					li 
+						text-align: center
+				&:last-child
+					width: 60%
+
+@mixin nuestro-logo-smartphone
+	.nuestro-logo
+		height: auto
+		padding: 3.125rem 0
+		.container
+			display: block
+			h2
+				width: 100%
+			p
+				width: 100%
+			dl 
+				padding: 2.5rem 0 0
+				dd
+					display: block
+					width: 100%
+					p
+						height: auto
+						margin: 0 1rem 2rem 4rem

@@ -374,7 +374,7 @@ init = function(){
 			}
 			$(this).parent().toggleClass('activo');
 			$('~ ul', this).slideToggle();
-		});
+		}); 
 	}
 
 	menuFotterStop = function(){
@@ -400,7 +400,7 @@ init = function(){
 	
 	menuSelect = function(){
 		if($('.'+clase1+' .menu').length === 0){
-			$('.'+clase1+' select').material_select('destroy');
+			$('.'+clase1+' .menu select').material_select('destroy');
 
 			$('<div class="menu"><ul>').insertBefore('.'+clase2+'');
 

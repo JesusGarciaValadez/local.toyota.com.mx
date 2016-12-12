@@ -1,0 +1,26 @@
+-var location = "filosofia"
+-var subLoc = " "
+-var titulo = " "
+-var descrip = " "
+-var keyword = " "
+-var breadcrumb = "none"
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	body
+		
+		include includes/header
+		
+		main.wrapper
+			include includes/modulos/filosofia/cover-filosofia
+			include includes/modulos/filosofia/menu-conoce-toyota
+			include includes/modulos/filosofia/toyota-fabrica
+			include includes/modulos/filosofia/toyota-way
+			include includes/modulos/filosofia/fundadores
+			include includes/modulos/filosofia/filosofia-empresarial
+			include includes/modulos/filosofia/nuestro-logo
+		include includes/footer 

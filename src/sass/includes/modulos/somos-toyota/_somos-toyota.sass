@@ -1,0 +1,212 @@
+.somos-toyota
+	padding: 3.75rem 0
+	position: relative
+	.container
+		display: table
+		overflow: visible
+		h2
+			font-weight: 300
+			margin: 1.25rem auto
+			text-align: center
+		.subtitulo
+			color: $BlueGrey
+			font-size: 1.375rem
+			font-weight: 700
+			margin: 1.25rem auto
+			text-align: center
+		.timeline
+			position: relative
+			padding: 0
+			margin: 0 auto
+			width: 960px
+			.timeline-block
+				margin: 2rem 0
+				position: relative
+				.timeline-block-content
+					height: auto
+					margin-left: 10%
+					max-width: 40%
+					padding: 0
+					position: relative
+					width: auto
+					h4
+						display: block
+						font-weight: 300
+						margin: 0
+						padding-right: 2rem
+						position: relative
+						text-align: right
+					.linea-year
+						background: $BlueGrey800
+						height: 1px
+						right: 0
+						position: absolute
+						top: 20px
+						width: 26px
+						&:before
+							background: $BlueGrey800
+							border-radius: 4px
+							content: ""
+							display: block
+							height: 7px
+							left: -3px
+							position: absolute
+							top: -3px
+							width: 7px
+					> img
+						+bx
+						display: block
+						padding: 1rem 0
+						position: relative
+						left: 40%
+						max-width: 200px
+						width: 100%
+					.texto
+						+bx
+						display: table-cell
+						height: auto
+						left: 0
+						padding: 0 2rem
+						vertical-align: middle
+						width: 100%
+						p
+							display: block
+							font-size: 18px
+							margin: 0
+							text-align: right
+				&:nth-child(odd)
+					.timeline-block-content
+						left: 50%
+						margin-left: 0
+						h4
+							margin: 0
+							padding-left: 2rem
+							text-align: left
+						.linea-year
+							background: $BlueGrey800
+							height: 1px
+							left: 0
+							position: absolute
+							top: 20px
+							width: 26px
+							&:before
+								display: none
+							&:after
+								background: $BlueGrey800
+								border-radius: 4px
+								content: ""
+								display: block
+								height: 7px
+								right: -3px
+								position: absolute
+								top: -3px
+								width: 7px
+						> img
+							left: 10%
+						.texto 
+							+bx
+							padding: 0 2rem
+							vertical-align: middle
+							width: 100%
+							p
+								text-align: left
+				&:first-child, &:last-child
+					.timeline-block-content
+						display: block
+						left: 0
+						max-width: 80%
+						margin: auto
+						h4
+							margin: 0
+							padding: 0
+							text-align: center
+						.texto
+							+bx
+							height: auto
+							padding: 0 2rem
+							width: 48%
+							p
+								display: block
+								font-size: 18px
+								margin: 0
+								text-align: left
+						.imagen
+							display: table-cell
+							vertical-align: middle
+							width: 48%
+							img
+								float: right
+			.linea
+				+center(v)
+				background: $BlueGrey800
+				display: block
+				height: calc(100% - 400px)
+				position: absolute
+				top: 200px
+				width: 1px
+				&:before
+					background: $BlueGrey800
+					border-radius: 4px
+					content: ""
+					display: block
+					height: 7px
+					left: -3px
+					position: absolute
+					width: 7px
+				&:after
+					background: $BlueGrey800
+					border-radius: 4px
+					bottom: 0
+					content: ""
+					display: block
+					height: 7px
+					left: -3px
+					position: absolute
+					width: 7px
+		
+@mixin somos-toyota-smartphone
+	.somos-toyota
+		height: auto
+		padding: 0
+		.linea
+			display: none
+		.container
+			.info
+				width: 100%
+				padding: 0px 30px 0
+				position: relative
+				.boton
+					display: none
+			.plan
+				+fx(all,0.5s)
+				display: block
+				height: auto
+				overflow: hidden
+				position: relative
+				width: 100%
+				> div
+					padding: 0 1rem
+				> img
+					+center(r)
+					height: 320px
+					position: absolute
+				.info-small
+					display: none
+				.info-big
+					+fx(all,0.6s)
+					+center(r)
+					margin-top: 2.5rem
+					p
+						height: 112px
+					.caracteristicas
+						margin: 3rem 0
+						p
+							color: $BlueGrey800
+							height: auto
+						ul
+							li 
+								color: $BlueGrey800
+						.boton
+							margin: 1.25rem 0
+			.boton.planes
+				display: block
