@@ -1,0 +1,51 @@
+.exterior
+	padding: 2.5rem 0px
+	.container
+		> p
+			text-align: center
+		.menu360
+			> span
+				color: $BlueGrey
+				display: table
+				font-size: 0.875rem
+				line-height: 1.1875rem
+				margin: 1.5625rem auto
+				text-transform: capitalize
+			.colores360
+				border-collapse: separate
+				border-spacing: 15px 0px
+				display: table
+				margin: 1.5625rem auto
+				> div
+					+bx
+					+fx(all,0.5s)
+					cursor: pointer
+					display: table-cell
+					height: 30px
+					position: relative
+					width: 30px
+					&:hover, &.active
+						+shadow(0px, 5px, 11px, 0px, rgba(0,0,0,0.18), 0px, 4px, 15px, 0px, rgba(0,0,0,0.15))
+						&:before
+							+center(vh)
+							+icons('\E876')
+							color: $White
+							font-size: 1.25rem
+				.grisMetalico
+					background: #9D9EA0
+				.rojo
+					background: #D0011B
+				.azul
+					background: #1B5293
+				.negro
+					background: #000000
+				.plata
+					background: #c6c6c6
+		.threesixty
+			height: auto!important
+			> img
+				height: auto
+				width: 100%
+			.spinner
+				+center(vh)
+				margin: 0px!important

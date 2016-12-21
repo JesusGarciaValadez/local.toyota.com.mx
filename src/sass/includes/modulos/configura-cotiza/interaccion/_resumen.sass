@@ -1,0 +1,332 @@
+.resumen
+	padding: 2.5rem 0px
+	.container
+		overflow: visible
+		> div
+			margin: auto
+			max-width: 600px
+			width: 100%
+			> p
+				padding: 0px 2rem
+				margin: 0px
+			.tabla
+				+bx
+				border-bottom: 1px solid #E0E0E0
+				display: table
+				padding: 1rem 2rem
+				width: 100%
+				.fila
+					display: table
+					margin-bottom: 0.5rem
+					width: 100%
+					.celda
+						display: table-cell
+						vertical-align: middle
+						width: 50%
+						h4
+							display: inline
+							font-size: 1.5rem
+							font-weight: 300
+							line-height: 1.75rem
+							margin-top: 0px
+							span
+								font-weight: 700
+						.editar
+							display: inline
+							color: $Red800
+							cursor: pointer
+							font-size: 0.75rem
+							font-weight: 300
+							padding-left: 0.3125rem
+						.eliminar
+							color: $Red800
+							cursor: pointer
+							font-size: 0.75rem
+							font-weight: 300
+							padding-left: 0.3125rem
+						p
+							font-size: 0.875rem
+							line-height: 1.1875rem
+							&:last-child
+								margin-bottom: 0px
+						.opcion
+							color: $BlueGrey400
+							font-size: 0.75rem
+							font-weight: 600
+						> div
+							.precio
+								display: block
+								font-size: 0.75rem
+								font-weight: 300
+								text-align: right
+								b
+									display: block
+									font-size: 1.5rem
+									font-weight: 700
+							p
+								text-align: right
+								margin: 0px
+						.seleccion
+							span
+								font-size: 0.75rem
+							.color, .img
+								display: block
+								float: left
+								height: 20px
+								width: 60px
+								overflow: hidden
+								margin-right: 1rem
+								> img
+									+object
+									display: block
+									width: 100%
+									height: 100%
+								&.grisMetalico
+									background: #9D9EA0
+								&.rojo
+									background: #D0011B
+								&.azul
+									background: #1B5293
+								&.negro
+									background: #000000
+								&.plata
+									background: #c6c6c6
+						.link
+							cursor: pointer
+							float: right
+							font-size: 0.75rem
+							margin-top: 0.3125rem
+				&.ext
+					.icono
+						font-size: 1rem
+						font-weight: 700
+						position: relative
+						&:before
+							+center(h)
+							+fawesome('\f043')
+							font-size: 20px
+							line-height: 1.4
+							right: 100%
+							padding-right: 0.5rem
+				&.int
+					.icono
+						font-size: 1rem
+						font-weight: 700
+						position: relative
+						&:before
+							+center(h)
+							+fonIco('\e929')
+							font-size: 20px
+							line-height: 1.4
+							right: 100%
+							padding-right: 0.5rem
+				&.acc
+					.icono
+						font-size: 1rem
+						font-weight: 700
+						position: relative
+						&:before
+							+center(h)
+							+fonIco('\e92a')
+							font-size: 20px
+							line-height: 1.4
+							right: 100%
+							padding-right: 0.5rem
+			.precio
+				margin-top: 1rem
+				span
+					display: block
+					font-size: 1rem
+					text-align: right
+					b
+						font-size: 1.5rem
+						font-weight: 700
+			.cotizar
+				background: $Grey100
+				display: table
+				margin: 1rem auto
+				> div
+					+bx
+					padding: 1.25rem 2rem
+					display: table-cell
+					vertical-align: middle
+					p
+						font-size: 0.875rem
+						line-height: 1.1875rem
+						&:last-child
+							margin-bottom: 0px
+					.link
+						cursor: pointer
+						display: inline
+						font-size: 0.875rem
+						margin: 0px
+			.distribuidor
+				padding: 2.5rem 0px
+				padding-bottom: 0px
+				> p
+					padding: 0px 2rem
+					span
+						font-size: 1.125rem
+						font-weight: 700
+				dl
+					margin-bottom: 1rem
+					dd
+						+fx(all,0.5s)
+						border-bottom: 1px solid $Grey400
+						cursor: pointer
+						display: table
+						margin-bottom: 0.5rem
+						width: 100%
+						&:hover
+							+shadow
+							background: rgba(238, 238, 238, 0.30)
+							border-bottom: 1px solid rgba(238, 238, 238, 0.3)
+						&.activo
+							+shadow
+							background: rgba(238, 238, 238, 0.30)
+							border-bottom: 1px solid rgba(238, 238, 238, 0.3)
+							margin-top: 1rem
+							p
+								b
+									&:before
+										+center(h)
+										+icons('\E876')
+										color: $BlueGrey900
+										font-size: 1.25rem
+										padding-right: 5px
+										right: 100%
+						&.none
+							display: none
+						> div
+							+bx
+							display: table-cell
+							height: 100%
+							vertical-align: top
+						.info
+							padding: 1.25rem 4rem
+							width: 65%
+							i
+								color: $BlueGrey400
+								display: block
+								font-size: 0.75rem
+								font-weight: 700
+								margin: 0px auto 1.25rem
+								position: relative
+								&:before
+									+center(h)
+									+icons('\E885')
+									color: $Yellow700
+									padding-right: 5px
+									right: 100%
+							p
+								color: $BlueGrey900
+								font-size: 0.875rem
+								margin: 0px
+								position: relative
+								span
+									font-size: 0.875rem
+									font-weight: 300
+				.ver
+					+bx
+					background: $White
+					overflow: hidden
+					padding: 10px 4rem 30px
+					span
+						color: $Red800
+						cursor: pointer
+						display: table
+						font-size: 0.875rem
+						font-weight: 600
+						overflow: hidden
+						padding-right: 1rem
+						position: relative
+						text-decoration: none
+						&:before
+							+fx(all,0.5s)
+							background: $Red800
+							bottom: 0px
+							content: " "
+							display: block
+							height: 2px
+							left: 0px
+							position: absolute
+							width: 0%
+						&:after
+							+center(h)
+							+fawesome('\f107')
+							+fx(all,0.5s)
+							font-size: 1rem
+							line-height: normal
+							right: 0px
+						&:hover
+							&:before
+								width: calc(100% - 1rem)
+					&.activo
+						span
+							&:after
+								+fawesome('\f106')
+			.servicios
+				> p
+					padding: 0px 2rem
+				nav
+					background: $Grey50
+					border: 1px solid #E0E0E0
+					display: table
+					height: 65px
+					position: relative
+					width: 100%
+					ul
+						display: table
+						height: 100%
+						margin: 0px
+						padding: 0px
+						width: 100%
+						li
+							+bx
+							+fx(all,0.3s)
+							border-right: 1px solid #E0E0E0
+							cursor: pointer
+							display: table-cell
+							height: 100%
+							margin: 0px
+							vertical-align: middle
+							width: 25%
+							a
+								color: $BlueGrey900
+								display: table
+								font-size: 0.875rem
+								font-weight: 400
+								margin: auto
+							&:before
+								color: $Grey400
+								display: table
+								font-size: 20px
+								margin: 0px auto
+							&:last-child
+								border-right: none
+							&.mai
+								&:before
+									+fawesome('\f0e0')
+									line-height: 1.4
+							&.des
+								&:before
+									+icons('\e2c4')
+									display: table
+									line-height: 1.4
+							&.cha
+								&:before
+									+fonIco('\e90c')
+									line-height: 1.4
+							&.mane
+								&:before
+									+fawesome('\f271')
+									line-height: 1.4
+							&:hover
+								+scale(1.20,1.20)
+								+shadow(0px, 27px, 24px, 0px, rgba(0,0,0,0.2), 0px, 40px, 77px, 0px, rgba(0,0,0,0.22))
+								background: $Red800
+								border-right: none
+								&:before
+									color: $White
+								a
+									color: $White

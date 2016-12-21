@@ -1,0 +1,696 @@
+section.configura-cotiza
+	.financiamiento
+		display: none
+		.cotiza
+			width: 100%
+			.container
+				overflow: visible
+				.head
+					padding: 0.625rem 0px
+					> h6 
+						text-align: center
+					> div
+						display: table
+						> div
+							display: table-cell
+							vertical-align: middle
+							width: 33%
+							h4
+								font-weight: 300
+								span
+									font-weight: 700
+							p
+								font-size: 0.875rem
+								line-height: 1.1875rem
+							.img
+								img
+									display: table
+									height: 100%
+									margin: auto
+									max-width: 340px
+									width: 100%
+							.opcion
+								color: $BlueGrey400
+								font-size: 0.75rem
+								font-weight: 600
+							> div
+								display: table
+								margin: auto
+								.precio
+									display: block
+									font-size: 0.75rem
+									font-weight: 300
+									text-align: right
+									b
+										display: block
+										font-size: 1.375rem
+										font-weight: 700
+							.link
+								cursor: pointer
+								font-size: 0.875rem
+								padding-right: 1rem
+								&:after
+									+center(h)
+									+fawesome('\f107')
+									+fx(all,0.5s)
+									font-size: 1rem
+									line-height: normal
+									right: 0px
+								&:hover
+									&:before
+										width: calc(100% - 1rem)
+								&.activo
+									&:after
+										+fawesome('\f106')
+				.historia
+					display: none
+					margin: auto
+					max-width: 600px
+					width: 100%
+					.tabla
+						+bx
+						border-bottom: 1px solid #E0E0E0
+						display: table
+						padding: 1rem 2rem
+						width: 100%
+						.fila
+							display: table
+							margin-bottom: 0.5rem
+							width: 100%
+							.celda
+								display: table-cell
+								vertical-align: middle
+								width: 50%
+								.opcion
+									color: $BlueGrey400
+									font-size: 0.75rem
+									font-weight: 600
+								> div
+									p
+										text-align: right
+										margin: 0px
+								.seleccion
+									span
+										font-size: 0.75rem
+									.color, .img
+										display: block
+										float: left
+										height: 20px
+										width: 60px
+										overflow: hidden
+										margin-right: 1rem
+										> img
+											+object
+											display: block
+											width: 100%
+											height: 100%
+										&.grisMetalico
+											background: #9D9EA0
+										&.rojo
+											background: #D0011B
+										&.azul
+											background: #1B5293
+										&.negro
+											background: #000000
+										&.plata
+											background: #c6c6c6
+						&.ext
+							.icono
+								font-size: 1rem
+								font-weight: 700
+								position: relative
+								&:before
+									+center(h)
+									+fawesome('\f043')
+									font-size: 20px
+									line-height: 1.4
+									right: 100%
+									padding-right: 0.5rem
+						&.int
+							.icono
+								font-size: 1rem
+								font-weight: 700
+								position: relative
+								&:before
+									+center(h)
+									+fonIco('\e929')
+									font-size: 20px
+									line-height: 1.4
+									right: 100%
+									padding-right: 0.5rem
+						&.acc
+							.icono
+								font-size: 1rem
+								font-weight: 700
+								position: relative
+								&:before
+									+center(h)
+									+fonIco('\e92a')
+									font-size: 20px
+									line-height: 1.4
+									right: 100%
+									padding-right: 0.5rem
+					.distribuidor
+						padding: 2.5rem 0px
+						padding-bottom: 0px
+						> p
+							span
+								font-size: 1.125rem
+								font-weight: 700
+						dl
+							margin-bottom: 1rem
+							dd
+								+fx(all,0.5s)
+								border-bottom: 1px solid $Grey400
+								cursor: pointer
+								display: table
+								margin-bottom: 0.5rem
+								width: 100%
+								&:hover
+									+shadow
+									background: rgba(238, 238, 238, 0.30)
+									border-bottom: 1px solid rgba(238, 238, 238, 0.3)
+								&.activo
+									+shadow
+									background: rgba(238, 238, 238, 0.30)
+									border-bottom: 1px solid rgba(238, 238, 238, 0.3)
+									margin-top: 1rem
+									p
+										b
+											&:before
+												+center(h)
+												+icons('\E876')
+												color: $BlueGrey900
+												font-size: 1.25rem
+												padding-right: 5px
+												right: 100%
+								&.none
+									display: none
+								> div
+									+bx
+									display: table-cell
+									height: 100%
+									vertical-align: top
+								.info
+									padding: 1.25rem 2.5rem
+									width: 65%
+									i
+										color: $BlueGrey400
+										display: block
+										font-size: 0.75rem
+										font-weight: 700
+										margin: 0px auto 1.25rem
+										position: relative
+										&:before
+											+center(h)
+											+icons('\E885')
+											color: $Yellow700
+											padding-right: 5px
+											right: 100%
+									p
+										color: $BlueGrey900
+										font-size: 0.875rem
+										margin: 0px
+										position: relative
+										span
+											font-size: 0.875rem
+											font-weight: 300
+						.ver
+							+bx
+							background: $White
+							overflow: hidden
+							padding: 10px 0px 30px
+							span
+								color: $Red800
+								cursor: pointer
+								display: table
+								font-size: 0.875rem
+								font-weight: 600
+								overflow: hidden
+								padding-right: 1rem
+								position: relative
+								text-decoration: none
+								&:before
+									+fx(all,0.5s)
+									background: $Red800
+									bottom: 0px
+									content: " "
+									display: block
+									height: 2px
+									left: 0px
+									position: absolute
+									width: 0%
+								&:after
+									+center(h)
+									+fawesome('\f107')
+									+fx(all,0.5s)
+									font-size: 1rem
+									line-height: normal
+									right: 0px
+								&:hover
+									&:before
+										width: calc(100% - 1rem)
+							&.activo
+								span
+									&:after
+										+fawesome('\f106')
+		.financiar
+			background: $Grey100
+			overflow: hidden
+			> div
+				+fx(all,0.5s)
+				opacity: 0
+				display: none
+				&.activo
+					display: block
+				&.animacion
+					opacity: 1
+			.plan
+				+bx
+				padding: 3.125rem 0px
+				.container
+					overflow: visible
+					> p
+						text-align: center
+					.flex
+						> div
+							+bx
+							margin: 2rem 0px
+							padding: 0px 1rem
+							width: 50%
+							> div
+								+fx(all,0.5s)
+								background: $White
+								height: 100%
+								overflow: hidden
+								position: relative
+								&:hover
+									+shadow(0px, 8px, 17px, 0px, rgba(0,0,0,0.2), 0px, 6px, 20px, 0px, rgba(0,0,0,0.19))
+								.info
+									+bx
+									padding: 0px 1rem
+									p
+										font-size: 1.125rem
+										b
+											font-size: 0.875rem
+									ul
+										margin-bottom: 4.375rem
+										li
+											font-size: 0.875rem
+											font-weight: 600
+											padding-left: 0.625rem
+											position: relative
+											&:before
+												+fawesome('\f111')
+												font-size: 0.3125rem
+												left: 0px
+												position: absolute
+												top: 0px
+								.seleccionar
+									+fx(all,0.5s)
+									background: $BlueGrey900
+									bottom: 0px
+									color: $White
+									cursor: pointer
+									display: block
+									font-size: 0.875rem
+									font-weight: 600
+									opacity: 1
+									padding: 0.625rem 0px
+									position: absolute
+									text-align: center
+									width: 100%
+									&:hover
+										background: $Red800
+									&.activo
+										background: $Red800
+										&:before
+											+center(vh)
+											+icons('\E876')
+											color: $White
+											font-size: 1.25rem
+											
+										span
+											opacity: 0
+			.elejir
+				margin: auto
+				max-width: 400px
+				width: 100%
+				> div
+					+bx
+					background: $White
+					margin-bottom: 1rem
+					padding: 2rem
+					.pago
+						display: table
+						p
+							display: table-cell
+							font-weight: 700
+							padding-right: 2rem
+							vertical-align: middle
+						ul
+							display: table-cell
+							height: 100%
+							margin: auto
+							vertical-align: middle
+							li
+								display: table
+								float: left
+								height: 100%
+								margin: 0px
+								padding: 0px 2rem
+								&:last-child
+									padding-right: 0px
+								> span
+									color: $BlueGrey900	
+									cursor: pointer
+									font-size: 0.875rem
+									font-weight: 700
+									margin: 0px
+									padding-right: 1rem
+									padding: 0px
+									position: relative
+									&:before
+										+center(h)
+										border-radius: 50%
+										border: 1px solid $BlueGrey900	
+										content: " "
+										display: block
+										height: 20px
+										margin-right: 10px
+										right: 100%
+										width: 20px
+									&:after
+										+center(h)
+										+fx(all,0.5s)
+										border-radius: 50%
+										content: " "
+										display: block
+										height: 10px
+										margin-right: 16px
+										right: 100%
+										width: 10px
+								&.activo
+									> span
+										&:after
+											background: $BlueGrey900
+					.plazo
+						background: $Grey50
+						border: 1px solid #E0E0E0
+						display: table
+						height: 65px
+						position: relative
+						width: 100%
+						dl
+							display: table
+							height: 100%
+							margin: 0px
+							padding: 0px
+							width: 100%
+							dd
+								+bx
+								+fx(all,0.3s)
+								border-right: 1px solid #E0E0E0
+								cursor: pointer
+								display: table-cell
+								font-size: 0.75rem
+								font-weight: 300
+								height: 100%
+								line-height: 0.875rem
+								margin: 0px
+								text-align: center
+								vertical-align: middle
+								width: 20%
+								b
+									display: block
+									font-size: 0.875rem
+									font-weight: 700
+								&:last-child
+									border-right: none
+								&:hover
+									+scale(1.20,1.20)
+									+shadow(0px, 27px, 24px, 0px, rgba(0,0,0,0.2), 0px, 40px, 77px, 0px, rgba(0,0,0,0.22))
+									background: $Red800
+									border-right: none
+									color: $White
+								&.activo
+									+shadow(0px, 27px, 24px, 0px, rgba(0,0,0,0.2), 0px, 40px, 77px, 0px, rgba(0,0,0,0.22))
+									background: $Red800
+									border-right: none
+									color: $White
+				.enganche
+					> p
+						margin: 0px
+					ul
+						display: table
+						margin-bottom: 30px
+						padding-top: 50px
+						position: relative
+						width: 100%
+						&:before
+							content: "10%"
+							font-size: 0.875rem
+							font-weight: 300
+							position: absolute
+							top: 100%
+						&:after
+							content: "85%"
+							font-size: 0.875rem
+							font-weight: 300
+							position: absolute
+							right: 0px
+							top: 100%
+						li
+							cursor: pointer
+							display: table-cell
+							height: 10px
+							position: relative
+							width: 22px
+							&:before
+								+center(h)
+								background: $Red400
+								border-radius: 50%
+								content: " "
+								display: block
+								height: 5px
+								width: 5px
+								z-index: 1
+							&:after
+								+center(h)
+								background: $Red400
+								content: " "
+								display: block
+								height: 1px
+								left: 0px
+								width: 100%
+								z-index: 0
+							&:last-child
+								&:after
+									display: none
+							&.activo
+								&:after
+									background: $Grey400
+								~ li
+									&:after
+										background: $Grey400
+								span
+									display: block
+							span
+								+translate(-50%, 0%)
+								bottom: 100%
+								color: $White
+								display: none
+								font-size: 1.125rem
+								font-weight: 600
+								left: 0px
+								margin-bottom: 5px
+								padding: 10px 7px
+								position: absolute
+								&:before
+									+center(vh)
+									+fonIco("\e92e")
+									color: $Red400
+									font-size: 45px
+									z-index: -1
+					dl
+						display: table
+						width: 100%
+						dd
+							display: table-cell
+							p
+								margin: 0px
+							&:nth-child(even)
+								p
+									text-align: right
+				.boton
+					margin: 2rem auto
+			.resultado
+				margin: auto
+				max-width: 400px
+				width: 100%
+				> div
+					+bx
+					background: $White
+					margin-bottom: 1rem
+					padding: 2rem
+				.info
+					> p
+						color: $Red800
+						text-align: center
+					> div
+						border-bottom: 1px solid $Grey400
+						display: table
+						margin-bottom: 5px
+						width: 100%
+						dl
+							display: table
+							padding: 5px 0px
+							width: 100%
+							dd
+								color: $BlueGrey900
+								display: table-cell
+								font-size: 0.875rem
+								b
+									font-weight: 700
+								&:nth-child(even)
+									text-align: right
+						&:last-child
+							border-bottom: none
+						&.eng, &.men
+							dl
+								dd
+									font-size: 1rem
+				.elejido
+					display: table
+					padding: 1rem 0px
+					width: 100%
+					> p
+						padding: 0px 2rem
+					dl
+						+fx(all,0.3s)
+						//cursor: pointer
+						display: table-row
+						width: 100%
+						dd
+							+fx(all,0.3s)
+							color: $BlueGrey400
+							display: table-cell
+							font-size: 1rem
+							padding: 2px 0px
+							text-align: center
+							vertical-align: middle
+							width: 50%
+						&.activo
+							+shadow
+							background: rgba(238, 238, 238, 0.30)
+							dd
+								color: $BlueGrey900
+								font-weight: 700
+				.servicios
+					padding: 0px
+					nav
+						background: $Grey50
+						border: 1px solid #E0E0E0
+						display: table
+						height: 65px
+						position: relative
+						width: 100%
+						ul
+							display: table
+							height: 100%
+							margin: 0px
+							padding: 0px
+							width: 100%
+							li
+								+bx
+								+fx(all,0.3s)
+								border-right: 1px solid #E0E0E0
+								cursor: pointer
+								display: table-cell
+								height: 100%
+								margin: 0px
+								vertical-align: middle
+								width: 25%
+								a
+									color: $BlueGrey900
+									display: table
+									font-size: 0.875rem
+									font-weight: 400
+									margin: auto
+								&:before
+									color: $Grey400
+									display: table
+									font-size: 20px
+									margin: 0px auto
+								&:last-child
+									border-right: none
+								&.mai
+									&:before
+										+fawesome('\f0e0')
+										line-height: 1.4
+								&.des
+									&:before
+										+icons('\e2c4')
+										display: table
+										line-height: 1.4
+								&.cha
+									&:before
+										+fonIco('\e90c')
+										line-height: 1.4
+								&.mane
+									&:before
+										+fawesome('\f271')
+										line-height: 1.4
+								&:hover
+									+scale(1.20,1.20)
+									+shadow(0px, 27px, 24px, 0px, rgba(0,0,0,0.2), 0px, 40px, 77px, 0px, rgba(0,0,0,0.22))
+									background: $Red800
+									border-right: none
+									&:before
+										color: $White
+									a
+										color: $White
+				.boton
+					margin: 2rem auto
+		.btnregresar
+			+bx
+			+center(v)
+			max-width: 1200px
+			padding: 0px 10px
+			top: 40px
+			width: 100%
+			> .link.regresar
+				cursor: pointer
+				display: none
+				font-size: 0.875rem
+				margin: 1rem 0px
+				&.activo
+					display: table
+@mixin configura-cotiza-financiamiento-smartphone
+	section.configura-cotiza
+		.financiamiento
+			.cotiza
+				.container
+					.head
+						> div
+							> div
+								display: block
+								width: 100%
+								> div
+									.precio
+										text-align: center
+			.financiar
+				.plan
+					.container
+						.flex
+							> div
+								padding: 0px
+								width: 100%
+			.btnregresar
+				+center(r)
+				padding: 0px 20px
+				> .boton.secundario
+					display: none
+					margin: 2rem auto
+					&.activo
+						display: table

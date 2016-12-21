@@ -60,10 +60,8 @@ init = function(){
 		if($('.header .menu.activo, .menu-propietarios .menufixed.activo').hasClass('activo')){
 			$('body').addClass('hidden');
 		}
-		$('.version .container > span').removeClass();
-		$('.version .container > span').addClass('boton secundario');
-		$('.configuracion .btnregresar > span').removeClass();
-		$('.configuracion .btnregresar > span').addClass('boton secundario');
+		$('.version .container > span, .configuracion .btnregresar > span, .financiamiento .btnregresar > span').removeClass('link regresar');
+		$('.version .container > span, .configuracion .btnregresar > span, .financiamiento .btnregresar > span').addClass('boton secundario');
 	}
 
 	resetElementos = function(){
@@ -71,10 +69,8 @@ init = function(){
 		$('.header .menu-autos > div ul li > div, .configura-modelos div ul li > div').css("display", "block");
 		$('.descargas .mobile').css("display", "none");
 		$('body').removeClass('hidden');
-		$('.version .container > span').removeClass();
-		$('.version .container > span').addClass('link regresar');
-		$('.configuracion .btnregresar > span').removeClass();
-		$('.configuracion .btnregresar > span').addClass('link regresar');
+		$('.version .container > span, .configuracion .btnregresar > span, .financiamiento .btnregresar > span').removeClass('boton secundario');
+		$('.version .container > span, .configuracion .btnregresar > span, .financiamiento .btnregresar > span').addClass('link regresar');
 	}
 
 	menudesktop = function(){
@@ -215,11 +211,11 @@ init = function(){
 			var nombre = $(this).parent().find('h6').html();
 			var precio = $(this).parent().find('span b').text();
 
-			$('.configuracion .head .precio b, .resumen .precio b').empty();
-			$('.configuracion .head .precio b, .resumen .precio b').append(precio);
+			$('.configuracion .head .precio b, .resumen .precio b, .cotizarModal .head .precio b, .financiamiento .head .precio b').empty();
+			$('.configuracion .head .precio b, .resumen .precio b, .cotizarModal .head .precio b, .financiamiento .head .precio b').append(precio);
 
-			$('.configuracion .head h4, .resumen .tabla .celda h4').empty();
-			$('.configuracion .head h4, .resumen .tabla .celda h4').append(nombre);
+			$('.configuracion .head h4, .resumen .tabla .celda h4, .cotizarModal .head h4, .financiamiento .head h4').empty();
+			$('.configuracion .head h4, .resumen .tabla .celda h4, .cotizarModal .head h4, .financiamiento .head h4').append(nombre);
 
 			$('.version .flex .confi').removeClass('activo');
 			$(this).addClass('activo');
@@ -246,23 +242,20 @@ init = function(){
 			$('.interior .img > img').attr("src", 'images/autos/interiores/corolla/tipo/'+img+'.jpg');
 		});		
 
-		$('.configuracion .menu ul li').on('click',function(){
-
-		});
-
 		$('.interaccion .menu ul li').on('click',function(){
 			rellenar();
 			var index = $(this).index();
 			var on = index+1
-			var nombre = $('.interaccion > div:not(.menu):visible').find('span:eq(0)').text();
+			var nombre = $('.interaccion > div.activo').find('span:eq(0)').text();
 			var numero = $('.interaccion .accesorios .seleccionar.activo').length;
 
 			$('.interaccion .menu ul li.activo').addClass('listo');
+			$('.configuracion .head .img').addClass('activo');
 			
 			if($('.interaccion .menu ul li').hasClass('activo')){
 				$(this).removeClass('listo');
 			}
-			
+
 			if($('.interaccion .menu ul li.acc').hasClass('listo')){
 				$('.interaccion .menu ul li.acc a span').empty();
 				$('.interaccion .menu ul li.acc a').append('<span> ('+numero+')</span>');
@@ -272,11 +265,13 @@ init = function(){
 			$('.interaccion .menu ul li:not(.acc, .res).activo a').append(nombre);
 			$('.interaccion .menu ul li').removeClass('activo');
 			$(this).addClass('activo');
-			$('.interaccion > div:not(.menu)').fadeOut( "slow", function() {
-				setTimeout(function(){
-					$('.interaccion > div:eq('+on+')').fadeIn("slow");
-				},500);
+			$('.interaccion > div:not(.menu)').removeClass('activo animacion');
+			$('.interaccion > div:eq('+on+')').addClass('activo').delay(150).queue(function(){
+			    $(this).addClass('animacion').dequeue();
 			});
+			if($('.interaccion .menu ul li.ext').hasClass('activo')){
+				$('.configuracion .head .img').removeClass('activo');
+			}
 		});
 
 		$('.interaccion .accesorios .seleccionar').on('click', function(){
@@ -285,9 +280,141 @@ init = function(){
 		});
 
 		$('.resumen .tabla .editar').on('click', function(){
-			//var clase = $(this).parent().parent().parent().parent().attr('class').split(' ')[1];
 			var clase = $(this).parents('.tabla').attr('class').split(' ')[1];
+			
+			if(clase == 'cambiar'){
+				$('.configuracion .btnregresar .link').trigger('click');
+			}
 			$('.interaccion .menu .'+clase+'').trigger('click');
+		});
+
+		$('.resumen .servicios .mai, .financiamiento .servicios .mai').on('click', function(){
+			$('.mailModal').fadeIn();
+			$('body').addClass('hidden');
+		});
+
+		$('.mailModal .close').on('click', function(){
+			$('.mailModal').fadeOut();
+			$('body').removeClass('hidden');
+		});
+
+		$('.configuracion .head .boton, .resumen .cotizar .boton').on('click', function(){
+			rellenar();
+			$('.cotizarModal').fadeIn();
+			$('body').addClass('hidden');
+		});
+
+		$('.cotizarModal .close').on('click', function(){
+			$('.cotizarModal').fadeOut();
+			$('body').removeClass('hidden');
+		});
+
+		$('.cotizarModal .head .link').on('click', function(){
+			$(this).toggleClass('activo');
+			$('.cotizarModal .cotiza .info').slideToggle();
+		});
+
+		$('.resumen .cambiar .link, .resumen .cotizar .link').on('click', function(){
+			$('.configuracion').fadeOut( "slow", function() {
+				$('.financiamiento').fadeIn();
+			});
+			$('.financiamiento .btnregresar .con').on('click', function(){
+				$('.financiamiento').fadeOut( "slow", function() {
+					$('.configuracion').fadeIn();
+				});
+			});
+		});
+
+		$('.financiamiento .cotiza .head .link').on('click', function(){
+			$(this).toggleClass('activo');
+			$('.financiamiento .cotiza .historia').slideToggle();
+		});
+
+		$('.financiamiento .plan .seleccionar').on('click', function(){
+			$('.financiamiento .plan .seleccionar').removeClass('activo');
+			$(this).addClass('activo');
+			$('.financiamiento .financiar > div').removeClass('activo animacion');
+			$('.financiamiento .financiar .elejir').addClass('activo').delay(150).queue(function(){
+				$(this).addClass('animacion').dequeue();
+		    });
+		    $('.financiamiento .btnregresar .con').removeClass('activo');
+		    $('.financiamiento .btnregresar .re').addClass('activo');
+			$('.financiamiento .btnregresar .re').on('click', function(){
+				$('.financiamiento .financiar > div').removeClass('activo animacion');
+				$('.financiamiento .financiar .plan').addClass('activo').delay(150).queue(function(){
+					$(this).addClass('animacion').dequeue();
+			    });
+			    $('.financiamiento .btnregresar .re').removeClass('activo');
+		    	$('.financiamiento .btnregresar .con').addClass('activo');
+			});
+		});
+
+		$('.financiamiento .financiar .pago ul li').on('click', function(){
+			$('.financiamiento .financiar .pago ul li').removeClass('activo');
+			$(this).addClass('activo');
+		});
+
+		$('.financiamiento .financiar .enganche ul li').on('click', function(){
+			var numero = $(this).children('span').text();
+
+			$('.financiamiento .financiar .enganche ul li').removeClass('activo');
+			$(this).addClass('activo');
+			$('.financiamiento .financiar .enganche .en b').empty();
+			$('.financiamiento .financiar .enganche .en b').append(''+numero+' %');
+		});
+
+		$('.financiamiento .financiar .plazo dl dd').on('click', function(){
+			var index = $(this).index();
+
+			$('.financiamiento .financiar .plazo dl dd').removeClass('activo');
+			$(this).addClass('activo');
+			$('.financiamiento .financiar .elejido dl').removeClass('activo');
+			$('.financiamiento .financiar .elejido dl:eq('+(index)+')').addClass('activo');
+			$('.financiamiento .financiar .elejir span').removeClass('disabled');
+			$('.financiamiento .financiar .elejir .boton').on('click', function(){
+				$('.financiamiento .financiar > div').removeClass('activo animacion');
+				$('.financiamiento .financiar .resultado').addClass('activo').delay(150).queue(function(){
+					$(this).addClass('animacion').dequeue();
+			    });
+			});
+		});
+
+		$('.financiamiento .financiar .resultado .boton').on('click', function(){
+			$('.financiamiento .financiar > div').removeClass('activo animacion');
+			$('.financiamiento .financiar .elejir').addClass('activo').delay(150).queue(function(){
+				$(this).addClass('animacion').dequeue();
+		    });
+		});
+
+		var sliderAcc = $('.accesorioModal .slide');
+
+		$('.interaccion .accesorios .link').on('click', function(){
+			var index = $(this).parents('.flex > div').index();
+			$('.accesorioModal').fadeIn();
+			sliderAcc.bxSlider({
+				mode:'horizontal',
+				infiniteLoop: false,
+				responsive: true,
+				hideControlOnEnd: true,
+				touchEnabled: true,
+				preventDefaultSwipeX: false,
+				preventDefaultSwipeY: false,
+				oneToOneTouch: false,
+				prevSelector: '#prev',
+				nextSelector: '#next'
+			});
+			$('body').addClass('hidden');
+			$('.accesorioModal .bx-pager-item:eq('+(index)+') > a').trigger('click');
+			$('.accesorioModal .slide .boton').on('click', function(){
+				var index = $(this).parents('.slide > dl').index();
+				$('.interaccion .accesorios .flex > div:eq('+(index)+') .seleccionar').trigger('click');
+			});
+		});
+
+		$('.accesorioModal .close').on('click', function(){
+			$('.accesorioModal').fadeOut();
+			$('body').removeClass('hidden');
+			sliderAcc.destroySlider();
 		});
 
 		//ThreeSixty
@@ -351,22 +478,39 @@ init = function(){
 			var cuantos = elemento.length;
 			var i = 0;
 
-			$('.resumen .tabla.acc .fila:not(.titulo)').remove();
+			$('.resumen .tabla.acc .fila:not(.titulo), .cotizarModal .tabla.acc .fila:not(.titulo), .financiamiento .tabla.acc .fila:not(.titulo)').remove();
 
-			$('.resumen .tabla.ext .seleccion span:eq(1)').empty();
-			$('.resumen .tabla.ext .seleccion span:eq(1)').append(extNombre);
+			$('.resumen .tabla.ext .seleccion span:eq(1), .cotizarModal .tabla.ext .seleccion span:eq(1), .financiamiento .tabla.ext .seleccion span:eq(1)').empty();
+			$('.resumen .tabla.ext .seleccion span:eq(1), .cotizarModal .tabla.ext .seleccion span:eq(1), .financiamiento .tabla.ext .seleccion span:eq(1)').append(extNombre);
+			$('.resumen .tabla.ext .seleccion span.color, .cotizarModal .tabla.ext .seleccion span.color, .financiamiento .tabla.ext .seleccion span.color').removeClass(''+extColor+'')
+			$('.resumen .tabla.ext .seleccion span.color, .cotizarModal .tabla.ext .seleccion span.color, .financiamiento .tabla.ext .seleccion span.color').addClass(''+extColor+'')
 
-			$('.resumen .tabla.int .seleccion span:eq(1)').empty();
-			$('.resumen .tabla.int .seleccion span:eq(1)').append(intNombre);
+			$('.resumen .tabla.int .seleccion span:eq(1), .cotizarModal .tabla.int .seleccion span:eq(1), .financiamiento .tabla.int .seleccion span:eq(1)').empty();
+			$('.resumen .tabla.int .seleccion span:eq(1), .cotizarModal .tabla.int .seleccion span:eq(1), .financiamiento .tabla.int .seleccion span:eq(1)').append(intNombre);
+			$('.resumen .tabla.int .seleccion span.img img, .cotizarModal .tabla.int .seleccion span.img img, .financiamiento .tabla.int .seleccion span.img img').remove();
+			$('.resumen .tabla.int .seleccion span.img, .cotizarModal .tabla.int .seleccion span.img, .financiamiento .tabla.int .seleccion span.img').append('<img src="'+intImg+'">');
 
 			while(i<=cuantos){
 				if(typeof elemento[i] !== 'undefined'){
-					$('.resumen .tabla.acc').append('<div class="fila"><div class="celda"><div class="seleccion"><span>'+elemento[i][0]+'</span><span class="eliminar">ELIMINAR</span></div></div><div class="celda"><div><p><b>'+elemento[i][1]+'</b></p></div></div></div>');
+					$('.resumen .tabla.acc').append('<div class="fila"><div class="celda"><div class="seleccion"><span>'+elemento[i][0]+'</span><span class="eliminar">ELIMINAR</span></div></div><div class="celda"><div><p><b>$'+elemento[i][1]+'</b></p></div></div></div>');
+					$('.cotizarModal .tabla.acc').append('<div class="fila"><div class="celda"><div class="seleccion"><span>'+elemento[i][0]+'</span></div></div><div class="celda"><div><p><b>$'+elemento[i][1]+'</b></p></div></div></div>');
+					$('.financiamiento .tabla.acc').append('<div class="fila"><div class="celda"><div class="seleccion"><span>'+elemento[i][0]+'</span></div></div><div class="celda"><div><p><b>$'+elemento[i][1]+'</b></p></div></div></div>');
 				}
 				i++
 			}
+			$('.resumen .tabla.acc .eliminar').on('click', function(){
+				var carnal =  $(this).prev().text();
+				$('.accesorios .flex > div.activo p:contains("'+carnal+'")').parent().parent().children('.seleccionar').trigger('click');
+				
+				var numero = $('.interaccion .accesorios .seleccionar.activo').length;
+				$('.interaccion .menu ul li.acc a span').empty();
+				$('.interaccion .menu ul li.acc a').append('<span> ('+numero+')</span>');
 
+				$(this).parents('.fila').remove();
+			});
 		}
+		$('.interaccion > div:eq(1)').addClass('activo animacion');
+		$('.financiamiento .financiar .plan').addClass('activo animacion');
 		reel360Gal('grisMetalico');
 		coloresCar();
 		rellenar();
@@ -476,6 +620,9 @@ init = function(){
 		$('header').addClass('static');
 		$('html').css("overflow", "visible");
 		$(window).on('scroll',menufixed);
+	}
+	else if($('section').hasClass('configura-cotiza')){
+		configuraCotiza();
 	}
 	else{
 
@@ -739,27 +886,63 @@ init = function(){
 	});
 	$('.codigo > dl dd').on('click', function(){
 		$('.codigo > dl dd').removeClass('activo');
-		$('.input-field .boton').removeClass('disabled');
+		$('.codigo ~ .input-field .boton').removeClass('disabled');
 		$(this).addClass('activo');
 		$('.codigo > dl dd:not(.activo)').addClass('none');
 	});
 
-	$('.distribuidor .ver span').on('click', function(){
+	$('.resumen .distribuidor .ver span').on('click', function(){
 		
-		if(!$('.distribuidor > dl dd.none').hasClass('none')){
-			$('.distribuidor > dl dd:not(.activo)').addClass('none');
-			$('.distribuidor .ver').removeClass('activo');
+		if(!$('.resumen .distribuidor > dl dd.none').hasClass('none')){
+			$('.resumen .distribuidor > dl dd:not(.activo)').addClass('none');
+			$('.resumen .distribuidor .ver').removeClass('activo');
 		}
 		else{
-			$('.distribuidor > dl dd:not(.activo)').removeClass('none');
-			$('.distribuidor .ver').addClass('activo');
+			$('.resumen .distribuidor > dl dd:not(.activo)').removeClass('none');
+			$('.resumen .distribuidor .ver').addClass('activo');
 		}
 	});
-	$('.distribuidor > dl dd').on('click', function(){
-		$('.distribuidor > dl dd').removeClass('activo');
+	$('.resumen .distribuidor > dl dd').on('click', function(){
+		$('.resumen .distribuidor > dl dd').removeClass('activo');
 		$(this).addClass('activo');
-		$('.distribuidor > dl dd:not(.activo)').addClass('none');
-		$('.distribuidor .ver').removeClass('activo');
+		$('.resumen .distribuidor > dl dd:not(.activo)').addClass('none');
+		$('.resumen .distribuidor .ver').removeClass('activo');
+	});
+
+	$('.cotizarModal .distribuidor .ver span').on('click', function(){
+		
+		if(!$('.cotizarModal .distribuidor > dl dd.none').hasClass('none')){
+			$('.cotizarModal .distribuidor > dl dd:not(.activo)').addClass('none');
+			$('.cotizarModal .distribuidor .ver').removeClass('activo');
+		}
+		else{
+			$('.cotizarModal .distribuidor > dl dd:not(.activo)').removeClass('none');
+			$('.cotizarModal .distribuidor .ver').addClass('activo');
+		}
+	});
+	$('.cotizarModal .distribuidor > dl dd').on('click', function(){
+		$('.cotizarModal .distribuidor > dl dd').removeClass('activo');
+		$(this).addClass('activo');
+		$('.cotizarModal .distribuidor > dl dd:not(.activo)').addClass('none');
+		$('.cotizarModal .distribuidor .ver').removeClass('activo');
+	});
+
+	$('.financiamiento .distribuidor .ver span').on('click', function(){
+		
+		if(!$('.financiamiento .distribuidor > dl dd.none').hasClass('none')){
+			$('.financiamiento .distribuidor > dl dd:not(.activo)').addClass('none');
+			$('.financiamiento .distribuidor .ver').removeClass('activo');
+		}
+		else{
+			$('.financiamiento .distribuidor > dl dd:not(.activo)').removeClass('none');
+			$('.financiamiento .distribuidor .ver').addClass('activo');
+		}
+	});
+	$('.financiamiento .distribuidor > dl dd').on('click', function(){
+		$('.financiamiento .distribuidor > dl dd').removeClass('activo');
+		$(this).addClass('activo');
+		$('.financiamiento .distribuidor > dl dd:not(.activo)').addClass('none');
+		$('.financiamiento .distribuidor .ver').removeClass('activo');
 	});
 
 	$('.buscador input[type=text]').on('keyup', function(){
@@ -823,7 +1006,7 @@ init = function(){
 	});
 
 
-	$('.vacantes select, .talento select, .flotillas select, .ideal select, .prueba select, .distribuidores select, .precios-servicio select, .refacciones-servicio select').material_select();
+	$('.vacantes select, .talento select, .flotillas select, .ideal select, .prueba select, .distribuidores select, .precios-servicio select, .refacciones-servicio select, .cotizarModal select, .financiamiento .elejir select').material_select();
 	$('.datepicker').pickadate({
 		selectMonths: true, // Creates a dropdown to control month
 		selectYears: 15 // Creates a dropdown of 15 years to control year
@@ -860,7 +1043,6 @@ init = function(){
 	inicio = function(){
 		setSize();
 		modelotarjeta();
-		configuraCotiza();
 	}
 
 	$(window).resize(function(){
