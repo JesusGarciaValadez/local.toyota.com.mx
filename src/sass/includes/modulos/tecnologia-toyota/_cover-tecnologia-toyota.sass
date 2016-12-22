@@ -1,0 +1,15 @@
+section.cover-tecnologia-toyota
+	height: 510px
+	position: relative
+	> img
+		+center(v)
+		display: block
+		top: 0px
+
+@mixin cover-tecnologia-toyota-smartphone
+	.cover-tecnologia-toyota
+		height: auto
+		> img
+			min-height: auto
+			position: relative
+			width: 100%

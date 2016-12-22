@@ -493,7 +493,7 @@ init = function(){
 	$('.menuModal').html(menuSecundario);
 	$('.menuModal').prepend('<div class="close"></div>');
 
-	$('.cover .slide, .consejos-propietarios .slide').bxSlider({
+	$('.cover .slide, .consejos-propietarios .slide, .de-nosotros .slide').bxSlider({
 		mode:'horizontal',
 		infiniteLoop: false,
 		responsive: true,
@@ -527,6 +527,18 @@ init = function(){
 		preventDefaultSwipeY: false,
 		oneToOneTouch: false,
 		controls: false
+	});
+
+	$('.reto-medioambiental .slide').bxSlider({
+		mode:'fade',
+		controls: false,
+		infiniteLoop: false,
+		responsive: true,
+		hideControlOnEnd: true,
+		touchEnabled: true,
+		preventDefaultSwipeX: false,
+		preventDefaultSwipeY: false,
+		oneToOneTouch: false
 	});
 	
 	$('.menuModal .close').on('click', function(){

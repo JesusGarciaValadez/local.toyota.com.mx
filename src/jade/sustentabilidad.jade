@@ -1,0 +1,25 @@
+-var location = "sustentabilidad"
+-var subLoc = " "
+-var titulo = " "
+-var descrip = " "
+-var keyword = " "
+-var breadcrumb = "none"
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	body
+		
+		include includes/header
+		
+		main.wrapper.header-static
+			include includes/modulos/sustentabilidad/cover-sustentabilidad
+			include includes/modulos/somos-toyota/menu-conoce-toyota
+			include includes/modulos/sustentabilidad/reto-medioambiental
+			include includes/modulos/sustentabilidad/compromiso
+			include includes/modulos/sustentabilidad/mejores-autos
+			include includes/modulos/sustentabilidad/somos-agentes
+		include includes/footer 

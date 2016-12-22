@@ -1,0 +1,71 @@
+.compromiso-mexico
+	padding: 6.25rem 0 
+	position: relative
+	.container
+		display: table
+		overflow: visible
+		h2
+			font-weight: 300
+			margin: 0 auto
+			text-align: center
+		> p
+			margin: 1.875rem auto
+			font-size: 1.125rem
+			text-align: center
+			width: 64%
+		.flex
+			+flex
+			+flexDirRow
+			+justifyCont(center)
+			float: left
+			width: 100%
+			margin: 3.75rem auto 0
+			padding: 0px
+			> div
+				+bx
+				+fx(all,0.5s)
+				margin-bottom: 1rem
+				max-width: 260px
+				padding: 0px 1rem
+				width: 25%
+				i
+					background: $BlueGrey400
+					border-radius: 50%
+					display: block
+					height: 78px
+					margin: auto
+					position: relative
+					width: 78px
+					&:before
+						+center(vh)
+						color: $White
+						font-size: 40px
+					&.icono_pinos
+						&:before
+							+fonIco('\e956')
+					&.icono_planta
+						&:before
+							+fonIco('\e955')
+					&.icono_bateria
+						&:before
+							+fonIco('\e92d')
+							font-size: 28px
+					&.icono_reciclado
+						&:before
+							+fonIco('\e92c')
+				p
+					font-size: 1.125rem
+					font-weight: 400
+					margin: 1rem 0
+					text-align: center
+
+@mixin compromiso-mexico-smartphone
+	.compromiso-mexico
+		height: auto
+		padding: 3.125rem 0
+		.container
+			display: block
+			h2
+				width: 100%
+			p
+				width: 100% 

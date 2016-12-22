@@ -1,0 +1,33 @@
+section.cover-responsabilidad-social
+	height: 510px
+	position: relative
+	> img
+		+center(v)
+		display: block
+		top: 0px
+	.container
+		display: table
+		overflow: visible
+		> div
+			+bx
+			display: table-cell
+			padding: 0px 2rem
+			vertical-align: middle
+			width: 60%
+			h1
+				margin-top: 0px
+			p
+				color: $BlueGrey800
+				font-size: 2rem
+				line-height: 2.75rem
+
+@mixin cover-responsabilidad-social-smartphone
+	.cover-responsabilidad-social
+		height: auto
+		> img
+			min-height: auto
+			position: relative
+			width: 100%
+		.container
+			> div
+				display: none

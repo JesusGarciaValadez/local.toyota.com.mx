@@ -1,0 +1,53 @@
+.innovacion
+	padding: 6.25rem 0 
+	position: relative
+	.container
+		display: table
+		overflow: visible
+		h2
+			font-weight: 300
+			margin: 0 auto
+			text-align: center
+		> p
+			margin: 1.875rem auto
+			font-size: 1rem
+			line-height: 1.625rem
+			text-align: center
+			width: 74%
+		img
+			display: block
+			margin: 1.625rem auto
+		.video
+			height: 720px
+			overflow: hidden
+			padding-bottom: 0px
+			position: relative
+			width: 100%
+			img
+				+object
+				height: 100%
+				position: absolute
+				top: 0px
+				width: 100%
+			a
+				display: block
+				height: 100%
+				position: relative
+				text-decoration: none
+				width: 100%
+				&:after
+					+center(vh)
+					+fonIco('\E927')
+					color: $Red800
+					font-size: 4.5rem
+
+@mixin innovacion-smartphone
+	.innovacion
+		height: auto
+		padding: 3.125rem 0
+		.container
+			display: block
+			h2
+				width: 100%
+			p
+				width: 100% 

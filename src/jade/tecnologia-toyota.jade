@@ -1,0 +1,26 @@
+-var location = "tecnologia-toyota"
+-var subLoc = " "
+-var titulo = " "
+-var descrip = " "
+-var keyword = " "
+-var breadcrumb = "none"
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage") 
+	include includes/head
+	body
+		
+		include includes/header
+		
+		main.wrapper.header-static
+			include includes/modulos/tecnologia-toyota/cover-tecnologia-toyota
+			include includes/modulos/tecnologia-toyota/menu-conoce-toyota
+			include includes/modulos/tecnologia-toyota/innovacion
+			include includes/modulos/tecnologia-toyota/sello-toyota
+			include includes/modulos/tecnologia-toyota/toyota-se-adelanta
+			include includes/modulos/tecnologia-toyota/autos-concepto
+			include includes/modulos/tecnologia-toyota/seguridad
+		include includes/footer 

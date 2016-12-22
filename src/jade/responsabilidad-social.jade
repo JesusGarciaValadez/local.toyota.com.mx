@@ -1,0 +1,26 @@
+-var location = "responsabilidad-social"
+-var subLoc = " "
+-var titulo = " "
+-var descrip = " "
+-var keyword = " "
+-var breadcrumb = "none"
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	body
+		
+		include includes/header
+		
+		main.wrapper.header-static
+			include includes/modulos/responsabilidad-social/cover-responsabilidad-social
+			include includes/modulos/somos-toyota/menu-conoce-toyota
+			include includes/modulos/responsabilidad-social/compromiso-mundial
+			include includes/modulos/responsabilidad-social/iniciativas
+			include includes/modulos/responsabilidad-social/respeto
+			include includes/modulos/responsabilidad-social/toyota-apoya
+			include includes/modulos/responsabilidad-social/compromiso-mexico
+		include includes/footer 

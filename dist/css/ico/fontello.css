@@ -30,6 +30,24 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-icono_indicador:before {
+  content: "\e92e";
+}
+.icon-icono_editar:before {
+  content: "\e92b";
+}
+.icon-icono_reciclado:before {
+  content: "\e92c";
+}
+.icon-icono_bateria:before {
+  content: "\e92d";
+}
+.icon-icono_planta:before {
+  content: "\e955";
+}
+.icon-icono_pinos:before {
+  content: "\e956";
+}
 .icon-icono_int:before {
   content: "\e929";
 }

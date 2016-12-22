@@ -1,0 +1,167 @@
+.nuestras-plantas
+	padding: 0 0 6.25rem 
+	position: relative
+	.container
+		display: table
+		overflow: visible
+		h2
+			font-weight: 300
+			margin: 0 auto
+			text-align: center
+		> p
+			margin: 1.875rem auto
+			font-size: 1.125rem
+			text-align: center
+			width: 74%
+		.flex
+			+flex
+			+flexDirRow
+			+justifyCont(center)
+			float: left
+			width: 100%
+			margin: 6.25rem auto 0
+			padding: 0px
+			> div 
+				+bx
+				+fx(all,0.5s)
+				background: $White
+				margin-bottom: 1rem
+				max-width: 260px
+				margin: 0 1rem
+				padding: 0
+				text-align: center
+				width: 25%
+				span
+					color: $BlueGrey800
+					display: block
+					font-size: 1.125rem
+					font-weight: 700
+					margin: 2rem 0 0
+				p
+					display: block
+					font-size: 1rem
+					font-weight: 400
+					margin: 0.5rem 0 0
+		.menu
+			margin: 3.75rem auto
+			ul
+				display: table
+				height: 100%
+				margin: auto
+				li
+					display: table
+					float: left
+					height: 100%
+					margin: 0px
+					padding: 0px 1.5rem
+					&.activo
+						> a
+							color: $BlueGrey900	
+							&:before
+								background: $BlueGrey900
+								width: 100%
+					> a
+						+fx(all,0.5s)
+						color: $BlueGrey
+						cursor: pointer
+						display: table-cell
+						font-size: 0.875rem
+						font-weight: 700
+						margin: 0px
+						padding: 0px
+						position: relative
+						text-decoration: none
+						vertical-align: middle
+						&:before
+							+center(v)
+							+fx(all,0.5s)
+							background: transparent
+							bottom: 0px
+							content: " "
+							display: block
+							height: 2px
+							width: 0%
+						&:hover
+							color: $BlueGrey900
+							&:before
+								background: $BlueGrey900
+								width: 100%
+	.planta
+		position: relative
+		> div
+			display: none
+			&:first-child
+				display: block
+			.titulo
+				font-size: 1.375rem
+				font-weight: 700
+				text-align: center
+			> p
+				margin: 1rem auto 3.75rem
+				font-size: 1.125rem
+				text-align: center
+				width: 60%
+			.content
+				+bx
+				height: 760px
+				overflow: hidden
+				padding: 10rem 0
+				position: relative
+				.info
+					position: relative
+					z-index: 3
+					h2
+						color: $White
+						font-weight: 300
+						margin: 1.25rem auto
+						text-align: center
+					p
+						color: $White
+						font-size: 1.125rem
+						line-height: 1.75rem
+						margin: 3.125rem auto
+						text-align: center
+						width: 82%
+					a
+						display: block
+						height: 4.5rem
+						margin: 0 auto
+						position: relative
+						text-decoration: none
+						width: 4.5rem
+						&:after
+							+center(vh)
+							+fonIco('\E927')
+							color: rgba(255,255,255,0.85)
+							font-size: 4.5rem
+				.mascara 
+					background: rgba(38,50,56,0.6)
+					height: 100%
+					position: absolute
+					top: 0
+					width: 100%
+					z-index: 2
+				.content-video
+
+					z-index: 1
+					.video
+						+center(vh)
+						z-index: 1
+						min-width: 100%
+						min-height: 100%
+						width: auto
+						height: auto
+									
+@mixin nuestras-plantas-smartphone
+	.nuestras-plantas
+		height: auto
+		padding: 3.125rem 0
+		.container
+			display: block
+			h2
+				margin: 0
+			p
+				margin: 2rem 0
+				width: 100%
+
+					

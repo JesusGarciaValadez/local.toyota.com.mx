@@ -1,0 +1,23 @@
+-var location = "por-que-toyota"
+-var subLoc = " "
+-var titulo = " "
+-var descrip = " "
+-var keyword = " "
+-var breadcrumb = "none"
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	body
+		
+		include includes/header
+		
+		main.wrapper.header-static
+			include includes/modulos/por-que-toyota/cover-por-que-toyota
+			include includes/modulos/somos-toyota/menu-conoce-toyota
+			include includes/modulos/por-que-toyota/cinco-razones
+			include includes/modulos/por-que-toyota/de-nosotros
+		include includes/footer
