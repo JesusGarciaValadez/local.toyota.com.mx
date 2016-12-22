@@ -11,6 +11,8 @@ if($(window).width() <= 767){
 
 init = function(){
 
+	anclasArray = [];
+	
 	medidas = function(){
 		altura = $(window).height();
 		anchura = $(window).width();
@@ -619,7 +621,17 @@ init = function(){
 	if($('main').hasClass('header-static')){
 		$('header').addClass('static');
 		$('html').css("overflow", "visible");
-		$(window).on('scroll',menufixed);
+		//$(window).on('scroll',menufixed);
+
+		$(document).on('scroll', function() {
+			var altura, anclas, posScroll;
+			posScroll = $(window).scrollTop();
+			altura = 60;
+			anclas = $('.anclas').length;
+			menuSupProducto();
+			menufixed();
+		});
+
 	}
 	else if($('section').hasClass('configura-cotiza')){
 		configuraCotiza();
@@ -838,6 +850,46 @@ init = function(){
 		$('.'+clase1+' select').material_select();
 	}
 
+	countAnclas = function(){
+		var anclas, menuSup;
+		menuSup = $('.menuSup').length;
+		anclas = $('.anclas').length;
+
+		if (menuSup !== 0){
+			return $('.anclas').each(function(index){
+				return anclasArray.push($('a.anclas:eq(' + index + ')').attr('name'));
+			});
+		}
+	};
+
+	menuSupProducto = function(){
+		var anclas, menuSup, posScroll;
+		posScroll = $(window).scrollTop();
+		menuSup = $('.menuSup').length;
+		anclas = $('.anclas').length;
+
+		if (menuSup !== 0){
+			return $('.anclas').each(function(index){
+				var next, prev;
+				prev = index - 1;
+
+				if (prev === -1){
+					prev = 0;
+				}
+				
+				next = index + 1;
+
+				if ($('a.anclas[name="' + anclasArray[index] + '"]').offset().top < posScroll + 1){
+					$('.menuSup a[href="#' + anclasArray[index] + '"]').parent().addClass('activo');
+					$('.menuSup a[href="#' + anclasArray[index] + '"]').parent().prevAll().removeClass('activo');
+					return $('.menuSup a[href="#' + anclasArray[index] + '"]').parent().nextAll().removeClass('activo');
+				} else if ($('a.anclas[name="' + anclasArray[0] + '"]').offset().top > posScroll){
+					return $('.menuSup a[href*="#"]').parent().removeClass('activo');
+				}
+			});
+		}
+	};
+
 	$('.resultados input[type=text]').on('keyup', function(){
 		var cuantos = $(this).val().length
 		if(cuantos >= 1){
@@ -1055,6 +1107,8 @@ init = function(){
 	inicio = function(){
 		setSize();
 		modelotarjeta();
+		countAnclas();
+		menuSupProducto();
 	}
 
 	$(window).resize(function(){
@@ -1064,13 +1118,26 @@ init = function(){
 	inicio();
 
 	//genera movimiento sutil del scroll	
-	$('a.scroll').on('click', function(e) {  		
-		event.preventDefault();
-		var $link = $(this);  
-		var anchor  = $link.attr('href'); 
-		var general =  $(anchor).offset().top
-		//general = general - 100;
-		$('html, body').stop().animate({scrollTop: general}, 1000);
+	// $('.scroll').on('click', function(e) {  		
+	// 	event.preventDefault();
+	// 	var $link = $(this);  
+	// 	var anchor  = $link.attr('href'); 
+	// 	var general =  $(anchor).offset().top
+	// 	//general = general - 100;
+	// 	$('html, body').stop().animate({scrollTop: general}, 1000);
+	// });
+	$('a.scroll').on('click', function(){
+		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+		&& location.hostname == this.hostname) {
+			var $target = $(this.hash);
+			$target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
+
+			if ($target.length) {
+				var targetOffset = $target.offset().top;
+				$('html,body').animate({scrollTop: targetOffset}, 1000);
+				return false;
+			}
+		}
 	});
 
 };
