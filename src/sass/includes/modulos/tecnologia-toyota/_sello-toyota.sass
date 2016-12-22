@@ -1,7 +1,7 @@
-.filosofia-empresarial
+.sello-toyota
 	+bx
-	height: 760px
-	padding: 4.375rem 0 
+	height: 700px
+	padding: 12rem 0 
 	position: relative
 	.bg
 		+center(v)
@@ -23,68 +23,9 @@
 		span 
 			color: $Red400
 			font-weight: 700
-		dl
-			display: table
-			padding: 5.75rem 0 0
-			width: 100%
-			.simbolo
-				+center(v)
-				position: absolute
-				z-index: 2
-			dd
-				+bx
-				display: table-cell
-				padding: 0 6rem
-				position: relative
-				vertical-align: top
-				width: 50%
-				img
-					display: block
-					margin: 0 auto
-				h3
-					font-weight: 700
-					margin: 0.625rem auto
-					text-align: center
-				span
-					display: block
-					font-weight: 300
-					font-style: italic
-					position: relative
-					text-align: center
-				p
-					font-size: 22px
-					font-style: italic
-					font-weight: 600 
-					margin: 1rem 0
-					position: relative
-					text-align: center
-					width: auto
-					z-index: 1
-				&:before
-					+fawesome('\f10d')
-					bottom: -14%
-					color: $Grey200
-					font-size: 12.5rem
-					font-style: normal
-					left: 4%
-					position: absolute
-					z-index: 0
-
-@mixin filosofia-empresarial-smartphone
-	.filosofia-empresarial
+@mixin sello-toyota-smartphone
+	.sello-toyota
 		height: auto
 		padding: 3.125rem 0
 		.container
 			display: block
-			h2
-				width: 100%
-			p
-				width: 100%
-			dl 
-				padding: 2.5rem 0 0
-				dd
-					display: block
-					width: 100%
-					p
-						height: auto
-						margin: 0 1rem 2rem 4rem
