@@ -1,0 +1,62 @@
+.accesorios
+	background: $Grey100
+	padding: 2.5rem 0px
+	.container
+		> p
+			text-align: center
+		.flex
+			> div
+				+bx
+				margin-bottom: 2rem
+				padding: 0px 1rem
+				width: 33%
+				> div
+					+fx(all,0.5s)
+					background: $White
+					overflow: hidden
+					width: 100%
+					&:hover
+						+shadow(0px, 8px, 17px, 0px, rgba(0,0,0,0.2), 0px, 6px, 20px, 0px, rgba(0,0,0,0.19))
+					.img
+						margin-bottom: 1rem
+						overflow: hidden
+						> img
+							+object
+							display: block
+							height: 100%
+							width: 100%
+					.info
+						+bx
+						padding: 0px 1rem
+						p
+							font-size: 1.125rem
+							margin-bottom: 0px
+						.link
+							cursor: pointer
+							font-size: 0.875rem
+							margin: 1rem 0px
+					.seleccionar
+						+fx(all,0.5s)
+						background: $BlueGrey900
+						color: $White
+						cursor: pointer
+						display: block
+						font-size: 0.875rem
+						font-weight: 600
+						opacity: 1
+						padding: 0.625rem 0px
+						position: relative
+						text-align: center
+						width: 100%
+						&:hover
+							background: $Red800
+						&.activo
+							background: $Red800
+							&:before
+								+center(vh)
+								+icons('\E876')
+								color: $White
+								font-size: 1.25rem
+								
+							span
+								opacity: 0
