@@ -652,7 +652,7 @@ init = function(){
 	$('.menuModal').html(menuSecundario);
 	$('.menuModal').prepend('<div class="close"></div>');
 
-	$('.cover .slide, .consejos-propietarios .slide, .de-nosotros .slide').bxSlider({
+	$('.cover .slide, .consejos-propietarios .slide, .de-nosotros .slide, .autos-concepto .slide').bxSlider({
 		mode:'horizontal',
 		infiniteLoop: false,
 		responsive: true,

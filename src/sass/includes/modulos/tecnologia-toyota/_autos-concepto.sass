@@ -1,90 +1,166 @@
-.filosofia-empresarial
-	+bx
-	height: 760px
-	padding: 4.375rem 0 
+.autos-concepto
+	padding: 0 0 8.75rem
 	position: relative
-	.bg
-		+center(v)
-		top: 0px 
 	.container
 		display: table
 		overflow: visible
+		position: relative
 		h2
-			color: $White
 			font-weight: 300
-			margin: 1.25rem auto 6.25rem
-			text-align: center
-		p
-			color: $White
-			font-size: 1.125rem
-			margin: 2.125rem auto
-			text-align: center
-			width: 70%
-		span 
-			color: $Red400
-			font-weight: 700
-		dl
-			display: table
-			padding: 5.75rem 0 0
+			margin: 0 auto
+			text-align: left
+	.slide
+		overflow: hidden
+		width: 100%
+		> div
+			overflow: hidden
+			height: 800px
 			width: 100%
-			.simbolo
+			.bg
 				+center(v)
-				position: absolute
-				z-index: 2
-			dd
-				+bx
-				display: table-cell
-				padding: 0 6rem
-				position: relative
-				vertical-align: top
-				width: 50%
-				img
-					display: block
-					margin: 0 auto
-				h3
-					font-weight: 700
-					margin: 0.625rem auto
-					text-align: center
-				span
-					display: block
+				top: 0px
+			.container
+				h2
+					color: $White
 					font-weight: 300
-					font-style: italic
-					position: relative
+					margin: 4.625rem 0 0
 					text-align: center
 				p
-					font-size: 22px
-					font-style: italic
-					font-weight: 600 
-					margin: 1rem 0
-					position: relative
+					color: $White
+					font-size: 1.125rem
+					margin: 2rem auto
 					text-align: center
-					width: auto
-					z-index: 1
-				&:before
-					+fawesome('\f10d')
-					bottom: -14%
-					color: $Grey200
-					font-size: 12.5rem
-					font-style: normal
-					left: 4%
-					position: absolute
-					z-index: 0
-
-@mixin filosofia-empresarial-smartphone
-	.filosofia-empresarial
-		height: auto
-		padding: 3.125rem 0
+					width: 74%
+				.boton
+					max-width: 160px
+					min-width: 150px
+					margin: 2rem auto
+					padding: 12px 0
+				.nombre
+					color: $White
+					font-size: 2rem
+					font-weight: 300
+					margin: 4rem auto 0
+					text-align: right
+					width: 74%
+	.bx-prev 
+		border-radius: 50%
+		border: 2px solid $White
+		color: $White
+		left: 0px
+		margin-right: 2rem 
+		position: relative
+		&:before
+			+fonIco("\e903")
+			+translate(-50%,-50%)
+			font-size: 16px
+			left: 50%
+			position: absolute
+			text-indent: 0px
+			top: 50%
+	.bx-next 
+		border-radius: 50%
+		border: 2px solid $White
+		color: $White
+		float: right
+		position: relative
+		right: 0px
+		&:before
+			+fonIco("\e904")
+			+translate(-50%,-50%)
+			font-size: 16px
+			left: 50%
+			position: absolute
+			text-indent: 0px
+			top: 50%
+	.bx-controls-direction
+		bottom: 50%
+		position: absolute
+		width: 100%
 		.container
-			display: block
-			h2
-				width: 100%
-			p
-				width: 100%
-			dl 
-				padding: 2.5rem 0 0
-				dd
+			width: 900px
+		a
+			+fx(all,0.5s) 
+			display: inline-block
+			height: 42px
+			outline: 0
+			text-decoration: none
+			text-indent: -9998px
+			width: 42px
+			z-index: 98
+			&.disabled 
+				border: 2px solid rgba(255, 255, 255, 0.4)
+				color: rgba(255, 255, 255, 0.4)
+				&:hover
+					background: none
+	
+	.bx-wrapper
+		.bx-has-pager
+			+center(v)
+			bottom: 120px
+		.bx-pager
+			color: rgba(38, 50, 56, 0.4)
+			font-family: Arial
+			font-size: 0px
+			font-weight: bold
+			text-align: center
+			&.bx-default-pager
+				a
+					+fx(all,0.5s)
+					-moz-border-radius: 5px
+					-webkit-border-radius: 5px
+					background: rgba(38, 50, 56, 0.4)
+					border-radius: 5px
 					display: block
-					width: 100%
-					p
-						height: auto
-						margin: 0 1rem 2rem 4rem
+					height: 8px
+					margin: 0px 12px
+					outline: 0px
+					text-indent: -9999px
+					width: 8px
+					&:hover, &.active, &:focus
+						+scale(1.5,1.5)
+						background: $BlueGrey900
+		.bx-pager-item
+			*display: inline
+			*zoom: 1
+			display: inline-block
+			font-size: 0px
+			line-height: 0px
+		.bx-controls-auto
+			.bx-controls-auto-item
+				*display: inline
+				*zoom: 1
+				display: inline-block
+
+@mixin autos-concepto-smartphone
+	.autos-concepto
+		.slide 
+			> div 
+				height: auto
+				.bg
+					width: 120%
+				.container 
+					.flex 
+						> div
+							width: 100%
+						.texto
+							+order(2)
+							margin-bottom: 40px
+							h2
+								margin: 0px
+								text-align: center
+								b
+									display: block
+							.btvideo
+								margin: 27px auto
+								p
+									font-weight: 400
+									text-transform: capitalize
+									span
+										display: none
+							.boton
+								margin: 1rem auto
+						.imagen
+							+order(1)
+		.bx-controls-direction
+			display: none

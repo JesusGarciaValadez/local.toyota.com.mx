@@ -1,4 +1,4 @@
-.respeto
+.toyota-se-adelanta
 	padding: 6.25rem 0 0
 	position: relative
 	.container
@@ -12,13 +12,112 @@
 			margin: 1.875rem auto
 			font-size: 1.125rem
 			text-align: center
-			width: 64%
-		img
+			width: 80%
+		> img
 			display: block
-			margin: 6rem auto
+			margin: 2rem auto
+		.carro
+		.movilidad
+			margin: 2.5rem 0
+			padding: 0
+			overflow: hidden
+			width: 100%
+			.columna
+				display: block
+				min-height: 260px
+				position: relative
+				.texto
+					display: block
+					h2
+						margin: 0.625rem 0
+						text-align: left
+					p
+						display: block
+						font-size: 1.125rem
+						margin: 0.625rem 0
+						text-align: left
+				img
+					display: block
+					margin: auto
+					width: 100%
+				&.left
+					float: left
+					padding: 0px 1rem
+					width: 42%
+				&.right
+					float: right
+					padding: 0px 1rem
+					width: 58%
+	.i-road
+		+bx
+		height: 780px
+		padding: 0
+		position: relative
+		.bg
+			+center(v)
+			top: 0px 
+		.container
+			display: table
+			overflow: visible
+			p
+				color: $BlueGrey900
+				font-size: 2rem
+				font-weight: 300
+				line-height: 2.75rem
+				margin: 1rem auto
+				text-align: center
+				width: 70%
+			.flex
+				+justifyCont(center)
+				margin-top: 22.5rem
+				> div
+					+bx
+					+fx(all,0.5s)
+					background: $White
+					height: 280px
+					margin: 0 2rem
+					margin-bottom: 1rem
+					overflow: hidden
+					position: relative
+					width: 380px
+					&:hover
+						+shadow(0px, 8px, 17px, 0px, rgba(0,0,0,0.2), 0px, 6px, 20px, 0px, rgba(0,0,0,0.19))
+					.video
+						height: 100%
+						overflow: hidden
+						padding-bottom: 0px
+						position: relative
+						width: 100%
+						img
+							+fx(all,0.5s)
+							+object
+							height: 100%
+							position: absolute
+							top: 0px
+							width: 100%
+						&:hover
+							img
+								+scale(1.08,1.08)
+						a
+							display: block
+							height: 100%
+							position: relative
+							text-decoration: none
+							width: 100%
+							&:after
+								+center(vh)
+								+fonIco('\E927')
+								color: rgba(255,255,255,0.85)
+								font-size: 3.75rem
+	.ttc 
+		padding: 6.25rem 0 0
+		.container
+			> img
+				display: block
+				margin: 3.75rem auto 0
 
-@mixin respeto-smartphone
-	.respeto
+@mixin toyota-se-adelanta-smartphone
+	.toyota-se-adelanta
 		height: auto
 		padding: 3.125rem 0
 		.container
