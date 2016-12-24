@@ -1,7 +1,7 @@
 .filosofia-empresarial
 	+bx
 	height: 760px
-	padding: 4.375rem 0 
+	padding: 4.375rem 0px
 	position: relative
 	.bg
 		+center(v)
@@ -23,13 +23,19 @@
 		span 
 			color: $Red400
 			font-weight: 700
-@mixin filosofia-empresarial-smartphone
+@mixin filosofia-filosofia-empresarial-smartphone
 	.filosofia-empresarial
 		height: auto
-		padding: 3.125rem 0
+		padding: 3.125rem 0px
+		.bg
+			+center(r)
+			width: 100%
 		.container
 			display: block
 			h2
+				color: $BlueGrey900
+				margin: 1.25rem auto
 				width: 100%
 			p
+				color: $BlueGrey900
 				width: 100%

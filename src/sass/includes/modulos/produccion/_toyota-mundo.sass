@@ -1,33 +1,25 @@
 .toyota-mundo
-	padding: 6.25rem 0 
+	padding: 6.25rem 0px
 	position: relative
 	.container
-		display: table
-		overflow: visible
-		position: relative
 		h2
 			font-weight: 300
-			margin: 0 auto
+			margin: 0px auto
 			text-align: center
 		> p
-			margin: 1.875rem auto 3.75rem
 			font-size: 1.125rem
+			margin: 1.875rem auto 3.75rem
 			text-align: center
 			width: 80%
 	.mundo
-		height: 920px
-		position: relative
 		img
-			+center(v)
-			top: 0px
+			display: block
+			width: 100%
 
-@mixin toyota-mundo-smartphone
+@mixin produccion-toyota-mundo-smartphone
 	.toyota-mundo
 		height: auto
 		padding: 3.125rem 0
 		.container
-			display: block
-			h2
-				width: 100%
 			p
-				width: 100% 
+				width: 100%

@@ -1,12 +1,12 @@
 .mejores-autos
-	padding: 6.25rem 0 
+	padding: 6.25rem 0px
 	position: relative
 	.container
-		display: table
+		max-width: 1500px
 		overflow: visible
 		h2
 			font-weight: 300
-			margin: 0 auto
+			margin: 0px auto
 			text-align: center
 		> p
 			margin: 1.875rem auto
@@ -57,39 +57,42 @@
 							&:before
 								background: $BlueGrey900
 								width: 100%
-	.tipo-auto
-		position: relative
-		> div
-			display: none
-			&:first-child
-				display: block
-			.titulo
-				font-size: 1.375rem
-				font-weight: 700
-				text-align: center
-			> p
-				margin: 1rem auto
-				font-size: 1.125rem
-				text-align: center
-				width: 60%
-			.link
-				font-size: 14px
-				margin: 2rem auto
-			.bg
-				+center(v)
-				position: relative
-				top: 0px
+		.tipo-auto
+			position: relative
+			> div
+				display: none
+				&:first-child
+					display: block
+				.titulo
+					font-size: 1.375rem
+					font-weight: 700
+					text-align: center
+				> p
+					margin: 1rem auto
+					font-size: 1.125rem
+					text-align: center
+					width: 60%
+				.link
+					font-size: 14px
+					margin: 2rem auto
+				> img
+					display: block
+					width: calc(100% + 40px)
+					position: relative
+					left: -20px
 									
-@mixin mejores-autos-smartphone
+@mixin sustentabilidad-mejores-autos-smartphone
 	.mejores-autos
 		height: auto
-		padding: 3.125rem 0
+		padding: 3.125rem 0px
 		.container
 			display: block
 			h2
-				margin: 0
-			p
-				margin: 2rem 0
+				margin: 0px
+			> p
+				margin: 2rem 0px
 				width: 100%
-
-					
+			.tipo-auto
+				> div
+					> p
+						width: 100%
