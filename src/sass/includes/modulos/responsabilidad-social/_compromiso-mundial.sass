@@ -14,13 +14,11 @@
 			text-align: center
 			width: 64%
 		.flex
-			+flex
-			+flexDirRow
-			+justifyCont(center)
+			+justifyCont
 			float: left
-			width: 100%
-			margin: 3.75rem auto 0
+			margin: 3.75rem auto 0px
 			padding: 0px
+			width: 100%
 			> div
 				+bx
 				+fx(all,0.5s)
@@ -59,13 +57,19 @@
 					margin: 1rem 0
 					text-align: center
 
-@mixin compromiso-mundial-smartphone
+@mixin responsabilidad-compromiso-mundial-smartphone
 	.compromiso-mundial
 		height: auto
-		padding: 3.125rem 0
+		padding: 3.125rem 0px
 		.container
 			display: block
 			h2
 				width: 100%
-			p
-				width: 100% 
+			> p
+				width: 100%
+			.flex
+				> div
+					margin: auto
+					max-width: 100%
+					padding: 0px
+					width: 100%

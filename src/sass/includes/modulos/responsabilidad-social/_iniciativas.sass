@@ -1,7 +1,7 @@
 .iniciativas
 	+bx
 	height: 760px
-	padding: 4.375rem 0
+	padding: 4.375rem 0px
 	position: relative
 	.container
 		overflow: visible
@@ -19,10 +19,10 @@
 				line-height: 1.75rem
 				width: 40%
 			.boton
+				margin: 2rem 0px
 				max-width: 160px
 				min-width: 150px
-				margin: 2rem 0
-				padding: 12px 0
+				padding: 12px 0px
 				text-transform: uppercase
 	.back
 		z-index: 1
@@ -30,7 +30,17 @@
 			+center(v)
 			top: 0px
 
-@mixin iniciativas-smartphone
+@mixin responsabilidad-iniciativas-smartphone
 	.iniciativas
-		.container 
-			
+		height: auto
+		padding: 3.125rem 0px
+		.container
+			.contenido
+				h2
+					margin-top: 0px
+					text-align: center
+				p
+					text-align: center
+					width: 100%
+				.boton
+					margin: 2rem auto

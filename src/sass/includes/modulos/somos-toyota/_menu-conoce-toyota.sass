@@ -2,7 +2,7 @@
 	height: 60px
 	position: relative
 	.menufixed
-		+shadow(0px, 8px, 17px, 0px, rgba(0,0,0,0.2), 0px, 6px, 20px, 0px, rgba(0,0,0,0.19))
+		+shadow(0px, 6px, 12px, 0px, rgba(0,0,0,0.2), 0px, 4px, 8px, 0px, rgba(0,0,0,0.19))
 		background: $BlueGrey900
 		position: absolute
 		top: 0px
@@ -10,11 +10,11 @@
 		z-index: 98
 		.container
 			max-width: 1500px
+			overflow: visible
 			nav
 				display: table
 				height: 60px
-				margin: auto 0
-				overflow: hidden
+				overflow: visible
 				> ul
 					display: table
 					height: 100%
@@ -85,44 +85,59 @@
 						text-decoration: none
 						vertical-align: middle
 
-@mixin menu-conoce-toyota-smartphone
+@mixin somos-toyota-menu-conoce-toyota-smartphone
 	.menu-conoce-toyota
 		.menufixed
 			.container
+				> .titulo
+					height: 60px
+					position: relative
+					width: 100%
+					> div
+						color: $White
+						display: table
+						float: left
+						font-size: 1.5rem
+						font-weight: 600
+						height: 100%
+						padding: 0px
+						span
+							display: table-cell
+							vertical-align: middle
+					.seccion
+						float: right
+						position: relative
+						cursor: pointer
+						padding-right: 1.5rem
+						font-size: 0.875rem
+						font-weight: 700
+						&:after
+							+center(h)
+							+icons('\E145')
+							color: $Red800
+							font-size: 1rem
+							line-height: normal
+							right: 0px
 				nav
 					+fx(all,0.5s)
 					+translate(100%, 0%)
 					background: $BlueGrey900
+					display: block
 					height: 100vh
 					left: 0px
+					overflow: auto
 					position: fixed
 					top: 0px
 					width: 100vw
 					.datos
 						position: relative
-						.carro
+						.titulo
 							span
 								color: $White
 								display: block
 								font-size: 1.5rem
 								font-weight: 600
 								padding: 1.5rem 20px
-						.name
-							cursor: pointer
-							&:hover
-								background: $BlueGrey800
-								> span
-									border-bottom: 1px solid $BlueGrey800
-									color: $White
-							span
-								+fx(all,0.5s)
-								border-bottom: 1px solid $BlueGrey400
-								color: $BlueGrey400
-								display: block
-								font-weight: 700
-								margin: auto
-								padding: 1.125rem 0px
-								width: calc(100% - 40px)
 						.close 
 							cursor: pointer
 							height: 24px
@@ -145,11 +160,11 @@
 							position: relative
 							width: 100%
 							> a
-								display: block
-								padding: 1.125rem 0px
 								border-bottom: 1px solid $BlueGrey400
-								width: calc(100% - 40px)
+								display: block
 								margin: auto
+								padding: 1.125rem 0px
+								width: calc(100% - 40px)
 								&:before
 									display: none
 							&:last-child

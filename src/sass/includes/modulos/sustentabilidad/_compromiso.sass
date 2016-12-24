@@ -1,26 +1,24 @@
 .compromiso
-	padding: 0
+	padding: 0px
 	position: relative
 	.container
 		display: table
 		overflow: visible
 		h2
 			font-weight: 300
-			margin: 0 auto
+			margin: 0px auto
 			text-align: center
 		> p
-			margin: 1.875rem auto
 			font-size: 1.125rem
+			margin: 1.875rem auto
 			text-align: center
 			width: 64%
 		.flex
-			+flex
-			+flexDirRow
-			+justifyCont(center)
+			+justifyCont
 			float: left
-			width: 100%
-			margin: 3.75rem auto 0
+			margin: 3.75rem auto 0px
 			padding: 0px
+			width: 100%
 			> div
 				+bx
 				+fx(all,0.5s)
@@ -60,13 +58,19 @@
 					margin: 1rem 0
 					text-align: center
 
-@mixin compromiso-smartphone
+@mixin sustentabilidad-compromiso-smartphone
 	.compromiso
 		height: auto
-		padding: 3.125rem 0
+		padding: 3.125rem 0px
 		.container
 			display: block
 			h2
 				width: 100%
-			p
+			> p
 				width: 100%
+			.flex
+				> div
+					margin: auto
+					max-width: 100%
+					padding: 0px
+					width: 100%

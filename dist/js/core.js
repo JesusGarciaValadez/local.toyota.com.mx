@@ -32,6 +32,7 @@ init = function(){
 				menuFotter();
 				mobileMenuSelect();
 				mobileMenuPropietarios();
+				mobileMenuConoceToyota();
 				if($('section').hasClass('cover-modelo')){
 					coverModeloMobile();
 				}
@@ -48,6 +49,7 @@ init = function(){
 				menuFotterStop();
 				menuSelect();
 				menuPropietarios();
+				menuConoceToyota();
 				if($('section').hasClass('cover-modelo')){
 					coverModeloDesctop();
 				}
@@ -585,6 +587,29 @@ init = function(){
 		$('.filtro-autos').off('mouseout');
 		$('.filtro-autos').on('click', function(){
 			$(this).toggleClass('activo');
+		});
+	}
+
+	menuConoceToyota  = function(){
+		$('.menu-conoce-toyota .titulo > div').remove();
+		$('.menu-conoce-toyota .datos > div').remove();
+	}
+
+	mobileMenuConoceToyota = function(){
+
+		var name = $('.cover-somos-toyota h1').text();
+		var activo = $('.menu-conoce-toyota nav ul li.activo').text();
+
+		$('.menu-conoce-toyota .titulo').append($('<div class="seccion"><span>'+activo+'</span></div>'));
+		$('.menu-conoce-toyota .datos').append($('<div class="close"></div><div class="titulo"><span>'+name+'</span></div>'));
+
+		$('.menu-conoce-toyota .seccion').on('click', function(){
+			$('.menufixed').addClass('activo');
+			$('body').addClass('hidden');
+		});
+		$('.menu-conoce-toyota .close').on('click', function(){
+			$('.menufixed').removeClass('activo');
+			$('body').removeClass('hidden');
 		});
 	}
 
