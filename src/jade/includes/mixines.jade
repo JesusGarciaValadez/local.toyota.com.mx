@@ -14,9 +14,9 @@ mixin menu-autos(arreglo)
 								.flex
 									each valu in arreglo[index].lista
 										div
-											a(href="#{valu.urlimg}")
-												img(src="images/autos/#{valu.img}")
-												img(src="images/autos/#{valu.imghover}").hover
+											a(href="#{urlSitio}#{valu.urlimg}")
+												img(src="#{urlSitio}images/autos/#{valu.img}")
+												img(src="#{urlSitio}images/autos/#{valu.imghover}").hover
 											p #{valu.modelo}
 												cite #{valu.slogan}
 												span Desde 
@@ -25,7 +25,7 @@ mixin menu-autos(arreglo)
 												dd
 													a(href="#{valu.urlver}").link VER DETALLE
 												dd
-													a(href="#{valu.url}").link CONFIGURA
+													a(href="#{urlSitio}#{valu.url}").link CONFIGURA
 
 //-Seleccionar Autos
 mixin seleccionar-autos(arreglo)
@@ -41,12 +41,13 @@ mixin seleccionar-autos(arreglo)
 								.flex
 									each valu in arreglo[index].lista
 										div
-											.img
-												img(src="images/autos/#{valu.img}")
-												img(src="images/autos/#{valu.imghover}").hover
-											p #{valu.modelo}
-											span Desde 
-												b $#{valu.precio}
+											a(href="version.html")
+												.img
+													img(src="#{urlSitio}images/autos/#{valu.img}")
+													img(src="#{urlSitio}images/autos/#{valu.imghover}").hover
+												p #{valu.modelo}
+												span Desde 
+													b $#{valu.precio}
 
 //-Autos
 mixin lista-autos(arreglo)
@@ -90,4 +91,4 @@ mixin links-footer(arreglo)
 					ul
 						each value in arreglo[index].lista[index1].subLista
 							li
-								a(href="#{value.url}") #{value.text1}
+								a(href="#{urlSitio}#{value.url}") #{value.text1}

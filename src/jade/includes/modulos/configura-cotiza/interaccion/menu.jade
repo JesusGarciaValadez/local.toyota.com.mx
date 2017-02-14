@@ -2,11 +2,11 @@
 	.container
 		nav
 			ul 
-				li.ext.activo
-					a(href="#") EXTERIOR
-				li.int
-					a(href="#") INTERIOR
-				li.acc
-					a(href="#") ACCESORIOS
-				li.res
-					a(href="#") RESUMEN
+				li.ext(class="#{activoMenu == 'exterior' ? 'activo' : ''}")
+					a(href="exterior.html") EXTERIOR
+				li.int(class="#{activoMenu == 'interior' ? 'activo' : ''}")
+					a(href="interior.html") INTERIOR
+				li.acc(class="#{activoMenu == 'accesorios' ? 'activo' : ''}")
+					a(href="accesorios.html") ACCESORIOS
+				li.res(class="#{activoMenu == 'resumen' ? 'activo' : ''}")
+					a(href="resumen.html") RESUMEN

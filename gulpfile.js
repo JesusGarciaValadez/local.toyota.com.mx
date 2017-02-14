@@ -37,6 +37,16 @@ gulp.task('jade', function(){
 	.pipe(gulp.dest('./dist/'))
 });
 
+gulp.task('jadeURL', function(){
+	var YOUR_LOCALS = {};
+	gulp.src('./src/jade/configura-cotiza/*.jade')
+	.pipe(jade({
+		pretty: true,
+		locals: YOUR_LOCALS
+	}))
+	.pipe(gulp.dest('./dist/configura-cotiza/'))
+});
+
 /* Configuración de la tarea 'compass' */
 gulp.task('compass', function(){
 	gulp.src('./src/sass/**/*.*')
@@ -84,6 +94,11 @@ gulp.task('jade:watch', function(){
 	gulp.watch('./src/jade/**/*.jade', ['jade']);
 });
 
+/* Configuración de la tarea 'jade:watch' */
+gulp.task('jadeURL:watch', function(){
+	gulp.watch('./src/jade/**/*.jade', ['jadeURL']);
+});
+
 /* Configuración de la tarea 'compass:watch' */
 gulp.task('compass:watch', function(){
 	gulp.watch('./src/sass/**/*.sass', ['compass']);
@@ -101,6 +116,6 @@ gulp.task('watch', function(){
 	});
 });
 
-gulp.task('toyota', ['jade:watch','compass:watch','webserver']);
+gulp.task('toyota', ['jade:watch','jadeURL:watch','compass:watch','webserver']);
 
 gulp.task('default', ['js']);

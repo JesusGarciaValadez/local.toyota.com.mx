@@ -1,72 +1,68 @@
 .cinco-razones
-	padding: 6.25rem 0 
-	position: relative
+	padding-bottom: 6.25rem
 	.container
-		display: table
-		overflow: visible
 		h2
 			font-weight: 300
-			margin: 0 auto
 			text-align: center
 		.razones
-			margin: 2rem 0
+			margin: 2rem 0px
 			position: relative
 			.razon
-				margin: 2rem 0
-				padding: 0
+				display: table
+				margin: 2rem 0px
+				padding: 0px
 				overflow: hidden
 				width: 100%
 				.columna
-					display: flex
-					min-height: 260px
+					+bx
+					float: left
+					padding: 0px 1rem
 					position: relative
 					width: 50%
 					.numero
 						color: $Grey200
-						font-family: 'lucida'
 						font-size: 300px
-						float: left
-						line-height: 300px
-						position: relative
-					.texto
-						display: block
-						float: left
-						width: 340px
+						font-weight: 700
+						line-height: 1
+						padding-right: 1rem
+					> div
+						display: table-cell
+						vertical-align: middle
 						h3
-							margin: 0.625rem 0
+							margin: 0.9375rem 0px
 						span
 							color: $BlueGrey400
+							display: block
 							font-size: 1.375rem
-							margin: 0.625rem 0
-							text-align: left
+							margin-bottom: 0.8125rem
 						p
 							display: block
 							font-size: 1.125rem
-							margin: 0.625rem 0
-							text-align: left
-					img
-						display: block
-						margin: auto
-						width: 74%
-					&.left
-						float: left
-						padding: 0px 1rem
-					&.right
-						float: right
-						padding: 0px 1rem
+					&.img
+						position: relative
+						height: 300px
+						img
+							+center(vh)
+							display: block
+							margin: 1rem auto
+							max-width: 590px
+							width: 100%
 				&:nth-child(even)
 					.columna
-						&.left
-							float: right
-						&.right
+						float: right
+						&.img
 							float: left
-@mixin cinco-razones-smartphone
+
+@mixin por-que-toyota-cinco-razones-smartphone
 	.cinco-razones
-		height: auto
-		padding: 3.125rem 0
 		.container
-			display: block
-			h2
-				width: 100%
-			p
-				width: 100% 
+			.razones
+				.razon
+					.columna
+						width: 100%
+						.numero
+							display: none
+						&.img
+							height: auto
+							img
+								+center(r)

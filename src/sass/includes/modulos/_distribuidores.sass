@@ -10,7 +10,7 @@
 			background: $White
 			height: 100%
 			width: 350px
-			> div:not(.mapa)
+			.localiza
 				+bx
 				height: 14.5rem
 				margin-bottom: 1.875rem
@@ -71,11 +71,11 @@
 						&:before
 							+center(vh)
 							+fawesome('\f002')
-			> dl
+			.lista
 				display: none
 				height: calc(100% - 16.375rem)
 				overflow: auto
-				> dd
+				> li
 					+fx(all,0.5s)
 					border-bottom: 1px solid $Grey400
 					display: table
@@ -129,65 +129,65 @@
 								cursor: pointer
 								float: right
 								font-size: 0.75rem
-					.datos
-						+fx(all,0.5s)
-						+translate(-100%, 0%)
-						background: $Grey50
-						height: 100%
-						left: 0px
-						overflow: auto
-						position: absolute
-						top: 0px
-						width: 350px
-						z-index: 2
-						.link
-							cursor: pointer
-							margin: 1rem 0px
-						> div
-							+bx
-							background: $White
-							padding: 1rem 2rem
-							width: 100%
-							img
-								display: block
-								height: auto
-								width: 100%
-							h6
-								font-size: 1.125rem
-								margin-top: 1.875rem
-							p
-								font-size: 0.875rem
-								font-weight: 300
-								line-height: 1.25rem
-							dl
-								dt
+			.datos
+				+fx(all,0.5s)
+				+translate(-100%, 0%)
+				background: $Grey50
+				height: 100%
+				left: 0px
+				overflow: auto
+				position: absolute
+				top: 0px
+				width: 350px
+				z-index: 2
+				.link
+					cursor: pointer
+					margin: 1rem 0px
+				> div
+					+bx
+					background: $White
+					padding: 1rem 2rem
+					width: 100%
+					img
+						display: block
+						height: auto
+						width: 100%
+					h6
+						font-size: 1.125rem
+						margin-top: 1.875rem
+					p
+						font-size: 0.875rem
+						font-weight: 300
+						line-height: 1.25rem
+					dl
+						dt
+							font-size: 0.75rem
+							font-weight: 700
+							line-height: 1.0625rem
+						dd
+							font-size: 0.75rem
+							font-weight: 400
+							line-height: 1.0625rem
+							margin-bottom: 0.75rem
+							a
+								color: $BlueGrey900
+								font-style: italic
+							ul
+								li
+									color: $BlueGrey900
 									font-size: 0.75rem
-									font-weight: 700
-									line-height: 1.0625rem
-								dd
-									font-size: 0.75rem
-									font-weight: 400
-									line-height: 1.0625rem
-									margin-bottom: 0.75rem
-									a
-										color: $BlueGrey900
-										font-style: italic
-									ul
-										li
-											color: $BlueGrey900
-											font-size: 0.75rem
-											line-height: 1.1875rem
-											p
-												font-size: 0.75rem
-												font-weight: 300
-												line-height: 1.1875rem
-												margin: 0px
-						.form
-							background: $Grey50
-							.boton
-								margin: 2rem 0px
-						&.activo
-							+translate(0%, 0%)			
+									line-height: 1.1875rem
+									p
+										font-size: 0.75rem
+										font-weight: 300
+										line-height: 1.1875rem
+										margin: 0px
+				.form
+					background: $Grey50
+					.boton
+						margin: 2rem 0px
+				&.activo
+					+translate(0%, 0%)			
 			.mapa
 				height: 100%
 				position: absolute
@@ -213,21 +213,24 @@
 		.container
 			.buscador
 				width: 100%
-				> div:not(.mapa)
+				.localiza
 					height: auto
 					> h3
 						text-align: center
 					> p
 						text-align: center
-				> dl
+				.lista
 					height: auto
 					overflow: inherit
-					> dd
+					> li
 						&:last-child
 							border-bottom: none
 							margin-bottom: 3.125rem
-						.datos
-							width: 100%
+				.datos
+					width: 100vw
+					position: fixed
+					height: 100vh
+					z-index: 99
 				.mapa
 					+bx
 					height: auto

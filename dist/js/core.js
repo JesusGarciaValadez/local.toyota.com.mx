@@ -3,6 +3,9 @@ var url = 'http://'+document.location.hostname+'/';
 var core = null;
 var clase1 = $('.menu-select').data('clase1');
 var	clase2 = $('.menu-select2').data('clase2');
+var cookies = localStorage.getItem("cookiesAcuerdo");
+var activoModelo = localStorage.getItem("activoModelo");
+var activoPadre = localStorage.getItem("activoPadre");
 if($(window).width() <= 767){
 	core = true
 }else{
@@ -26,8 +29,8 @@ init = function(){
 			if(core=== true){
 				core = false
 				moverElementos();
-				menumobile();
 				destructMenuDesctop();
+				menumobile();
 				filtroblogMobile();
 				menuFotter();
 				mobileMenuSelect();
@@ -43,8 +46,8 @@ init = function(){
 				core = true
 				resetElementos();
 				hoverdir();
-				menudesktop();
 				destructMenuMobile();
+				menudesktop();
 				filtroblog();
 				menuFotterStop();
 				menuSelect();
@@ -64,8 +67,8 @@ init = function(){
 		if($('.header .menu.activo, .menu-propietarios .menufixed.activo').hasClass('activo')){
 			$('body').addClass('hidden');
 		}
-		$('.version .container > span, .configuracion .btnregresar > span, .financiamiento .btnregresar > span').removeClass('link regresar');
-		$('.version .container > span, .configuracion .btnregresar > span, .financiamiento .btnregresar > span').addClass('boton secundario');
+		$('.version .container > a, .configuracion .btnregresar > a, .financiamiento .btnregresar > a, .financiamiento .btnregresar .re').removeClass('link regresar');
+		$('.version .container > a, .configuracion .btnregresar > a, .financiamiento .btnregresar > a, .financiamiento .btnregresar .re').addClass('boton secundario');
 	}
 
 	resetElementos = function(){
@@ -73,8 +76,8 @@ init = function(){
 		$('.header .menu-autos > div ul li > div, .configura-modelos div ul li > div').css("display", "block");
 		$('.descargas .mobile').css("display", "none");
 		$('body').removeClass('hidden');
-		$('.version .container > span, .configuracion .btnregresar > span, .financiamiento .btnregresar > span').removeClass('boton secundario');
-		$('.version .container > span, .configuracion .btnregresar > span, .financiamiento .btnregresar > span').addClass('link regresar');
+		$('.version .container > a, .configuracion .btnregresar > a, .financiamiento .btnregresar > a, .financiamiento .btnregresar .re').removeClass('boton secundario');
+		$('.version .container > a, .configuracion .btnregresar > a, .financiamiento .btnregresar > a, .financiamiento .btnregresar .re').addClass('link regresar');
 	}
 
 	menudesktop = function(){
@@ -98,8 +101,6 @@ init = function(){
 		$('.btnBuscador > span').on('click', function(){
 			$('.btnBuscador').toggleClass('activo');
 		});
-		$('.configura-modelos div ul li').removeClass('activo');
-		$('.configura-modelos div ul li').eq(0).addClass('activo');
 		$('.configura-modelos div ul li').on('click', function(){
 			$('.configura-modelos div ul li').removeClass('activo');
 			$(this).addClass('activo');
@@ -111,6 +112,16 @@ init = function(){
 			$(this).removeClass('hover');
 			$('.configura-modelos .flex').removeClass('hover');
 		});
+
+		if(activoPadre === '' || activoPadre === undefined || activoPadre === null ){
+			$('.configura-modelos li').removeClass('activo');
+			$('.configura-modelos li').eq(0).addClass('activo');
+		}else{
+			$('.configura-modelos li').removeClass('activo');
+			$('.configura-modelos li:eq('+(activoPadre)+')').addClass('activo');
+			$('.configura-modelos li:eq('+(activoPadre)+') .flex > div:eq('+(activoModelo)+')').parent().toggleClass('activo');
+			$('.configura-modelos li:eq('+(activoPadre)+') .flex > div:eq('+(activoModelo)+')').addClass('activo');
+		}
 	}
 
 	menumobile = function(){
@@ -153,6 +164,16 @@ init = function(){
 			$(this).toggleClass('activo');
 			$('~ div', this).slideToggle();
 		});
+		if(activoPadre === '' || activoPadre === undefined || activoPadre === null ){
+			$('.configura-modelos li').removeClass('activo');
+			$('.configura-modelos li').eq(0).addClass('activo');
+		}else{
+			$('.configura-modelos li > a').removeClass('activo');
+			$('.configura-modelos li:eq('+(activoPadre)+') > a').addClass('activo');
+			$('.configura-modelos li:eq('+(activoPadre)+') > div').slideDown();
+			$('.configura-modelos li:eq('+(activoPadre)+') .flex > div:eq('+(activoModelo)+')').parent().toggleClass('activo');
+			$('.configura-modelos li:eq('+(activoPadre)+') .flex > div:eq('+(activoModelo)+')').addClass('activo');
+		}
 	}
 
 	destructMenuMobile = function(){
@@ -167,39 +188,20 @@ init = function(){
 		$('.configura-modelos .flex > div').off('mouseover');
 		$('.configura-modelos .flex > div').off('mouseout');
 		$('.btnBuscador > span').off('click');
-		var activo = $('.configura-modelos div ul li.activo a').text();
+		var activo = $('.configura-modelos div ul li.activo > a').text();
 		$('.modelo h6 b').append(activo);
 	} 
 
 	configuraCotiza = function(){
-		$('.ubicacion .input-field > .boton').on('click', function(){
-			if(!$('.ubicacion .input-field > .boton').hasClass('disabled')){
-				$('.ubicacion').fadeOut( "slow", function() {
-					$('.modelo').fadeIn();
-				});
-			}
-		});
 		$('.configura-modelos .flex > div').on('click', function(){
 			var nombre = $(this).find('p').text();
-
-			$('.version h3 b').empty();
-			$('.version h3').append($('<b>'+nombre+'</b>'));
-
-			if(!$(this).hasClass('activo')){
-				$('.configura-modelos .flex').removeClass('activo');
-				$('.configura-modelos .flex > div').removeClass('activo');
-			}
-			$(this).parent().toggleClass('activo');
-			$(this).toggleClass('activo');
-			$('.modelo').fadeOut( "slow", function() {
-				$('.version').fadeIn();
-			});
-			$('.version .container > span').on('click', function(){
-				$('.version').fadeOut( "slow", function() {
-					$('.modelo').fadeIn();
-				});
-			});
+			var activoPadre = $(this).parents('li').index();
+			var activo = $(this).index();
+			localStorage.setItem("nombreModelo", nombre);
+			localStorage.setItem("activoModelo", activo);
+			localStorage.setItem("activoPadre", activoPadre);
 		});
+
 		$('.version .menu ul li').on('click', function(){
 			var clase = $(this).data('clase');
 			$('.version .menu ul li').removeClass();
@@ -211,31 +213,21 @@ init = function(){
 			$(this).parent().toggleClass('activo');
 		});
 		$('.version .flex .confi').on('click', function(){
-
 			var nombre = $(this).parent().find('h6').html();
 			var precio = $(this).parent().find('span b').text();
-
-			$('.configuracion .head .precio b, .resumen .precio b, .cotizarModal .head .precio b, .financiamiento .head .precio b').empty();
-			$('.configuracion .head .precio b, .resumen .precio b, .cotizarModal .head .precio b, .financiamiento .head .precio b').append(precio);
-
-			$('.configuracion .head h4, .resumen .tabla .celda h4, .cotizarModal .head h4, .financiamiento .head h4').empty();
-			$('.configuracion .head h4, .resumen .tabla .celda h4, .cotizarModal .head h4, .financiamiento .head h4').append(nombre);
-
-			$('.version .flex .confi').removeClass('activo');
-			$(this).addClass('activo');
-			$('.version').fadeOut( "slow", function() {
-				$('.configuracion').fadeIn();
-			});
-			$('.configuracion .btnregresar > span').on('click', function(){
-				$('.configuracion').fadeOut( "slow", function() {
-					$('.version').fadeIn();
-				});
-			});
+			var activo = $(this).parents('.all').index();
+			localStorage.setItem("nombreVersion", nombre);
+			localStorage.setItem("precioVersion", precio);
+			localStorage.setItem("activoVersion", activo);
 		});
 
 		$('.interior .tipos > div ').on('click',function(){
 			var nombre = $(this).data( "options" ).nombre;
 			var img = $(this).data( "options" ).imagen;
+			var activo = $(this).index();
+			localStorage.setItem("interiorNombre", nombre);
+			localStorage.setItem("interiorImg", img);
+			localStorage.setItem("activo", activo)
 
 			$('.interior .tipos > div').removeClass('activo');
 			$(this).addClass('activo');
@@ -243,53 +235,26 @@ init = function(){
 			$('.interiores > span').empty();
 			$('.interiores > span').append(nombre);
 
-			$('.interior .img > img').attr("src", 'images/autos/interiores/corolla/tipo/'+img+'.jpg');
+			$('.interior .img > img').attr("src", '../images/autos/interiores/corolla/tipo/'+img+'.jpg');
 		});		
-
-		$('.interaccion .menu ul li').on('click',function(){
-			rellenar();
-			var index = $(this).index();
-			var on = index+1
-			var nombre = $('.interaccion > div.activo').find('span:eq(0)').text();
-			var numero = $('.interaccion .accesorios .seleccionar.activo').length;
-
-			$('.interaccion .menu ul li.activo').addClass('listo');
-			$('.configuracion .head .img').addClass('activo');
-			
-			if($('.interaccion .menu ul li').hasClass('activo')){
-				$(this).removeClass('listo');
-			}
-
-			if($('.interaccion .menu ul li.acc').hasClass('listo')){
-				$('.interaccion .menu ul li.acc a span').empty();
-				$('.interaccion .menu ul li.acc a').append('<span> ('+numero+')</span>');
-			}
-			
-			$('.interaccion .menu ul li:not(.acc, .res).activo a').empty();
-			$('.interaccion .menu ul li:not(.acc, .res).activo a').append(nombre);
-			$('.interaccion .menu ul li').removeClass('activo');
-			$(this).addClass('activo');
-			$('.interaccion > div:not(.menu)').removeClass('activo animacion');
-			$('.interaccion > div:eq('+on+')').addClass('activo').delay(150).queue(function(){
-			    $(this).addClass('animacion').dequeue();
-			});
-			if($('.interaccion .menu ul li.ext').hasClass('activo')){
-				$('.configuracion .head .img').removeClass('activo');
-			}
-		});
 
 		$('.interaccion .accesorios .seleccionar').on('click', function(){
 			$(this).parent().parent().toggleClass('activo');
-			$(this).toggleClass('activo');
-		});
 
-		$('.resumen .tabla .editar').on('click', function(){
-			var clase = $(this).parents('.tabla').attr('class').split(' ')[1];
+			var activos = $('.accesorios .flex > div.activo .info');
+			var arry = [];
 			
-			if(clase == 'cambiar'){
-				$('.configuracion .btnregresar .link').trigger('click');
-			}
-			$('.interaccion .menu .'+clase+'').trigger('click');
+			$.each(activos, function(k,v){
+				arry.push($(v).find('p').text().split('$'));
+			})
+			
+			$(this).toggleClass('activo');
+
+			var activos = $('.interaccion .accesorios .seleccionar.activo').length;
+
+			localStorage.setItem("accesorios", JSON.stringify(arry));
+			$('.interaccion .menu ul li.acc a span').empty();
+			$('.interaccion .menu ul li.acc a').append('<span> ('+arry.length+')</span>');
 		});
 
 		$('.resumen .servicios .mai, .financiamiento .servicios .mai').on('click', function(){
@@ -297,13 +262,16 @@ init = function(){
 			$('body').addClass('hidden');
 		});
 
-		$('.mailModal .close').on('click', function(){
+		$('.mailModal .close, .mailModal .gracias .boton').on('click', function(){
 			$('.mailModal').fadeOut();
+			$('#mail')[0].reset();
+			$('#mail label').removeClass('active');
+			$('.mailModal .gracias').hide();
+			$('.mailModal .mail').show();
 			$('body').removeClass('hidden');
 		});
 
 		$('.configuracion .head .boton, .resumen .cotizar .boton').on('click', function(){
-			rellenar();
 			$('.cotizarModal').fadeIn();
 			$('body').addClass('hidden');
 		});
@@ -316,17 +284,6 @@ init = function(){
 		$('.cotizarModal .head .link').on('click', function(){
 			$(this).toggleClass('activo');
 			$('.cotizarModal .cotiza .info').slideToggle();
-		});
-
-		$('.resumen .cambiar .link, .resumen .cotizar .link').on('click', function(){
-			$('.configuracion').fadeOut( "slow", function() {
-				$('.financiamiento').fadeIn();
-			});
-			$('.financiamiento .btnregresar .con').on('click', function(){
-				$('.financiamiento').fadeOut( "slow", function() {
-					$('.configuracion').fadeIn();
-				});
-			});
 		});
 
 		$('.financiamiento .cotiza .head .link').on('click', function(){
@@ -432,7 +389,7 @@ init = function(){
 		        imgList: '.threesixty_images',
 		        progress: '.spinner',
 		        //imagePath: url+'images/autos/modelos360/corolla/'+color+'/',
-		        imagePath: 'images/autos/modelos360/corolla/'+color+'/',
+		        imagePath: '../images/autos/modelos360/corolla/'+color+'/',
 		        filePrefix: '',
 		        ext: '.jpg',
 		        height: 406,
@@ -454,72 +411,170 @@ init = function(){
 				$('.configuracion .colores360').append('<div class="'+cars[i]+'">')
 				i++
 			}
-
-			$('.configuracion .colores360 > div:eq(0)').addClass('active');
 			
 			$('.configuracion .colores360 > div').on('click',function(){
 				$('.configuracion .colores360 > div').removeClass('active');
 				$(this).addClass('active');
 				var colorActive = $('.configuracion .colores360 > div.active').index();
 				$('.menu360 span').text(cars_n[colorActive]);
-				$('.threesixty > img').attr("src", 'images/autos/modelos360/corolla/'+cars[colorActive]+'/1.jpg');
+				$('.threesixty > img').attr("src", '../images/autos/modelos360/corolla/'+cars[colorActive]+'/1.jpg');
 				reel360Gal(cars[colorActive]);
+
+				localStorage.setItem("exteriorColor", cars[colorActive]);
+				localStorage.setItem("exteriorNombre", cars_n[colorActive]);
 			});
 		}
 		rellenar = function(){
-			var extColor = $('.exterior .colores360 > div.active').attr('class').split(' ')[0];
-			var extNombre = $('.exterior .menu360 > span').text();
+			var nombreModelo = localStorage.getItem("nombreModelo");
+			var nombreVersion = localStorage.getItem("nombreVersion");
+			var precioVersion = localStorage.getItem("precioVersion");
+			var activoVersion = localStorage.getItem("activoVersion");
+			var exteriorColor = localStorage.getItem("exteriorColor");
+			var exteriorNombre = localStorage.getItem("exteriorNombre");
+			var interiorNombre = localStorage.getItem("interiorNombre");
+			var interiorImg = localStorage.getItem("interiorImg");
+			var accesorios = localStorage.getItem("accesorios");
 
-			var intImg = $('.interior .tipos > div.activo > img').attr('src');
-			var intNombre = $('.interior .interiores > span').text();
+			$('.interaccion .menu ul li.acc a span').empty();
 
-			var activos = $('.accesorios .flex > div.activo .info');
-			var arry = [];
-			$.each(activos, function(k,v){
-				arry.push($(v).find('p').text().split('$'));
-			})
-			var elemento = arry;
-			var cuantos = elemento.length;
+			try{
+				$('.interaccion .menu ul li.acc a').append('<span> ('+JSON.parse(accesorios).length+')</span>');
+			}catch(e){
+
+			}
+
+			$('.version h3 b').empty();
+			$('.version h3').append($('<b>'+nombreModelo+'</b>'));
+
+			$('.version .flex .confi').removeClass('activo');
+			$('.version .flex > div:eq('+(activoVersion)+') .confi').addClass('activo');
+
+			if(exteriorColor === '' || exteriorColor === undefined || exteriorColor === null ){
+				var exteriorColor = 'grisMetalico';
+				var exteriorNombre = 'Gris Metálico';
+			}
+			if(interiorImg === '' || interiorImg === undefined || interiorImg === null ){
+				var interiorNombre = 'Piel Negro';
+				var interiorImg = 'pielNegro';
+			}
+			if($('.configura-cotiza .interaccion > div').hasClass('exterior')){
+				if(exteriorColor === '' || exteriorColor === undefined || exteriorColor === null ){
+					reel360Gal(cars[0]);
+					$('.configuracion .colores360 > div:eq(0)').addClass('active');
+				}else{
+					$('.threesixty > img').attr("src", '../images/autos/modelos360/corolla/'+exteriorColor+'/1.jpg');
+					reel360Gal(exteriorColor);
+					$('.menu360 span').text(exteriorNombre);
+					$('.configuracion .colores360 div.'+exteriorColor+'').addClass('active');
+				}
+			}else{
+				$('.configuracion .head .img').addClass('activo');
+			}
+
+			if($('.configura-cotiza .interaccion > div').hasClass('interior')){
+				var elemento = localStorage.getItem("activo")
+
+				$('.interaccion .menu ul li.ext').addClass('listo')
+				$('.interaccion .menu ul li.ext a').empty();
+				$('.interaccion .menu ul li.ext a').append(exteriorNombre);
+
+				$('.interior .tipos > div:eq('+elemento+')').trigger('click');
+			}
+			if($('.configura-cotiza .interaccion > div').hasClass('accesorios')){
+				$('.interaccion .menu ul li.ext').addClass('listo')
+				$('.interaccion .menu ul li.ext a').empty();
+				$('.interaccion .menu ul li.ext a').append(exteriorNombre);
+				$('.interaccion .menu ul li.int').addClass('listo')
+				$('.interaccion .menu ul li.int a').empty();
+				$('.interaccion .menu ul li.int a').append(interiorNombre);
+
+			    try {
+					var access = JSON.parse(localStorage.getItem("accesorios"));
+					var index = "";
+					for(var o = 0; o < $('.accesorios .flex > div').children().length; o++){
+						for(var i = 0; i < access.length; i++) {
+						   if(access[i][0] === $('.accesorios .flex > div:eq('+o+') .info p:eq(0)').html()) {
+						     $('.accesorios .flex > div:eq('+o+')').addClass('activo');
+						     $('.accesorios .flex > div:eq('+o+') .seleccionar').addClass('activo');
+						   }
+						}	
+					}
+			    } catch (e) {
+			       
+			    }
+			}
+			if($('.configura-cotiza .interaccion > div').hasClass('resumen')){
+				$('.interaccion .menu ul li.ext').addClass('listo')
+				$('.interaccion .menu ul li.ext a').empty();
+				$('.interaccion .menu ul li.ext a').append(exteriorNombre);
+				$('.interaccion .menu ul li.int').addClass('listo')
+				$('.interaccion .menu ul li.int a').empty();
+				$('.interaccion .menu ul li.int a').append(interiorNombre);
+				$('.interaccion .menu ul li.acc').addClass('listo')
+			}
+
+			$('.configuracion .head .precio b, .resumen .precio b, .cotizarModal .head .precio b, .financiamiento .head .precio b').empty();
+			$('.configuracion .head .precio b, .resumen .precio b, .cotizarModal .head .precio b, .financiamiento .head .precio b').append(precioVersion);
+
+			$('.configuracion .head h4, .resumen .tabla .celda h4, .cotizarModal .head h4, .financiamiento .head h4').empty();
+			$('.configuracion .head h4, .resumen .tabla .celda h4, .cotizarModal .head h4, .financiamiento .head h4').append(nombreVersion);
+
+		    try {
+		        var elemento = JSON.parse(accesorios);
+				var cuantos = elemento.length;
+		    } catch (e) {
+		       
+		    }
+
 			var i = 0;
 
-			$('.resumen .tabla.acc .fila:not(.titulo), .cotizarModal .tabla.acc .fila:not(.titulo), .financiamiento .tabla.acc .fila:not(.titulo)').remove();
-
 			$('.resumen .tabla.ext .seleccion span:eq(1), .cotizarModal .tabla.ext .seleccion span:eq(1), .financiamiento .tabla.ext .seleccion span:eq(1)').empty();
-			$('.resumen .tabla.ext .seleccion span:eq(1), .cotizarModal .tabla.ext .seleccion span:eq(1), .financiamiento .tabla.ext .seleccion span:eq(1)').append(extNombre);
-			$('.resumen .tabla.ext .seleccion span.color, .cotizarModal .tabla.ext .seleccion span.color, .financiamiento .tabla.ext .seleccion span.color').removeClass(''+extColor+'')
-			$('.resumen .tabla.ext .seleccion span.color, .cotizarModal .tabla.ext .seleccion span.color, .financiamiento .tabla.ext .seleccion span.color').addClass(''+extColor+'')
+			$('.resumen .tabla.ext .seleccion span:eq(1), .cotizarModal .tabla.ext .seleccion span:eq(1), .financiamiento .tabla.ext .seleccion span:eq(1)').append(exteriorNombre);
+			$('.resumen .tabla.ext .seleccion span.color, .cotizarModal .tabla.ext .seleccion span.color, .financiamiento .tabla.ext .seleccion span.color').removeClass(''+exteriorColor+'')
+			$('.resumen .tabla.ext .seleccion span.color, .cotizarModal .tabla.ext .seleccion span.color, .financiamiento .tabla.ext .seleccion span.color').addClass(''+exteriorColor+'')
 
 			$('.resumen .tabla.int .seleccion span:eq(1), .cotizarModal .tabla.int .seleccion span:eq(1), .financiamiento .tabla.int .seleccion span:eq(1)').empty();
-			$('.resumen .tabla.int .seleccion span:eq(1), .cotizarModal .tabla.int .seleccion span:eq(1), .financiamiento .tabla.int .seleccion span:eq(1)').append(intNombre);
+			$('.resumen .tabla.int .seleccion span:eq(1), .cotizarModal .tabla.int .seleccion span:eq(1), .financiamiento .tabla.int .seleccion span:eq(1)').append(interiorNombre);
 			$('.resumen .tabla.int .seleccion span.img img, .cotizarModal .tabla.int .seleccion span.img img, .financiamiento .tabla.int .seleccion span.img img').remove();
-			$('.resumen .tabla.int .seleccion span.img, .cotizarModal .tabla.int .seleccion span.img, .financiamiento .tabla.int .seleccion span.img').append('<img src="'+intImg+'">');
+			$('.resumen .tabla.int .seleccion span.img, .cotizarModal .tabla.int .seleccion span.img, .financiamiento .tabla.int .seleccion span.img').append('<img src="../images/autos/interiores/corolla/tipo/thumbs/'+interiorImg+'.jpg">');
 
 			while(i<=cuantos){
 				if(typeof elemento[i] !== 'undefined'){
 					$('.resumen .tabla.acc').append('<div class="fila"><div class="celda"><div class="seleccion"><span>'+elemento[i][0]+'</span><span class="eliminar">ELIMINAR</span></div></div><div class="celda"><div><p><b>$'+elemento[i][1]+'</b></p></div></div></div>');
+
 					$('.cotizarModal .tabla.acc').append('<div class="fila"><div class="celda"><div class="seleccion"><span>'+elemento[i][0]+'</span></div></div><div class="celda"><div><p><b>$'+elemento[i][1]+'</b></p></div></div></div>');
+
 					$('.financiamiento .tabla.acc').append('<div class="fila"><div class="celda"><div class="seleccion"><span>'+elemento[i][0]+'</span></div></div><div class="celda"><div><p><b>$'+elemento[i][1]+'</b></p></div></div></div>');
 				}
 				i++
 			}
+
 			$('.resumen .tabla.acc .eliminar').on('click', function(){
-				var carnal =  $(this).prev().text();
-				$('.accesorios .flex > div.activo p:contains("'+carnal+'")').parent().parent().children('.seleccionar').trigger('click');
-				
-				var numero = $('.interaccion .accesorios .seleccionar.activo').length;
-				$('.interaccion .menu ul li.acc a span').empty();
-				$('.interaccion .menu ul li.acc a').append('<span> ('+numero+')</span>');
+
+				var access = JSON.parse(localStorage.getItem("accesorios"));
+				var index = "";
+
+				for(var i = 0; i < access.length; i++) {
+				   if(access[i][0] === $(this).prev().html()) {
+				     index = i;
+				     console.log(i);
+				   }
+				}
+
+				access.splice(index,1);
+				localStorage.setItem("accesorios",JSON.stringify(access));
 
 				$(this).parents('.fila').remove();
+				$('.interaccion .menu ul li.acc a span').empty();
+				$('.interaccion .menu ul li.acc a').append('<span> ('+access.length+')</span>');
 			});
 		}
-		$('.interaccion > div:eq(1)').addClass('activo animacion');
 		$('.financiamiento .financiar .plan').addClass('activo animacion');
-		reel360Gal('grisMetalico');
-		coloresCar();
+		if($('.configura-cotiza .interaccion > div').hasClass('exterior')){
+			coloresCar();
+		}
 		rellenar();
 	}
-
 
 	hoverdir = function(){
 		$('.promociones .flex dd').each( function() { $(this).hoverdir(); } );
@@ -665,6 +720,17 @@ init = function(){
 
 	}
 
+	$('.cookies').on('click',function(){
+		var acuerdo = 'acuerdo';
+		localStorage.setItem("cookiesAcuerdo", acuerdo);
+	});
+
+	if(cookies === '' || cookies === undefined || cookies === null ){
+		$('.cookies').css("display", "block");
+	}else{
+
+	}
+
 	$('.menu-categorias .container nav span > a').on('click', function(){
 		var index = $(this).index();
 		$('.menuModal').fadeIn();
@@ -677,7 +743,7 @@ init = function(){
 	$('.menuModal').html(menuSecundario);
 	$('.menuModal').prepend('<div class="close"></div>');
 
-	$('.cover .slide, .consejos-propietarios .slide, .de-nosotros .slide, .autos-concepto .slide').bxSlider({
+	$('.cover .slide, .consejos-propietarios .slide, .autos-concepto .slide').bxSlider({
 		mode:'horizontal',
 		infiniteLoop: false,
 		responsive: true,
@@ -688,6 +754,38 @@ init = function(){
 		oneToOneTouch: false,
 		prevSelector: '#prev',
 		nextSelector: '#next'
+	});
+
+	$('.de-nosotros .slide').bxSlider({
+		mode:'horizontal',
+		infiniteLoop: false,
+		responsive: true,
+		hideControlOnEnd: true,
+		touchEnabled: true,
+		preventDefaultSwipeX: false,
+		preventDefaultSwipeY: false,
+		oneToOneTouch: false,
+		prevSelector: '#prev',
+		nextSelector: '#next',
+		slideWidth: 393,
+		minSlides: 3,
+		maxSlides: 3
+	});
+
+	$('.reconocimientos .slide').bxSlider({
+		mode:'horizontal',
+		infiniteLoop: false,
+		responsive: true,
+		hideControlOnEnd: true,
+		touchEnabled: true,
+		preventDefaultSwipeX: false,
+		preventDefaultSwipeY: false,
+		oneToOneTouch: false,
+		prevSelector: '#prevR',
+		nextSelector: '#nextR',
+		slideWidth: 393,
+		minSlides: 3,
+		maxSlides: 3
 	});
 
 	$('.menuModal .menu-autos > div ul').bxSlider({
@@ -746,20 +844,24 @@ init = function(){
 	});
 
 	
-	$('.prueba .input-field > .boton').on('click', function(){
-		if(!$('.prueba .input-field > .boton').hasClass('disabled')){
-			$('.pruebaModal').fadeIn();
-			$('body').addClass('hidden');
-		}
-	});
+	// $('.prueba .input-field > .boton').on('click', function(){
+	// 	if(!$('.prueba .input-field > .boton').hasClass('disabled')){
+	// 		$('.pruebaModal').fadeIn();
+	// 		$('body').addClass('hidden');
+	// 	}
+	// });
 	$('.pruebaModal .gracias > .boton').on('click', function(){
 		$('.pruebaModal').fadeOut();
 		$('body').removeClass('hidden');
-		$('.codigo > button').trigger( "click" );
+		$('#agenda')[0].reset();
+		$('#agenda label').removeClass('active');
+		//$('.codigo > button').trigger( "click" );
 	});
 
 	deacargasModal = function(){
 		$('.descargas .enviar, .card-descarga .enviar').on('click', function(){
+			$('#descargas')[0].reset();
+			$('#descargas label').removeClass('active');
 			$('.descargasModal').fadeIn();
 			$('body').addClass('hidden');
 		});
@@ -767,11 +869,6 @@ init = function(){
 		$('.descargasModal .close').on('click', function(){
 			$('.descargasModal').fadeOut();
 			$('body').removeClass('hidden');
-		});
-
-		$('.descargasModal .mail .boton').on('click', function(){
-			$('.mail').fadeOut();
-			$('.gracias').fadeIn();
 		});
 
 		$('.descargasModal .gracias .boton').on('click', function(){
@@ -942,13 +1039,35 @@ init = function(){
 			$('.buscar form > button').fadeOut();
 			$('.buscar form > ul').fadeOut();
 			$('.buscar form > span').fadeIn();
-
+			$('.buscar .pregunta').fadeOut();
+			$('.buscar .pregunta >').removeClass('activo');
+			$('.buscar .pregunta .informacion').addClass('activo');
 		}
 	});
 	$('.buscar form > button').on('click', function(){
 		$('.buscar form > button').fadeOut();
 		$('.buscar form > ul').fadeOut();
 		$('.buscar form > span').fadeIn();
+	});
+	$('.buscar form > ul li').on('click', function(){
+		$('.buscar form > button').fadeOut();
+		$('.buscar form > ul').fadeOut();
+		$('.buscar form > span').fadeIn();
+		$('.buscar .pregunta').fadeIn();
+		$('.buscar .pregunta >').removeClass('activo');
+		$('.buscar .pregunta .informacion').addClass('activo');
+	});
+	$('.buscar .informacion .boton').on('click', function(){
+		var si = $('.informacion input[type="radio"]#si:checked').length
+		var no = $('.informacion input[type="radio"]#no:checked').length
+		if(si >= 1){
+			$('.buscar .pregunta >').removeClass('activo');
+			$('.buscar .pregunta .gracias').addClass('activo');
+		}
+		if(no >= 1){
+			$('.buscar .pregunta >').removeClass('activo');
+			$('.buscar .pregunta .losentimos').addClass('activo');
+		}
 	});
 
 	$('.codigo input[type=text]').on('keyup', function(){
@@ -1039,27 +1158,27 @@ init = function(){
 		if(cuantos >= 1){
 			$('.buscador form > span').fadeOut();
 			$('.buscador form > button').fadeIn();
-			$('.buscador > dl').slideDown();
+			$('.buscador .lista').slideDown();
 		}
 		else{
 			$('.buscador form > button').fadeOut();
-			$('.buscador > dl').slideUp();
+			$('.buscador .lista').slideUp();
 			$('.buscador form > span').fadeIn();
-			$('.buscador > dl dd').removeClass();
+			$('.buscador .lista li').removeClass();
 		}
 	});
 	$('.buscador form > button').on('click', function(){
 		$('.buscador form > button').fadeOut();
-		$('.buscador > dl').slideUp();
+		$('.buscador .lista').slideUp();
 		$('.buscador form > span').fadeIn();
-		$('.buscador > dl dd').removeClass();
+		$('.buscador .lista li').removeClass();
 	});
-	$('.buscador > dl dd').on('click', function(){
-		$('.buscador > dl dd').removeClass('activo');
+	$('.buscador .lista li').on('click', function(){
+		$('.buscador .lista li').removeClass('activo');
 		$(this).addClass('activo');
 	});
-	$('.buscador > dl .tabla .link').on('click', function(){
-		$(this).parent().parent().parent().parent().children('.datos').addClass('activo');
+	$('.buscador .lista .tabla .link').on('click', function(){
+		$('.buscador .datos').addClass('activo');
 		$('.buscador .datos .link').on('click', function(){
 			$('.buscador .datos').removeClass('activo');
 		});
@@ -1099,6 +1218,84 @@ init = function(){
 	$('.datepicker').pickadate({
 		selectMonths: true, // Creates a dropdown to control month
 		selectYears: 15 // Creates a dropdown of 15 years to control year
+	});
+
+	$.validator.setDefaults({
+	    errorClass: 'invalid',
+	    validClass: "valid",
+	});
+
+	$("#comentario").validate({
+	    errorPlacement: function (error, element) {
+	        $(element)
+	            .closest("form")
+	            .find("label[for='" + element.attr("id") + "']")
+	            .attr('data-error', error.text());
+	    },
+	    submitHandler: function (form) {
+			$('.comentario .gracias').fadeIn();
+	    }
+	});
+
+	$("#mail").validate({
+	    errorPlacement: function (error, element) {
+	        $(element)
+	            .closest("form")
+	            .find("label[for='" + element.attr("id") + "']")
+	            .attr('data-error', error.text());
+	    },
+	    submitHandler: function (form) {
+			$('.mailModal .mail').fadeOut();
+			$('.mailModal .gracias').fadeIn();
+	    }
+	});
+	
+	$('.comentario .gracias .boton').on('click', function(){
+		$('#comentario')[0].reset();
+		$('#comentario label').removeClass('active');
+		$('#comentario textarea').css('height', 'auto');
+		$('.comentario .gracias').fadeOut();
+	});
+
+	$("#descargas").validate({
+	    rules: {
+            email: {
+				required: true,
+				email: true
+            }
+	    },
+	    messages: {
+            email: "Ingresa un correo válido"
+        },
+	    errorPlacement: function (error, element) {
+	        $(element)
+	            .closest("form")
+	            .find("label[for='" + element.attr("id") + "']")
+	            .attr('data-error', error.text());
+	    },
+	    submitHandler: function (form) {
+			$('.mail').fadeOut();
+			$('.gracias').fadeIn();
+	    }
+	});
+
+	$("#agenda").validate({
+	    rules: {
+            tel: {
+				required: true,
+				number: true
+            }
+	    },
+	    errorPlacement: function (error, element) {
+	        $(element)
+	            .closest("form")
+	            .find("label[for='" + element.attr("id") + "']")
+	            .attr('data-error', error.text());
+	    },
+	    submitHandler: function (form) {
+			$('.pruebaModal').fadeIn();
+			$('body').addClass('hidden');
+	    }
 	});
 
 	var options = [ 

@@ -1,20 +1,26 @@
 .mailModal
 	.close
 	.container
-		div
+		.mail
 			h6
 				b Envía el resumen de tu cotización a tu correo
-			form
+			form#mail
 				.input-field
-					input(type="text").validate#last_name
-					label(for="last_name") Ingresa tu nombre completo
+					input(type="text" name="nombre" required="" aria-required="true" data-msg="Nombre Obligatorio" data-rule-minlength="3" data-msg-minlength="Mínimo 3 Caracteres").validate#nombre
+					label(for="nombre") Ingresa tu nombre completo*
 				.input-field
-					input(type="email").validate#email
-					label(for="email" data-error="Ingresa un correo válido") ¿Cuál es tu correo electrónico?
+					input(type="email" name="email" required="" aria-required="true" data-msg="Ingresa un correo válido").validate#email
+					label(for="email" data-error="Ingresa un correo válido") ¿Cuál es tu correo electrónico?*
 				.input-field
-					input(type="checkbox")#acepto
+					input(type="checkbox" name="acepto" required="" aria-required="true").validate#acepto
 					label(for="acepto").acepto
 					p He leído y acepto las 
-					a(href="politica-de-privacidad.html").link políticas de privacidad
+					a(href="#{urlSitio}politica-de-privacidad.html").link políticas de privacidad
 				.input-field
-					input(type="submit" value="ENVIAR").boton.disabled
+					input(type="submit" value="ENVIAR").boton
+		.gracias
+			i
+			h1
+				b ¡Listo!
+			p Por favor revisa tu correo, se ha enviado el enlace de descarga.
+			span.boton ENTENDIDO

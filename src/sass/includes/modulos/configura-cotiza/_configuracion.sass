@@ -1,6 +1,5 @@
 section.configura-cotiza
 	.configuracion
-		display: none
 		.head
 			padding: 0.625rem 0px
 			.container
@@ -39,15 +38,6 @@ section.configura-cotiza
 								font-size: 1.375rem
 								font-weight: 700
 		.interaccion
-			> div
-				&:not(.menu)
-					+fx(all,0.5s)
-					opacity: 0
-					display: none
-				&.activo
-					display: block
-				&.animacion
-					opacity: 1
 			@import "interaccion/menu"
 			@import "interaccion/exterior"
 			@import "interaccion/interior"

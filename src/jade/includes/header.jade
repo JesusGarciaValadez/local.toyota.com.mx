@@ -1,9 +1,9 @@
 header
 	.header
 		.contenedor
-			a(href="index.html").logo-toyota
+			a(href="#{urlSitio}index.html").logo-toyota
 			.btnDistribuidores(class="#{location == 'distribuidores' ? 'activo' : ''}")
-				a(href="distribuidores.html") Distribuidores
+				a(href="#{urlSitio}distribuidores.html") Distribuidores
 		.hamburguesa Menú
 		.menu
 			.flex
@@ -12,7 +12,7 @@ header
 						.btnBuscador
 							span
 								i.fa.fa-search
-							form(action="resultados.html")
+							form(action="#{urlSitio}resultados.html")
 								input(type="text" placeholder=" Empieza a escribir para buscar")
 								button(type="submit").fa.fa-search
 						nav
@@ -21,18 +21,18 @@ header
 									a(href="#") Modelos
 									+menu-autos(infoMenuAutos)
 								li(class="#{location == 'configura-cotiza' ? 'activo' : ''}")
-									a(href="configura-cotiza.html") Configura y Cotiza
+									a(href="#{urlSitio}configura-cotiza/ubicacion.html") Configura y Cotiza
 								li(class="#{location == 'servicio' ? 'activo' : ''}")
-									a(href="servicio.html") Servicio
+									a(href="#{urlSitio}servicio.html") Servicio
 								li(class="#{location == 'propietarios-toyota' ? 'activo' : ''}")
-									a(href="propietarios-toyota.html") Propietarios Toyota
+									a(href="#{urlSitio}propietarios-toyota.html") Propietarios Toyota
 								li(class="#{location == 'financiamiento' ? 'activo' : ''}")
-									a(href="financiamiento.html") Financiamiento
+									a(href="#{urlSitio}financiamiento.html") Financiamiento
 				.menu-inferior
 					.contenedor
 						nav
-							a(href="prueba-un-toyota.html") Prueba un Toyota
-							a(href="preguntas-frecuentes.html") Preguntas frecuentes
+							a(href="#{urlSitio}prueba-un-toyota.html") Prueba un Toyota
+							a(href="#{urlSitio}preguntas-frecuentes.html") Preguntas frecuentes
 							a(href="#").logoComoNuevos
 							.redes
 								a(href="#").fa.fa-facebook

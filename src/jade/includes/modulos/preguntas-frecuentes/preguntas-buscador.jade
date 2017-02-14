@@ -21,27 +21,28 @@ section.preguntas-buscador
 					li 
 						b ¿Necesitas ayuda? 
 						span contáctanos
-			p La financiera donde adquiere su unidad le da la opción de elegir entre varias aseguradoras con diferentes tipos de cobertura.
-			.informacion
-				form
-					.input-field
-						p ¿Te ha sido útil está información
-					.input-field
-						div
+			.pregunta
+				p La financiera donde adquiere su unidad le da la opción de elegir entre varias aseguradoras con diferentes tipos de cobertura.
+				.informacion
+					form
+						.input-field
+							p ¿Te ha sido útil está información
+						.input-field
 							div
-								input(name="group1" type="radio")#si.with-gap
-								label(for="si") Si
-							div
-								input(name="group1" type="radio")#no.with-gap
-								label(for="no") No
-					.input-field
-						input(type="submit" value="ENVIAR").boton
-			.losentimos
-				h6 
-					b Lo sentimos
-				p Para responder tus dudas
-				a(href="#").boton CÓNTACTANOS
-			.gracias
-				h6 
-					b ¡Muchas gracias!
-				p Tu opinión es muy importante para nosotros
+								div
+									input(name="group1" type="radio")#si.with-gap
+									label(for="si") Si
+								div
+									input(name="group1" type="radio")#no.with-gap
+									label(for="no") No
+						.input-field
+							input(type="submit" value="ENVIAR" onclick="return false;").boton
+				.losentimos
+					h6 
+						b Lo sentimos
+					p Para responder tus dudas
+					a(href="#").boton CÓNTACTANOS
+				.gracias
+					h6 
+						b ¡Muchas gracias!
+					p Tu opinión es muy importante para nosotros

@@ -578,13 +578,13 @@ html(itemscope, itemtype="http://schema.org/WebPage")
 						.close
 						.container
 							.mail
-								form
+								form#descargas
 									p Envía el enlace de descarga a tu correo electrónico 
 									.input-field
-										input(type="email").validate#email
+										input(type="email" name="email" required="" aria-required="true").validate#email
 										label(for="email" data-error="Ingresa un correo válido") ¿Cuál es tu correo electrónico?*
 									.input-field
-										input(type="submit" value="ENVIAR" onclick="return false;").boton
+										input(type="submit" value="ENVIAR").boton
 							.gracias
 								i
 								h1

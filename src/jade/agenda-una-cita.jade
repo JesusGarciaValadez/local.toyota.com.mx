@@ -24,22 +24,22 @@ html(itemscope, itemtype="http://schema.org/WebPage")
 								b Agenda una cita para tu servicio
 							p Al realizar  una cita, tu vehículo es asignado de manera previa a un técnico especializado y a un asesor de servicio, quienes estarán esperando tu llegada. En la mayoría de los servicios por kilometraje, tu auto estará listo ese mismo día.
 						dd
-							form
+							form#agenda
 								.input-field
-									input(type="text").validate#last_name
-									label(for="last_name") Ingresa tu nombre completo
+									input(type="text" name="nombre" required="" aria-required="true" data-msg="Nombre Obligatorio" data-rule-minlength="3" data-msg-minlength="Mínimo 3 Caracteres").validate#nombre
+									label(for="nombre") Ingresa tu nombre completo
 								.input-field
-									input(type="email").validate#email
-									label(for="email" data-error="Ingresa un correo válido") ¿Cuál es tu correo electrónico?
+									input(type="email" name="email" required="" aria-required="true" data-msg="Ingresa un correo válido").validate#email
+									label(for="email") ¿Cuál es tu correo electrónico?
 								.input-field
-									input(type="tel").validate#tel
+									input(type="number" name="tel" required="" aria-required="true" data-msg="Teléfono Obligatorio" data-rule-minlength="10" data-rule-maxlength="10" data-msg-minlength="Mínimo 10 Caracteres" data-msg-maxlength="Máximo 10 Caracteres").validate#tel
 									label(for="tel") Teléfono de contacto
 								.input-field
-									select
+									select(required="" aria-required="true").validate
 										option(value="" disabled selected) Selecciona un modelo
 										option(value="1") Yaris
 								.input-field
-									select
+									select(required="" aria-required="true").validate
 										option(value="" disabled selected) Selecciona una versión
 										option(value="1") S CVT
 								.input-field
@@ -93,7 +93,7 @@ html(itemscope, itemtype="http://schema.org/WebPage")
 												p (55) 8647 - 8020
 
 								.input-field
-									input(type="submit" value="ENVIAR" onclick="return false;").boton.disabled
+									input(type="submit" value="ENVIAR").boton
 				.pruebaModal
 					.container
 						.gracias
