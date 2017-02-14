@@ -1,64 +1,34 @@
 .de-nosotros
 	background: $Grey100
-	padding: 5rem 0 1.875rem
-	position: relative
 	.container
-		display: table
-		overflow: visible
-		position: relative
 		h2
 			font-weight: 300
-			margin: 0 auto
-			text-align: left
-	.slide
-		overflow: hidden
-		width: 100%
-		> div
+	.container
+		.slide
 			overflow: hidden
-			height: 560px
 			width: 100%
-			.bg
-				+center(v)
-				top: 0px
-			.container
-				.flex
-					+flex
-					+flexDirRow
-					+justifyCont(center)
-					float: left
+			li
+				+bx
+				float: left
+				max-width: 393px
+				padding: 0px 0.5rem
+				padding-bottom: 8.125rem
+				.imagen
+					height: 160px
+					max-height: 160px
+					overflow: hidden
+					position: relative
 					width: 100%
-					margin: 3.75rem auto 0
-					padding: 0px
-					> div
-						+bx
-						+fx(all,0.5s)
-						margin-bottom: 1rem
-						max-width: 340px
-						margin: 0 1rem
-						padding: 0
-						width: 33.3%
-						.imagen
-							height: 160px
-							max-height: 160px
-							overflow: hidden
-							position: relative
-							width: 100%
-							img
-								+center(vh)
-								display: block
-								width: auto
-						span
-							color: $BlueGrey800
-							display: block
-							font-size: 1.25rem
-							font-weight: 700
-							margin: 1rem
-						p
-							display: block
-							font-size: 1rem
-							font-weight: 400
-							margin: 1rem
-							text-align: left
+					img
+						+center(vh)
+						display: block
+						width: auto
+				span
+					color: $BlueGrey800
+					display: block
+					font-size: 1.25rem
+					font-weight: 700
+					margin: 1.375rem 0px
 	.bx-prev 
 		border-radius: 50%
 		border: 2px solid $BlueGrey900
@@ -111,6 +81,7 @@
 		.bx-has-pager
 			+center(v)
 			bottom: 40px
+			display: table
 		.bx-pager
 			color: rgba(38, 50, 56, 0.4)
 			font-family: Arial
@@ -145,35 +116,15 @@
 				*zoom: 1
 				display: inline-block
 
-@mixin de-nosotros-smartphone
+@mixin por-que-toyota-de-nosotros-smartphone
 	.de-nosotros
-		.slide 
+		.slide
 			> div 
 				height: auto
-				.bg
-					width: 120%
 				.container 
-					.flex 
+					.flex
+						margin-bottom: 3.125rem
 						> div
 							width: 100%
-						.texto
-							+order(2)
-							margin-bottom: 40px
-							h2
-								margin: 0px
-								text-align: center
-								b
-									display: block
-							.btvideo
-								margin: 27px auto
-								p
-									font-weight: 400
-									text-transform: capitalize
-									span
-										display: none
-							.boton
-								margin: 1rem auto
-						.imagen
-							+order(1)
 		.bx-controls-direction
 			display: none

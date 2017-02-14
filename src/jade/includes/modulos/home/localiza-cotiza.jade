@@ -4,10 +4,19 @@ section.localiza-cotiza
 			dd.localiza
 				img(src="images/bg_localiza.jpg")
 				h6 Localiza tu distribuidor más cercano
-				div
-					span
-						input(type="text" name="s" placeholder=" Escríbe tu dirección o C.P.")
-						button(type="button").ubicame
+				form
+					.input-field
+						input(type="number").validate#codigo
+						label(for="codigo") Ingresa tu C.P.
+					.ubicame
+				.codigo
+					p Tu código postal:
+						span 06600
+					.cambiar
+				//- div
+				//- 	span
+				//- 		input(type="text" name="s" placeholder=" Escríbe tu dirección o C.P.")
+				//- 		button(type="button").ubicame
 			dd.cotiza
 				img(src="images/bg_cotiza.jpg")
 				h6 Cotiza el Toyota perfecto para ti

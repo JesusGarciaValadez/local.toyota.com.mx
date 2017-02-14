@@ -11,12 +11,10 @@
 		padding: 0px
 		nav
 			display: table
-			height: 65px
 			position: relative
 			width: 100%
 			ul
 				display: table
-				height: 100%
 				margin: 0px
 				padding: 0px
 				width: 100%
@@ -24,25 +22,32 @@
 					+bx
 					+fx(all,0.3s)
 					border-right: 1px solid #E0E0E0
-					cursor: pointer
 					display: table-cell
-					height: 100%
 					margin: 0px
 					vertical-align: middle
 					width: 25%
 					a
+						+bx
 						color: $BlueGrey900
-						display: table
+						display: block
 						font-size: 1rem
 						font-weight: 700
-						margin: auto
+						height: 65px
+						text-align: center
+						padding: 7px 0px
+						&:before
+							color: #989898
+							display: table
+							font-size: 20px
+							margin: 0px auto
 					&.listo
 						&.ext, &.int, &.acc
-							&:before
-								+icons('\E876')
-								display: table
-								line-height: 1.4
-								color: $Red800
+							a
+								&:before
+									+icons('\E876')
+									display: table
+									line-height: 1.4
+									color: $Red800
 						&:hover
 							+transformr
 							+shadowr
@@ -51,45 +56,45 @@
 							a
 								color: $BlueGrey900
 								font-weight: 700
-					&:before
-						color: #989898
-						display: table
-						font-size: 20px
-						margin: 0px auto
 					&:last-child
 						border-right: none
 						&.listo
 							&:hover
 								border-right: none
 					&.ext
-						&:before
-							+fawesome('\f043')
-							line-height: 1.4
+						a
+							&:before
+								+fawesome('\f043')
+								line-height: 1.4
 					&.int
-						&:before
-							+fonIco('\e929')
-							line-height: 1.4
+						a
+							&:before
+								+fonIco('\e929')
+								line-height: 1.4
 					&.acc
-						&:before
-							+fonIco('\e92a')
-							line-height: 1.4
+						a
+							&:before
+								+fonIco('\e92a')
+								line-height: 1.4
 					&.res
-						&:before
-							display: none
+						a
+							padding: 20px 0px
+							&:before
+								display: none
 					&:hover
 						+scale(1.20,1.20)
 						+shadow(0px, 27px, 24px, 0px, rgba(0,0,0,0.2), 0px, 40px, 77px, 0px, rgba(0,0,0,0.22))
 						background: $Red800
 						border-right: none
-						&:before
-							color: $White
 						a
 							color: $White
 							font-weight: 400
+							&:before
+								color: $White
 					&.activo
 						background: $Red800
-						&:before
-							color: $White
 						a
 							color: $White
 							font-weight: 400
+							&:before
+								color: $White

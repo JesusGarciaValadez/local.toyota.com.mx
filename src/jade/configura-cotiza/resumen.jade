@@ -1,0 +1,49 @@
+-var location = "configura-cotiza"
+-var subLoc = " "
+-var titulo = " "
+-var descrip = " "
+-var keyword = " "
+-var breadcrumb = "none"
+
+include ../includes/mixines
+include ../includes/variables
+
+-var urlSitio = "../"
+-var activoMenu = "resumen"
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include ../includes/head
+	body
+		
+		include ../includes/header
+		
+		main.wrapper
+			section.configura-cotiza
+				.configuracion
+					.head
+						.container
+							div
+								h4
+									span Corolla 
+									| Base
+								p 1.8 L, 4 cilindros, 16 válvulas, Transmisión Manual de 6 velocidades / CVT
+							div
+								.img
+									img(src="#{urlSitio}images/autos/modelos360/corolla/corolla.jpg")
+							div
+								div 
+									span.precio Precio Total
+										b $255,500
+								span.boton.secundario COTIZAR
+					.interaccion
+						include ../includes/modulos/configura-cotiza/interaccion/menu
+						include ../includes/modulos/configura-cotiza/interaccion/resumen
+					.btnregresar
+						a(href="version.html").link.regresar Cambia versión
+
+				include ../includes/modulos/configura-cotiza/modal/mail
+				include ../includes/modulos/configura-cotiza/modal/cotizar
+				include ../includes/modulos/configura-cotiza/modal/accesorio
+
+		include ../includes/footer

@@ -3,7 +3,7 @@
 		h1 
 			b Configura tu Toyota
 		p Crea a tu medida el auto de tus sueños
-		form
+		form(action="modelo.html")
 			p
 				b Para mejorar tu experiencia, introduce tu código postal o tu geolocalización.
 			.codigo
@@ -13,7 +13,7 @@
 				dl
 					dd
 						.img
-							img(src='images/sucursal/polanco.jpg')
+							img(src='#{urlSitio}images/sucursal/polanco.jpg')
 						.info
 							i Distribuidor más cercano
 							p
@@ -23,7 +23,7 @@
 							p (55) 2581 - 1010
 					dd
 						.img
-							img(src='images/sucursal/polanco.jpg')
+							img(src='#{urlSitio}images/sucursal/polanco.jpg')
 						.info
 							p
 								b Toyota Revolución
@@ -32,7 +32,7 @@
 							p (55) 8647 - 8020
 					dd
 						.img
-							img(src='images/sucursal/polanco.jpg')
+							img(src='#{urlSitio}images/sucursal/polanco.jpg')
 						.info
 							p
 								b Toyota Universidad
@@ -40,4 +40,4 @@
 								span Avenida Revolución 406, Col. San Pedro de los Pinos, México Distrito Federal
 							p (55) 8647 - 8020
 			.input-field
-				input(type="submit" value="CONTINUAR" onclick="return false;").boton.disabled
+				input(type="submit" value="CONTINUAR").boton.disabled

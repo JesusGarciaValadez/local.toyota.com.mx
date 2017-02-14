@@ -4,21 +4,21 @@ section.comentario
 			dd
 				h3 
 					b Escribe tu comentario
-				from
+				form#comentario
 					.input-field
-						input(type="text").validate#last_name
-						label(for="last_name") Ingresa tu nombre completo*
+						input(type="text" name="nombre" required="" aria-required="true" data-msg="Nombre Obligatorio" data-rule-minlength="3" data-msg-minlength="Mínimo 3 Caracteres").validate#nombre
+						label(for="nombre") Ingresa tu nombre completo*
 					.input-field
-						input(type="email").validate#email
+						input(type="email" name="email" required="" aria-required="true" data-msg="Ingresa un correo válido").validate#email
 						label(for="email" data-error="Ingresa un correo válido") ¿Cuál es tu correo electrónico?*
 					.input-field
-						input(type="text").validate#last_name
-						label(for="last_name") Asunto
+						input(type="text" name="asunto" required="" aria-required="true" data-msg="Asunto Obligatorio" data-rule-minlength="5" data-msg-minlength="Mínimo 5 Caracteres").validate#asunto
+						label(for="asunto") Asunto
 					.input-field
-						input(type="text" length="170").validate#input_text
-						label(for="input_text") Mensaje*
+						textarea(length="170" name="textarea" required="" aria-required="true" data-msg="Mensaje Obligatorio" data-rule-maxlength="170" data-msg-maxlength="Máximo 170 Caracteres").materialize-textarea#textarea
+						label(for="textarea") Mensaje*
 					.input-field
-						input(type="submit" value="ENVIAR").boton.disabled
+						input(type="submit" value="ENVIAR").boton
 				.gracias
 					div
 						i
@@ -27,7 +27,7 @@ section.comentario
 						p Tus comentarios han sido 
 							br
 							| recibidos con éxito
-						a(href="#").boton CONTINUAR
+						span.boton CONTINUAR
 			dd
 				p 
 					b o llámanos al
