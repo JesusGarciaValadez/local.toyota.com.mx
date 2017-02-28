@@ -1,0 +1,50 @@
+.interiorModal
+	+bx
+	background: rgba(0,0,0,0.86)
+	display: none
+	height: 100vh
+	left: 0px
+	overflow: auto
+	position: fixed
+	top: 0px
+	width: 100vw
+	z-index: 99
+	.close
+		+translate(-50% , -50%)
+		cursor: pointer
+		display: table
+		height: 25px
+		position: absolute
+		right: 20px
+		top: 40px
+		width: 25px
+		z-index: 999
+		&:before
+			+center(vh)
+			+icons('\E14C')
+			color: $Red800
+			font-size: 1.5625rem
+	.container
+		+center(vh)
+		height: 660px
+		padding: 0 2rem
+		#contenedorView
+			height: 100% !important
+			width: 100% !important
+	.boton
+		+center(vh)
+		padding: 15px 28px
+		position: absolute
+
+@mixin modelos-interiorModal-smartphone
+	.interiorModal
+		.container
+			overflow: auto
+			padding: 0
+			.mail, .gracias
+				position: relative
+				form
+					.boton
+						margin: 1rem auto
+						margin-top: 3rem
+	

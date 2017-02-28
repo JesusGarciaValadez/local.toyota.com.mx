@@ -15,7 +15,7 @@ if($(window).width() <= 767){
 init = function(){
 
 	anclasArray = [];
-	
+
 	medidas = function(){
 		altura = $(window).height();
 		anchura = $(window).width();
@@ -32,6 +32,8 @@ init = function(){
 				destructMenuDesctop();
 				menumobile();
 				filtroblogMobile();
+				panoramico();
+				dragMobile();
 				menuFotter();
 				mobileMenuSelect();
 				mobileMenuPropietarios();
@@ -49,6 +51,8 @@ init = function(){
 				destructMenuMobile();
 				menudesktop();
 				filtroblog();
+				panoramico();
+				drag();
 				menuFotterStop();
 				menuSelect();
 				menuPropietarios();
@@ -574,6 +578,63 @@ init = function(){
 			coloresCar();
 		}
 		rellenar();
+	}
+
+	//Panoramico
+	panoramico = function(){
+
+		$('.panoramico .container .contenido .boton').on('click', function(){
+			
+			$('.interiorModal').fadeIn();
+			$('body').addClass('hidden');
+
+			pano=new pano2vrPlayer("contenedorView");
+			pano.readConfigUrlAsync("../images/modelos/corolla/pano.xml");
+
+			$('.interiorModal .boton').delay(2800).fadeOut(1600);
+
+		});
+
+		$('.interiorModal .close').on('click', function(){
+			$('.interiorModal').fadeOut();
+			$('body').removeClass('hidden');
+			$('.interiorModal .boton').delay(600).fadeIn(400);
+		});
+
+	}
+
+	//Drag
+	drag = function(){
+		var icon = $('.como-funciona .content-drag .icon'),
+			steps = 10,
+			dd = new Dragdealer('carro-drag',{
+				snap: true,
+				horizontal: true,
+				steps: steps,
+				speed: 0.3,
+				loose: false,
+				animationCallback: function(x, y) {
+					var percent = parseInt(steps * (x*100), 10);
+					icon.css({'background-position-x': (6000 * x * 9/10 + 600) + 'px'});
+				}
+			}).setStep(1);
+	}
+
+	//Drag
+	dragMobile = function(){
+		var icon = $('.como-funciona .content-drag .icon'),
+			steps = 10,
+			dd = new Dragdealer('carro-drag',{
+				snap: true,
+				horizontal: true,
+				steps: steps,
+				speed: 0.3,
+				loose: false,
+				animationCallback: function(x, y) {
+					var percent = parseInt(steps * (x*100), 10);
+					icon.css({'background-position-x': (3000 * x * 9/10 + 300) + 'px'});
+				}
+			}).setStep(1);
 	}
 
 	hoverdir = function(){
@@ -1648,7 +1709,10 @@ init = function(){
 $(document).on('ready',init);
 
 $(window).on('load',function(){
+		
+
 	
+
 	if(! /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 
 	}
