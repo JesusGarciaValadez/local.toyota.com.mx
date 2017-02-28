@@ -1,0 +1,55 @@
+.panoramico
+	+bx
+	height: 840px
+	padding: 4.375rem 0px
+	position: relative
+	.container
+		overflow: visible
+		position: relative
+		z-index: 3
+		.contenido
+			h2
+				color: $BlueGrey900
+				font-weight: 300
+				margin: 0 auto
+				text-align: center
+			p
+				color: $BlueGrey400
+				font-size: 1.25rem
+				line-height: 1.875rem
+				margin: 0 auto
+				text-align: center
+			.boton
+				bottom: 0
+				margin: 2rem auto
+				max-width: 160px
+				min-width: 150px
+				padding: 12px 0px
+				right: 0
+				text-transform: uppercase
+				
+	.back
+		z-index: 1
+		img
+			+center(v)
+			top: 0px
+
+@mixin modelos-panoramico-smartphone
+	.panoramico
+		height: 500px
+		padding: 2.25rem 0px
+		.container
+			.contenido
+				h2
+					font-size: 2rem
+					line-height: 2.2rem
+					margin-top: 0px
+					text-align: center
+				p
+					font-size: 1rem
+					line-height: 1.5rem	
+				.boton
+					margin: 2rem auto
+		.back
+			img
+				height: 100%

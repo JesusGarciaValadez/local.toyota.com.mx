@@ -1,0 +1,101 @@
+.como-funciona
+	overflow: hidden
+	padding: 6.25rem 0px
+	width: 100%
+	.container
+		overflow: visible
+		> h6
+			color: $BlueGrey
+			font-size: 1.375rem
+			margin-top: 0px
+			text-align: center
+		> h2
+			font-weight: 300
+			margin-top: 0px
+			text-align: center
+		.content-drag
+			margin: 0 auto
+			width: 600px
+			.dragdealer
+				border-bottom: 2px solid #BDBDBD
+				margin: 0
+				.red-circle
+					background: $Red800
+					border: 0
+					border-radius: 50%
+					box-shadow: 0 2px 8px 0px rgba(0, 0, 0, .4)
+					height: 30px
+					line-height: 30px
+					position: relative
+					text-align: center
+					top: 15px
+					width: 30px
+					z-index: 8
+					&:after
+						+center(vh)
+						+fawesome("\f105")
+						color: $White
+						font-size: 22px
+						font-weight: 600
+						left: 54%
+						top: 48%
+					&:hover
+						cursor: pointer
+				.icon
+					background: $White
+					background-image: url(../images/modelos/corolla/corolla-drag.jpg)
+					background-position-x: -.5px
+					background-position-y: 0
+					color: white
+					left: -10px
+					height: 300px
+					position: relative
+					top: 0px
+					width: 100%
+					-webkit-transform: scale(1)
+					transform: scale(1)
+					-webkit-animation: iconOut .3s 1.3s backwards
+					animation: iconOut .3s 1.3s backwards
+					-webkit-animation-delay: 1s
+					animation-delay: 1s
+				&.active
+					.red-circle
+						&:after
+					.icon
+						-webkit-transform: scale(1)
+						transform: scale(1)
+						-webkit-transform: translateX(0px) scale(1)
+						transform: translateX(0px) scale(1)
+						-webkit-animation: iconIn .3s forwards
+						animation: iconIn .3s forwards
+			.scale
+				margin-top: 30px
+				width: 100%
+				td
+					position: relative
+					text-align: center
+					width: 10%
+					img
+						left: 0
+						position: absolute
+						text-align: center
+						width: 100%
+		
+
+@mixin modelos-como-funciona-smartphone
+	.como-funciona 
+		padding: 3.125rem 0px
+		.container
+			> h6
+				display: none
+			> h2
+				font-weight: 700
+			.content-drag
+				width: 300px !important
+				.icon 
+					height: 150px !important
+					left: 0px !important
+					background-image: url(../images/modelos/corolla/corolla-drag-mobile.jpg) !important
+					background-position-x: -.5px
+					background-position-y: 0
+					width: 300px !important
