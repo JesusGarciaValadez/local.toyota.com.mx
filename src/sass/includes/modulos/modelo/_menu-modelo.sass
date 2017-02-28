@@ -1,8 +1,8 @@
-.menu-conoce-toyota
+.menu-modelo
 	height: 60px
 	position: relative
 	.menufixed
-		+shadow(0px, 6px, 12px, 0px, rgba(0,0,0,0.2), 0px, 4px, 8px, 0px, rgba(0,0,0,0.19))
+		+shadow(0px, 8px, 17px, 0px, rgba(0,0,0,0.2), 0px, 6px, 20px, 0px, rgba(0,0,0,0.19))
 		background: $BlueGrey900
 		position: absolute
 		top: 0px
@@ -10,11 +10,29 @@
 		z-index: 98
 		.container
 			max-width: 1500px
-			overflow: visible
+			> div
+				height: 60px
+				float: left
+				> div
+					color: $White
+					display: table
+					float: left
+					font-size: 0.875rem
+					font-weight: 700
+					height: 100%
+					padding: 0px 1rem
+					span
+						display: table-cell
+						vertical-align: middle
+						> img
+							display: block
+				.seccion
+					display: none
+					position: relative
 			nav
 				display: table
 				height: 60px
-				overflow: visible
+				overflow: hidden
 				> ul
 					display: table
 					height: 100%
@@ -39,7 +57,7 @@
 							font-weight: 700
 							margin: 0px
 							padding: 0px
-							padding: 0px 1.5rem
+							padding: 0px 1rem
 							position: relative
 							text-decoration: none
 							vertical-align: middle
@@ -52,65 +70,72 @@
 								display: block
 								height: 4px
 								width: 0%
-				.btnTecnologia
-					+fx(all,0.3s)
-					background: linear-gradient(to right,$Red800 50%,transparent 0)
-					background-position: right bottom
-					background-color: $BlueGrey800
-					background-size: 200% 100%
+				> div
+					bottom: 0px
 					display: table
 					height: 60px
 					overflow: hidden
 					position: absolute
 					right: 0px
-					bottom: 0px
-					&:hover
-						background-color: transparent
-						background-position: left bottom
-						a
-							color: $White
-					&.activo
-						background: $Red800
-						a
-							color: $White
-					a
-						+fx(all,0.5s)
-						color: $White
-						display: table-cell
-						font-size: 0.875rem
-						font-weight: 700
-						margin: 0px
-						padding: 0px 1.5rem
-						position: relative
-						text-decoration: none
-						vertical-align: middle
-
-@mixin somos-toyota-menu-conoce-toyota-smartphone
-	.menu-conoce-toyota
-		.menufixed
-			.container
-				> .titulo
-					height: 60px
-					position: relative
-					width: 100%
-					> div
-						color: $White
+					.btnPrueba
 						display: table
 						float: left
-						font-size: 1.5rem
-						font-weight: 600
 						height: 100%
-						padding: 0px
-						span
+						a
+							color: $White
 							display: table-cell
+							font-size: 0.875rem
+							font-weight: 700
+							margin: 0px
+							padding: 0px 1.5rem
+							position: relative
+							text-decoration: none
 							vertical-align: middle
+					.btnAgenda
+						+fx(all,0.3s)
+						background: linear-gradient(to right,$Red800 50%,transparent 0)
+						background-position: right bottom
+						background-color: $BlueGrey800
+						background-size: 200% 100%
+						display: table
+						float: left
+						height: 100%
+						&:hover
+							background-color: transparent
+							background-position: left bottom
+							a
+								color: $White
+						&.activo
+							background: $Red800
+							a
+								color: $White
+						a
+							+fx(all,0.5s)
+							color: $White
+							display: table-cell
+							font-size: 0.875rem
+							font-weight: 700
+							margin: 0px
+							padding: 0px 1.5rem
+							position: relative
+							text-decoration: none
+							vertical-align: middle
+
+@mixin modelos-menu-modelo-smartphone
+	.menu-modelo
+		.menufixed
+			.container
+				> div
+					float: none
+					width: 100%
+					> div
+						padding: 0px
+						float: left
 					.seccion
-						float: right
-						position: relative
 						cursor: pointer
+						display: table
+						float: right
 						padding-right: 1.5rem
-						font-size: 0.875rem
-						font-weight: 700
 						&:after
 							+center(h)
 							+icons('\E145')
@@ -122,22 +147,38 @@
 					+fx(all,0.5s)
 					+translate(100%, 0%)
 					background: $BlueGrey900
-					display: block
 					height: 100vh
 					left: 0px
-					overflow: auto
 					position: fixed
 					top: 0px
 					width: 100vw
 					.datos
+						margin: 0px
 						position: relative
-						.titulo
+						width: 100%
+						.logo
 							span
 								color: $White
 								display: block
 								font-size: 1.5rem
 								font-weight: 600
 								padding: 1.5rem 20px
+						.name
+							cursor: pointer
+							&:hover
+								background: $BlueGrey800
+								> span
+									border-bottom: 1px solid $BlueGrey800
+									color: $White
+							span
+								+fx(all,0.5s)
+								border-bottom: 1px solid $BlueGrey400
+								color: $BlueGrey400
+								display: block
+								font-weight: 700
+								margin: auto
+								padding: 1.125rem 0px
+								width: calc(100% - 40px)
 						.close 
 							cursor: pointer
 							height: 24px
@@ -160,11 +201,11 @@
 							position: relative
 							width: 100%
 							> a
-								border-bottom: 1px solid $BlueGrey400
 								display: block
-								margin: auto
 								padding: 1.125rem 0px
+								border-bottom: 1px solid $BlueGrey400
 								width: calc(100% - 40px)
+								margin: auto
 								&:before
 									display: none
 							&:last-child
@@ -177,9 +218,16 @@
 								&:last-child
 									> a
 										border: none
-					.btnTecnologia
+					> div
 						position: relative
-						margin: 2rem auto
+						margin: 1rem auto
+						.btnPrueba
+							background: $BlueGrey400
+						> div
+							width: 50%
+							a
+								padding: 0px
+								text-align: center
 			&.activo
 				z-index: 99
 				.container

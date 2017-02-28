@@ -1,45 +1,36 @@
-.reconocimientos
-	background: $BlueGrey800
+.adn-deportivo
+	padding: 3.75rem 0px
+	> img
+		+center(v)
+		bottom: 50px
+		z-index: -1
 	.container
+		overflow: visible
 		h6
-			color: $White
+			color: $BlueGrey
 			margin-bottom: 0px
+			text-align: center
 		h2
-			color: $White
 			font-weight: 300
-			margin-top: 0px
-	.container
+			margin: 1.25rem auto
+			text-align: center
+		p
+			font-size: 1.125rem
+			font-weight: 300
+			text-align: center
+		.boton
+			margin: 2rem auto
 		.slide
-			overflow: hidden
-			width: 100%
-			li
-				+bx
-				padding: 0px 0.5rem
-				padding-bottom: 8.125rem
-				.imagen
-					height: 160px
-					margin-bottom: 1rem
-					max-height: 160px
-					overflow: hidden
-					position: relative
-					width: 100%
-					img
-						+center(vh)
-						display: block
-						width: auto
-				span
-					color: $White
-					display: block
-					font-size: 1.25rem
-					font-weight: 700
-					margin: 1.375rem 0px
-				p
-					color: $White
+			img
+				display: table
+				margin: 5rem auto 0px
+				max-width: 850px
+				width: 80%
 	.bx-prev 
 		border-radius: 50%
-		border: 2px solid $White
-		color: $White
-		left: 0px
+		border: 2px solid $BlueGrey900
+		color: $BlueGrey900
+		left: 20px
 		margin-right: 2rem 
 		position: relative
 		&:before
@@ -52,10 +43,10 @@
 			top: 50%
 	.bx-next 
 		border-radius: 50%
-		border: 2px solid $White
-		color: $White
+		border: 2px solid $BlueGrey900
+		color: $BlueGrey900
 		position: relative
-		right: 0px
+		right: 20px
 		&:before
 			+fonIco("\e904")
 			+translate(-50%,-50%)
@@ -65,10 +56,8 @@
 			text-indent: 0px
 			top: 50%
 	.bx-controls-direction
-		bottom: 50px
-		position: absolute
-		width: 100%
 		a
+			+center(h)
 			+fx(all,0.5s) 
 			display: inline-block
 			height: 42px
@@ -78,18 +67,24 @@
 			width: 42px
 			z-index: 98
 			&.disabled 
-				border: 2px solid rgba(255, 255, 255, 0.4)
-				color: rgba(255, 255, 255, 0.4)
+				border: 2px solid rgba(38, 50, 56, 0.4)
+				color: rgba(38, 50, 56, 0.4)
 				&:hover
 					background: none
 	
 	.bx-wrapper
+		clear: both
+		margin: auto
+		overflow: hidden
+		padding-bottom: 30px
+		.bx-viewport
+			overflow: visible!important
 		.bx-has-pager
 			+center(v)
-			bottom: 40px
-			display: table
+			bottom: 20px
+			display: none
 		.bx-pager
-			color: rgba(255, 255, 255, 0.4)
+			color: rgba(38, 50, 56, 0.4)
 			font-family: Arial
 			font-size: 0px
 			font-weight: bold
@@ -99,7 +94,7 @@
 					+fx(all,0.5s)
 					-moz-border-radius: 5px
 					-webkit-border-radius: 5px
-					background: rgba(255, 255, 255, 0.4)
+					background: rgba(38, 50, 56, 0.4)
 					border-radius: 5px
 					display: block
 					height: 8px
@@ -109,7 +104,7 @@
 					width: 8px
 					&:hover, &.active, &:focus
 						+scale(1.5,1.5)
-						background: $White
+						background: $BlueGrey900
 		.bx-pager-item
 			*display: inline
 			*zoom: 1
@@ -121,3 +116,18 @@
 				*display: inline
 				*zoom: 1
 				display: inline-block
+
+@mixin modelos-deportivo-smartphone
+	.adn-deportivo
+		padding-top: 0px
+		> img
+			bottom: 90px
+			width: 100%
+		.container
+			.boton
+				margin-bottom: 0px
+		.bx-controls-direction
+			display: none
+		.bx-wrapper
+			.bx-has-pager
+				display: table

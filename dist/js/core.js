@@ -37,7 +37,7 @@ init = function(){
 				mobileMenuPropietarios();
 				mobileMenuConoceToyota();
 				if($('section').hasClass('cover-modelo')){
-					coverModeloMobile();
+					modeloMobile();
 				}
 			}
 		}
@@ -54,7 +54,7 @@ init = function(){
 				menuPropietarios();
 				menuConoceToyota();
 				if($('section').hasClass('cover-modelo')){
-					coverModeloDesctop();
+					modeloDesctop();
 				}
 			}
 		}
@@ -64,7 +64,7 @@ init = function(){
 		$('.links-footer li > ul').css("display", "none");
 		$('.header .menu-autos > div ul li > div, .configura-modelos div ul li > div').css("display", "none");
 		$('.btnBuscador, .configura-modelos div ul li > a').removeClass('activo');
-		if($('.header .menu.activo, .menu-propietarios .menufixed.activo').hasClass('activo')){
+		if($('.header .menu.activo, .menu-propietarios .menufixed.activo, .menu-modelo .menufixed.activo').hasClass('activo')){
 			$('body').addClass('hidden');
 		}
 		$('.version .container > a, .configuracion .btnregresar > a, .financiamiento .btnregresar > a, .financiamiento .btnregresar .re').removeClass('link regresar');
@@ -668,8 +668,228 @@ init = function(){
 		});
 	}
 
-	coverModeloDesctop = function(){
-		coverslider = $('.cover-modelo .slide').bxSlider({
+	render360 = function(){
+		//ThreeSixty
+		reel360Gal = function(color){	
+			
+			$('.car').ThreeSixty({
+		        totalFrames: 36,
+		        endFrame: 36,
+		        //currentFrame: 1,
+
+		        imgList: '.threesixty_images',
+		        progress: '.spinner',
+		        //imagePath: url+'images/autos/modelos360/corolla/'+color+'/',
+		        imagePath: '../images/autos/modelos360/corolla/'+color+'/',
+		        filePrefix: '',
+		        ext: '.jpg',
+		        height: 406,
+		        width: 1000,
+				disableSpin: true,
+		        navigation: false,
+		        dragging: false,
+		        responsive: true
+			});
+		}
+
+		coloresCar = function(){
+			var cars = ['grisMetalico','rojo','azul','negro','plata'];
+			var cars_n = ['Gris Metálico','Rojo','Azul','Negro','Plata'];
+			var i = 0;
+			var total = (cars.length)-1;
+
+			while(i<=total){
+				$('.render360 .colores360').append('<div class="'+cars[i]+'">')
+				i++
+			}
+			
+			$('.render360 .colores360 > div').on('click',function(){
+				$('.render360 .colores360 > div').removeClass('active');
+				$(this).addClass('active');
+				var colorActive = $('.render360 .colores360 > div.active').index();
+				$('.menu360 span').text(cars_n[colorActive]);
+				$('.threesixty > img').attr("src", '../images/autos/modelos360/corolla/'+cars[colorActive]+'/1.jpg');
+				reel360Gal(cars[colorActive]);
+			});
+		}
+		coloresCar();
+		reel360Gal('grisMetalico');
+		//console.log(cars[0])
+		$('.render360 .colores360 > div:eq(0)').addClass('active');
+	};
+
+	render360();
+
+	versionesSlider = $('.versiones .slide');
+	reconocimientosSlider = $('.reconocimientos .slide');
+	fotosTodoSlider = $('.fotos .todo .flex');
+	fotosExteriorSlider = $('.fotos .exte .flex');
+	fotosInteriorSlider = $('.fotos .inte .flex');
+	
+	modeloDesctop = function(){
+		var r = $('.reconocimientos .slide li').length;
+		var v = $('.versiones .slide > div').length;
+
+		if($('.versiones div').hasClass('bx-wrapper')){
+			versionesSlider.destroySlider();
+			versionesSlider.bxSlider({
+				mode:'horizontal',
+				infiniteLoop: false,
+				responsive: true,
+				hideControlOnEnd: true,
+				touchEnabled: true,
+				preventDefaultSwipeX: false,
+				preventDefaultSwipeY: false,
+				oneToOneTouch: false,
+				prevSelector: '#prevV',
+				nextSelector: '#nextV',
+				slideWidth: 295,
+				minSlides: 4,
+				maxSlides: 4
+			});
+		}else{
+			versionesSlider.bxSlider({
+				mode:'horizontal',
+				infiniteLoop: false,
+				responsive: true,
+				hideControlOnEnd: true,
+				touchEnabled: true,
+				preventDefaultSwipeX: false,
+				preventDefaultSwipeY: false,
+				oneToOneTouch: false,
+				prevSelector: '#prevV',
+				nextSelector: '#nextV',
+				slideWidth: 295,
+				minSlides: 4,
+				maxSlides: 4
+			});
+		}
+		if($('.reconocimientos div').hasClass('bx-wrapper')){
+			reconocimientosSlider.destroySlider();
+			reconocimientosSlider.bxSlider({
+				mode:'horizontal',
+				infiniteLoop: false,
+				responsive: true,
+				hideControlOnEnd: true,
+				touchEnabled: true,
+				preventDefaultSwipeX: false,
+				preventDefaultSwipeY: false,
+				oneToOneTouch: false,
+				prevSelector: '#prevR',
+				nextSelector: '#nextR',
+				slideWidth: 393,
+				minSlides: 3,
+				maxSlides: 3
+			});
+		}else{
+			reconocimientosSlider.bxSlider({
+				mode:'horizontal',
+				infiniteLoop: false,
+				responsive: true,
+				hideControlOnEnd: true,
+				touchEnabled: true,
+				preventDefaultSwipeX: false,
+				preventDefaultSwipeY: false,
+				oneToOneTouch: false,
+				prevSelector: '#prevR',
+				nextSelector: '#nextR',
+				slideWidth: 393,
+				minSlides: 3,
+				maxSlides: 3
+			});
+		}
+		if (r <= 3) {
+			$('.reconocimientos .bx-controls, .reconocimientos .bx-controls-direction').hide();
+		}
+		if (v <= 4) {
+			$('.versiones .bx-controls, .versiones .bx-controls-direction').hide();
+		}
+		if($('.fotos .todo div').hasClass('bx-wrapper')){
+			fotosTodoSlider.destroySlider();
+			setTimeout(function(){
+				$('.fotos .todo div').removeAttr('style');
+			},100);
+		}
+		if($('.fotos .exte div').hasClass('bx-wrapper')){
+			fotosExteriorSlider.destroySlider();
+			setTimeout(function(){
+				$('.fotos .exte div').removeAttr('style');
+			},100);
+		}
+		if($('.fotos .inte div').hasClass('bx-wrapper')){
+			fotosInteriorSlider.destroySlider();
+			setTimeout(function(){
+				$('.fotos .inte div').removeAttr('style');
+			},100);
+		}
+
+		$('.menu-modelo .datos > div').remove();
+		$('.menu-modelo .seccion').off('click');
+	}
+
+	modeloMobile = function(){
+		// if($('.cover-modelo div').hasClass('bx-wrapper')){
+		// 	coverslider.destroySlider();
+		// 	setTimeout(function(){
+		// 		$('.cover-modelo div').removeAttr('style');
+		// 	},100);
+		// }else{
+
+		// }
+
+		if($('.versiones div').hasClass('bx-wrapper')){
+			versionesSlider.destroySlider();
+			versionesSlider.bxSlider({
+				mode:'horizontal',
+				infiniteLoop: false,
+				responsive: true,
+				hideControlOnEnd: true,
+				touchEnabled: true,
+				preventDefaultSwipeX: false,
+				preventDefaultSwipeY: false,
+				oneToOneTouch: false,
+				controls: false
+			});
+		}else{
+			versionesSlider.bxSlider({
+				mode:'horizontal',
+				infiniteLoop: false,
+				responsive: true,
+				hideControlOnEnd: true,
+				touchEnabled: true,
+				preventDefaultSwipeX: false,
+				preventDefaultSwipeY: false,
+				oneToOneTouch: false,
+				controls: false
+			});
+		}
+		if($('.reconocimientos div').hasClass('bx-wrapper')){
+			reconocimientosSlider.destroySlider();
+			reconocimientosSlider.bxSlider({
+				mode:'horizontal',
+				infiniteLoop: false,
+				responsive: true,
+				hideControlOnEnd: true,
+				touchEnabled: true,
+				preventDefaultSwipeX: false,
+				preventDefaultSwipeY: false,
+				oneToOneTouch: false,
+				controls: false
+			});
+		}else{
+			reconocimientosSlider.bxSlider({
+				mode:'horizontal',
+				infiniteLoop: false,
+				responsive: true,
+				hideControlOnEnd: true,
+				touchEnabled: true,
+				preventDefaultSwipeX: false,
+				preventDefaultSwipeY: false,
+				oneToOneTouch: false,
+				controls: false
+			});
+		}
+		fotosTodoSlider.bxSlider({
 			mode:'horizontal',
 			infiniteLoop: false,
 			responsive: true,
@@ -678,12 +898,43 @@ init = function(){
 			preventDefaultSwipeX: false,
 			preventDefaultSwipeY: false,
 			oneToOneTouch: false,
-			prevSelector: '#prev',
-			nextSelector: '#next'
+			controls: false
 		});
-	}
-	coverModeloMobile = function(){
-		coverslider.destroySlider();
+		fotosExteriorSlider.bxSlider({
+			mode:'horizontal',
+			infiniteLoop: false,
+			responsive: true,
+			hideControlOnEnd: true,
+			touchEnabled: true,
+			preventDefaultSwipeX: false,
+			preventDefaultSwipeY: false,
+			oneToOneTouch: false,
+			controls: false,
+		});
+		fotosInteriorSlider.bxSlider({
+			mode:'horizontal',
+			infiniteLoop: false,
+			responsive: true,
+			hideControlOnEnd: true,
+			touchEnabled: true,
+			preventDefaultSwipeX: false,
+			preventDefaultSwipeY: false,
+			oneToOneTouch: false,
+			controls: false,
+		});
+			
+		var name = $('.menu-modelo .logo').html();
+
+		$('.menu-modelo .datos').append($('<div class="close"></div><div class="logo">'+name+'</div>'));
+
+		$('.menu-modelo .seccion').on('click', function(){
+			$('.menufixed').addClass('activo');
+			$('body').addClass('hidden');
+		});
+		$('.menu-modelo .close').on('click', function(){
+			$('.menufixed').removeClass('activo');
+			$('body').removeClass('hidden');
+		});
 	}
 
 	menufixed = function(){
@@ -708,8 +959,14 @@ init = function(){
 			posScroll = $(window).scrollTop();
 			altura = 60;
 			anclas = $('.anclas').length;
-			menuSupProducto();
+			menuSupAncla();
 			menufixed();
+			var activo = $('.menuSup ul li.activo').text();
+			$('.menu-modelo .seccion > span').text(activo);
+			if(! $('.menuSup ul li').hasClass('activo')){
+				var activo = $('.menuSup ul li:eq(0)').text();
+				$('.menu-modelo .seccion > span').text(activo);
+			}
 		});
 
 	}
@@ -756,6 +1013,32 @@ init = function(){
 		nextSelector: '#next'
 	});
 
+	$('.cover-modelo .slide').bxSlider({
+		mode:'horizontal',
+		infiniteLoop: false,
+		responsive: true,
+		hideControlOnEnd: true,
+		touchEnabled: true,
+		preventDefaultSwipeX: false,
+		preventDefaultSwipeY: false,
+		oneToOneTouch: false,
+		prevSelector: '#prev',
+		nextSelector: '#next'
+	});
+
+	$('.adn-deportivo .slide').bxSlider({
+		mode:'horizontal',
+		infiniteLoop: false,
+		responsive: true,
+		hideControlOnEnd: true,
+		touchEnabled: true,
+		preventDefaultSwipeX: false,
+		preventDefaultSwipeY: false,
+		oneToOneTouch: false,
+		prevSelector: '#prevD',
+		nextSelector: '#nextD'
+	});
+
 	$('.de-nosotros .slide').bxSlider({
 		mode:'horizontal',
 		infiniteLoop: false,
@@ -767,22 +1050,6 @@ init = function(){
 		oneToOneTouch: false,
 		prevSelector: '#prev',
 		nextSelector: '#next',
-		slideWidth: 393,
-		minSlides: 3,
-		maxSlides: 3
-	});
-
-	$('.reconocimientos .slide').bxSlider({
-		mode:'horizontal',
-		infiniteLoop: false,
-		responsive: true,
-		hideControlOnEnd: true,
-		touchEnabled: true,
-		preventDefaultSwipeX: false,
-		preventDefaultSwipeY: false,
-		oneToOneTouch: false,
-		prevSelector: '#prevR',
-		nextSelector: '#nextR',
 		slideWidth: 393,
 		minSlides: 3,
 		maxSlides: 3
@@ -923,53 +1190,67 @@ init = function(){
 	}
 	
 	menuSelect = function(){
-		if($('.'+clase1+' .menu').length === 0){
-			$('.'+clase1+' .menu select').material_select('destroy');
+		$('[data-clase1]').each(function(i){
+			var clase1 = $('[data-clase1]:eq('+i+')').data('clase1');
+			var	clase2 = $('[data-clase1]:eq('+i+') .menu-select2').data('clase2');
+			if($('.'+clase1+' .menu').length === 0){
+				$('.'+clase1+' .menu select').material_select('destroy');
 
-			$('<div class="menu"><ul>').insertBefore('.'+clase2+'');
+				$('<div class="menu"><ul>').insertBefore('.'+clase1+' .'+clase2+'');
 
-			$.each($('.fill-'+clase2+' option'), function( index ) {
-				var text = $('.fill-'+clase2+' option:eq('+index+')').text();
-				var filter = $('.fill-'+clase2+' option:eq('+index+')').data('filter');
-				$('.'+clase1+' .menu ul').append($("<li><a>"+text+"</a></li>"));
-				$('.'+clase1+' .menu ul li:eq(0)').addClass('activo');
+				$.each($('.fill-'+clase2+' option'), function( index ) {
+					var text = $('.fill-'+clase2+' option:eq('+index+')').text();
+					var filter = $('.fill-'+clase2+' option:eq('+index+')').data('filter');
+					$('.'+clase1+' .menu ul').append($("<li><a>"+text+"</a></li>"));
+					$('.'+clase1+' .menu ul li:eq(0)').addClass('activo');
+					$('.'+clase1+' .'+clase2+' > div').hide();
+					$('.'+clase1+' .'+clase2+' > div:eq(0)').show();
+				});
+
+				//console.log('count'+i+clase1+' pasao el if con el each')
+				$('.fill-'+clase2+'').remove();
+			}
+
+			$('.'+clase1+' .menu ul li').on('click', function(e){
+				e.preventDefault();
+				var index = $(this).index();
+				$('.'+clase1+' .menu ul li').removeClass('activo');
+				$(this).addClass('activo');
+				$('.'+clase1+' .'+clase2+' > div').hide();
+				$('.'+clase1+' .'+clase2+' > div:eq('+(index)+')').fadeIn('slow');
+				//console.log('count'+i+clase1+' clase2'+clase2)
+			});
+
+		});
+
+	}
+
+	mobileMenuSelect = function(){
+		$('[data-clase1]').each(function(i){
+			var clase1 = $('[data-clase1]:eq('+i+')').data('clase1');
+			var	clase2 = $('[data-clase1]:eq('+i+') .menu-select2').data('clase2');
+			$('<select name="filtro" class="fill-'+clase2+'" />').insertBefore('.'+clase2+'');
+
+			$.each($('.'+clase1+' .menu ul li'), function( index ) {
+				var text = $('.'+clase1+' .menu ul li:eq('+index+')').text();
+				var filter = $('.'+clase1+' .menu ul li:eq('+index+')').data('filter');
+				$('.'+clase1+' .fill-'+clase2+'').append($("<option value="+index+" />").text(text));
 				$('.'+clase1+' .'+clase2+' > div').hide();
 				$('.'+clase1+' .'+clase2+' > div:eq(0)').show();
 			});
 
-			$('.fill-'+clase2+'').remove();
-		}
+			$('.'+clase1+' .menu').remove();
 
-		$('.'+clase1+' .menu ul li').on('click', function(e){
-			e.preventDefault();
-			var index = $(this).index();
-			$('.'+clase1+' .menu ul li').removeClass('activo');
-			$(this).addClass('activo');
-			$('.'+clase1+' .'+clase2+' > div').hide();
-			$('.'+clase1+' .'+clase2+' > div:eq('+(index)+')').fadeIn('slow');
+			$('.fill-'+clase2+'').on('change',function() {
+				var index = $(this).val();
+				$('.'+clase1+' .menu ul li').removeClass('activo');
+				$(this).addClass('activo');
+				$('.'+clase1+' .'+clase2+' > div').hide();
+				$('.'+clase1+' .'+clase2+' > div:eq('+(index)+')').fadeIn('slow');
+			});
+
+			$('.'+clase1+' select').material_select();
 		});
-	}
-
-	mobileMenuSelect = function(){
-		$('<select name="filtro" class="fill-'+clase2+'" />').insertBefore('.'+clase2+'');
-
-		$.each($('.'+clase1+' .menu ul li'), function( index ) {
-			var text = $('.'+clase1+' .menu ul li:eq('+index+')').text();
-			var filter = $('.'+clase1+' .menu ul li:eq('+index+')').data('filter');
-			$('.'+clase1+' .fill-'+clase2+'').append($("<option value="+index+" />").text(text));
-		});
-
-		$('.'+clase1+' .menu').remove();
-
-		$('.fill-'+clase2+'').on('change',function() {
-			var index = $(this).val();
-			$('.'+clase1+' .menu ul li').removeClass('activo');
-			$(this).addClass('activo');
-			$('.'+clase1+' .'+clase2+' > div').hide();
-			$('.'+clase1+' .'+clase2+' > div:eq('+(index)+')').fadeIn('slow');
-		});
-
-		$('.'+clase1+' select').material_select();
 	}
 
 	countAnclas = function(){
@@ -984,7 +1265,7 @@ init = function(){
 		}
 	};
 
-	menuSupProducto = function(){
+	menuSupAncla = function(){
 		var anclas, menuSup, posScroll;
 		posScroll = $(window).scrollTop();
 		menuSup = $('.menuSup').length;
@@ -1330,7 +1611,7 @@ init = function(){
 		setSize();
 		modelotarjeta();
 		countAnclas();
-		menuSupProducto();
+		menuSupAncla();
 	}
 
 	$(window).resize(function(){

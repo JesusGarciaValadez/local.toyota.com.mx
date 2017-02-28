@@ -1,0 +1,260 @@
+.galeria
+	padding: 3.75rem 0px
+	.container
+		overflow: visible
+		> h6
+			color: $BlueGrey
+			margin-bottom: 0px
+			text-align: center
+		> h2
+			font-weight: 300
+			margin: 1.25rem auto
+			text-align: center
+		> p
+			font-size: 1.125rem
+			font-weight: 300
+			text-align: center
+		.menu
+			margin: 3.75rem auto
+			ul
+				display: table
+				height: 100%
+				margin: auto
+				li
+					display: table
+					float: left
+					height: 100%
+					margin: 0px
+					padding: 0px 1.5rem
+					&.activo
+						> a
+							color: $BlueGrey900	
+							&:before
+								background: $BlueGrey900
+								width: 100%
+					> a
+						+fx(all,0.5s)
+						color: $BlueGrey
+						cursor: pointer
+						display: table-cell
+						font-size: 0.875rem
+						font-weight: 700
+						margin: 0px
+						padding: 0px
+						position: relative
+						text-decoration: none
+						vertical-align: middle
+						&:before
+							+center(v)
+							+fx(all,0.5s)
+							background: transparent
+							bottom: 0px
+							content: " "
+							display: block
+							height: 2px
+							width: 0%
+						&:hover
+							color: $BlueGrey900
+							&:before
+								background: $BlueGrey900
+								width: 100%
+		.fotos
+			> div
+				display: none
+				&:first-child
+					display: block
+				.flex
+					+justifyCont(space-between)
+					margin: 30px auto
+					padding: 0px 10px
+					.colum
+						+flex
+						+flexDir
+						+justifyCont(space-between)
+						float: left
+						width: 32.5%
+						> div
+							+bx
+							+fx(all,0.5s)
+							background: $White
+							height: 280px
+							margin-bottom: 1rem
+							overflow: hidden
+							position: relative
+							width: 100%
+							&.bigpic
+								height: 576px
+							&:hover
+								+shadow(0px, 8px, 17px, 0px, rgba(0,0,0,0.2), 0px, 6px, 20px, 0px, rgba(0,0,0,0.19))
+							.video
+								height: 100%
+								overflow: hidden
+								padding-bottom: 0px
+								position: relative
+								width: 100%
+								img
+									+fx(all,0.5s)
+									+object
+									height: 100%
+									position: absolute
+									top: 0px
+									width: 100%
+								&:hover
+									img
+										+scale(1.08,1.08)
+									span
+										&:after
+											opacity: 1
+								span
+									cursor: pointer
+									display: block
+									height: 100%
+									position: relative
+									text-decoration: none
+									width: 100%
+									&:after
+										+center(vh)
+										+fonIco('\E927')
+										+fx(all,0.5s)
+										color: rgba(255,255,255,0.85)
+										font-size: 3.75rem
+										opacity: 0
+							.imagen
+								height: 100%
+								overflow: hidden
+								padding-bottom: 0px
+								position: relative
+								width: 100%
+								img
+									+fx(all,0.5s)
+									+object
+									height: 100%
+									position: absolute
+									top: 0px
+									width: 100%
+								&:hover
+									img
+										+scale(1.08,1.08)
+									span
+										&:after
+											opacity: 1
+								span
+									cursor: pointer
+									display: block
+									height: 100%
+									position: relative
+									text-decoration: none
+									width: 100%
+									&:after
+										+center(vh)
+										+fawesome('\f00e')
+										+fx(all,0.5s)
+										color: rgba(255,255,255,0.85)
+										font-size: 1.75rem
+										opacity: 0
+	.bx-prev 
+		border-radius: 50%
+		border: 2px solid $BlueGrey900
+		color: $BlueGrey900
+		left: -50px
+		margin-right: 2rem 
+		position: relative
+		&:before
+			+fonIco("\e903")
+			+translate(-50%,-50%)
+			font-size: 16px
+			left: 50%
+			position: absolute
+			text-indent: 0px
+			top: 50%
+	.bx-next 
+		border-radius: 50%
+		border: 2px solid $BlueGrey900
+		color: $BlueGrey900
+		position: relative
+		right: -50px
+		&:before
+			+fonIco("\e904")
+			+translate(-50%,-50%)
+			font-size: 16px
+			left: 50%
+			position: absolute
+			text-indent: 0px
+			top: 50%
+	.bx-controls-direction
+		a
+			+center(h)
+			+fx(all,0.5s) 
+			display: inline-block
+			height: 42px
+			outline: 0
+			text-decoration: none
+			text-indent: -9998px
+			width: 42px
+			z-index: 98
+			&.disabled 
+				border: 2px solid rgba(38, 50, 56, 0.4)
+				color: rgba(38, 50, 56, 0.4)
+				&:hover
+					background: none
+	
+	.bx-wrapper
+		clear: both
+		margin: auto
+		overflow: hidden
+		padding-bottom: 0px
+		.bx-viewport
+			overflow: visible!important
+		.bx-has-pager
+			+center(v)
+			bottom: 20px
+			display: table
+		.bx-pager
+			color: rgba(38, 50, 56, 0.4)
+			font-family: Arial
+			font-size: 0px
+			font-weight: bold
+			text-align: center
+			&.bx-default-pager
+				a
+					+fx(all,0.5s)
+					-moz-border-radius: 5px
+					-webkit-border-radius: 5px
+					background: rgba(38, 50, 56, 0.4)
+					border-radius: 5px
+					display: block
+					height: 8px
+					margin: 0px 12px
+					outline: 0px
+					text-indent: -9999px
+					width: 8px
+					&:hover, &.active, &:focus
+						+scale(1.5,1.5)
+						background: $BlueGrey900
+		.bx-pager-item
+			*display: inline
+			*zoom: 1
+			display: inline-block
+			font-size: 0px
+			line-height: 0px
+		.bx-controls-auto
+			.bx-controls-auto-item
+				*display: inline
+				*zoom: 1
+				display: inline-block
+
+@mixin modelos-galeria-smartphone
+	.galeria
+		padding-bottom: 0px
+		.container
+			.fotos
+				> div
+					padding-bottom: 40px
+					.flex
+						display: block
+						padding: 0px
+						.colum
+							width: calc(100vw - 20px) !important
+							> div
+								&:hover
+									+shadowr

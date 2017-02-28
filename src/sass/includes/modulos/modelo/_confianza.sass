@@ -1,0 +1,122 @@
+.confianza
+	padding: 3.75rem 0px
+	.container
+		overflow: visible
+		> h6
+			color: $BlueGrey
+			margin-bottom: 0px
+			text-align: center
+		> h2
+			font-weight: 300
+			margin: 1.25rem auto
+			text-align: center
+		> p
+			font-size: 1.125rem
+			font-weight: 300
+			text-align: center
+		.menu
+			margin: 3.75rem auto
+			ul
+				display: table
+				height: 100%
+				margin: auto
+				li
+					display: table
+					float: left
+					height: 100%
+					margin: 0px
+					padding: 0px 1.5rem
+					&.activo
+						> a
+							color: $BlueGrey900	
+							&:before
+								background: $BlueGrey900
+								width: 100%
+					> a
+						+fx(all,0.5s)
+						color: $BlueGrey
+						cursor: pointer
+						display: table-cell
+						font-size: 0.875rem
+						font-weight: 700
+						margin: 0px
+						padding: 0px
+						position: relative
+						text-decoration: none
+						vertical-align: middle
+						&:before
+							+center(v)
+							+fx(all,0.5s)
+							background: transparent
+							bottom: 0px
+							content: " "
+							display: block
+							height: 2px
+							width: 0%
+						&:hover
+							color: $BlueGrey900
+							&:before
+								background: $BlueGrey900
+								width: 100%
+		.videos
+			> div
+				display: none
+				&:first-child
+					display: block
+				.tabla
+					display: table
+					width: 100%
+					> div
+						+bx
+						display: table-cell
+						padding: 0px 2rem
+						vertical-align: middle
+						width: 50%
+						.video
+							height: 285px
+							max-width: 478px
+							overflow: hidden
+							padding-bottom: 0px
+							position: relative
+							width: 100%
+							img
+								+fx(all,0.5s)
+								+object
+								height: 100%
+								position: absolute
+								top: 0px
+								width: 100%
+							&:hover
+								img
+									+scale(1.08,1.08)
+							a
+								cursor: pointer
+								display: block
+								height: 100%
+								position: relative
+								text-decoration: none
+								width: 100%
+								&:after
+									+center(vh)
+									+fonIco('\E927')
+									+fx(all,0.5s)
+									color: rgba(255,255,255,0.85)
+									font-size: 3.75rem
+						> p
+							font-size: 1.375rem
+
+@mixin modelos-confianza-smartphone
+	.confianza
+		.container
+			.videos
+				> div
+					.tabla
+						> div
+							display: block
+							margin-bottom: 1rem
+							padding: 0px
+							width: 100%
+							.video
+								margin: 1rem auto
+							> p
+								text-align: center
