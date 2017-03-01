@@ -32,14 +32,14 @@ init = function(){
 				destructMenuDesctop();
 				menumobile();
 				filtroblogMobile();
-				panoramico();
-				dragMobile();
 				menuFotter();
 				mobileMenuSelect();
 				mobileMenuPropietarios();
 				mobileMenuConoceToyota();
 				if($('section').hasClass('cover-modelo')){
 					modeloMobile();
+					panoramico();
+					dragMobile();
 				}
 			}
 		}
@@ -51,14 +51,14 @@ init = function(){
 				destructMenuMobile();
 				menudesktop();
 				filtroblog();
-				panoramico();
-				drag();
 				menuFotterStop();
 				menuSelect();
 				menuPropietarios();
 				menuConoceToyota();
 				if($('section').hasClass('cover-modelo')){
 					modeloDesctop();
+					panoramico();
+					drag();
 				}
 			}
 		}
