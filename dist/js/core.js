@@ -39,7 +39,7 @@ init = function(){
 				if($('section').hasClass('cover-modelo')){
 					modeloMobile();
 					panoramico();
-					dragMobile();
+					//dragMobile();
 				}
 			}
 		}
@@ -58,7 +58,7 @@ init = function(){
 				if($('section').hasClass('cover-modelo')){
 					modeloDesctop();
 					panoramico();
-					drag();
+					//drag();
 				}
 			}
 		}
@@ -786,6 +786,43 @@ init = function(){
 	fotosTodoSlider = $('.fotos .todo .flex');
 	fotosExteriorSlider = $('.fotos .exte .flex');
 	fotosInteriorSlider = $('.fotos .inte .flex');
+	sliderGaleria = $('.galeriaModal .slide');
+
+	$('.galeria .fotos .colum > div').on('click', function(){
+		var numero = $(this).data('numero');
+		var index = numero-1
+		$('.galeriaModal').fadeIn();
+		sliderGaleria.bxSlider({
+			mode:'horizontal',
+			infiniteLoop: false,
+			responsive: true,
+			hideControlOnEnd: true,
+			touchEnabled: true,
+			preventDefaultSwipeX: false,
+			preventDefaultSwipeY: false,
+			oneToOneTouch: false,
+			prevSelector: '#prevG',
+			nextSelector: '#nextG'
+		});
+		$('body').addClass('hidden');
+		var total = $('.galeriaModal .bx-wrapper .bx-pager-item').length;
+		$('.galeriaModal .indicador .numero').text(numero);
+		$('.galeriaModal .indicador .total').text(total);
+		$('.galeriaModal .bx-pager-item:eq('+(index)+') > a').trigger('click');
+
+		$('.galeriaModal .bx-controls-direction a').on('click', function(){
+			var index = $('.galeriaModal .bx-pager-item a.active').parent().index();
+			var numero = index+1
+			$('.galeriaModal .indicador .numero').text(numero);
+		});
+	});
+
+	$('.galeriaModal .close').on('click', function(){
+		$('.galeriaModal').fadeOut();
+		$('body').removeClass('hidden');
+		$('.galeriaModal .bx-controls-direction a').off('click');
+		sliderGaleria.destroySlider();
+	});
 	
 	modeloDesctop = function(){
 		var r = $('.reconocimientos .slide li').length;
