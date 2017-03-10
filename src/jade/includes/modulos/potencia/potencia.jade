@@ -1,0 +1,55 @@
+section.potencia
+  #potencia
+  .container
+    h2.animated.fadeIn.onScreen Potencia inteligente en cualquier trayecto
+    .modelos
+      div
+        div
+          .one
+            h5
+              | 01. Subida
+            img(src='images/potencia/potencia-1.png')
+            p
+              | Los dos motores impulsan el auto para lograr
+              | un rendimiento óptimo.
+          .two
+            h5
+              | 02. Desaceleración y frenado
+            img(src='images/potencia/potencia-2.png')
+            p
+              | El sistema recicla la energía cinética para cargar
+              | la batería
+          .three
+            h5
+              | 03. Rebasar
+            img(src='images/potencia/potencia-3.png')
+            p
+              | Ambos motores implusan el vehículo para conseguir
+              | un máximo rendimiento
+          .four
+            h5
+              | 04. Detención
+            img(src='images/potencia/potencia-4.png')
+            p
+              | Los motores se apagan automáticamente para
+              | no perder energía al ralentí.
+          nav.select
+            ul
+              li.active
+                a(href="#" data-potencia="one")
+              li
+                a(href="#" data-potencia="two")
+              li
+                a(href="#" data-potencia="three")
+              li
+                a(href="#" data-potencia="four")
+script(href="https://unpkg.com/jquery@1.11.3/dist/jquery.min.js", type="text/javascript")
+script(type="text/javascript").
+  $( function () {
+    $( 'nav.select li a' ).on( 'click', function ( event ) {
+      var _potencia = $( event.currentTarget ).data( 'potencia' );
+
+      $( event.currentTarget ).parent( ).parent( ).fadeOut( 'slow' );
+      $( event.currentTarget ).parent( ).parent( ).siblings( "." + _potencia ).fadeIn( 'slow' );
+    } );
+  } );

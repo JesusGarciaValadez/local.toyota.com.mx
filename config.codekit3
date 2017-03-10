@@ -2102,6 +2102,14 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/src\/jade\/includes\/modulos\/potencia\/potencia.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "\/dist\/jade\/includes\/modulos\/potencia\/potencia.html",
+		"oF": 0,
+		"oS": 0
+		},
 	"\/src\/jade\/includes\/modulos\/preguntas-frecuentes\/consulta-categorias.jade": {
 		"cOD": 1,
 		"ft": 512,
@@ -4391,6 +4399,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/..\/dist\/css\/_de-nosotros.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/src\/sass\/includes\/modulos\/potencia\/potencia.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/..\/dist\/css\/potencia.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
