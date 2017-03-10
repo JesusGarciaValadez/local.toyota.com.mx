@@ -1,0 +1,178 @@
+.localiza-configura
+	// background: -moz-linear-gradient(0deg, #a00008 0%, #a00008 50%, #121a1c 50%, #121a1c 100%)
+	// background: -webkit-gradient(linear, left top, right top, color-stop(0%, #a00008), color-stop(50%, #a00008), color-stop(50%, #121a1c), color-stop(100%, #121a1c))
+	// background: -webkit-linear-gradient(0deg, #a00008 0%, #a00008 50%, #121a1c 50%, #121a1c 100%)
+	// background: -o-linear-gradient(0deg, #a00008 0%, #a00008 50%, #121a1c 50%, #121a1c 100%)
+	// background: -ms-linear-gradient(0deg, #a00008 0%, #a00008 50%, #121a1c 50%, #121a1c 100%)
+	// background: linear-gradient(90deg, #a00008 0%, #a00008 50%, #121a1c 50%, #121a1c 100%)
+	// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a00008', endColorstr='#121a1c',GradientType=1 )
+	overflow: hidden
+	width: 100%
+	.container
+		max-width: 100%
+		padding: 0px
+		dl
+			display: table
+			width: 100%
+			dd
+				display: table-cell
+				padding: 90px 0px
+				position: relative
+				vertical-align: middle
+				overflow: hidden
+				width: 50%
+				img
+					+fx(all,0.5s)
+					+object
+					height: 100%
+					position: absolute
+					top: 0px
+					width: 100%
+				&:hover
+					img
+						+scale(1.08,1.08)
+				h5
+					color: $White
+					font-weight: 600
+					margin-bottom: 1.875rem
+					position: relative
+					text-align: center
+					&:before
+						color: $White
+						display: block
+						font-size: 31px
+						margin-bottom: 2.0625rem
+				.boton
+					position: relative
+			.localiza
+				img
+					right: 0px
+				h6
+					color: $White
+					font-weight: 600
+					margin-bottom: 2.625rem
+					position: relative
+					text-align: center
+					&:before
+						+fawesome('\f041')
+						color: $White
+						display: block
+						font-size: 31px
+						margin-bottom: 2.0625rem
+				form
+					display: table
+					margin: auto
+					width: 258px
+					position: relative
+					.input-field
+						margin: 0px
+						> input[type=number]
+							border-bottom: 1px solid $White
+							color: $White
+							height: 2.5rem
+							&.valid
+								border-bottom: 2px solid $Green400
+								color: $White
+							&.invalid
+								border-bottom: 1px solid $Red600
+						> label
+							color: $BlueGrey100
+							font-size: 1.125rem
+							left: 0px
+						> input[type=submit],button
+							+center(h)
+							background: none
+							border: none
+							color: $White
+							cursor: pointer
+							font-family: "FontAwesome"
+							font-size: 1.125rem
+							padding: 0px
+							right: 0px
+							&:before
+								display: block
+								margin-bottom: 0.375rem
+								font-size: 0.875rem
+					.ubicame
+						+center(h)
+						+fx(all,0.5s)
+						background: none
+						border-radius: 50%
+						border: none
+						cursor: pointer
+						height: 35px
+						left: 100%
+						margin: 0px 0.5rem
+						overflow: hidden
+						width: 35px
+						&:before
+							+center(vh)
+							+fonIco('\e917')
+							color: $White
+							font-size: 35px
+						&:hover
+							+shadow
+				.codigo
+					display: table
+					margin: auto
+					position: relative
+					display: none
+					p
+						color: $White
+						font-size: 0.875rem
+						margin: 0px
+						span
+							color: $White
+							font-size: 1.125rem
+							padding-left: 0.5rem
+					.cambiar
+						+center(h)
+						+fx(all,0.5s)
+						background: none
+						border-radius: 50%
+						border: none
+						cursor: pointer
+						height: 20px
+						left: 100%
+						margin: 0px 0.5rem
+						overflow: hidden
+						width: 20px
+						&:before
+							+center(vh)
+							+icons('\E863')
+							color: $White
+							font-size: 20px
+
+@mixin landing-localiza-configura-smartphone
+	.localiza-configura 
+		.container
+			dl 
+				dd
+					+bx
+					display: block
+					width: 100%
+					h6
+						color: $BlueGrey900
+						&:before
+							color: $Red800
+				.localiza
+					background: none
+					background-color: $White
+					> div
+						span
+							&:before
+								color: $Grey400
+							input
+								border-bottom: 1px solid $BlueGrey800
+								color: $Grey400
+								&::-webkit-input-placeholder
+									color: $Grey400
+								&:-moz-placeholder
+									color: $Grey400
+								&::-moz-placeholder
+									color: $Grey400
+								&:-ms-input-placeholder
+									color: $Grey400
+							.ubicame
+								&:before
+									color: $BlueGrey800
