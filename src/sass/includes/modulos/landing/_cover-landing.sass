@@ -1,0 +1,32 @@
+.cover-landing
+	height: 510px
+	position: relative
+	> img
+		+center(v)
+		top: 0px
+	.container
+		display: table
+		overflow: visible
+		> div
+			display: table-cell
+			vertical-align: middle
+			h1
+				color: $White
+				text-align: center
+
+@mixin landing-cover-landing-smartphone
+	.cover-landing
+		height: auto
+		> img
+			display: block
+			min-height: auto
+			position: relative
+			width: 100%
+		.container
+			margin: 2.5rem 0ox
+			> div
+				display: block
+				h1
+					color: $BlueGrey900
+					margin-top: 1.875rem
+					width: 100%
