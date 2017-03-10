@@ -39,7 +39,7 @@ init = function(){
 				if($('section').hasClass('cover-modelo')){
 					modeloMobile();
 					panoramico();
-					//dragMobile();
+					dragMobile();
 				}
 			}
 		}
@@ -58,7 +58,7 @@ init = function(){
 				if($('section').hasClass('cover-modelo')){
 					modeloDesctop();
 					panoramico();
-					//drag();
+					drag();
 				}
 			}
 		}
@@ -606,7 +606,7 @@ init = function(){
 	//Drag
 	drag = function(){
 		var icon = $('.como-funciona .content-drag .icon'),
-			steps = 10,
+			steps = 24,
 			dd = new Dragdealer('carro-drag',{
 				snap: true,
 				horizontal: true,
@@ -614,8 +614,8 @@ init = function(){
 				speed: 0.3,
 				loose: false,
 				animationCallback: function(x, y) {
-					var percent = parseInt(steps * (x*100), 10);
-					icon.css({'background-position-x': (6000 * x * 9/10 + 600) + 'px'});
+					var percent = parseInt(steps * (x*100), 24);
+					icon.css({'background-position-x': (14400 * x * 23/24 + 600) + 'px'});
 				}
 			}).setStep(1);
 	}
@@ -623,7 +623,7 @@ init = function(){
 	//Drag
 	dragMobile = function(){
 		var icon = $('.como-funciona .content-drag .icon'),
-			steps = 10,
+			steps = 24,
 			dd = new Dragdealer('carro-drag',{
 				snap: true,
 				horizontal: true,
@@ -631,8 +631,8 @@ init = function(){
 				speed: 0.3,
 				loose: false,
 				animationCallback: function(x, y) {
-					var percent = parseInt(steps * (x*100), 10);
-					icon.css({'background-position-x': (3000 * x * 9/10 + 300) + 'px'});
+					var percent = parseInt(steps * (x*100), 24);
+					icon.css({'background-position-x': (7200 * x * 23/24 + 300) + 'px'});
 				}
 			}).setStep(1);
 	}
