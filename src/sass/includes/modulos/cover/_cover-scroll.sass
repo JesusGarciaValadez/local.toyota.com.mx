@@ -9,7 +9,7 @@
     top: 50%
     width: 55%
   h1
-    color: white
+    color: $White
     text-align: center
     margin: 0px
     text-transform: uppercase
@@ -27,7 +27,7 @@
     -webkit-animation-duration: 4s
     animation-duration: 4s
     bottom: 3em
-    color: #FFF
+    color: $White
     display: table
     font-family: "Open Sans", sans-serif
     font-size: 0.92857rem
@@ -43,8 +43,15 @@
 @mixin cover-cover-scroll-smartphone
   .cover-scroll
     .titulo
+      top: 60%
+      width: 65%
     h1
+      color: $BlueGrey800
+      font-size: 2.0rem
     #cover
+      background-size: contain
+      background-position: center 60px
     .mouse
+      display: none
     .fadeIn
     .animated
