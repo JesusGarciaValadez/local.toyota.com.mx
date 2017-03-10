@@ -1,0 +1,75 @@
+.filtro-version
+	overflow: visible
+	padding: 3.75rem 0px
+	.container
+		overflow: visible
+		> h2
+			font-weight: 300
+			margin: 1.25rem auto
+			text-align: center
+		form
+			display: table
+			margin: 0 auto
+			max-width: 460px
+			width: 100%
+			.input-field
+				+bx
+				display: table-cell
+				width: 70%
+				padding: 1rem 1.5rem 0 0
+				input[type=text]
+					font-size: 1.125rem
+					height: 2.5rem
+					&::-webkit-input-placeholder
+						color: $BlueGrey400
+						font-weight: 300
+					&:-moz-placeholder
+						color: $BlueGrey400
+						font-weight: 300
+					&::-moz-placeholder
+						color: $BlueGrey400
+						font-weight: 300
+					&:-ms-input-placeholder
+						color: $BlueGrey400
+						font-weight: 300
+				> p
+					color: $BlueGrey900
+					font-size: 1rem
+					font-weight: 700
+					margin: 0
+					text-align: left
+				label
+					color: $BlueGrey900
+					font-size: 0.875rem
+					font-weight: 300
+					line-height: 1.125rem
+					margin: 0
+					top: -6px
+				&:last-child
+					width: 30%
+					padding-right: 0rem
+	.btnregresar
+		+bx
+		+center(v)
+		max-width: 1200px
+		padding: 0px 10px
+		top: 0px
+		width: 100%
+		> .link.regresar
+			cursor: pointer
+			font-size: 0.875rem
+			margin: 2.875rem 0px
+
+@mixin versiones-filtro-version-smartphone
+	.filtro-version
+		.container
+			.info
+				> div
+					.tabla
+						> div
+							display: block
+							margin-bottom: 1rem
+							padding: 0px
+							width: 100%
+							> p
+								text-align: center
