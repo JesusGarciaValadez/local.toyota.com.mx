@@ -1187,6 +1187,30 @@ init = function(){
 		preventDefaultSwipeY: false,
 		oneToOneTouch: false
 	});
+
+	$('.slide-landing .slide').bxSlider({
+		mode:'fade',
+		controls: false,
+		infiniteLoop: false,
+		responsive: true,
+		hideControlOnEnd: true,
+		touchEnabled: true,
+		preventDefaultSwipeX: false,
+		preventDefaultSwipeY: false,
+		oneToOneTouch: false
+	});
+
+	$('.elementos .slide-elementos').bxSlider({
+		mode:'fade',
+		controls: false,
+		infiniteLoop: false,
+		responsive: true,
+		hideControlOnEnd: true,
+		touchEnabled: true,
+		preventDefaultSwipeX: false,
+		preventDefaultSwipeY: false,
+		oneToOneTouch: false
+	});
 	
 	$('.menuModal .close').on('click', function(){
 		$('.menuModal').fadeOut();

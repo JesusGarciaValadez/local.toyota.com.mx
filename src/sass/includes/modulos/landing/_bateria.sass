@@ -1,0 +1,42 @@
+.bateria
+	+bx
+	height: 760px
+	padding: 4.375rem 0px
+	position: relative
+	.container
+		overflow: visible
+		position: relative
+		z-index: 3
+		.contenido
+			h2
+				color: $White
+				font-weight: 300
+				margin: 1.25rem auto 1.875rem
+				text-align: right
+			p
+				color: $White
+				font-size: 1rem
+				float: right
+				line-height: 1.375rem
+				text-align: right
+				width: 42%
+			.boton
+				margin: 2rem 0px
+				max-width: 160px
+				min-width: 150px
+				padding: 12px 0px
+				text-transform: uppercase
+	.back
+		z-index: 1
+		img
+			+center(v)
+			top: 0px
+
+@mixin landing-bateria-smartphone
+	.bateria
+		height: auto
+		padding: 3.125rem 0px
+		.container
+			.contenido
+				p
+					width: 80%
