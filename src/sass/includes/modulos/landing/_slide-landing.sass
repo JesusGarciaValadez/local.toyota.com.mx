@@ -1,49 +1,33 @@
 .slide-landing
 	background: $Grey100
-	padding: 6.25rem 0 
+	padding: 6.25rem 0px
 	position: relative
 	.container
 		max-width: 1500px
-		padding: 0px
-		h2
-			font-weight: 300
-			margin: 0 auto
-			text-align: center
-		> p 
-			margin: 1.875rem auto
-			font-size: 1.125rem
-			text-align: center
-			width: 74%
+		overflow: visible
 		.slide
 			height: 100%
 			overflow: hidden
 			width: 100%
-			> div
-				min-height: 520px
+			li
 				overflow: hidden
-				.flex
-					+justifyCont(space-between)
-					height: 100%
-					> div
-						+center(v)
-						+bx
-						+order(2)
-						padding: 0px 2rem
-						position: relative
-						width: 60%
-						z-index: 1
-						img
-							display: block
-							margin: 3.125rem 0
-							width: 100%
-						p
-							margin: 1.25rem 0
-							text-align: center
+				img
+					display: block
+					margin: 3.125rem auto
+					max-width: 1007px
+					width: 80%
+				p
+					font-size: 1.75rem
+					font-weight: 300
+					line-height: 2.3125rem
+					margin: 1.25rem auto
+					max-width: 850px
+					text-align: center
 		.bx-wrapper
 			position: relative
 			.bx-has-pager
 				+center(h)
-				right: 40px
+				right: 20px
 				z-index: 50
 			.bx-pager
 				color: rgba(255, 255, 255, 0.4)
@@ -79,38 +63,22 @@
 					*zoom: 1
 					display: block
 
-
 @mixin landing-slide-landing-smartphone
 	.slide-landing
 		background: $White
 		height: auto
-		padding: 1.25rem 0
+		padding: 0px
+		padding-bottom: 1.25rem
 		.container
-			padding: 0px 20px
-			> p
-				width: 100%
-			.slide 
-				> div 
-					height: auto
-					min-height: 420px
-					.flex
-						> div
-							padding: 0px
-							width: 100%
-						.img
-							+order(2)
-							img
-								+center(r)
-								display: block
-						.texto
-							+order(1)
-							h3
-								margin-top: 0px
+			.slide
+				li
+					img
+						margin-top: 1.5625rem
 			.bx-wrapper
 				.bx-has-pager
 					+center(v)
 					top: inherit
-					bottom: 10px
+					bottom: -20px
 					display: table
 					margin: auto
 				.bx-pager
@@ -119,4 +87,4 @@
 							margin: 0px 1rem
 				.bx-pager-item
 					float: left
-					margin: 4px 0
+					margin: 4px 0px

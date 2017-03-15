@@ -1,0 +1,76 @@
+.potencia
+	background: #F6FCFF
+	padding: 3.75rem 0px
+	.container
+		overflow: visible
+		> h2
+			font-weight: 300
+			margin: 1.25rem auto
+			text-align: center
+		.flex
+			div
+				+bx
+				padding: 2rem
+				width: 50%
+				h6
+					color: $Red800
+				img
+					display: block
+					margin: 3.125rem auto
+					max-width: 314px
+					width: 100%
+				p
+					font-size: 1.125rem
+
+@mixin landing-potencia-smartphone
+	.potencia
+		.container
+			.flex
+				display: block
+				div
+					padding: 2rem 0px
+					width: 100%
+		.bx-wrapper
+			clear: both
+			margin: auto
+			overflow: hidden
+			padding-bottom: 20px
+			.bx-viewport
+				overflow: visible!important
+			.bx-has-pager
+				+center(v)
+				bottom: 5px
+				display: table
+			.bx-pager
+				color: rgba(38, 50, 56, 0.4)
+				font-family: Arial
+				font-size: 0px
+				font-weight: bold
+				text-align: center
+				&.bx-default-pager
+					a
+						+fx(all,0.5s)
+						-moz-border-radius: 5px
+						-webkit-border-radius: 5px
+						background: rgba(38, 50, 56, 0.4)
+						border-radius: 5px
+						display: block
+						height: 8px
+						margin: 0px 12px
+						outline: 0px
+						text-indent: -9999px
+						width: 8px
+						&:hover, &.active, &:focus
+							+scale(1.5,1.5)
+							background: $BlueGrey900
+			.bx-pager-item
+				*display: inline
+				*zoom: 1
+				display: inline-block
+				font-size: 0px
+				line-height: 0px
+			.bx-controls-auto
+				.bx-controls-auto-item
+					*display: inline
+					*zoom: 1
+					display: inline-block

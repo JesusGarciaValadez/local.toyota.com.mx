@@ -13,6 +13,15 @@
 			h1
 				color: $White
 				text-align: center
+			.des
+				+center(v)
+				bottom: 35px
+				color: $White
+				font-size: 0.75rem
+				&:before
+					+fawesome('\f175')
+					display: block
+					text-align: center
 
 @mixin landing-cover-landing-smartphone
 	.cover-landing
@@ -23,11 +32,8 @@
 			position: relative
 			width: 100%
 		.container
-			margin: 2.5rem 0ox
 			> div
 				display: block
 				h1
 					color: $BlueGrey900
 					margin-top: 1.875rem
-					width: 100%
-

@@ -41,6 +41,9 @@ init = function(){
 					panoramico();
 					dragMobile();
 				}
+				if($('section').hasClass('potencia')){
+					landingMobile();
+				}
 			}
 		}
 		else if(anchura >= 768){
@@ -59,6 +62,9 @@ init = function(){
 					modeloDesctop();
 					panoramico();
 					drag();
+				}
+				if($('section').hasClass('potencia')){
+					landingDesctop();
 				}
 			}
 		}
@@ -926,15 +932,6 @@ init = function(){
 	}
 
 	modeloMobile = function(){
-		// if($('.cover-modelo div').hasClass('bx-wrapper')){
-		// 	coverslider.destroySlider();
-		// 	setTimeout(function(){
-		// 		$('.cover-modelo div').removeAttr('style');
-		// 	},100);
-		// }else{
-
-		// }
-
 		if($('.versiones div').hasClass('bx-wrapper')){
 			versionesSlider.destroySlider();
 			versionesSlider.bxSlider({
@@ -1035,6 +1032,31 @@ init = function(){
 		});
 	}
 
+	potenciaSlider = $('.potencia .flex');
+
+	landingDesctop = function(){
+		if($('.potencia div').hasClass('bx-wrapper')){
+			potenciaSlider.destroySlider();
+			setTimeout(function(){
+				$('.potencia div').removeAttr('style');
+			},100);
+		}
+	}
+
+	landingMobile = function(){
+		potenciaSlider.bxSlider({
+			mode:'horizontal',
+			infiniteLoop: false,
+			responsive: true,
+			hideControlOnEnd: true,
+			touchEnabled: true,
+			preventDefaultSwipeX: false,
+			preventDefaultSwipeY: false,
+			oneToOneTouch: false,
+			controls: false
+		});
+	}
+
 	menufixed = function(){
 		medidas();
 		var clase = $('.menufixed').data('clase');
@@ -1071,9 +1093,6 @@ init = function(){
 	else if($('section').hasClass('configura-cotiza')){
 		configuraCotiza();
 	}
-	else{
-
-	}
 
 	$('.cookies').on('click',function(){
 		var acuerdo = 'acuerdo';
@@ -1082,8 +1101,6 @@ init = function(){
 
 	if(cookies === '' || cookies === undefined || cookies === null ){
 		$('.cookies').css("display", "block");
-	}else{
-
 	}
 
 	$('.menu-categorias .container nav span > a').on('click', function(){
@@ -1616,7 +1633,6 @@ init = function(){
 		$('.cookies').addClass('fadeOutDown');
 	});
 
-
 	$('.vacantes select, .talento select, .flotillas select, .ideal select, .prueba select, .distribuidores select, .precios-servicio select, .refacciones-servicio select, .cotizarModal select, .financiamiento .elejir select, .filtro-version select').material_select();
 	$('.datepicker').pickadate({
 		selectMonths: true, // Creates a dropdown to control month
@@ -1771,9 +1787,6 @@ $(document).on('ready',init);
 
 $(window).on('load',function(){
 		
-
-	
-
 	if(! /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 
 	}

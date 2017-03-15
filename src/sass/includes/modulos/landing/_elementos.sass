@@ -28,21 +28,17 @@
 					width: 80%
 					z-index: 1
 					> dl
-						+flex
-						+justifyCont(space-between)
-						padding: 0px 0px
+						display: table
 						> dd
-							overflow: hidden
-							padding: 0
-							position: relative
+							display: table-cell
+							vertical-align: middle
 							width: 50%
-							.image
-								+center(vh)
+							img
+								display: block
+								height: auto
+								margin: auto
 								max-width: 280px
-								img
-									display: block
-									height: auto
-									width: 100%
+								width: 50%
 							.titulo
 								font-size: 1.375rem
 								font-weight: 700
@@ -118,11 +114,12 @@
 							display: block
 							padding: 0 0 2rem
 							> dd
+								display: block
+								margin-bottom: 2rem
 								width: 100%
-								.image
-									+center(r)
-									margin: 2rem auto
+								img
 									max-width: 160px
+									width: 100%
 			.bx-wrapper
 				.bx-has-pager
 					+center(v)
