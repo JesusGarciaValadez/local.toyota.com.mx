@@ -113,15 +113,15 @@ html(itemscope, itemtype="http://schema.org/WebPage")
 								h6
 									b ¿Cómo podemos ayudarte?
 								p Por favor escríbenos, y en breve alguno de nuestros especialistas te atenderá.
-								form
+								form#distribuidores
 									.input-field
-										input(type="text").validate#last_name
-										label(for="last_name") Ingresa tu nombre completo
+										input(type="text" name="nombre" required="" aria-required="true" data-msg="Nombre Obligatorio" data-rule-minlength="3" data-msg-minlength="Mínimo 3 Caracteres").validate#nombre
+										label(for="nombre") Ingresa tu nombre completo
 									.input-field
-										input(type="email").validate#email
-										label(for="email" data-error="Ingresa un correo válido") ¿Cuál es tu correo electrónico?
+										input(type="email" name="email" required="" aria-required="true" data-msg="Ingresa un correo válido").validate#email
+										label(for="email") ¿Cuál es tu correo electrónico?
 									.input-field
-										input(type="tel").validate#tel
+										input(type="number" name="tel" required="" aria-required="true" data-msg="Teléfono Obligatorio" data-rule-minlength="10" data-rule-maxlength="10" data-msg-minlength="Mínimo 10 Caracteres" data-msg-maxlength="Máximo 10 Caracteres").validate#tel
 										label(for="tel") Teléfono de contacto
 									.input-field
 										select

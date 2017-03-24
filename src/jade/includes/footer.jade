@@ -12,10 +12,10 @@ footer
 						.numero
 					dd
 					dd
-						form
+						form#newsletter
 							.input-field
-								input(type="email").validate#email
-								label(for="email") Mantente informado
+								input(type="email" name="email" required="" aria-required="true" data-msg="Ingresa un correo válido").validate#email
+								label(for="email" data-error="Ingresa un correo válido") Mantente informado
 								button(type="submit").fa.fa-envelope
 
 	.footer2
@@ -34,6 +34,8 @@ footer
 						li
 							a(href="#{urlSitio}mapa-de-sitio.html") Mapa de sitio
 
+	include scripts
+
 .cookies.fadeInUp.animated
 	.container
 		dl
@@ -42,5 +44,6 @@ footer
 					a(href="#{urlSitio}politica-de-cookies.html") Click aquí
 			dd
 				span.boton DE ACUERDO
-
-	include scripts
+include modulos/mensajes/error-page
+include modulos/mensajes/error
+include modulos/mensajes/correcto

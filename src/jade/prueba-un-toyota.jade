@@ -32,15 +32,15 @@ html(itemscope, itemtype="http://schema.org/WebPage")
 								li Credencial de elector IFE (Vigente)
 								li Licencia de conducir (Vigente)
 						dd
-							form
+							form#prueba
 								.input-field
-									input(type="text").validate#last_name
-									label(for="last_name") Ingresa tu nombre completo
+									input(type="text" name="nombre" required="" aria-required="true" data-msg="Nombre Obligatorio" data-rule-minlength="3" data-msg-minlength="Mínimo 3 Caracteres").validate#nombre
+									label(for="nombre") Ingresa tu nombre completo
 								.input-field
-									input(type="email").validate#email
-									label(for="email" data-error="Ingresa un correo válido") ¿Cuál es tu correo electrónico?
+									input(type="email" name="email" required="" aria-required="true" data-msg="Ingresa un correo válido").validate#email
+									label(for="email") ¿Cuál es tu correo electrónico?
 								.input-field
-									input(type="tel").validate#tel
+									input(type="number" name="tel" required="" aria-required="true" data-msg="Teléfono Obligatorio" data-rule-minlength="10" data-rule-maxlength="10" data-msg-minlength="Mínimo 10 Caracteres" data-msg-maxlength="Máximo 10 Caracteres").validate#tel
 									label(for="tel") Teléfono de contacto
 								.input-field
 									select
@@ -98,22 +98,6 @@ html(itemscope, itemtype="http://schema.org/WebPage")
 												p (55) 8647 - 8020
 
 								.input-field
-									input(type="submit" value="ENVIAR" onclick="return false;").boton.disabled
-				.pruebaModal
-					.container
-						.gracias
-							i
-							h1
-								b En breve te contactaremos
-							p Tu agente de ventas se pondrá en contacto contigo en las
-								| próximas 
-								b 24 horas 
-								| para confirmar tu cita
-							p
-								b No olvides llevar
-							ul
-								li Credencial de elector IFE (Vigente)
-								li Licencia de conducir (Vigente)
-							span.boton CONTINUAR
+									input(type="submit" value="ENVIAR").boton
 
 		include includes/footer

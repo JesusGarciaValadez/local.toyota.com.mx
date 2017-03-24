@@ -594,8 +594,17 @@ init = function(){
 			$('.interiorModal').fadeIn();
 			$('body').addClass('hidden');
 
-			pano=new pano2vrPlayer("contenedorView");
-			pano.readConfigUrlAsync("../images/modelos/corolla/pano.xml");
+			//pano=new pano2vrPlayer("contenedorView");
+			//pano.readConfigUrlAsync("../images/modelos/corolla/pano.xml");
+
+			embedpano({
+				swf:"../library/pano/panoramico.swf", 
+				xml:"../images/modelos/corolla/pano.xml", 
+				target:"pano", 
+				html5:"prefer", 
+				mobilescale:1.0, 
+				passQueryParameters:true
+			});
 
 			$('.interiorModal .boton').delay(2800).fadeOut(1600);
 
@@ -605,6 +614,8 @@ init = function(){
 			$('.interiorModal').fadeOut();
 			$('body').removeClass('hidden');
 			$('.interiorModal .boton').delay(600).fadeIn(400);
+			removepano("pano");
+			$('.interiorModal .container').append('<div id="pano"></div>');
 		});
 
 	}
@@ -1249,6 +1260,15 @@ init = function(){
 		$('body').removeClass('hidden');
 	});
 
+	$('.error .close').on('click', function(){
+		$('.error').fadeOut();
+		$('body').removeClass('hidden');
+	});
+
+	$('.correcto .close').on('click', function(){
+		$('.correcto').fadeOut();
+		$('body').removeClass('hidden');
+	});
 	
 	// $('.prueba .input-field > .boton').on('click', function(){
 	// 	if(!$('.prueba .input-field > .boton').hasClass('disabled')){
@@ -1652,7 +1672,21 @@ init = function(){
 	            .attr('data-error', error.text());
 	    },
 	    submitHandler: function (form) {
-			$('.comentario .gracias').fadeIn();
+			$('.correcto').fadeIn();
+			$('body').addClass('hidden');
+	    }
+	});
+
+	$("#newsletter").validate({
+	    errorPlacement: function (error, element) {
+	        $(element)
+	            .closest("form")
+	            .find("label[for='" + element.attr("id") + "']")
+	            .attr('data-error', error.text());
+	    },
+	    submitHandler: function (form) {
+			$('.correcto').fadeIn();
+			$('body').addClass('hidden');
 	    }
 	});
 
@@ -1712,7 +1746,65 @@ init = function(){
 	            .attr('data-error', error.text());
 	    },
 	    submitHandler: function (form) {
-			$('.pruebaModal').fadeIn();
+			$('.correcto').fadeIn();
+			$('body').addClass('hidden');
+	    }
+	});
+
+	$("#prueba").validate({
+	    rules: {
+            tel: {
+				required: true,
+				number: true
+            }
+	    },
+	    errorPlacement: function (error, element) {
+	        $(element)
+	            .closest("form")
+	            .find("label[for='" + element.attr("id") + "']")
+	            .attr('data-error', error.text());
+	    },
+	    submitHandler: function (form) {
+			$('.correcto').fadeIn();
+			$('body').addClass('hidden');
+	    }
+	});
+
+	$("#distribuidores").validate({
+	    errorPlacement: function (error, element) {
+	        $(element)
+	            .closest("form")
+	            .find("label[for='" + element.attr("id") + "']")
+	            .attr('data-error', error.text());
+	    },
+	    submitHandler: function (form) {
+			$('.correcto').fadeIn();
+			$('body').addClass('hidden');
+	    }
+	});
+
+	$("#ventas").validate({
+	    errorPlacement: function (error, element) {
+	        $(element)
+	            .closest("form")
+	            .find("label[for='" + element.attr("id") + "']")
+	            .attr('data-error', error.text());
+	    },
+	    submitHandler: function (form) {
+			$('.correcto').fadeIn();
+			$('body').addClass('hidden');
+	    }
+	});
+
+	$("#talento").validate({
+	    errorPlacement: function (error, element) {
+	        $(element)
+	            .closest("form")
+	            .find("label[for='" + element.attr("id") + "']")
+	            .attr('data-error', error.text());
+	    },
+	    submitHandler: function (form) {
+			$('.correcto').fadeIn();
 			$('body').addClass('hidden');
 	    }
 	});

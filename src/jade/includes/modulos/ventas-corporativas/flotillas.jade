@@ -3,18 +3,18 @@ section.flotillas
 		div
 			h3 
 				b ¿Estás interesado(a) en adquirir una flotilla de autos Toyota?
-			form
+			form#ventas
 				.input-field
-					input(type="text").validate#last_name
-					label(for="last_name") Ingresa tu nombre completo*
+					input(type="text" name="nombre" required="" aria-required="true" data-msg="Nombre Obligatorio" data-rule-minlength="3" data-msg-minlength="Mínimo 3 Caracteres").validate#nombre
+					label(for="nombre") Ingresa tu nombre completo*
 				.input-field
 					input(type="text").validate#last_name
 					label(for="last_name") Nombre de la empresa*
 				.input-field
-					input(type="email").validate#email
-					label(for="email" data-error="Ingresa un correo válido") ¿Cuál es tu correo electrónico?*
+					input(type="email" name="email" required="" aria-required="true" data-msg="Ingresa un correo válido").validate#email
+					label(for="email") ¿Cuál es tu correo electrónico?*
 				.input-field
-					input(type="tel").validate#tel
+					input(type="number" name="tel" required="" aria-required="true" data-msg="Teléfono Obligatorio" data-rule-minlength="10" data-rule-maxlength="10" data-msg-minlength="Mínimo 10 Caracteres" data-msg-maxlength="Máximo 10 Caracteres").validate#tel
 					label(for="tel") Teléfono*
 				.input-field
 					input(type="text").validate#cp
@@ -33,4 +33,4 @@ section.flotillas
 						input(type="text" length="170").validate#input_text
 						label(for="input_text") Mensaje*
 				.input-field
-					input(type="submit" value="ENVIAR").boton.disabled
+					input(type="submit" value="ENVIAR").boton

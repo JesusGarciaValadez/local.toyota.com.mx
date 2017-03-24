@@ -6,9 +6,9 @@ section.nuestras-promociones
 					b Conoce nuestras promociones
 				p Aprovecha tu oportunidad
 			dd
-				form
+				form#newsletter
 					.input-field
-						input(type="email").validate#email  
+						input(type="email" name="email" required="" aria-required="true" data-msg="Ingresa un correo válido").validate#email
 						label(for="email" data-error="Ingresa un correo válido") Correo*
 					.input-field
-						input(type="submit" value="ENVIAR").boton.disabled
+						input(type="submit" value="ENVIAR").boton

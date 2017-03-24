@@ -159,47 +159,6 @@
 								display: block					
 				.boton
 					margin: 3rem 0px
-	.pruebaModal
-		+bx
-		background: $White
-		display: none
-		height: 100vh
-		left: 0px
-		position: fixed
-		top: 0px
-		width: 100vw
-		z-index: 99
-		.gracias
-			+center(vh)
-			i
-				+bx
-				border-radius: 50%
-				border: 5px solid $Green400
-				color: $Green400
-				display: table
-				height: 70px
-				margin: auto
-				position: relative
-				width: 70px
-				&:before
-					+center(vh)
-					+icons('\E876')
-					font-size: 50px
-					line-height: 0px
-			h1
-				margin-top: 30px
-				text-align: center
-			p
-				text-align: center
-				font-size: 1.375rem
-				line-height: 1.875rem
-			ul
-				li
-					text-align: center
-					font-size: 1.375rem
-					line-height: 1.875rem
-			> .boton
-				margin-top: 3rem		
 
 @mixin prueba-smartphone
 	.prueba
@@ -234,14 +193,3 @@
 										width: 100%
 					.boton
 						margin: 3rem auto
-		.pruebaModal
-			.gracias
-				p
-					font-size: 1.125rem
-					line-height: 1.625rem
-				ul
-					li
-						font-size: 1.125rem
-						line-height: 1.625rem
-				> .boton
-					margin-top: 1rem

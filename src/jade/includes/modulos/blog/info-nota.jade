@@ -82,9 +82,9 @@ section.info-nota
 							a(href="nota.html").link.plus Leer nota
 				.recibe-notas
 					h5 Recibe más notas como ésta.
-					form
+					form#newsletter
 						.input-field
-							input(type="email").validate#email
+							input(type="email" name="email" required="" aria-required="true" data-msg="Ingresa un correo válido").validate#email
 							label(for="email" data-error="Ingresa un correo válido") Correo*
 						.input-field
-							input(type="submit" value="ENVIAR").boton.disabled
+							input(type="submit" value="ENVIAR").boton
