@@ -5,13 +5,13 @@
 			nav
 				.datos
 				ul
-					li.activo
-						a(href="#") TODOS
-					li
-						a(href="#") EXPERIENCIAS
-					li
+					li(class="#{location == 'blog' ? 'activo' : ''}")
+						a(href="blog.html") TODOS
+					li(class="#{location == 'experiencias' ? 'activo' : ''}")
+						a(href="blog-experiencias.html") EXPERIENCIAS
+					li(class="#{location == 'somosToyota' ? 'activo' : ''}")
 						a(href="#") SOMOS TOYOTA
-					li
+					li(class="#{location == 'innovacion' ? 'activo' : ''}")
 						a(href="#") INNOVACIÓN
 					li.filtro-autos
 						a(href="#") TODOS LOS AUTOS
