@@ -1080,6 +1080,25 @@ init = function(){
 		}
 	}
 
+	menuhistoria = function(){
+		medidas();
+
+		var valor = $('.menufixed').offset().top;
+		var bottom = (alturaScroll+altura);
+		var footer = $('footer').offset().top;
+		
+		if (alturaScroll >= valor) {
+			$('.menu-historia').addClass('top');
+		}else {
+			$('.menu-historia').removeClass('top');
+			$('.menu-historia').removeClass('bottom');
+		}
+		if(bottom >= footer){
+			$('.menu-historia').removeClass('top');
+			$('.menu-historia').addClass('bottom');
+		}
+	}
+
 	if($('main').hasClass('header-static')){
 		$('header').addClass('static');
 		$('html').css("overflow", "visible");
@@ -1092,6 +1111,7 @@ init = function(){
 			anclas = $('.anclas').length;
 			menuSupAncla();
 			menufixed();
+			menuhistoria();
 			var activo = $('.menuSup ul li.activo').text();
 			$('.menu-modelo .seccion > span').text(activo);
 			if(! $('.menuSup ul li').hasClass('activo')){
