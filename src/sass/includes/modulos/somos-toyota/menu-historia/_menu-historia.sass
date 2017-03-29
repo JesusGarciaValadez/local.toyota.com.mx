@@ -1,0 +1,77 @@
+.menu-historia
+	position: absolute
+	top: -30px
+	left: 5%
+	height: 100vh
+	&.top
+		position: fixed
+		top: 30px
+	&.bottom
+		bottom: -30px
+		top: inherit
+	nav
+		+center(h)
+		height: 100%
+		display: table
+		ul
+			+bx
+			padding: 50px 0px
+			height: 100%
+			position: relative
+			li
+				display: table
+				height: 20%
+				position: relative
+				width: 18px
+				&:after
+					+center(v)
+					background: $Red800
+					content: " "
+					display: block
+					height: 100%
+					width: 1px
+					z-index: 0
+				&:first-child
+					&:after
+						bottom: 0px
+						height: 50%
+				&:last-child
+					&:after
+						height: 50%
+				&.activo
+					a
+						background: $White
+						border: 2px solid $Red800
+						height: 18px
+						width: 18px
+					span
+						opacity: 1
+				a
+					+bx
+					+fx(all,0.3s)
+					+center(vh)
+					background: $Red800
+					border-radius: 50%
+					border: 2px solid transparent
+					display: block
+					height: 14px
+					width: 14px
+					z-index: 1
+					&:hover
+						background: $White
+						border: 2px solid $Red800
+						height: 18px
+						width: 18px
+						~ span
+							opacity: 1
+				span
+					+fx(all,0.3s)
+					+center(h)
+					//+translate(0% , -50%)
+					color: $Red800
+					display: table
+					font-size: 0.875rem
+					left: 100%
+					opacity: 0
+					padding-left: 0.625rem
+					width: 200px
