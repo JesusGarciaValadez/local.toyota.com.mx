@@ -17,7 +17,7 @@
 		.timeline
 			position: relative
 			padding: 0
-			margin: 0 auto
+			margin: 0 auto 7rem
 			width: 960px
 			.timeline-block
 				margin: 2rem 0
@@ -29,11 +29,11 @@
 					padding: 0
 					position: relative
 					width: auto
-					h4
+					h3
 						display: block
 						font-weight: 300
 						margin: 0
-						padding-right: 2rem
+						padding-right: 2.75rem
 						position: relative
 						text-align: right
 					.linea-year
@@ -41,7 +41,7 @@
 						height: 1px
 						right: 0
 						position: absolute
-						top: 20px
+						top: 26px
 						width: 26px
 						&:before
 							background: $BlueGrey800
@@ -58,8 +58,8 @@
 						display: block
 						padding: 1rem 0
 						position: relative
-						left: 40%
-						max-width: 200px
+						left: 18%
+						max-width: 280px
 						width: 100%
 					.texto
 						+bx
@@ -74,20 +74,20 @@
 							font-size: 18px
 							margin: 0
 							text-align: right
-				&:nth-child(odd)
+				&:nth-child(even)
 					.timeline-block-content
 						left: 50%
 						margin-left: 0
-						h4
+						h3
 							margin: 0
-							padding-left: 2rem
+							padding-left: 2.75rem
 							text-align: left
 						.linea-year
 							background: $BlueGrey800
 							height: 1px
 							left: 0
 							position: absolute
-							top: 20px
+							top: 26px
 							width: 26px
 							&:before
 								display: none
@@ -110,13 +110,13 @@
 							width: 100%
 							p
 								text-align: left
-				&:first-child, &:last-child
+				&:nth-child(2)
 					.timeline-block-content
 						display: block
 						left: 0
 						max-width: 80%
 						margin: auto
-						h4
+						h3
 							margin: 0
 							padding: 0
 							text-align: center
@@ -136,6 +136,10 @@
 							width: 48%
 							img
 								float: right
+				&:last-child
+					.timeline-block-content
+						.linea-year
+							display: none
 			.linea
 				+center(v)
 				background: $BlueGrey800
