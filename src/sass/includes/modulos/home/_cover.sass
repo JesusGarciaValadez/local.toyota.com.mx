@@ -23,7 +23,6 @@
 						-webkit-animation-duration: 3s
 						animation-duration: 3s
 						h2
-							color: $White
 							white-space: pre-line
 						.btvideo
 							display: table
@@ -31,12 +30,10 @@
 							margin-top: 28px
 							position: relative
 							p
-								color: $White
 								font-size: 1.125rem
 								font-weight: 700
 								margin: 0px
 								span
-									color: $White
 									font-weight: 700
 							a
 								+center(h)
@@ -60,7 +57,7 @@
 							margin: 0px
 							min-width: 200px
 					.imagen
-						+alignSelf
+						+alignSelf(flex-end)
 						+order(2)
 						img
 							height: auto
@@ -68,8 +65,8 @@
 							margin-top: 4.5rem
 	.bx-prev 
 		border-radius: 50%
-		border: 2px solid $White
-		color: $White
+		border: 2px solid $BlueGrey900
+		color: $BlueGrey900
 		left: 0px
 		margin-right: 2rem 
 		position: relative
@@ -83,8 +80,8 @@
 			top: 50%
 	.bx-next 
 		border-radius: 50%
-		border: 2px solid $White
-		color: $White
+		border: 2px solid $BlueGrey900
+		color: $BlueGrey900
 		position: relative
 		right: 0px
 		&:before
@@ -96,7 +93,7 @@
 			text-indent: 0px
 			top: 50%
 	.bx-controls-direction
-		bottom: 30px
+		bottom: 50px
 		position: absolute
 		width: 100%
 		a
@@ -109,8 +106,8 @@
 			width: 42px
 			z-index: 98
 			&.disabled 
-				border: 2px solid rgba(255, 255, 255, 0.4)
-				color: rgba(255, 255, 255, 0.4)
+				border: 2px solid rgba(38, 50, 56, 0.4)
+				color: rgba(38, 50, 56, 0.4)
 				&:hover
 					background: none
 	
@@ -119,7 +116,7 @@
 			+center(v)
 			bottom: 20px
 		.bx-pager
-			color: rgba(255, 255, 255, 0.4)
+			color: rgba(38, 50, 56, 0.4)
 			font-family: Arial
 			font-size: 0px
 			font-weight: bold
@@ -129,7 +126,7 @@
 					+fx(all,0.5s)
 					-moz-border-radius: 5px
 					-webkit-border-radius: 5px
-					background: rgba(255, 255, 255, 0.4)
+					background: rgba(38, 50, 56, 0.4)
 					border-radius: 5px
 					display: block
 					height: 8px
@@ -138,7 +135,8 @@
 					text-indent: -9999px
 					width: 8px
 					&:hover, &.active, &:focus
-						background: $White
+						+scale(1.5,1.5)
+						background: $BlueGrey900
 		.bx-pager-item
 			*display: inline
 			*zoom: 1
