@@ -1,53 +1,40 @@
 .autos-concepto
-	padding: 0 0 8.75rem
-	position: relative
+	padding-bottom: 3.75rem
+	> img
+		+center(v)
+		z-index: -1
 	.container
-		display: table
 		overflow: visible
-		position: relative
 		h2
+			color: $White
 			font-weight: 300
-			margin: 0 auto
-			text-align: left
-	.slide
+			margin: 1.25rem auto
+			text-align: center
+		p
+			color: $White
+			font-size: 1.125rem
+			font-weight: 300
+			text-align: center
+		.boton
+			margin: 2rem auto
+	.content
+		height: 100%
+		margin: 0 auto
 		overflow: hidden
+		position: relative
 		width: 100%
-		> div
-			overflow: hidden
-			height: 800px
-			width: 100%
-			.bg
-				+center(v)
-				top: 0px
-			.container
-				h2
-					color: $White
-					font-weight: 300
-					margin: 4.625rem 0 0
-					text-align: center
-				p
-					color: $White
-					font-size: 1.125rem
-					margin: 2rem auto
-					text-align: center
-					width: 74%
-				.boton
-					max-width: 160px
-					min-width: 150px
-					margin: 2rem auto
-					padding: 12px 0
-				.nombre
-					color: $White
-					font-size: 2rem
-					font-weight: 300
-					margin: 4rem auto 0
-					text-align: right
-					width: 74%
+		max-width: 1000px
+		.slide
+			img
+				display: table
+				margin: 5rem auto 0px
+				max-width: 850px
+				width: 80%
 	.bx-prev 
 		border-radius: 50%
 		border: 2px solid $White
 		color: $White
-		left: 0px
+		left: 20px
 		margin-right: 2rem 
 		position: relative
 		&:before
@@ -62,9 +49,8 @@
 		border-radius: 50%
 		border: 2px solid $White
 		color: $White
-		float: right
 		position: relative
-		right: 0px
+		right: 20px
 		&:before
 			+fonIco("\e904")
 			+translate(-50%,-50%)
@@ -74,12 +60,8 @@
 			text-indent: 0px
 			top: 50%
 	.bx-controls-direction
-		bottom: 50%
-		position: absolute
-		width: 100%
-		.container
-			width: 900px
 		a
+			+center(h)
 			+fx(all,0.5s) 
 			display: inline-block
 			height: 42px
@@ -95,9 +77,16 @@
 					background: none
 	
 	.bx-wrapper
+		clear: both
+		margin: auto
+		overflow: hidden
+		padding-bottom: 50px
+		.bx-viewport
+			overflow: visible!important
 		.bx-has-pager
 			+center(v)
-			bottom: 120px
+			bottom: 10px
+			display: table
 		.bx-pager
 			color: rgba(38, 50, 56, 0.4)
 			font-family: Arial
@@ -132,35 +121,13 @@
 				*zoom: 1
 				display: inline-block
 
-@mixin autos-concepto-smartphone
+@mixin tecnologia-toyota-autos-concepto-smartphone
 	.autos-concepto
-		.slide 
-			> div 
-				height: auto
-				.bg
-					width: 120%
-				.container 
-					.flex 
-						> div
-							width: 100%
-						.texto
-							+order(2)
-							margin-bottom: 40px
-							h2
-								margin: 0px
-								text-align: center
-								b
-									display: block
-							.btvideo
-								margin: 27px auto
-								p
-									font-weight: 400
-									text-transform: capitalize
-									span
-										display: none
-							.boton
-								margin: 1rem auto
-						.imagen
-							+order(1)
+		padding: 0px
+		.slide
+			> div
+				.container
+					.nombre
+						text-align: center
 		.bx-controls-direction
 			display: none

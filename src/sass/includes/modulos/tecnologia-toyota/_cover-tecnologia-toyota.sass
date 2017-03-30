@@ -1,15 +1,39 @@
-section.cover-tecnologia-toyota
+.cover-tecnologia-toyota
 	height: 510px
 	position: relative
 	> img
 		+center(v)
 		display: block
 		top: 0px
+	.container
+		display: table
+		overflow: visible
+		> div
+			+bx
+			display: table-cell
+			padding: 0px 2rem
+			vertical-align: middle
+			width: 60%
+			h1
+				margin-top: 0px
+			p
+				color: $BlueGrey800
+				font-size: 2rem
+				line-height: 2.75rem
 
-@mixin cover-tecnologia-toyota-smartphone
+@mixin tecnologia-toyota-cover-smartphone
 	.cover-tecnologia-toyota
 		height: auto
 		> img
 			min-height: auto
 			position: relative
 			width: 100%
+		.container
+			> div
+				padding: 0px
+				width: 100%
+				h1
+					margin-top: 2.25rem
+				p
+					font-size: 1.125rem
+					line-height: 1.5rem

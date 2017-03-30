@@ -1,12 +1,10 @@
 .innovacion
-	padding: 6.25rem 0 
+	padding: 6.25rem 0px
 	position: relative
 	.container
-		display: table
-		overflow: visible
 		h2
 			font-weight: 300
-			margin: 0 auto
+			margin: 0px auto
 			text-align: center
 		> p 
 			margin: 1.875rem auto
@@ -14,29 +12,23 @@
 			line-height: 1.625rem
 			text-align: center
 			width: 74%
-		span 
-			color: $Red400
-			font-weight: 700
+			span 
+				color: $Red400
+				font-weight: 700
 		img
 			display: block
 			margin: 1.625rem auto
 		.video
-			height: 720px
-			overflow: hidden
-			padding-bottom: 0px
 			position: relative
 			width: 100%
 			img
 				+object
 				height: 100%
-				position: absolute
-				top: 0px
 				width: 100%
 			a
+				+center(vh)
 				display: block
 				height: 100%
-				position: relative
-				text-decoration: none
 				width: 100%
 				&:after
 					+center(vh)
@@ -44,13 +36,11 @@
 					color: $Red800
 					font-size: 4.5rem
 
-@mixin innovacion-smartphone
+@mixin tecnologia-toyota-innovacion-smartphone
 	.innovacion
-		height: auto
-		padding: 3.125rem 0
+		padding: 3.125rem 0px
 		.container
-			display: block
-			h2
-				width: 100% 
 			p
-				width: 100% 
+				width: 100%
+			img
+				width: 100%

@@ -1,7 +1,7 @@
 .sello-toyota
 	+bx
 	height: 700px
-	padding: 12rem 0
+	padding: 12rem 0px
 	position: relative
 	.bg
 		+center(v)
@@ -20,12 +20,18 @@
 			margin: 2.125rem auto
 			text-align: center
 			width: 70%
-		span 
-			color: $Red400
-			font-weight: 700
-@mixin sello-toyota-smartphone
+			span 
+				color: $Red400
+				font-weight: 700
+
+@mixin tecnologia-toyota-sello-toyota-smartphone
 	.sello-toyota
 		height: auto
-		padding: 3.125rem 0
+		padding: 3.125rem 0px
 		.container
 			display: block
+			h2
+				text-align: left
+			p
+				text-align: left
+				width: 100%
