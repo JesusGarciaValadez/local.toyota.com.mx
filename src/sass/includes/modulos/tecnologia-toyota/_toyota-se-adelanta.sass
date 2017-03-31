@@ -14,10 +14,72 @@
 			text-align: center
 			width: 80%
 		.carro
+			position: relative
 			img
 				+bx
+				display: block
 				padding: 0px 1.25rem
 				width: 100%
+			nav
+				+center(h)
+				//overflow: hidden
+				width: 100%
+				ul
+					display: table
+					height: 26px
+					position: relative
+					width: 100%
+					li
+						height: 100%
+						position: absolute
+						top: 0px
+						&.pote
+							left: 15%
+						&.moto
+							left: 28%
+						&.conv
+							left: 40%
+						&.conb
+							left: 48%
+						&.hidr
+							left: 60%
+						&.bate
+							left: 76%
+						// &:after
+						// 	+center(v)
+						// 	background: $BlueGrey400
+						// 	content: " "
+						// 	display: block
+						// 	height: 240px
+						// 	top: 6px
+						// 	width: 1px
+						// 	z-index: 0
+						// &:first-child
+						// 	&:after
+						// 		bottom: 0px
+						// 		height: 50%
+						// &:last-child
+						// 	&:after
+						// 		height: 50%
+						&.activo
+							span
+								border: 8px solid $White
+								height: 26px
+								width: 26px
+						span
+							+bx
+							+center(vh)
+							+fx(all,0.3s)
+							background: #1b80f2
+							border-radius: 50%
+							border: 8px solid transparent
+							cursor: pointer
+							display: block
+							z-index: 1
+							&:hover
+								border: 8px solid $White
+								height: 26px
+								width: 26px
 		.movilidad
 			display: table
 			margin: 2.5rem 0px

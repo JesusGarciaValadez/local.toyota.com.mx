@@ -1146,8 +1146,21 @@ init = function(){
 	$('.menuModal').html(menuSecundario);
 	$('.menuModal').prepend('<div class="close"></div>');
 
-	$('.cover .slide, .consejos-propietarios .slide, .autos-concepto .slide').bxSlider({
+	$('.cover .slide, .consejos-propietarios .slide').bxSlider({
 		mode:'horizontal',
+		infiniteLoop: false,
+		responsive: true,
+		hideControlOnEnd: true,
+		touchEnabled: true,
+		preventDefaultSwipeX: false,
+		preventDefaultSwipeY: false,
+		oneToOneTouch: false,
+		prevSelector: '#prev',
+		nextSelector: '#next'
+	});
+
+	$('.autos-concepto .slide').bxSlider({
+		mode:'fade',
 		infiniteLoop: false,
 		responsive: true,
 		hideControlOnEnd: true,
@@ -1173,7 +1186,7 @@ init = function(){
 	});
 
 	$('.adn-deportivo .slide').bxSlider({
-		mode:'horizontal',
+		mode:'fade',
 		infiniteLoop: false,
 		responsive: true,
 		hideControlOnEnd: true,

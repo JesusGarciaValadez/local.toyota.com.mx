@@ -1,5 +1,4 @@
 .autos-concepto
-	padding-bottom: 3.75rem
 	> img
 		+center(v)
 		z-index: -1
@@ -27,7 +26,7 @@
 		.slide
 			img
 				display: table
-				margin: 5rem auto 0px
+				margin: 3rem auto 0px
 				max-width: 850px
 				width: 80%
 	.bx-prev 
@@ -80,15 +79,15 @@
 		clear: both
 		margin: auto
 		overflow: hidden
-		padding-bottom: 50px
+		padding-bottom: 70px
 		.bx-viewport
 			overflow: visible!important
 		.bx-has-pager
 			+center(v)
-			bottom: 10px
+			bottom: 20px
 			display: table
 		.bx-pager
-			color: rgba(38, 50, 56, 0.4)
+			color: rgba(255, 255, 255, 0.4)
 			font-family: Arial
 			font-size: 0px
 			font-weight: bold
@@ -98,7 +97,7 @@
 					+fx(all,0.5s)
 					-moz-border-radius: 5px
 					-webkit-border-radius: 5px
-					background: rgba(38, 50, 56, 0.4)
+					background: rgba(255, 255, 255, 0.4)
 					border-radius: 5px
 					display: block
 					height: 8px
@@ -108,7 +107,7 @@
 					width: 8px
 					&:hover, &.active, &:focus
 						+scale(1.5,1.5)
-						background: $BlueGrey900
+						background: $White
 		.bx-pager-item
 			*display: inline
 			*zoom: 1
@@ -123,7 +122,6 @@
 
 @mixin tecnologia-toyota-autos-concepto-smartphone
 	.autos-concepto
-		padding: 0px
 		.slide
 			> div
 				.container
