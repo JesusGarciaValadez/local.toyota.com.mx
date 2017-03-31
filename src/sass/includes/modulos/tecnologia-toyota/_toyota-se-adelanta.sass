@@ -21,12 +21,13 @@
 				padding: 0px 1.25rem
 				width: 100%
 			nav
-				+center(h)
-				//overflow: hidden
+				height: 100%
+				position: absolute
+				top: 0px
 				width: 100%
 				ul
 					display: table
-					height: 26px
+					height: 100%
 					position: relative
 					width: 100%
 					li
@@ -45,23 +46,26 @@
 							left: 60%
 						&.bate
 							left: 76%
-						// &:after
-						// 	+center(v)
-						// 	background: $BlueGrey400
-						// 	content: " "
-						// 	display: block
-						// 	height: 240px
-						// 	top: 6px
-						// 	width: 1px
-						// 	z-index: 0
-						// &:first-child
-						// 	&:after
-						// 		bottom: 0px
-						// 		height: 50%
-						// &:last-child
-						// 	&:after
-						// 		height: 50%
 						&.activo
+							&:after
+								+center(v)
+								background: $BlueGrey400
+								content: " "
+								display: block
+								height: 50%
+								top: 50%
+								width: 1px
+								z-index: 0
+							&:before
+								+bx
+								+center(v)
+								background: $BlueGrey400
+								border-radius: 50%
+								border: 8px solid transparent
+								content: " "
+								display: block
+								top: 100%
+								z-index: 1
 							span
 								border: 8px solid $White
 								height: 26px
@@ -80,6 +84,38 @@
 								border: 8px solid $White
 								height: 26px
 								width: 26px
+		.tool
+			overflow: hidden
+			width: 100%
+			dl
+				display: none
+				position: relative
+				top: 10px
+				width: 50%
+				z-index: 0
+				&.activo
+					display: table
+				&.pote
+					left: 8%
+				&.moto
+					left: 18%
+				&.conv
+					left: 30%
+				&.conb
+					left: 38%
+				&.hidr
+					left: 22%
+				&.bate
+					left: 35%
+				dd
+					display: table-cell
+					vertical-align: middle
+					img
+						display: block
+						margin: auto
+						width: 200px
+					p
+						font-size: 1.125rem
 		.movilidad
 			display: table
 			margin: 2.5rem 0px
@@ -178,6 +214,33 @@
 	.toyota-se-adelanta 
 		padding-top: 3.125rem
 		.container 
+			.carro
+				nav
+					ul
+						li
+							&.activo
+								&:after
+									display: none
+								&:before
+									display: none
+			.tool
+				dl
+					width: 100%
+					&.pote
+						left: 0px
+					&.moto
+						left: 0px
+					&.conv
+						left: 0px
+					&.conb
+						left: 0px
+					&.hidr
+						left: 0px
+					&.bate
+						left: 0px
+					dd
+						display: block
+						width: 100%
 			.movilidad
 				.columna
 					display: block
