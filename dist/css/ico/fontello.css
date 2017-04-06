@@ -30,6 +30,48 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-icono_water:before {
+  content: "\e935";
+}
+.icon-icono_fundacion:before {
+  content: "\e936";
+}
+.icon-icono_desastres:before {
+  content: "\e937";
+}
+.icon-icono_asientos:before {
+  content: "\e938";
+}
+.icon-icono_olimpico:before {
+  content: "\e939";
+}
+.icon-icono_tecnologia2:before {
+  content: "\e93a";
+}
+.icon-icono_mexico:before {
+  content: "\e93b";
+}
+.icon-icono_leed:before {
+  content: "\e93c";
+}
+.icon-icono_empleos:before {
+  content: "\e933";
+}
+.icon-icono_confianza2:before {
+  content: "\e934";
+}
+.icon-icono_piston:before {
+  content: "\e92f";
+}
+.icon-icono_poleas:before {
+  content: "\e930";
+}
+.icon-icono_speedmeter:before {
+  content: "\e931";
+}
+.icon-icono_ICN:before {
+  content: "\e932";
+}
 .icon-icono_indicador:before {
   content: "\e92e";
 }

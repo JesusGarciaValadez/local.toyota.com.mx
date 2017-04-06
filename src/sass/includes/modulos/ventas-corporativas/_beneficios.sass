@@ -60,31 +60,33 @@
 										position: relative
 										margin-bottom: 3.75rem
 										i
+											background: $Grey400
+											border-radius: 50%
 											display: block
-											height: 60px
+											height: 66px
 											right: 100%
 											position: absolute
-											width: 60px
+											width: 66px
 											margin-right: 1rem
 											color: $Grey400
 											&:before
-												+center(v)
+												+center(vh)
+												color: $White
+												font-size: 40px
 											&.icono_tecnologia
 												&:before
 													+fonIco('\e91a')
-													font-size: 45px
 											&.icono_seguridad
 												&:before
 													+fonIco('\e919')
-													font-size: 43px
+													font-size: 32px
 											&.icono_rendimiento
 												&:before
 													+fonIco('\e918')
-													font-size: 51px
+													font-size: 36px
 											&.icono_carga
 												&:before
 													+fonIco('\e91b')
-													font-size: 50px
 								h6
 									font-size: 1rem
 									margin-bottom: 0px
