@@ -1293,8 +1293,8 @@ init = function(){
 		$('body').removeClass('hidden');
 	});
 
-	$('.error .close').on('click', function(){
-		$('.error').fadeOut();
+	$('.error-alerta .close').on('click', function(){
+		$('.error-alerta').fadeOut();
 		$('body').removeClass('hidden');
 	});
 
