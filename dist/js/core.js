@@ -402,8 +402,8 @@ init = function(){
 		        imagePath: '../images/autos/modelos360/corolla/'+color+'/',
 		        filePrefix: '',
 		        ext: '.jpg',
-		        height: 406,
-		        width: 1000,
+		        height: 388,
+		        width: 900,
 				disableSpin: true,
 		        navigation: false,
 		        dragging: false,
@@ -412,8 +412,8 @@ init = function(){
 		}
 
 		coloresCar = function(){
-			var cars = ['grisMetalico','rojo','azul','negro','plata'];
-			var cars_n = ['Gris Metálico','Rojo','Azul','Negro','Plata'];
+			var cars = ['agehaMetalico','arena','azul','azulElectrico','azulFrances','azulGrafito','azulMarino','azulMetalico','beige','blanco','blancoPerlado','bronce','cafe','champagne','grafito','gris','grisMetalico','grisOscuro','jade','morado','naranja','negro','negroMetalico','rojo','rojoOscuro','plata','plataMetalico','verde','vinoClaro'];
+			var cars_n = ['Ageha Metálico','Arena','Azul','Azul Eléctrico','Azul Francés','Azul Grafito','Azul Marino','Azul Metálico','Beige','Blanco','Blanco Perlado','Bronce','Café','Champagne','Grafito','Gris','Gris Metálico','Gris Oscuro','Jade','Morado','Naranja','Negro','Negro Metálico','Rojo','Rojo Oscuro','Plata','Plata Metálico','Verde','Vino Claro'];
 			var i = 0;
 			var total = (cars.length)-1;
 
@@ -761,8 +761,8 @@ init = function(){
 		        imagePath: '../images/autos/modelos360/corolla/'+color+'/',
 		        filePrefix: '',
 		        ext: '.jpg',
-		        height: 406,
-		        width: 1000,
+		        height: 388,
+		        width: 900,
 				disableSpin: true,
 		        navigation: false,
 		        dragging: false,
@@ -771,8 +771,8 @@ init = function(){
 		}
 
 		coloresCar = function(){
-			var cars = ['grisMetalico','rojo','azul','negro','plata'];
-			var cars_n = ['Gris Metálico','Rojo','Azul','Negro','Plata'];
+			var cars = ['agehaMetalico','arena','azul','azulElectrico','azulFrances','azulGrafito','azulMarino','azulMetalico','beige','blanco','blancoPerlado','bronce','cafe','champagne','grafito','gris','grisMetalico','grisOscuro','jade','morado','naranja','negro','negroMetalico','rojo','rojoOscuro','plata','plataMetalico','verde','vinoClaro'];
+			var cars_n = ['Ageha Metálico','Arena','Azul','Azul Eléctrico','Azul Francés','Azul Grafito','Azul Marino','Azul Metálico','Beige','Blanco','Blanco Perlado','Bronce','Café','Champagne','Grafito','Gris','Gris Metálico','Gris Oscuro','Jade','Morado','Naranja','Negro','Negro Metálico','Rojo','Rojo Oscuro','Plata','Plata Metálico','Verde','Vino Claro'];
 			var i = 0;
 			var total = (cars.length)-1;
 
@@ -791,7 +791,7 @@ init = function(){
 			});
 		}
 		coloresCar();
-		reel360Gal('grisMetalico');
+		reel360Gal('azul');
 		//console.log(cars[0])
 		$('.render360 .colores360 > div:eq(0)').addClass('active');
 	};
@@ -1694,7 +1694,7 @@ init = function(){
 		$('.cookies').addClass('fadeOutDown');
 	});
 
-	$('.vacantes select, .talento select, .flotillas select, .ideal select, .prueba select, .distribuidores select, .precios-servicio select, .refacciones-servicio select, .cotizarModal select, .financiamiento .elejir select, .filtro-version select').material_select();
+	$('.vacantes select, .talento select, .flotillas select, .ideal select, .prueba select, .distribuidores select, .precios-servicio select, .refacciones-servicio select, .cotizarModal select, .financiamiento .elejir select, .filtro-version select, .registrate select').material_select();
 	$('.datepicker').pickadate({
 		selectMonths: true, // Creates a dropdown to control month
 		selectYears: 15 // Creates a dropdown of 15 years to control year
