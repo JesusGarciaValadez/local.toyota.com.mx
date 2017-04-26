@@ -1392,6 +1392,14 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/src\/jade\/añadir-vin.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/dist\/añadir-vin.html",
+		"oF": 0,
+		"oS": 0
+		},
 	"\/src\/jade\/asistencia-vial.jade": {
 		"cOD": 1,
 		"ft": 512,
@@ -1547,7 +1555,7 @@
 	"\/src\/jade\/includes\/footer.jade": {
 		"cOD": 1,
 		"ft": 512,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/dist\/footer.html",
 		"oF": 0,
 		"oS": 0
@@ -1555,7 +1563,7 @@
 	"\/src\/jade\/includes\/head.jade": {
 		"cOD": 1,
 		"ft": 512,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/dist\/head.html",
 		"oF": 0,
 		"oS": 0
@@ -1563,7 +1571,7 @@
 	"\/src\/jade\/includes\/header.jade": {
 		"cOD": 1,
 		"ft": 512,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/dist\/header.html",
 		"oF": 0,
 		"oS": 0
@@ -1571,7 +1579,7 @@
 	"\/src\/jade\/includes\/mixines.jade": {
 		"cOD": 1,
 		"ft": 512,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/dist\/mixines.html",
 		"oF": 0,
 		"oS": 0
@@ -2336,6 +2344,14 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/src\/jade\/includes\/modulos\/propietarios-toyota\/añadir-vin.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "\/dist\/añadir-vin.html",
+		"oF": 1,
+		"oS": 0
+		},
 	"\/src\/jade\/includes\/modulos\/propietarios-toyota\/blog-propietarios.jade": {
 		"cOD": 1,
 		"ft": 512,
@@ -2355,7 +2371,7 @@
 	"\/src\/jade\/includes\/modulos\/propietarios-toyota\/cover-propietarios.jade": {
 		"cOD": 1,
 		"ft": 512,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/dist\/cover-propietarios.html",
 		"oF": 0,
 		"oS": 0
@@ -2379,7 +2395,7 @@
 	"\/src\/jade\/includes\/modulos\/propietarios-toyota\/localiza-cotiza.jade": {
 		"cOD": 1,
 		"ft": 512,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/dist\/localiza-cotiza.html",
 		"oF": 0,
 		"oS": 0
@@ -2387,7 +2403,7 @@
 	"\/src\/jade\/includes\/modulos\/propietarios-toyota\/menu-propietarios.jade": {
 		"cOD": 1,
 		"ft": 512,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/dist\/menu-propietarios.html",
 		"oF": 0,
 		"oS": 0
@@ -2691,7 +2707,7 @@
 	"\/src\/jade\/includes\/variables.jade": {
 		"cOD": 1,
 		"ft": 512,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/dist\/variables.html",
 		"oF": 0,
 		"oS": 0
@@ -4821,6 +4837,19 @@
 		"ma": 1,
 		"oA": 1,
 		"oAP": "\/..\/dist\/css\/_agendar-propietarios.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/src\/sass\/includes\/modulos\/propietarios-toyota\/_añadir-vin.sass": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/..\/dist\/css\/_añadir-vin.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1

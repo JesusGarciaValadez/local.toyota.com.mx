@@ -1694,7 +1694,7 @@ init = function(){
 		$('.cookies').addClass('fadeOutDown');
 	});
 
-	$('.vacantes select, .talento select, .flotillas select, .ideal select, .prueba select, .distribuidores select, .precios-servicio select, .refacciones-servicio select, .cotizarModal select, .financiamiento .elejir select, .filtro-version select, .registrate select').material_select();
+	$('.vacantes select, .talento select, .flotillas select, .ideal select, .prueba select, .distribuidores select, .precios-servicio select, .refacciones-servicio select, .cotizarModal select, .financiamiento .elejir select, .filtro-version select, .registrate select, .add-a-new-vin select').material_select();
 	$('.datepicker').pickadate({
 		selectMonths: true, // Creates a dropdown to control month
 		selectYears: 15 // Creates a dropdown of 15 years to control year
