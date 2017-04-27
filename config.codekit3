@@ -448,6 +448,12 @@
 		"oAP": "\/dist\/.sass-cache\/65e9dea6638c0f6ef37c1f4760f7fc91b027c1cd\/_agendar-propietarios.sassc",
 		"oF": 0
 		},
+	"\/src\/.sass-cache\/65e9dea6638c0f6ef37c1f4760f7fc91b027c1cd\/_añadir-vin.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/dist\/.sass-cache\/65e9dea6638c0f6ef37c1f4760f7fc91b027c1cd\/_añadir-vin.sassc",
+		"oF": 0
+		},
 	"\/src\/.sass-cache\/65e9dea6638c0f6ef37c1f4760f7fc91b027c1cd\/_blog-propietarios.sassc": {
 		"ft": 8192,
 		"oA": 1,
@@ -488,6 +494,12 @@
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/dist\/.sass-cache\/65e9dea6638c0f6ef37c1f4760f7fc91b027c1cd\/_promociones-propietarios.sassc",
+		"oF": 0
+		},
+	"\/src\/.sass-cache\/65e9dea6638c0f6ef37c1f4760f7fc91b027c1cd\/_vin-added.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/dist\/.sass-cache\/65e9dea6638c0f6ef37c1f4760f7fc91b027c1cd\/_vin-added.sassc",
 		"oF": 0
 		},
 	"\/src\/.sass-cache\/6a29a7af7ea90b57810007addd56c353088ca51d\/_accesorio.sassc": {
@@ -1536,6 +1548,14 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/src\/jade\/editar-vin.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/dist\/editar-vin.html",
+		"oF": 0,
+		"oS": 0
+		},
 	"\/src\/jade\/filosofia.jade": {
 		"cOD": 1,
 		"ft": 512,
@@ -2392,6 +2412,14 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/src\/jade\/includes\/modulos\/propietarios-toyota\/editar-vin.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "\/dist\/editar-vin.html",
+		"oF": 0,
+		"oS": 0
+		},
 	"\/src\/jade\/includes\/modulos\/propietarios-toyota\/localiza-cotiza.jade": {
 		"cOD": 1,
 		"ft": 512,
@@ -2413,6 +2441,14 @@
 		"ft": 512,
 		"oA": 0,
 		"oAP": "\/dist\/promociones-propietarios.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/src\/jade\/includes\/modulos\/propietarios-toyota\/vin-agregado.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 1,
+		"oAP": "\/dist\/vin-agregado.html",
 		"oF": 0,
 		"oS": 0
 		},
@@ -2901,6 +2937,14 @@
 		"ft": 512,
 		"oA": 0,
 		"oAP": "\/dist\/ventas-corporativas.html",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/src\/jade\/vin-agregado.jade": {
+		"cOD": 1,
+		"ft": 512,
+		"oA": 0,
+		"oAP": "\/dist\/vin-agregado.html",
 		"oF": 0,
 		"oS": 0
 		},
@@ -4941,6 +4985,19 @@
 		"ma": 1,
 		"oA": 1,
 		"oAP": "\/..\/dist\/css\/_promociones-propietarios.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/src\/sass\/includes\/modulos\/propietarios-toyota\/_vin-added.sass": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/..\/dist\/css\/_vin-added.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1

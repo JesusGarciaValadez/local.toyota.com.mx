@@ -1,0 +1,36 @@
+.edit-vin
+  .container
+    > div
+      +fx(all,0.5s)
+      h1
+      p
+        .link
+          i.fa.fa-plus-circle
+      form
+        table
+          thead
+            tr
+              th
+          tfoot
+            tr
+              td
+          tbody
+            tr
+              td
+                .switch
+                  label
+                    input[type="checkbox"] + .lever
+                      background-color: #64BB70
+                      &:after
+                        background-color: #BDE3C2
+                    input[type="checkbox"][disabled] + lever
+                      background-color: #BDBDBD
+                      &:after
+                        background-color: #EEEEEE
+                a
+                  .fa-trash
+        div
+          span
+            a.boton.secundario
+          .boton.disabled
+
