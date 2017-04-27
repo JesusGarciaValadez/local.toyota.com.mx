@@ -1,0 +1,49 @@
+.vin-added
+  .container
+    > div
+      +fx(all,0.5s)
+      margin: 6.25rem auto
+      width: 31.25rem
+      i
+        box-sizing: border-box
+        border-radius: 50%
+        border: 5px solid $Green400
+        color: #66BB6A
+        display: table
+        height: 4.375rem
+        margin: auto
+        position: relative
+        width: 4.375rem
+        &:before
+          position: absolute
+          +translate(-50%, -50%)
+          top: 50%
+          left: 50%
+          -moz-osx-font-smoothing: grayscale
+          -webkit-font-smoothing: antialiased
+          content: ""
+          direction: ltr
+          display: inline-block
+          font-family: "Material Icons"
+          font-feature-settings: "liga"
+          font-style: normal
+          font-weight: normal
+          letter-spacing: normal
+          line-height: 1
+          text-rendering: optimizeLegibility
+          text-transform: none
+          white-space: nowrap
+          word-wrap: normal
+          font-size: 50px
+          line-height: 0px
+      h1, p
+        text-align: center
+      h1
+        font-size: 49px
+        font-weight: 700
+        margin: 2.3076923077rem auto auto
+      p
+        font-size: 1.2307692308rem
+        margin: 3.125rem auto
+      div
+        .boton.entrar
