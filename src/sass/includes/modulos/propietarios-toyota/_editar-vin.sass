@@ -1,0 +1,63 @@
+.edit-vin
+  .container
+    > div
+      +fx(all,0.5s)
+      margin: auto auto 100px
+      width: 600px
+      h1, p
+        float: left
+        width: 50%
+      h1
+        font-size: 50px
+      p
+        text-align: right
+        margin-top: 115px
+        .link
+          color: $Grey400
+          float: right
+          i.fa.fa-plus-circle
+            margin-left: 10px
+      form
+        table
+          thead
+            tr
+              th
+                font-weight: 700
+                &:nth-child( 4 )
+                  text-align: center
+          tfoot
+            border-top: 1px solid $Grey
+            tr
+              td
+          tbody
+            tr
+              td
+                color: $Grey
+                .switch
+                  label
+                    .lever
+                      background-color: #BDE3C2
+                      &:after
+                        background-color: #64BB70
+                        box-shadow: unset
+                    input[type=checkbox][disabled] + .lever
+                      background-color: #EEE !important
+                    input[type=checkbox][disabled] + .lever:after,
+                    input[type=checkbox][disabled]:checked + .lever:after
+                      background-color: #BDBDBD !important
+                &:nth-child( 4 )
+                  text-align: center
+                  a
+                    color: $Grey
+                    .fa-trash
+        > div
+          float: right
+          width: 100%
+          span, .boton
+            float: right
+            width: 50%
+          span
+            a.boton.secundario
+          .boton
+            margin-right: 40px
+

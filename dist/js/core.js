@@ -149,7 +149,7 @@ init = function(){
 		});
 		$('.header .menu-autos div ul li > a').on('click', function(){
 			if(!$(this).hasClass('activo')){
-				$('.header .menu-autos div ul li > a').removeClass('activo')		
+				$('.header .menu-autos div ul li > a').removeClass('activo')
 				$('.header .menu-autos div ul li > a ~ div').slideUp();
 			}
 			$(this).toggleClass('activo');
@@ -168,7 +168,7 @@ init = function(){
 			$('.modelo h6 b').append(activo);
 
 			if(!$(this).hasClass('activo')){
-				$('.configura-modelos div ul li > a').removeClass('activo')		
+				$('.configura-modelos div ul li > a').removeClass('activo')
 				$('.configura-modelos div ul li > a ~ div').slideUp();
 			}
 			$(this).toggleClass('activo');
@@ -190,7 +190,7 @@ init = function(){
 		$('.hamburguesa, .desplegar > a, .regresar, .header .menu-autos div ul li a, .configura-modelos div ul li > a').off('click');
 		$('.modelo h6 b').empty();
 	}
-	
+
 	destructMenuDesctop = function(){
 		$('.header .menu-autos div ul li, .configura-modelos div ul li').off('click');
 		$('.desplegar').off('mouseover');
@@ -200,7 +200,7 @@ init = function(){
 		$('.btnBuscador > span').off('click');
 		var activo = $('.configura-modelos div ul li.activo > a').text();
 		$('.modelo h6 b').append(activo);
-	} 
+	}
 
 	configuraCotiza = function(){
 		$('.configura-modelos .flex > div').on('click', function(){
@@ -241,23 +241,23 @@ init = function(){
 
 			$('.interior .tipos > div').removeClass('activo');
 			$(this).addClass('activo');
-			
+
 			$('.interiores > span').empty();
 			$('.interiores > span').append(nombre);
 
 			$('.interior .img > img').attr("src", '../images/autos/interiores/corolla/tipo/'+img+'.jpg');
-		});		
+		});
 
 		$('.interaccion .accesorios .seleccionar').on('click', function(){
 			$(this).parent().parent().toggleClass('activo');
 
 			var activos = $('.accesorios .flex > div.activo .info');
 			var arry = [];
-			
+
 			$.each(activos, function(k,v){
 				arry.push($(v).find('p').text().split('$'));
 			})
-			
+
 			$(this).toggleClass('activo');
 
 			var activos = $('.interaccion .accesorios .seleccionar.activo').length;
@@ -389,8 +389,8 @@ init = function(){
 		});
 
 		//ThreeSixty
-		reel360Gal = function(color){	
-			
+		reel360Gal = function(color){
+
 			$('.car').ThreeSixty({
 		        totalFrames: 36,
 		        endFrame: 36,
@@ -421,7 +421,7 @@ init = function(){
 				$('.configuracion .colores360').append('<div class="'+cars[i]+'">')
 				i++
 			}
-			
+
 			$('.configuracion .colores360 > div').on('click',function(){
 				$('.configuracion .colores360 > div').removeClass('active');
 				$(this).addClass('active');
@@ -507,10 +507,10 @@ init = function(){
 						     $('.accesorios .flex > div:eq('+o+')').addClass('activo');
 						     $('.accesorios .flex > div:eq('+o+') .seleccionar').addClass('activo');
 						   }
-						}	
+						}
 					}
 			    } catch (e) {
-			       
+
 			    }
 			}
 			if($('.configura-cotiza .interaccion > div').hasClass('resumen')){
@@ -533,7 +533,7 @@ init = function(){
 		        var elemento = JSON.parse(accesorios);
 				var cuantos = elemento.length;
 		    } catch (e) {
-		       
+
 		    }
 
 			var i = 0;
@@ -590,7 +590,7 @@ init = function(){
 	panoramico = function(){
 
 		$('.panoramico .container .contenido .boton').on('click', function(){
-			
+
 			$('.interiorModal').fadeIn();
 			$('body').addClass('hidden');
 
@@ -598,11 +598,11 @@ init = function(){
 			//pano.readConfigUrlAsync("../images/modelos/corolla/pano.xml");
 
 			embedpano({
-				swf:"../library/pano/panoramico.swf", 
-				xml:"../images/modelos/corolla/pano.xml", 
-				target:"pano", 
-				html5:"prefer", 
-				mobilescale:1.0, 
+				swf:"../library/pano/panoramico.swf",
+				xml:"../images/modelos/corolla/pano.xml",
+				target:"pano",
+				html5:"prefer",
+				mobilescale:1.0,
 				passQueryParameters:true
 			});
 
@@ -669,7 +669,7 @@ init = function(){
 	}
 
 	mobileMenuPropietarios = function(){
-		
+
 		var name = $('.menu-propietarios .hola').html();
 
 		$('.menu-propietarios .datos').append($('<div class="close"></div>'+name+''));
@@ -748,8 +748,8 @@ init = function(){
 
 	render360 = function(){
 		//ThreeSixty
-		reel360Gal = function(color){	
-			
+		reel360Gal = function(color){
+
 			$('.car').ThreeSixty({
 		        totalFrames: 36,
 		        endFrame: 36,
@@ -780,7 +780,7 @@ init = function(){
 				$('.render360 .colores360').append('<div class="'+cars[i]+'">')
 				i++
 			}
-			
+
 			$('.render360 .colores360 > div').on('click',function(){
 				$('.render360 .colores360 > div').removeClass('active');
 				$(this).addClass('active');
@@ -840,7 +840,7 @@ init = function(){
 		$('.galeriaModal .bx-controls-direction a').off('click');
 		sliderGaleria.destroySlider();
 	});
-	
+
 	modeloDesctop = function(){
 		var r = $('.reconocimientos .slide li').length;
 		var v = $('.versiones .slide > div').length;
@@ -1028,7 +1028,7 @@ init = function(){
 			oneToOneTouch: false,
 			controls: false,
 		});
-			
+
 		var name = $('.menu-modelo .logo').html();
 
 		$('.menu-modelo .datos').append($('<div class="close"></div><div class="logo">'+name+'</div>'));
@@ -1072,7 +1072,7 @@ init = function(){
 		medidas();
 		var clase = $('.menufixed').data('clase');
 		var valor = $('.'+(clase)+'').offset().top;
-		
+
 		if (alturaScroll >= valor) {
 			$('.menufixed').addClass('fixed');
 		} else {
@@ -1086,7 +1086,7 @@ init = function(){
 		var valor = $('.menufixed').offset().top;
 		var bottom = (alturaScroll+altura);
 		var footer = $('footer').offset().top;
-		
+
 		if (alturaScroll >= valor) {
 			$('.menu-historia').addClass('top');
 		}else {
@@ -1272,7 +1272,7 @@ init = function(){
 		preventDefaultSwipeY: false,
 		oneToOneTouch: false
 	});
-	
+
 	$('.menuModal .close').on('click', function(){
 		$('.menuModal').fadeOut();
 		$('body').removeClass('hidden');
@@ -1302,7 +1302,7 @@ init = function(){
 		$('.correcto').fadeOut();
 		$('body').removeClass('hidden');
 	});
-	
+
 	// $('.prueba .input-field > .boton').on('click', function(){
 	// 	if(!$('.prueba .input-field > .boton').hasClass('disabled')){
 	// 		$('.pruebaModal').fadeIn();
@@ -1352,12 +1352,12 @@ init = function(){
 	menuFotter = function(){
 		$('.links-footer li > p').on('click', function(){
 			if(!$(this).parent().hasClass('activo')){
-				$('.links-footer li').removeClass('activo')		
+				$('.links-footer li').removeClass('activo')
 				$('.links-footer li > p ~ ul').slideUp();
 			}
 			$(this).parent().toggleClass('activo');
 			$('~ ul', this).slideToggle();
-		}); 
+		});
 	}
 
 	menuFotterStop = function(){
@@ -1380,7 +1380,7 @@ init = function(){
 				$('.proximos-eventos').addClass('activo')
 			}
 	}
-	
+
 	menuSelect = function(){
 		$('[data-clase1]').each(function(i){
 			var clase1 = $('[data-clase1]:eq('+i+')').data('clase1');
@@ -1471,7 +1471,7 @@ init = function(){
 				if (prev === -1){
 					prev = 0;
 				}
-				
+
 				next = index + 1;
 
 				if ($('a.anclas[name="' + anclasArray[index] + '"]').offset().top < posScroll + 1){
@@ -1573,7 +1573,7 @@ init = function(){
 	});
 
 	$('.resumen .distribuidor .ver span').on('click', function(){
-		
+
 		if(!$('.resumen .distribuidor > dl dd.none').hasClass('none')){
 			$('.resumen .distribuidor > dl dd:not(.activo)').addClass('none');
 			$('.resumen .distribuidor .ver').removeClass('activo');
@@ -1591,7 +1591,7 @@ init = function(){
 	});
 
 	$('.cotizarModal .distribuidor .ver span').on('click', function(){
-		
+
 		if(!$('.cotizarModal .distribuidor > dl dd.none').hasClass('none')){
 			$('.cotizarModal .distribuidor > dl dd:not(.activo)').addClass('none');
 			$('.cotizarModal .distribuidor .ver').removeClass('activo');
@@ -1609,7 +1609,7 @@ init = function(){
 	});
 
 	$('.financiamiento .distribuidor .ver span').on('click', function(){
-		
+
 		if(!$('.financiamiento .distribuidor > dl dd.none').hasClass('none')){
 			$('.financiamiento .distribuidor > dl dd:not(.activo)').addClass('none');
 			$('.financiamiento .distribuidor .ver').removeClass('activo');
@@ -1674,7 +1674,7 @@ init = function(){
 
 	$('.preguntas li > b, .preguntas li > i').on('click', function(){
 		if(!$(this).parent().hasClass('activo')){
-			$('.preguntas li').removeClass('activo')		
+			$('.preguntas li').removeClass('activo')
 			$('.preguntas li > b ~ div').slideUp();
 		}
 		$(this).parent().toggleClass('activo');
@@ -1703,7 +1703,7 @@ init = function(){
 		$('.cookies').addClass('fadeOutDown');
 	});
 
-	$('.vacantes select, .talento select, .flotillas select, .ideal select, .prueba select, .distribuidores select, .precios-servicio select, .refacciones-servicio select, .cotizarModal select, .financiamiento .elejir select, .filtro-version select, .registrate select').material_select();
+	$('.vacantes select, .talento select, .flotillas select, .ideal select, .prueba select, .distribuidores select, .precios-servicio select, .refacciones-servicio select, .cotizarModal select, .financiamiento .elejir select, .filtro-version select, .registrate select, .add-a-new-vin select').material_select();
 	$('.datepicker').pickadate({
 		selectMonths: true, // Creates a dropdown to control month
 		selectYears: 15 // Creates a dropdown of 15 years to control year
@@ -1752,7 +1752,7 @@ init = function(){
 			$('.mailModal .gracias').fadeIn();
 	    }
 	});
-	
+
 	$('.comentario .gracias .boton').on('click', function(){
 		$('#comentario')[0].reset();
 		$('#comentario label').removeClass('active');
@@ -1859,11 +1859,11 @@ init = function(){
 	    }
 	});
 
-	var options = [ 
+	var options = [
 		{selector: '.experiencia', offset: 500, callback: function(){
 			$('.colum').addClass("animacion");
 		}}
-	]; 
+	];
 	Materialize.scrollFire(options);
 
 	$('.ideal select').on('change',function() {
@@ -1900,11 +1900,11 @@ init = function(){
 
 	inicio();
 
-	//genera movimiento sutil del scroll	
-	// $('.scroll').on('click', function(e) {  		
+	//genera movimiento sutil del scroll
+	// $('.scroll').on('click', function(e) {
 	// 	event.preventDefault();
-	// 	var $link = $(this);  
-	// 	var anchor  = $link.attr('href'); 
+	// 	var $link = $(this);
+	// 	var anchor  = $link.attr('href');
 	// 	var general =  $(anchor).offset().top
 	// 	//general = general - 100;
 	// 	$('html, body').stop().animate({scrollTop: general}, 1000);
@@ -1923,17 +1923,22 @@ init = function(){
 		}
 	});
 
+	$( ".add_vin a" ).on( "click", function ( event ) {
+		event.preventDefault();
+		event.stopPropagation();
+
+		var _clone  = $( event.currentTarget ).closest( ".input-field" ).prev( ".new_vin" );
+		_clone.clone().prependTo( "form" );
+	} );
 };
 
 $(document).on('ready',init);
 
 $(window).on('load',function(){
-		
+
 	if(! /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 
-	}
-
-	else{
+	} else {
 		if(! /iPad/i.test(navigator.userAgent) ) {
 			$('.descargas .mobile').css("display", "table");
 			$('.card-descarga .mobile').css("display", "table");

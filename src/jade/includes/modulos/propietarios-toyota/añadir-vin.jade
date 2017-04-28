@@ -1,0 +1,24 @@
+section.add-a-new-vin
+  .container
+    div
+      p.clearfix.left
+        a(href="editar-vin.html").link.regresar.left Regresar
+      form
+        legend
+          h1 Añade tu nuevo VIN
+          p
+            | Cada auto Toyota tiene un VIN diferente. Ingresa
+            | aquí el que corresponde a tu nuevo auto.
+        .input-field
+          select
+            option(value="" disabled selected) Selecciona un modelo
+            option(value="1") Corolla
+            option(value="2") Corolla
+            option(value="3") Corolla
+            option(value="4") Corolla
+            option(value="5") Corolla
+        .input-field
+            input(type="text").validate#new_vin
+            label(for="new_vin") ¿Cuál es tu VIN?
+        .input-field
+          input(type="submit" value="AÑADE" onclick="return false;" data-clase="listo").boton.disabled

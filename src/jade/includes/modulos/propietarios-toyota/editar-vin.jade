@@ -1,0 +1,49 @@
+section.edit-vin
+  .container
+    div
+      h1 Edita tu VIN
+      p
+        a(href="añadir-vin.html").link
+          | Añade VIN
+          i.fa.fa-plus-circle
+      form.clearfix
+        table
+          thead
+            tr
+              th Modelo
+              th VIN
+              th Elige auto
+              th Elimina
+          tfoot
+            tr
+              td
+              td
+              td
+              td
+          tbody
+            tr
+              td Prius
+              td JT4RN56S2F0139246
+              td
+                .switch
+                  label
+                    input(type="checkbox" value="1")
+                    span.lever
+              td
+                a(href="about:blank")
+                  span(aria-hidden="true").fa.fa-trash
+            tr
+              td Highlander
+              td JT4RN56S2F0139248
+              td
+                .switch
+                  label
+                    input(type="checkbox" value="1" disabled)
+                    span.lever
+              td
+                a(href="about:blank")
+                  span(aria-hidden="true").fa.fa-trash
+        div.clearfix
+          input(type="submit" value="GUARDA" onclick="return false;" data-clase="listo").boton.disabled
+          span
+            a(href="about:black").boton.cancel CANCELA
