@@ -52,11 +52,16 @@ ul {
   }
 }
 
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
 // classic clearfix
 .clearfix {
   clear: both;
 }
-
 
 // Z-levels
 .z-depth-0 {
