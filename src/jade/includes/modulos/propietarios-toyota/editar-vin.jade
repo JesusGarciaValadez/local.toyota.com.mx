@@ -6,7 +6,7 @@ section.edit-vin
         a(href="añadir-vin.html").link
           | Añade VIN
           i.fa.fa-plus-circle
-      form
+      form.clearfix
         table
           thead
             tr
@@ -43,7 +43,7 @@ section.edit-vin
               td
                 a(href="about:blank")
                   span(aria-hidden="true").fa.fa-trash
-        div
-          span
-            a(href="about:black").boton.secundario CANCELA
+        div.clearfix
           input(type="submit" value="GUARDA" onclick="return false;" data-clase="listo").boton.disabled
+          span
+            a(href="about:black").boton.cancel CANCELA
