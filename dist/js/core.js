@@ -1927,8 +1927,9 @@ init = function(){
 		event.preventDefault();
 		event.stopPropagation();
 
-		var _clone  = $( event.currentTarget ).closest( ".input-field" ).prev( ".new_vin" );
-		_clone.clone().prependTo( "form" );
+		var _clone  = $( event.currentTarget ).closest( ".input-field" ).prev( ".new_vin" ),
+				_form		= $( event.currentTarget ).closest( "form" );
+		_clone.clone().prependTo( _form );
 	} );
 };
 
