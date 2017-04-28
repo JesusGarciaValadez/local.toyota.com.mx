@@ -1681,6 +1681,15 @@ init = function(){
 		$('~ div', this).slideToggle();
 	});
 
+	$('.categorias li > .titulo, .categorias li > i').on('click', function(){
+		if(!$(this).parent().hasClass('activo')){
+			$('.categorias li').removeClass('activo')		
+			$('.categorias li > .titulo ~ .content-info').slideUp();
+		}
+		$(this).parent().toggleClass('activo');
+		$('~ .content-info', this).slideToggle();
+	});
+
 	$('.toyota-se-adelanta .carro span').on('click', function(){
 		$('.toyota-se-adelanta .carro li').removeClass('activo');
 		$(this).parent().addClass('activo');

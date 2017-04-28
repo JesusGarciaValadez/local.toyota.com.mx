@@ -1,0 +1,22 @@
+-var location = "comparador-versiones"
+-var subLoc = " "
+-var titulo = " "
+-var descrip = " "
+-var keyword = " "
+-var breadcrumb = "none"
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	body
+		
+		include includes/header
+		
+		main.wrapper
+			include includes/modulos/comparador-versiones/versiones-comparador
+			include includes/modulos/comparador-versiones/categorias-comparador
+
+		include includes/footer
